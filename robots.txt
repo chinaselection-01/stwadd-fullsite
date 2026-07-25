@@ -12,4 +12,69 @@ Disallow: /*?*
 Disallow: /?*
 Disallow: /index.php
 
+# AI/LLM crawler rules - allow full access for GEO
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Bytespider
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
 Sitemap: https://www.stwadd.com/sitemap.xml

@@ -1,0 +1,132 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Yongkang STWADD Houseware Co., Ltd.",
+  "alternateName": "STWADD",
+  "url": "https://www.stwadd.com",
+  "logo": "https://img.yfisher.com/m5671/1724987713175-logo-150/png100-t3-scale100.webp",
+  "description": "Manufacturer and supplier of insulated water bottles, stainless steel tumblers, wine tumbler flasks, and plastic water bottles with OEM and ODM services.",
+  "foundingDate": "2017",
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Yongkang, Zhejiang, China"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No.8 Qianjin Industrial Zone",
+    "addressLocality": "Yongkang City",
+    "addressRegion": "Zhejiang Province",
+    "postalCode": "321300",
+    "addressCountry": "CN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "28.8983",
+    "longitude": "120.0475"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+86-150-8822-8843",
+      "contactType": "sales",
+      "email": "bob@stwadd.com",
+      "availableLanguage": ["English", "Chinese"],
+      "areaServed": "Worldwide"
+    }
+  ],
+  "sameAs": [],
+  "numberOfEmployees": {
+    "@type": "QuantitativeValue",
+    "minValue": 50,
+    "maxValue": 200
+  },
+  "knowsAbout": [
+    "Insulated Water Bottles",
+    "Stainless Steel Tumblers",
+    "Vacuum Insulated Drinkware",
+    "OEM Manufacturing",
+    "ODM Product Design",
+    "Plastic Water Bottles",
+    "Hip Flasks",
+    "Wine Tumblers"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Drinkware Products",
+    "itemListElement": [
+      {
+        "@type": "OfferCatalog",
+        "name": "Stainless Steel Drinkware",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Stainless Steel Tumblers",
+              "description": "Double wall vacuum insulated tumblers from 12oz to 40oz"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Stainless Steel Water Bottles",
+              "description": "Vacuum insulated sports and gym water bottles"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Wine Tumblers",
+              "description": "Double wall stainless steel wine tumblers with handles"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Plastic Drinkware",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "BPA-Free Plastic Water Bottles",
+              "description": "Tritan motivational water bottles with time markers and straws"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "OfferCatalog",
+        "name": "Specialty Drinkware",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Hip Flasks",
+              "description": "Stainless steel and copper hip flasks for whiskey and spirits"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Smart Thermos Bottles",
+              "description": "LED temperature display smart stainless steel thermos bottles"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "certification": [
+    "ISO 9001",
+    "SGS Tested",
+    "TUV Certified",
+    "EU Food Grade Compliant",
+    "US FDA Food Contact Compliant"
+  ]
+}
