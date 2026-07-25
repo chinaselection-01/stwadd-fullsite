@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /admin
+Disallow: /inquire
+Disallow: /due
+Disallow: /updating
+Disallow: /login
+Disallow: /register
+Disallow: /findpwd
+Disallow: /user
+Disallow: /shop-cart
+Disallow: /*?*
+Disallow: /?*
+Disallow: /index.php
+
+Sitemap: https://www.stwadd.com/sitemap.xml
