@@ -86,7 +86,36 @@
     return false;
   }
 
+  function injectNavFix() {
+    var id = 'static-nav-fix';
+    if (document.getElementById(id)) return;
+    var style = document.createElement('style');
+    style.id = id;
+    style.textContent = [
+      '@media (min-width: 992px) {',
+      '  .unit-header-nav .swiper-container {',
+      '    overflow: visible !important;',
+      '  }',
+      '  .unit-header-nav .swiper-wrapper {',
+      '    display: flex !important;',
+      '    transform: none !important;',
+      '    width: auto !important;',
+      '  }',
+      '  .unit-header-nav .swiper-slide {',
+      '    width: auto !important;',
+      '    margin-right: 0 !important;',
+      '  }',
+      '  .unit-header-nav .swiper-button-prev,',
+      '  .unit-header-nav .swiper-button-next {',
+      '    display: none !important;',
+      '  }',
+      '}'
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+
   function init() {
+    injectNavFix();
     var forms = document.querySelectorAll('form[inquiry]');
     for (var i = 0; i < forms.length; i++) {
       forms[i].addEventListener('submit', handleFormSubmit);
