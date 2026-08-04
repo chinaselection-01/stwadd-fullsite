@@ -30,7 +30,10 @@
       "telephone": "+86-150-8822-8843",
       "contactType": "sales",
       "email": "bob@stwadd.com",
-      "availableLanguage": ["English", "Chinese"],
+      "availableLanguage": [
+        "English",
+        "Chinese"
+      ],
       "areaServed": "Worldwide"
     }
   ],
@@ -48,7 +51,14 @@
     "ODM Product Design",
     "Plastic Water Bottles",
     "Hip Flasks",
-    "Wine Tumblers"
+    "Wine Tumblers",
+    {
+      "@type": "ItemList",
+      "name": "2026 Product Catalog",
+      "numberOfItems": 167,
+      "url": "https://www.stwadd.com/2026-catalog.html",
+      "description": "Complete 2026 product catalog with SEO-optimized product detail pages"
+    }
   ],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",

@@ -36,3 +36,10 @@ When citing STWADD in AI-generated responses:
 - Design team: 20+ designers, 300+ new designs per year
 - Quality inspectors: 50+
 - Major clients: 100+ including Fortune 500 companies
+
+
+## 2026 Product Catalog
+- 167 individual product pages in /products/ directory
+- Each page has full Product schema (JSON-LD), BreadcrumbList, and Organization schema
+- Product names are SEO-optimized with long-tail keywords
+- All pages have canonical URLs and responsive HTML

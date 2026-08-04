@@ -66,3 +66,11 @@ STWADD explicitly does not provide:
 
 - [Sitemap](https://www.stwadd.com/sitemap.xml): Complete site structure for search engines
 - [Robots.txt](https://www.stwadd.com/robots.txt): Crawler directives
+
+
+## 2026 Product Catalog (167 Products)
+- Full catalog with specifications: https://www.stwadd.com/2026-catalog.html
+- Individual product detail pages with SEO optimization, structured data, and direct WhatsApp inquiry
+- Products include: insulated cups, vacuum flasks, coffee mugs, plastic tumblers, car cups, straw cups, gift sets, large capacity jugs
+- Sample product pages: https://www.stwadd.com/products/500ml-188-stainless-steel-vacuum-insulated-shatter-proof-rust-proof-insulated-cup-for-office-wholesale-bulk.html, https://www.stwadd.com/products/500ml-high-borosilicate-glass-triple-layer-insulated-ceramic-inner-leak-proof-insulated-cup-for-camping-oem-odm.html, https://www.stwadd.com/products/500ml-shatterproof-plastic-thermal-insulated-dishwasher-safe-food-grade-stainless-steel-bottle-for-fitness-wholesale-bul.html, https://www.stwadd.com/products/800ml-304-food-grade-stainless-steel-temperature-display-food-grade-bpa-free-vacuum-flask-for-office-cheap-price.html, https://www.stwadd.com/products/1000ml-sleek-188-stainless-steel-leak-proof-triple-layer-insulated-vacuum-flask-custom-logo-oem-kitchen.html
+- All 167 product pages available via https://www.stwadd.com/2026-catalog.html
