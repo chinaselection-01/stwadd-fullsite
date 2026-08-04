@@ -1,0 +1,1338 @@
+[
+  {
+    "seq": "1",
+    "name": "温度杯",
+    "capacity": "500ML",
+    "weight": "13",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "2",
+    "name": "星空温度",
+    "capacity": "500ML",
+    "weight": "13",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "3",
+    "name": "铁甲",
+    "capacity": "500ML",
+    "weight": "15.5",
+    "pcs": "50",
+    "carton": "72*37*25.5"
+  },
+  {
+    "seq": "4",
+    "name": "星星壶",
+    "capacity": "800ML",
+    "weight": "19.4",
+    "pcs": "50",
+    "carton": "85*43*26.8"
+  },
+  {
+    "seq": "5",
+    "name": "星星壶",
+    "capacity": "1000ML",
+    "weight": "24.1",
+    "pcs": "50",
+    "carton": "85*43*32.8"
+  },
+  {
+    "seq": "6",
+    "name": "弹跳杯",
+    "capacity": "500ML",
+    "weight": "12.4",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "7",
+    "name": "800*吊带杯",
+    "capacity": "800ML",
+    "weight": "18.9",
+    "pcs": "50",
+    "carton": "80*42*26"
+  },
+  {
+    "seq": "8",
+    "name": "1000*吊带杯",
+    "capacity": "1000ML",
+    "weight": "21.6",
+    "pcs": "50",
+    "carton": "80*42*31"
+  },
+  {
+    "seq": "9",
+    "name": "800*艾克壶",
+    "capacity": "800ML",
+    "weight": "22.4",
+    "pcs": "50",
+    "carton": "82*42*29.5"
+  },
+  {
+    "seq": "10",
+    "name": "1000*艾克壶",
+    "capacity": "1000ML",
+    "weight": "24",
+    "pcs": "50",
+    "carton": "89*45.5*31.5"
+  },
+  {
+    "seq": "11",
+    "name": "书包熊",
+    "capacity": "500ML",
+    "weight": "15.8",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "12",
+    "name": "塑料杯三件套",
+    "capacity": "300/900/2000ML",
+    "weight": "21.4",
+    "pcs": "48",
+    "carton": "69*47*59.5"
+  },
+  {
+    "seq": "13",
+    "name": "2000*大壶",
+    "capacity": "2000ML",
+    "weight": "-",
+    "pcs": "20",
+    "carton": "67*54*36"
+  },
+  {
+    "seq": "14",
+    "name": "一杯三盖（套装）",
+    "capacity": "500ML",
+    "weight": "16.5",
+    "pcs": "30",
+    "carton": "85*44*27.3"
+  },
+  {
+    "seq": "15",
+    "name": "一杯三盖（套装）",
+    "capacity": "500ML",
+    "weight": "10.2",
+    "pcs": "24",
+    "carton": "57.5*44*26.5"
+  },
+  {
+    "seq": "16",
+    "name": "渐变温度杯",
+    "capacity": "500ML",
+    "weight": "15.8",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "17",
+    "name": "800太阳壶",
+    "capacity": "800ML",
+    "weight": "21.5",
+    "pcs": "50",
+    "carton": "85*43*27.5"
+  },
+  {
+    "seq": "18",
+    "name": "1000太阳壶",
+    "capacity": "1000ML",
+    "weight": "24",
+    "pcs": "50",
+    "carton": "85*43*31.5"
+  },
+  {
+    "seq": "19",
+    "name": "750*铁甲",
+    "capacity": "750ML",
+    "weight": "17kg",
+    "pcs": "50",
+    "carton": "80.5*42*30.5"
+  },
+  {
+    "seq": "20",
+    "name": "500*提环杯",
+    "capacity": "500ML/600ml",
+    "weight": "17.5",
+    "pcs": "60",
+    "carton": "44.5*38*44"
+  },
+  {
+    "seq": "21",
+    "name": "罗马杯",
+    "capacity": "600ML",
+    "weight": "20.5",
+    "pcs": "50",
+    "carton": "87*44*24"
+  },
+  {
+    "seq": "22",
+    "name": "罗马杯",
+    "capacity": "800ML",
+    "weight": "23",
+    "pcs": "50",
+    "carton": "87*44*29"
+  },
+  {
+    "seq": "23",
+    "name": "商务直杯",
+    "capacity": "500ML",
+    "weight": "14",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "24",
+    "name": "手提壶",
+    "capacity": "1200ML",
+    "weight": "23.1kg",
+    "pcs": "40",
+    "carton": "55.5*52.5*53"
+  },
+  {
+    "seq": "25",
+    "name": "手提壶",
+    "capacity": "1000ML",
+    "weight": "19.4kg",
+    "pcs": "40",
+    "carton": "55*48*48.5cm"
+  },
+  {
+    "seq": "26",
+    "name": "金钢杯",
+    "capacity": "900ml",
+    "weight": "20.67kg",
+    "pcs": "40",
+    "carton": "53*52*46.5"
+  },
+  {
+    "seq": "27",
+    "name": "金钢杯",
+    "capacity": "1200ML",
+    "weight": "22.8kg",
+    "pcs": "40",
+    "carton": "53*52*53"
+  },
+  {
+    "seq": "28",
+    "name": "骑士杯",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "73*37*26.5"
+  },
+  {
+    "seq": "29",
+    "name": "二代套盒",
+    "capacity": "650ml",
+    "weight": "23.5",
+    "pcs": "30",
+    "carton": "59*44.5*58cm"
+  },
+  {
+    "seq": "30",
+    "name": "闷茶壶",
+    "capacity": "1000ml",
+    "weight": "23.4",
+    "pcs": "40",
+    "carton": "72*58*38.8"
+  },
+  {
+    "seq": "31",
+    "name": "太空壶",
+    "capacity": "800ML",
+    "weight": "19",
+    "pcs": "50",
+    "carton": "86*43*29"
+  },
+  {
+    "seq": "32",
+    "name": "太空壶",
+    "capacity": "1000ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "93*47*31.5"
+  },
+  {
+    "seq": "33",
+    "name": "可乐壶",
+    "capacity": "800ml",
+    "weight": "20.2kg",
+    "pcs": "40",
+    "carton": "54.5*48.5*46.5"
+  },
+  {
+    "seq": "34",
+    "name": "可乐壶",
+    "capacity": "1200ml",
+    "weight": "24.7kg",
+    "pcs": "40",
+    "carton": "54.5*48.5*54"
+  },
+  {
+    "seq": "35",
+    "name": "40汽车杯",
+    "capacity": "1200ml",
+    "weight": "16.8",
+    "pcs": "25",
+    "carton": "74.5*59.5*30"
+  },
+  {
+    "seq": "36",
+    "name": "800*钻石盖",
+    "capacity": "800ML",
+    "weight": "21.5kg",
+    "pcs": "50",
+    "carton": "48*48*51"
+  },
+  {
+    "seq": "37",
+    "name": "1000*钻石盖",
+    "capacity": "1000ML",
+    "weight": "20kg",
+    "pcs": "40",
+    "carton": "76*48*31"
+  },
+  {
+    "seq": "38",
+    "name": "手提元素杯",
+    "capacity": "500ML",
+    "weight": "15",
+    "pcs": "50",
+    "carton": "75*38*27"
+  },
+  {
+    "seq": "39",
+    "name": "随行杯",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "77*39*27"
+  },
+  {
+    "seq": "40",
+    "name": "异形杯",
+    "capacity": "600ML",
+    "weight": "18.4",
+    "pcs": "50",
+    "carton": "53*53*42"
+  },
+  {
+    "seq": "41",
+    "name": "旋转吊带",
+    "capacity": "800ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "80*41*27"
+  },
+  {
+    "seq": "42",
+    "name": "塑料彩虹杯",
+    "capacity": "1000ML",
+    "weight": "-",
+    "pcs": "60",
+    "carton": "47*39.5*58"
+  },
+  {
+    "seq": "43",
+    "name": "卡通手提壶",
+    "capacity": "1000ML",
+    "weight": "19.4kg",
+    "pcs": "40",
+    "carton": "55*48*48.5cm"
+  },
+  {
+    "seq": "44",
+    "name": "卡通手提壶",
+    "capacity": "1200ML",
+    "weight": "23.1kg",
+    "pcs": "40",
+    "carton": "55.5*52.5*53"
+  },
+  {
+    "seq": "45",
+    "name": "格纹温度杯",
+    "capacity": "500ML",
+    "weight": "15.8",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "46",
+    "name": "鹿角塑料杯",
+    "capacity": "600ML",
+    "weight": "13kg",
+    "pcs": "80",
+    "carton": "62*43*39.5cm"
+  },
+  {
+    "seq": "47",
+    "name": "吸管杯",
+    "capacity": "750ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "54*54*48"
+  },
+  {
+    "seq": "48",
+    "name": "卡通骑士杯",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "73*37*28"
+  },
+  {
+    "seq": "49",
+    "name": "汽车杯三件套",
+    "capacity": "1200ml/900ml/300ml",
+    "weight": "-",
+    "pcs": "48",
+    "carton": "69*47*59.5"
+  },
+  {
+    "seq": "50",
+    "name": "焖茶壶",
+    "capacity": "1000ML",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "72*58*38.8"
+  },
+  {
+    "seq": "51",
+    "name": "凹凸咖啡杯",
+    "capacity": "510ml",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "43*43*37.5"
+  },
+  {
+    "seq": "52",
+    "name": "单杯",
+    "capacity": "500ml",
+    "weight": "15.8",
+    "pcs": "50",
+    "carton": "54.5*36*51"
+  },
+  {
+    "seq": "53",
+    "name": "毛毛虫",
+    "capacity": "800ML",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "72.5*46*23"
+  },
+  {
+    "seq": "54",
+    "name": "毛毛虫",
+    "capacity": "1000ML",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "74*47*27"
+  },
+  {
+    "seq": "55",
+    "name": "40汽车杯",
+    "capacity": "1200ml",
+    "weight": "18",
+    "pcs": "25",
+    "carton": "58*46.5*57.5"
+  },
+  {
+    "seq": "56",
+    "name": "美式咖啡杯\n（带手柄）",
+    "capacity": "860ML",
+    "weight": "22.5KG",
+    "pcs": "40",
+    "carton": "55.5*53.5*45.5"
+  },
+  {
+    "seq": "57",
+    "name": "汽车杯",
+    "capacity": "900ml",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "57.5*54*56"
+  },
+  {
+    "seq": "58",
+    "name": "印花温度杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "59",
+    "name": "一代咖啡杯",
+    "capacity": "-",
+    "weight": "14",
+    "pcs": "50",
+    "carton": "43*43*37.5"
+  },
+  {
+    "seq": "60",
+    "name": "豌豆杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "37*36.5*23"
+  },
+  {
+    "seq": "61",
+    "name": "平盖元素杯",
+    "capacity": "500ml",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "73*37*23"
+  },
+  {
+    "seq": "62",
+    "name": "小胖丁",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "100",
+    "carton": "42*42*61.5"
+  },
+  {
+    "seq": "63",
+    "name": "500*铁塔",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "64",
+    "name": "500*米奇",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "65",
+    "name": "咖啡杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "43*43*37.5"
+  },
+  {
+    "seq": "66",
+    "name": "咖啡杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "43*43*37.5"
+  },
+  {
+    "seq": "67",
+    "name": "草莓熊",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "60",
+    "carton": "52*49*51"
+  },
+  {
+    "seq": "68",
+    "name": "塑料中杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "100",
+    "carton": "85*43*32.8"
+  },
+  {
+    "seq": "69",
+    "name": "渐变星星壶",
+    "capacity": "800/1000",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "85*43*26.8"
+  },
+  {
+    "seq": "70",
+    "name": "可乐罐",
+    "capacity": "500",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "71",
+    "name": "凹凸咖啡杯",
+    "capacity": "510",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "49*49*38"
+  },
+  {
+    "seq": "72",
+    "name": "20卡通杯",
+    "capacity": "600",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "73",
+    "name": "可乐壶",
+    "capacity": "800/1200",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "53.5*50*51.5   53.5*50*47"
+  },
+  {
+    "seq": "74",
+    "name": "蛋杯",
+    "capacity": "300",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "47*38*38"
+  },
+  {
+    "seq": "75",
+    "name": "渐变卡通手提壶",
+    "capacity": "1000/1200/59*46.5*57",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "59*46.5*51"
+  },
+  {
+    "seq": "76",
+    "name": "嘟嘟杯",
+    "capacity": "1200",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "57*56*51"
+  },
+  {
+    "seq": "77",
+    "name": "鱼鳞杯",
+    "capacity": "750",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "78",
+    "name": "榴莲杯",
+    "capacity": "710",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "66*55.5*44"
+  },
+  {
+    "seq": "79",
+    "name": "速开杯",
+    "capacity": "500",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "80",
+    "name": "500*子弹头",
+    "capacity": "500",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "72*37*25"
+  },
+  {
+    "seq": "81",
+    "name": "星星壶",
+    "capacity": "800/1000",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "85*43*26.8 \n85*43*32.8"
+  },
+  {
+    "seq": "82",
+    "name": "600旋转盖",
+    "capacity": "600",
+    "weight": "18.3",
+    "pcs": "50",
+    "carton": "82*42*26"
+  },
+  {
+    "seq": "83",
+    "name": "手提汽车杯",
+    "capacity": "900",
+    "weight": "-",
+    "pcs": "36",
+    "carton": "64.5*63.5*27"
+  },
+  {
+    "seq": "84",
+    "name": "易拉罐",
+    "capacity": "400",
+    "weight": "-",
+    "pcs": "60",
+    "carton": "-"
+  },
+  {
+    "seq": "85",
+    "name": "易拉罐",
+    "capacity": "400",
+    "weight": "-",
+    "pcs": "60",
+    "carton": "-"
+  },
+  {
+    "seq": "86",
+    "name": "冰霸杯",
+    "capacity": "1000",
+    "weight": "22.5KG",
+    "pcs": "40",
+    "carton": "63*60*53.5"
+  },
+  {
+    "seq": "87",
+    "name": "40三代汽车杯",
+    "capacity": "1200",
+    "weight": "-",
+    "pcs": "25",
+    "carton": "77.5*58.5*29.5"
+  },
+  {
+    "seq": "88",
+    "name": "吸管杯",
+    "capacity": "750",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "54*54*48"
+  },
+  {
+    "seq": "89",
+    "name": "卡通太空壶",
+    "capacity": "800/1000",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "90",
+    "name": "750*铁甲",
+    "capacity": "750",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "80.5*41*30.5"
+  },
+  {
+    "seq": "91",
+    "name": "小口瓶",
+    "capacity": "500ML",
+    "weight": "18",
+    "pcs": "50",
+    "carton": "82*41.5*25"
+  },
+  {
+    "seq": "92",
+    "name": "拉布布塑料杯",
+    "capacity": "900ml",
+    "weight": "-",
+    "pcs": "100",
+    "carton": "69*35*51"
+  },
+  {
+    "seq": "93",
+    "name": "拉布布吸管杯",
+    "capacity": "750ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "54*54*48"
+  },
+  {
+    "seq": "94",
+    "name": "铃铃壶塑料",
+    "capacity": "600ML",
+    "weight": "11.4",
+    "pcs": "50",
+    "carton": "60*49.5*34"
+  },
+  {
+    "seq": "95",
+    "name": "拉布布手提壶",
+    "capacity": "1000/1200ml",
+    "weight": "19.5 \n21.5",
+    "pcs": "40",
+    "carton": "59*46.5*51 \n59*46.5*57"
+  },
+  {
+    "seq": "96",
+    "name": "水果杯",
+    "capacity": "480/680/880",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "97",
+    "name": "卡通手柄杯",
+    "capacity": "750ML",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "66*54.5*54"
+  },
+  {
+    "seq": "98",
+    "name": "30汽车杯渐变",
+    "capacity": "900ml",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "50*50*54"
+  },
+  {
+    "seq": "99",
+    "name": "水果运动壶",
+    "capacity": "600ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "48*44*54.8"
+  },
+  {
+    "seq": "100",
+    "name": "小口瓶手提",
+    "capacity": "500ML",
+    "weight": "18",
+    "pcs": "50",
+    "carton": "82*41.5*25"
+  },
+  {
+    "seq": "101",
+    "name": "温显咖啡壶",
+    "capacity": "1000ml",
+    "weight": "17.8",
+    "pcs": "20",
+    "carton": "89*29.5*47"
+  },
+  {
+    "seq": "102",
+    "name": "栀子花套盒",
+    "capacity": "600ml",
+    "weight": "-",
+    "pcs": "30",
+    "carton": "74*50*27"
+  },
+  {
+    "seq": "103",
+    "name": "800*新款钻石盖",
+    "capacity": "800ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "104",
+    "name": "1000*新款钻石盖",
+    "capacity": "1000ML",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "-"
+  },
+  {
+    "seq": "105",
+    "name": "铃兰咖啡杯",
+    "capacity": "600ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "49*49*42"
+  },
+  {
+    "seq": "106",
+    "name": "温显咖啡杯",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "60",
+    "carton": "84*42.5*18.5"
+  },
+  {
+    "seq": "107",
+    "name": "手提直杯",
+    "capacity": "600ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "108",
+    "name": "温显咖啡壶",
+    "capacity": "1000ML",
+    "weight": "-",
+    "pcs": "20",
+    "carton": "75*30.5*53"
+  },
+  {
+    "seq": "109",
+    "name": "咖啡杯4代",
+    "capacity": "500ML",
+    "weight": "18.5",
+    "pcs": "50",
+    "carton": "87.5*44.5*20"
+  },
+  {
+    "seq": "110",
+    "name": "皮套咖啡杯",
+    "capacity": "490ml",
+    "weight": "17",
+    "pcs": "50",
+    "carton": "49*49*38"
+  },
+  {
+    "seq": "111",
+    "name": "手柄杯",
+    "capacity": "900",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "57.5*54*56"
+  },
+  {
+    "seq": "112",
+    "name": "卡皮巴拉塑料鹿角",
+    "capacity": "600ML",
+    "weight": "-",
+    "pcs": "80",
+    "carton": "-"
+  },
+  {
+    "seq": "113",
+    "name": "小熊塑料杯",
+    "capacity": "600ML",
+    "weight": "-",
+    "pcs": "60",
+    "carton": "-"
+  },
+  {
+    "seq": "114",
+    "name": "拉布布塑料杯",
+    "capacity": "600ML",
+    "weight": "-",
+    "pcs": "80",
+    "carton": "-"
+  },
+  {
+    "seq": "115",
+    "name": "塑料大肚杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "116",
+    "name": "啤酒罐",
+    "capacity": "1200ML",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "118",
+    "name": "背包熊",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "119",
+    "name": "滑板熊",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "120",
+    "name": "滑板熊子弹头",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "121",
+    "name": "500*米奇",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "122",
+    "name": "500*子弹头",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "123",
+    "name": "新款钻石盖",
+    "capacity": "800/1000",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "124",
+    "name": "格纹温度杯",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "125",
+    "name": "草莓熊吸管杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "126",
+    "name": "拉布布吸管杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "127",
+    "name": "500*铁塔",
+    "capacity": "500ML",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "128",
+    "name": "拉布布塑料中杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "100",
+    "carton": "-"
+  },
+  {
+    "seq": "129",
+    "name": "手柄可乐壶",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "130",
+    "name": "渐变手提壶",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "-"
+  },
+  {
+    "seq": "133",
+    "name": "铁环杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "134",
+    "name": "800/1000星星壶大花",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "135",
+    "name": "三丽鸥塑料杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "100",
+    "carton": "-"
+  },
+  {
+    "seq": "136",
+    "name": "蜘蛛侠温度杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "137",
+    "name": "卡皮巴拉套盒",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "24",
+    "carton": "-"
+  },
+  {
+    "seq": "138",
+    "name": "小熊温度杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "139",
+    "name": "电镀温度杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "140",
+    "name": "史迪仔温度杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "141",
+    "name": "史迪仔小口瓶",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "143",
+    "name": "40三代汽车杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "25",
+    "carton": "-"
+  },
+  {
+    "seq": "144",
+    "name": "600/800/1000钻石盖",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50/40",
+    "carton": "-"
+  },
+  {
+    "seq": "145",
+    "name": "拉布布吸管杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "146",
+    "name": "塑料杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "147",
+    "name": "塑料杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "148",
+    "name": "咖啡杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "149",
+    "name": "杯子",
+    "capacity": "480/660/750",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "150",
+    "name": "杯子",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "151",
+    "name": "杯子",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "152",
+    "name": "高盖杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "-"
+  },
+  {
+    "seq": "153",
+    "name": "800/1000新款太阳壶（豪金）",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "154",
+    "name": "一杯三盖（套装）",
+    "capacity": "500ML",
+    "weight": "10.8",
+    "pcs": "24",
+    "carton": "57.5*44*26.5"
+  },
+  {
+    "seq": "155",
+    "name": "一杯三盖（套装）",
+    "capacity": "500ML",
+    "weight": "10.8",
+    "pcs": "24",
+    "carton": "57.5*44*26.5"
+  },
+  {
+    "seq": "156",
+    "name": "一杯三盖（套装）",
+    "capacity": "500ML",
+    "weight": "10.8",
+    "pcs": "24",
+    "carton": "57.5*44*26.5"
+  },
+  {
+    "seq": "157",
+    "name": "铃兰塑料杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "80",
+    "carton": "-"
+  },
+  {
+    "seq": "158",
+    "name": "卡通弹跳杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "159",
+    "name": "红酒瓶",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "160",
+    "name": "温显咖啡杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50/60",
+    "carton": "-"
+  },
+  {
+    "seq": "161",
+    "name": "小熊猫",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "48",
+    "carton": "-"
+  },
+  {
+    "seq": "162",
+    "name": "极光之夜",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "163",
+    "name": "手柄杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "-"
+  },
+  {
+    "seq": "164",
+    "name": "浮球保温杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "50",
+    "carton": "-"
+  },
+  {
+    "seq": "166",
+    "name": "塑料杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "172",
+    "name": "20汽车杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "60",
+    "carton": "-"
+  },
+  {
+    "seq": "173",
+    "name": "全钢盖保温杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "40",
+    "carton": "-"
+  },
+  {
+    "seq": "180",
+    "name": "口袋杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "184",
+    "name": "40汽车杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "186",
+    "name": "40汽车杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  },
+  {
+    "seq": "187",
+    "name": "水果杯",
+    "capacity": "-",
+    "weight": "-",
+    "pcs": "-",
+    "carton": "-"
+  }
+]
