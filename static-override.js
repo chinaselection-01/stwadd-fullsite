@@ -92,6 +92,8 @@
     var style = document.createElement('style');
     style.id = id;
     style.textContent = [
+      '/* Restore normal root font-size (weyescloud injected 16px override on live site) */',
+      'html { font-size: 16px !important; }',
       '@media (min-width: 992px) {',
       '  .unit-header-nav .swiper-container {',
       '    overflow: visible !important;',
