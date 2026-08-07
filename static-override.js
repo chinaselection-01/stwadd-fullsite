@@ -125,8 +125,87 @@
     document.head.appendChild(style);
   }
 
+  function replaceHeroBanner() {
+    var banner = document.getElementById('unit-FItKpYZGSP');
+    if (!banner) return;
+    if (banner.getAttribute('data-hero-replaced') === '1') return;
+
+    var inner = banner.querySelector('.unit-list.module-banner-3-unit-1');
+    if (inner) {
+      inner.removeAttribute('id');
+      inner.classList.remove('is-swiper');
+    }
+
+    banner.setAttribute('data-hero-replaced', '1');
+
+    banner.innerHTML = ''
+      + '<a class="hero-banner" href="/product.html" aria-label="Browse products">'
+      + '  <img class="hero-banner__img" src="/assets/images/hero-banner.jpg" alt="STWADD Premium Insulated Bottle Manufacturer" loading="eager" fetchpriority="high">'
+      + '  <span class="hero-banner__cta">Read More</span>'
+      + '</a>';
+
+    injectHeroBannerCSS();
+  }
+
+  function injectHeroBannerCSS() {
+    var id = 'static-hero-banner-css';
+    if (document.getElementById(id)) return;
+    var style = document.createElement('style');
+    style.id = id;
+    style.textContent = [
+      '/* Hero banner replacement (local image, no external CDN) */',
+      '#unit-FItKpYZGSP { padding: 0 !important; margin: 0 !important; }',
+      '#unit-FItKpYZGSP .hero-banner {',
+      '  position: relative;',
+      '  display: block;',
+      '  width: 100%;',
+      '  max-width: 1920px;',
+      '  margin: 0 auto;',
+      '  overflow: hidden;',
+      '  background: #f5f5f5;',
+      '  text-decoration: none;',
+      '  cursor: pointer;',
+      '}',
+      '#unit-FItKpYZGSP .hero-banner__img {',
+      '  display: block;',
+      '  width: 100%;',
+      '  height: auto;',
+      '  max-height: 800px;',
+      '  object-fit: cover;',
+      '  object-position: center;',
+      '}',
+      '#unit-FItKpYZGSP .hero-banner__cta {',
+      '  position: absolute;',
+      '  left: 5%;',
+      '  bottom: 9%;',
+      '  padding: 14px 38px;',
+      '  background: #ffffff;',
+      '  color: #b46e1e;',
+      '  font-size: 22px;',
+      '  font-weight: 600;',
+      '  border-radius: 30px;',
+      '  box-shadow: 0 4px 18px rgba(0,0,0,.18);',
+      '  transition: transform .2s ease, box-shadow .2s ease;',
+      '  pointer-events: none;',
+      '}',
+      '#unit-FItKpYZGSP .hero-banner:hover .hero-banner__cta {',
+      '  transform: translateY(-2px);',
+      '  box-shadow: 0 6px 22px rgba(0,0,0,.25);',
+      '}',
+      '@media (max-width: 768px) {',
+      '  #unit-FItKpYZGSP .hero-banner__cta {',
+      '    font-size: 14px;',
+      '    padding: 8px 22px;',
+      '    bottom: 6%;',
+      '  }',
+      '}'
+    ].join('\n');
+    document.head.appendChild(style);
+  }
+
   function init() {
     injectNavFix();
+    replaceHeroBanner();
     var forms = document.querySelectorAll('form[inquiry]');
     for (var i = 0; i < forms.length; i++) {
       forms[i].addEventListener('submit', handleFormSubmit);
