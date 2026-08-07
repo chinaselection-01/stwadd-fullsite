@@ -111,6 +111,16 @@
       '  .unit-header-nav .swiper-button-next {',
       '    display: none !important;',
       '  }',
+      '  .unit-header-nav__item {',
+      '    padding: 14px 18px !important;',
+      '  }',
+      '  .unit-header-nav__item-link,',
+      '  .unit-header-nav__item-link span,',
+      '  .unit-header-nav__item a {',
+      '    font-size: 18px !important;',
+      '    font-weight: 600 !important;',
+      '    letter-spacing: 0.5px !important;',
+      '  }',
       '}'
     ].join('\n');
     document.head.appendChild(style);
