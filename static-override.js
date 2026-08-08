@@ -92,7 +92,7 @@
     var style = document.createElement('style');
     style.id = id;
     style.textContent = [
-      '/* Nav fix: only target header nav items, do NOT change root html font-size */',
+      '/* Nav fix: larger font for better homepage proportion */',
       '@media (min-width: 992px) {',
       '  .unit-header-nav .swiper-container {',
       '    overflow: visible !important;',
@@ -111,14 +111,15 @@
       '    display: none !important;',
       '  }',
       '  .unit-header-nav__item {',
-      '    padding: 14px 18px !important;',
+      '    padding: 18px 24px !important;',
       '  }',
       '  .unit-header-nav__item-link,',
       '  .unit-header-nav__item-link span,',
       '  .unit-header-nav__item a {',
-      '    font-size: 18px !important;',
-      '    font-weight: 600 !important;',
+      '    font-size: 20px !important;',
+      '    font-weight: 700 !important;',
       '    letter-spacing: 0.5px !important;',
+      '    text-shadow: 0 1px 3px rgba(0,0,0,0.25) !important;',
       '  }',
       '}'
     ].join('\n');
