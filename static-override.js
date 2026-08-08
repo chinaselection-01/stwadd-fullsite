@@ -125,41 +125,8 @@
     document.head.appendChild(style);
   }
 
-  function replaceHeroBanner() {
-    var banner = document.getElementById('unit-FItKpYZGSP');
-    if (!banner) return;
-    if (banner.getAttribute('data-hero-fixed') === '1') return;
-    banner.setAttribute('data-hero-fixed', '1');
-
-    var BANNER_IMGS = [
-      '/assets/images/banner-slide-1.jpg',
-      '/assets/images/banner-slide-2.jpg',
-      '/assets/images/banner-slide-3.jpg'
-    ];
-
-    // Replace all banner images
-    var imgs = banner.querySelectorAll('img[from="banner_list"]');
-    for (var i = 0; i < imgs.length; i++) {
-      if (i < BANNER_IMGS.length) {
-        imgs[i].src = BANNER_IMGS[i];
-        imgs[i].setAttribute('lazy-src', BANNER_IMGS[i]);
-        imgs[i].removeAttribute('data-hidden');
-      }
-    }
-
-    // Remove external picture sources (Slide 1 has a <picture> with yfisher webp sources)
-    var pictures = banner.querySelectorAll('picture');
-    for (var j = 0; j < pictures.length; j++) {
-      var sources = pictures[j].querySelectorAll('source');
-      for (var k = 0; k < sources.length; k++) {
-        sources[k].remove();
-      }
-    }
-  }
-
   function init() {
     injectNavFix();
-    replaceHeroBanner();
     var forms = document.querySelectorAll('form[inquiry]');
     for (var i = 0; i < forms.length; i++) {
       forms[i].addEventListener('submit', handleFormSubmit);
