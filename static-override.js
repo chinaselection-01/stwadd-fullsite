@@ -144,14 +144,6 @@
         imgs[i].src = BANNER_IMGS[i];
         imgs[i].setAttribute('lazy-src', BANNER_IMGS[i]);
         imgs[i].removeAttribute('data-hidden');
-        // Trigger resize after image loads so swiper recalculates height
-        imgs[i].onload = function() {
-          window.dispatchEvent(new Event('resize'));
-        };
-        // Fallback if cached / already loaded
-        if (imgs[i].complete && imgs[i].naturalWidth > 0) {
-          window.dispatchEvent(new Event('resize'));
-        }
       }
     }
 
@@ -163,53 +155,10 @@
         sources[k].remove();
       }
     }
-
-    // Force swiper to recalculate after image change
-    setTimeout(function() {
-      var swiperContainer = banner.querySelector('.swiper-container');
-      if (swiperContainer && swiperContainer.swiper) {
-        swiperContainer.swiper.update();
-        swiperContainer.swiper.updateSize();
-      }
-      window.dispatchEvent(new Event('resize'));
-    }, 200);
-  }
-
-  function injectBannerFix() {
-    var id = 'static-banner-fix';
-    if (document.getElementById(id)) return;
-    var style = document.createElement('style');
-    style.id = id;
-    style.textContent = [
-      '/* Fix banner image display: show full image, no crop, no padding-top ratio */',
-      '#unit-FItKpYZGSP .base-image {',
-      '  padding-top: 0 !important;',
-      '  height: auto !important;',
-      '  min-height: 0 !important;',
-      '}',
-      '#unit-FItKpYZGSP .base-image__item--default {',
-      '  position: relative !important;',
-      '  height: auto !important;',
-      '}',
-      '#unit-FItKpYZGSP .base-image__img,',
-      '#unit-FItKpYZGSP picture.base-image__img,',
-      '#unit-FItKpYZGSP img[from="banner_list"] {',
-      '  display: block !important;',
-      '  width: 100% !important;',
-      '  height: auto !important;',
-      '  max-height: none !important;',
-      '  object-fit: contain !important;',
-      '}',
-      '#unit-FItKpYZGSP .unit-list__item {',
-      '  height: auto !important;',
-      '}'
-    ].join('\n');
-    document.head.appendChild(style);
   }
 
   function init() {
     injectNavFix();
-    injectBannerFix();
     replaceHeroBanner();
     var forms = document.querySelectorAll('form[inquiry]');
     for (var i = 0; i < forms.length; i++) {
