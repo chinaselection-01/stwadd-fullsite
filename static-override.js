@@ -128,79 +128,33 @@
   function replaceHeroBanner() {
     var banner = document.getElementById('unit-FItKpYZGSP');
     if (!banner) return;
-    if (banner.getAttribute('data-hero-replaced') === '1') return;
+    if (banner.getAttribute('data-hero-fixed') === '1') return;
+    banner.setAttribute('data-hero-fixed', '1');
 
-    var inner = banner.querySelector('.unit-list.module-banner-3-unit-1');
-    if (inner) {
-      inner.removeAttribute('id');
-      inner.classList.remove('is-swiper');
+    var BANNER_IMGS = [
+      '/assets/images/banner-slide-1.jpg',
+      '/assets/images/banner-slide-2.jpg',
+      '/assets/images/banner-slide-3.jpg'
+    ];
+
+    // Replace all banner images
+    var imgs = banner.querySelectorAll('img[from="banner_list"]');
+    for (var i = 0; i < imgs.length; i++) {
+      if (i < BANNER_IMGS.length) {
+        imgs[i].src = BANNER_IMGS[i];
+        imgs[i].setAttribute('lazy-src', BANNER_IMGS[i]);
+        imgs[i].removeAttribute('data-hidden');
+      }
     }
 
-    banner.setAttribute('data-hero-replaced', '1');
-
-    banner.innerHTML = ''
-      + '<a class="hero-banner" href="/product.html" aria-label="Browse products">'
-      + '  <img class="hero-banner__img" src="/assets/images/hero-banner.jpg" alt="STWADD Premium Insulated Bottle Manufacturer" loading="eager" fetchpriority="high">'
-      + '  <span class="hero-banner__cta">Read More</span>'
-      + '</a>';
-
-    injectHeroBannerCSS();
-  }
-
-  function injectHeroBannerCSS() {
-    var id = 'static-hero-banner-css';
-    if (document.getElementById(id)) return;
-    var style = document.createElement('style');
-    style.id = id;
-    style.textContent = [
-      '/* Hero banner replacement (local image, no external CDN) */',
-      '#unit-FItKpYZGSP { padding: 0 !important; margin: 0 !important; }',
-      '#unit-FItKpYZGSP .hero-banner {',
-      '  position: relative;',
-      '  display: block;',
-      '  width: 100%;',
-      '  max-width: 1920px;',
-      '  margin: 0 auto;',
-      '  overflow: hidden;',
-      '  background: #f5f5f5;',
-      '  text-decoration: none;',
-      '  cursor: pointer;',
-      '}',
-      '#unit-FItKpYZGSP .hero-banner__img {',
-      '  display: block;',
-      '  width: 100%;',
-      '  height: auto;',
-      '  max-height: 800px;',
-      '  object-fit: cover;',
-      '  object-position: center;',
-      '}',
-      '#unit-FItKpYZGSP .hero-banner__cta {',
-      '  position: absolute;',
-      '  left: 5%;',
-      '  bottom: 9%;',
-      '  padding: 14px 38px;',
-      '  background: #ffffff;',
-      '  color: #b46e1e;',
-      '  font-size: 22px;',
-      '  font-weight: 600;',
-      '  border-radius: 30px;',
-      '  box-shadow: 0 4px 18px rgba(0,0,0,.18);',
-      '  transition: transform .2s ease, box-shadow .2s ease;',
-      '  pointer-events: none;',
-      '}',
-      '#unit-FItKpYZGSP .hero-banner:hover .hero-banner__cta {',
-      '  transform: translateY(-2px);',
-      '  box-shadow: 0 6px 22px rgba(0,0,0,.25);',
-      '}',
-      '@media (max-width: 768px) {',
-      '  #unit-FItKpYZGSP .hero-banner__cta {',
-      '    font-size: 14px;',
-      '    padding: 8px 22px;',
-      '    bottom: 6%;',
-      '  }',
-      '}'
-    ].join('\n');
-    document.head.appendChild(style);
+    // Remove external picture sources (Slide 1 has a <picture> with yfisher webp sources)
+    var pictures = banner.querySelectorAll('picture');
+    for (var j = 0; j < pictures.length; j++) {
+      var sources = pictures[j].querySelectorAll('source');
+      for (var k = 0; k < sources.length; k++) {
+        sources[k].remove();
+      }
+    }
   }
 
   function init() {
