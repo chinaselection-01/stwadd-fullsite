@@ -1,8 +1,12 @@
 /**
  * STWADD Static Site - Form Override + Nav Fix + Layout Guard
- * v20260810: Minimal CSS - nav font, text layout guard.
+ * v20260810: CSS guards + JS fix for sticky wrapper divs.
  * Original site uses html{font-size:10px} making nav ~12px; we bump to ~16px.
  * Does NOT modify html root or banner.
+ *
+ * KEY FINDING: position:sticky anonymous divs inserted by the framework
+ * between .col-* cells and module __wrapper elements IGNORE width:100%.
+ * Must use JS to set explicit pixel widths after layout.
  */
 (function() {
   'use strict';
@@ -18,7 +22,6 @@
     s.id = id;
     s.textContent = [
       '@media (min-width: 992px) {',
-      /* Only target the actual nav link text inside the header */
       '  .unit-header-nav .unit-header-nav__item-link {',
       '    font-size: 16px !important;',
       '    font-weight: 600 !important;',
@@ -28,90 +31,94 @@
     document.head.appendChild(s);
   }
 
-  /* ── Text layout guard: prevent one-char-per-line collapse ── */
-  /* Defensive fix: ensure text containers never collapse to near-zero width. */
-  /* Root cause: on wide screens, nested wrapper divs shrink below the */
-  /* parent .col-* cell, causing text to stack one character per line. */
-  function fixTextLayout() {
+  /* ── Text layout guard (CSS) ── */
+  function fixTextLayoutCSS() {
     var id = 'stwadd-text-layout-guard';
     if (document.getElementById(id)) return;
     var s = document.createElement('style');
     s.id = id;
     s.textContent = [
-      '/* ═══════════════════  GRID / ROW / CELL  ═══════════════════ */',
-      '/* Ensure all grid rows allow children to fill properly */',
+      '/* Grid/Row/Cell base */',
       '.row { flex-wrap: wrap !important; }',
-      '/* Ensure col-* cells in footer/body don\'t shrink below content */',
       '.col { flex-shrink: 1 !important; }',
-      '',
-      '/* ═══════════════════  INTERMEDIATE WRAPPERS  ════════════════ */',
-      '/* Framework inserts anonymous position:sticky divs between */',
-      '/* .col-* cells and module __wrapper elements. These shrink */',
-      '/* to content width and must be forced to fill parent. */',
-      '.col > div {',
-      '  width: 100% !important;',
-      '  max-width: 100% !important;',
-      '}',
-      '[class*="col-"] > div:not([class]) {',
-      '  width: 100% !important;',
-      '  max-width: 100% !important;',
-      '}',
 
-      '/* ═══════════════════  TEXT UNIT WRAPPERS  ═══════════════════ */',
-      '/* Ensure text unit wrappers fill their container */',
+      /* Text unit wrappers */
       '.unit-text { width: 100% !important; max-width: 100% !important; }',
       '.unit-text__item {',
-      '  width: 100% !important;',
-      '  max-width: 100% !important;',
-      '  word-break: normal !important;',
-      '  overflow-wrap: break-word !important;',
+      '  width: 100% !important; max-width: 100% !important;',
+      '  word-break: normal !important; overflow-wrap: break-word !important;',
       '  white-space: normal !important;',
       '}',
 
-      '/* ═══════════════════  MODULE WRAPPERS (key fix)  ══════════════ */',
-      '/* All __wrapper elements must fill their parent container */',
-      '[class*="__wrapper"] {',
-      '  width: 100% !important;',
-      '  max-width: 100% !important;',
-      '  display: block !important;',
-      '}',
+      /* Module wrappers */
+      '[class*="__wrapper"] { width: 100% !important; display: block !important; }',
 
-      '/* ═══════════════════  SPECIFIC MODULE FIXES  ══════════════════ */',
-      '/* About/Company info module (footer left column) */',
-      '.module-about-3-unit-2__wrapper {',
-      '  width: 100% !important;',
-      '  max-width: 100% !important;',
-      '}',
-      '/* Superiority module title wrapper */',
-      '.module-superiority-1-unit-1__wrapper {',
-      '  width: 100% !important;',
-      '  max-width: 100% !important;',
-      '}',
+      /* Tinymce content */
+      '[tinymce] { width: 100% !important; word-break: normal !important; }',
+      '[tinymce] > div { display: block !important; width: 100% !important; }',
 
-      '/* ═══════════════════  TINYMCE CONTENT  ═══════════════════════ */',
-      '[tinymce] {',
-      '  width: 100% !important;',
-      '  max-width: 100% !important;',
-      '  word-break: normal !important;',
-      '}',
-      '[tinymce] > div {',
-      '  display: block !important;',
-      '  width: 100% !important;',
-      '  word-break: normal !important;',
-      '  overflow-wrap: break-word !important;',
-      '}',
-
-      '/* ═══════════════════  GLOBAL TEXT PROTECTION  ══════════════════ */',
-      '/* All package-type=text elements */',
-      '[package-type="text"] { width: 100% !important; max-width: 100% !important; }',
-      '[package-unit-type="text"] { width: 100% !important; max-width: 100% !important; }',
-      '',
-      '/* Footer-specific: ensure footer columns have reasonable width */',
-      '[package-type="footer"] .container { max-width: 100% !important; }',
-      '[package-type="footer"] .col-xl-6 { min-width: 200px !important; }'
+      /* Global text protection */
+      '[package-type="text"] { width: 100% !important; }',
+      '[package-unit-type="text"] { width: 100% !important; }'
     ].join('\n');
     document.head.appendChild(s);
   }
+
+  /* ── Text layout guard (JS): force pixel widths on sticky wrappers ── */
+  /*
+   * The framework inserts anonymous DIVs with position:sticky (or relative)
+   * between .col-* grid cells and module __wrapper elements. These divs
+   * shrink to fit their CONTENT instead of filling the parent cell, and
+   * they IGNORE width:100% / max-width:100% in CSS (even !important).
+   *
+   * This JS function finds those collapsed wrappers and sets explicit pixel
+   * widths matching their parent cell's width.
+   */
+  function forceWrapperWidths() {
+    var cells = document.querySelectorAll('.col');
+    for (var i = 0; i < cells.length; i++) {
+      var cell = cells[i];
+      var cellW = cell.getBoundingClientRect().width;
+      if (cellW < 50) continue; /* skip hidden/collapsed cells */
+
+      var children = cell.children;
+      for (var j = 0; j < children.length; j++) {
+        var child = children[j];
+        if (child.tagName !== 'DIV') continue;
+
+        var cs = getComputedStyle(child);
+        var childW = child.getBoundingClientRect().width);
+
+        /* Target: anonymous (no id, no class) sticky/relative divs that
+         * are significantly narrower than their parent cell (>10% shrink) */
+        var isAnonymous = (!child.id || child.id === '') &&
+          (!child.className || String(child.className).trim().length === 0);
+        var isStickyOrRelative = cs.position === 'sticky' || cs.position === 'relative';
+        var isCollapsed = childW < cellW * 0.9;
+
+        if (isAnonymous && isStickyOrRelative && isCollapsed) {
+          child.style.width = Math.round(cellW) + 'px';
+          child.style.maxWidth = Math.round(cellW) + 'px';
+        }
+      }
+    }
+  }
+
+  /* Main init: CSS first, then JS fixes with delays for late layout */
+  function fixTextLayout() {
+    fixTextLayoutCSS();
+    forceWrapperWidths();
+    setTimeout(forceWrapperWidths, 300);
+    setTimeout(forceWrapperWidths, 800);
+    setTimeout(forceWrapperWidths, 1500);
+    setTimeout(forceWrapperWidths, 3000);
+    if (window.addEventListener) {
+      window.addEventListener('resize', forceWrapperWidths);
+      window.addEventListener('orientationchange', forceWrapperWidths);
+    }
+  }
+
+  /* ── Form handling (unchanged) ── */
 
   function getFormType(form) {
     var id = form.id || '';
