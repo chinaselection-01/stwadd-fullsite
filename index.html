@@ -108,8 +108,43 @@
   <link rel="dns-prefetch" href="https://www.google-analytics.com/" />
   <!-- weyescloud API removed (static site) -->
 
+  <!-- ═══════════════════  STWADD LAYOUT GUARD (inline, loads before all) ═══════════════════ -->
+  <style>
+    /* Prevent text containers from collapsing to near-zero width on wide screens.
+     * Root cause: framework inserts anonymous position:sticky divs between
+     * .col-* cells and module wrappers that shrink to content width. */
+    /* Grid/Row/Cell foundation */
+    .row { flex-wrap: wrap !important; }
+    .col { flex-shrink: 1 !important; }
+    /* Anonymous sticky/relative wrapper divs inside .col cells */
+    .col > div[style*="position"] { width: 100% !important; max-width: 100% !important; }
+    .col > div:not([class]):not([id]) { width: 100% !important; max-width: 100% !important; }
+    /* All module __wrapper elements */
+    [class*="__wrapper"] { width: 100% !important; max-width: 100% !important; display: block !important; }
+    /* Text units - never collapse */
+    .unit-text { width: 100% !important; max-width: 100% !important; }
+    .unit-text__item {
+      width: 100% !important; max-width: 100% !important;
+      word-break: normal !important; overflow-wrap: break-word !important;
+      white-space: normal !important;
+    }
+    /* Tinymce content */
+    [tinymce] { width: 100% !important; max-width: 100% !important; word-break: normal !important; }
+    [tinymce] > div { display: block !important; width: 100% !important; word-break: normal !important; overflow-wrap: break-word !important; }
+    /* All package-type=text elements */
+    [package-type="text"], [package-unit-type="text"] { width: 100% !important; max-width: 100% !important; }
+    /* Footer-specific: ensure columns have reasonable min-width */
+    [package-type="footer"] .container { max-width: 100% !important; }
+    [package-type="footer"] .col-xl-3, [package-type="footer"] .col-xl-2, [package-type="footer"] .col-xl-6 {
+      min-width: 150px !important;
+    }
+    /* Team module Bob@Stwadd.Com - prevent email break */
+    #unit-6o93k9gauN, #unit-6o93k9gauN * { word-break: normal !important; overflow-wrap: break-word !important; }
+    #unit-6o93k9gauN a { white-space: nowrap !important; }
+  </style>
+  <!-- ═══════════════════  END LAYOUT GUARD ═══════════════════ -->
 
-  
+
 </head>
 
 <body >
