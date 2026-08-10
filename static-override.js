@@ -1,8 +1,8 @@
 /**
- * STWADD Static Site - Form Override + Nav Fix
- * v20260810: Minimal CSS - only enlarges header nav text.
+ * STWADD Static Site - Form Override + Nav Fix + Layout Guard
+ * v20260810: Minimal CSS - nav font, text layout guard.
  * Original site uses html{font-size:10px} making nav ~12px; we bump to ~16px.
- * Does NOT modify html root, banner, or any other element.
+ * Does NOT modify html root or banner.
  */
 (function() {
   'use strict';
@@ -24,6 +24,50 @@
       '    font-weight: 600 !important;',
       '  }',
       '}'
+    ].join('\n');
+    document.head.appendChild(s);
+  }
+
+  /* ── Text layout guard: prevent one-char-per-line collapse ── */
+  /* Defensive fix: ensure .unit-text containers never collapse to */
+  /* near-zero width, which causes each letter to stack vertically. */
+  function fixTextLayout() {
+    var id = 'stwadd-text-layout-guard';
+    if (document.getElementById(id)) return;
+    var s = document.createElement('style');
+    s.id = id;
+    s.textContent = [
+      '/* Ensure text unit wrappers fill their container */',
+      '.unit-text { width: 100% !important; max-width: 100% !important; }',
+      '.unit-text__item {',
+      '  width: 100% !important;',
+      '  max-width: 100% !important;',
+      '  min-width: 0;',
+      '  word-break: normal !important;',
+      '  overflow-wrap: break-word !important;',
+      '  white-space: normal !important;',
+      '}',
+      '/* Protect tinymce content divs from collapsing */',
+      '[tinymce] {',
+      '  width: 100% !important;',
+      '  max-width: 100% !important;',
+      '  word-break: normal !important;',
+      '}',
+      '[tinymce] > div {',
+      '  display: block !important;',
+      '  width: 100% !important;',
+      '  word-break: normal !important;',
+      '  overflow-wrap: break-word !important;',
+      '}',
+      '/* Superiority module title wrapper - prevent narrow column */',
+      '.module-superiority-1-unit-1__wrapper {',
+      '  width: 100% !important;',
+      '  max-width: 100% !important;',
+      '  display: block !important;',
+      '}',
+      '/* General protection for all module text wrappers */',
+      '[package-type="text"] { width: 100% !important; max-width: 100% !important; }',
+      '[package-unit-type="text"] { width: 100% !important; max-width: 100% !important; }'
     ].join('\n');
     document.head.appendChild(s);
   }
@@ -106,6 +150,7 @@
 
   function init() {
     fixNavFontSize();
+    fixTextLayout();
     var forms = document.querySelectorAll('form[inquiry]');
     for (var i = 0; i < forms.length; i++) {
       forms[i].addEventListener('submit', handleFormSubmit);
