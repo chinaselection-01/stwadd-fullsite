@@ -1,12 +1,13 @@
 /**
  * STWADD Static Site - Form Override + Nav Fix + Layout Guard
- * v20260810: CSS guards + JS fix for sticky wrapper divs.
+ * v20260810: CSS guards + JS fix with MutationObserver for sticky wrappers.
  * Original site uses html{font-size:10px} making nav ~12px; we bump to ~16px.
  * Does NOT modify html root or banner.
  *
  * KEY FINDING: position:sticky anonymous divs inserted by the framework
  * between .col-* cells and module __wrapper elements IGNORE width:100%.
- * Must use JS to set explicit pixel widths after layout.
+ * The framework's layout JS also RESETS widths after page load.
+ * Must use setAttribute('style',...) + MutationObserver to persist fixes.
  */
 (function() {
   'use strict';
@@ -14,7 +15,7 @@
   var INQUIRY_EMAIL = 'sales1@stwadd.com';
   var INQUIRY_CC = 'bob@stwadd.com';
 
-  /* ── Nav: enlarge text only (original site 10px base makes it too small) ── */
+  /* ── Nav: enlarge text only ── */
   function fixNavFontSize() {
     var id = 'stwadd-nav-fix';
     if (document.getElementById(id)) return;
@@ -38,26 +39,17 @@
     var s = document.createElement('style');
     s.id = id;
     s.textContent = [
-      '/* Grid/Row/Cell base */',
       '.row { flex-wrap: wrap !important; }',
       '.col { flex-shrink: 1 !important; }',
-
-      /* Text unit wrappers */
       '.unit-text { width: 100% !important; max-width: 100% !important; }',
       '.unit-text__item {',
       '  width: 100% !important; max-width: 100% !important;',
       '  word-break: normal !important; overflow-wrap: break-word !important;',
       '  white-space: normal !important;',
       '}',
-
-      /* Module wrappers */
       '[class*="__wrapper"] { width: 100% !important; display: block !important; }',
-
-      /* Tinymce content */
       '[tinymce] { width: 100% !important; word-break: normal !important; }',
       '[tinymce] > div { display: block !important; width: 100% !important; }',
-
-      /* Global text protection */
       '[package-type="text"] { width: 100% !important; }',
       '[package-unit-type="text"] { width: 100% !important; }'
     ].join('\n');
@@ -66,20 +58,21 @@
 
   /* ── Text layout guard (JS): force pixel widths on sticky wrappers ── */
   /*
-   * The framework inserts anonymous DIVs with position:sticky (or relative)
-   * between .col-* grid cells and module __wrapper elements. These divs
-   * shrink to fit their CONTENT instead of filling the parent cell, and
-   * they IGNORE width:100% / max-width:100% in CSS (even !important).
+   * Framework inserts anonymous DIVs with position:sticky between .col-*
+   * cells and module __wrapper elements. These shrink to content width,
+   * ignore CSS width:100%, and get RESET by framework's layout JS.
    *
-   * This JS function finds those collapsed wrappers and sets explicit pixel
-   * widths matching their parent cell's width.
+   * We use setAttribute('style',...) which has higher precedence than
+   * element.style, plus MutationObserver to catch framework resets.
    */
+  var _wrapperFixObserver = null;
+
   function forceWrapperWidths() {
     var cells = document.querySelectorAll('.col');
     for (var i = 0; i < cells.length; i++) {
       var cell = cells[i];
       var cellW = cell.getBoundingClientRect().width;
-      if (cellW < 50) continue; /* skip hidden/collapsed cells */
+      if (cellW < 50) continue;
 
       var children = cell.children;
       for (var j = 0; j < children.length; j++) {
@@ -87,31 +80,56 @@
         if (child.tagName !== 'DIV') continue;
 
         var cs = getComputedStyle(child);
-        var childW = child.getBoundingClientRect().width);
+        var childW = child.getBoundingClientRect().width;
 
-        /* Target: anonymous (no id, no class) sticky/relative divs that
-         * are significantly narrower than their parent cell (>10% shrink) */
         var isAnonymous = (!child.id || child.id === '') &&
           (!child.className || String(child.className).trim().length === 0);
         var isStickyOrRelative = cs.position === 'sticky' || cs.position === 'relative';
         var isCollapsed = childW < cellW * 0.9;
 
         if (isAnonymous && isStickyOrRelative && isCollapsed) {
-          child.style.width = Math.round(cellW) + 'px';
-          child.style.maxWidth = Math.round(cellW) + 'px';
+          /* setAttribute overrides element.style and resists framework resets */
+          child.setAttribute('style',
+            'width:' + Math.round(cellW) + 'px !important;' +
+            'max-width:' + Math.round(cellW) + 'px !important;');
         }
       }
     }
   }
 
-  /* Main init: CSS first, then JS fixes with delays for late layout */
+  function startWrapperObserver() {
+    if (_wrapperFixObserver || !window.MutationObserver) return;
+    try {
+      _wrapperFixObserver = new MutationObserver(function(mutations) {
+        var needsFix = false;
+        for (var m = 0; m < mutations.length; m++) {
+          if (mutations[m].type === 'attributes' &&
+              mutations[m].attributeName === 'style') {
+            needsFix = true;
+            break;
+          }
+        }
+        if (needsFix) forceWrapperWidths();
+      });
+      _wrapperFixObserver.observe(document.body, {
+        attributes: true,
+        subtree: true,
+        attributeFilter: ['style']
+      });
+    } catch(e) { /* observer not supported, rely on polling */ }
+  }
+
+  /* Main init: CSS first, then JS fixes with progressive delays */
   function fixTextLayout() {
     fixTextLayoutCSS();
     forceWrapperWidths();
+    setTimeout(forceWrapperWidths, 100);
     setTimeout(forceWrapperWidths, 300);
     setTimeout(forceWrapperWidths, 800);
     setTimeout(forceWrapperWidths, 1500);
     setTimeout(forceWrapperWidths, 3000);
+    setTimeout(forceWrapperWidths, 5000);
+    setTimeout(startWrapperObserver, 1000);
     if (window.addEventListener) {
       window.addEventListener('resize', forceWrapperWidths);
       window.addEventListener('orientationchange', forceWrapperWidths);
@@ -211,7 +229,6 @@
     init();
   }
 
-  // Also intercept any dynamic form creation
   document.addEventListener('submit', function(e) {
     if (e.target && e.target.hasAttribute && e.target.hasAttribute('inquiry')) {
       handleFormSubmit(e);
