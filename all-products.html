@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>All Products | STWADD Drinkware Manufacturer</title>
-<meta name="description" content="Full STWADD product library: stainless steel bottles, tumblers, cups, glass & plastic drinkware. Search 800+ models with images.">
+<title>Product Catalog | STWADD Drinkware Manufacturer</title>
+<meta name="description" content="STWADD Big Catalog — browse 850+ drinkware models by material, type and style. Filter stainless steel, plastic, glass, ceramic, Stanley and more with images.">
 <style>
   :root{
     --primary:#c41e3a; --text:#222; --text-light:#666; --border:#eaeaea;
@@ -23,18 +23,38 @@
   .wrap{max-width:1200px;margin:0 auto;padding:32px 20px 60px}
   .page-title{font-size:1.8rem;font-weight:800;margin-bottom:4px}
   .page-sub{color:var(--text-light);margin-bottom:24px}
-  .toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:24px}
+  .section-h{font-size:1.05rem;font-weight:700;margin:28px 0 12px;display:flex;align-items:center;gap:8px}
+  .section-h .ln{flex:1;height:1px;background:var(--border)}
+
+  /* category cards (big catalog by material) */
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .cat-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 14px;
+    cursor:pointer;text-align:center;transition:.15s;user-select:none}
+  .cat-card:hover{border-color:var(--primary);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+  .cat-card.active{border-color:var(--primary);background:#fff5f6}
+  .cat-card .ic{font-size:1.9rem;margin-bottom:6px;line-height:1}
+  .cat-card .nm{font-weight:700;font-size:.95rem}
+  .cat-card .ct{color:var(--text-light);font-size:.78rem;margin-top:2px}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:8px 0 4px}
   .search-box{flex:1;min-width:240px;position:relative}
   .search-box input{width:100%;padding:13px 16px 13px 42px;border:1px solid var(--border);
     border-radius:10px;font-size:1rem;outline:none;background:#fff}
   .search-box input:focus{border-color:var(--primary)}
   .search-box svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#999}
   .count{color:var(--text-light);font-size:.95rem;white-space:nowrap}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+  .clear-btn{padding:9px 16px;border:1px solid var(--border);border-radius:10px;background:#fff;
+    cursor:pointer;font-size:.85rem;color:var(--text-light)}
+  .clear-btn:hover{border-color:var(--primary);color:var(--primary)}
+
+  .filter-block{margin-bottom:14px}
+  .filter-label{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:#aaa;margin-bottom:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chip{padding:7px 14px;border:1px solid var(--border);border-radius:999px;font-size:.85rem;
-    background:#fff;cursor:pointer;color:var(--text)}
+    background:#fff;cursor:pointer;color:var(--text);user-select:none}
   .chip:hover,.chip.active{border-color:var(--primary);color:var(--primary);background:#fff5f6}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:8px}
   .card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;
     transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
@@ -47,6 +67,7 @@
   .no-result{text-align:center;padding:60px 20px;color:var(--text-light);display:none}
   .no-result .emoji{font-size:2.5rem;margin-bottom:10px}
   .footer{text-align:center;padding:30px;color:#aaa;font-size:13px}
+  .hint{font-size:.8rem;color:#aaa;margin-top:6px}
   @media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}.page-title{font-size:1.4rem}}
 </style>
 </head>
@@ -59,31 +80,31 @@
 </header>
 
 <div class="wrap">
-  <h1 class="page-title">All Products</h1>
-  <p class="page-sub">Search the complete STWADD product library — stainless steel bottles, tumblers, cups, glass &amp; plastic drinkware.</p>
+  <h1 class="page-title">Product Catalog</h1>
+  <p class="page-sub">The complete STWADD drinkware library — browse <b id="totalCount">850+</b> models by material, type and style. Combine filters to narrow down.</p>
 
+  <!-- BIG CATALOG: browse by material -->
+  <div class="section-h">Browse by Material <span class="ln"></span></div>
+  <div class="cat-grid" id="catGrid"></div>
+
+  <!-- search + filters -->
+  <div class="section-h">Filter <span class="ln"></span></div>
   <div class="toolbar">
     <div class="search-box">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="searchInput" placeholder="Search by keyword, e.g. cup, stainless steel, flask...">
+      <input type="text" id="searchInput" placeholder="Search keyword, e.g. cup, stainless steel, flask...">
     </div>
     <span class="count" id="resultCount"></span>
+    <button class="clear-btn" id="clearBtn">Clear All</button>
   </div>
 
-  <div class="chips" id="chips">
-    <span class="chip" data-q="stainless steel">Stainless Steel</span>
-    <span class="chip" data-q="plastic">Plastic</span>
-    <span class="chip" data-q="glass">Glass</span>
-    <span class="chip" data-q="cup">Cups</span>
-    <span class="chip" data-q="flask">Flasks</span>
-    <span class="chip" data-q="sport">Sport</span>
-    <span class="chip" data-q="">All</span>
-  </div>
+  <div id="filterGroups"></div>
+  <p class="hint">Tip: click multiple filters to combine — e.g. <b>Stanley</b> + <b>Stainless Steel</b> + <b>Cups</b> shows only Stanley stainless steel cups. Same for Plastic / Glass / Ceramic.</p>
 
   <div class="grid" id="grid"></div>
   <div class="no-result" id="noResult">
     <div class="emoji">🔍</div>
-    <div>No products found. Try a different keyword.</div>
+    <div>No products match these filters. Try removing one.</div>
   </div>
 </div>
 
@@ -94,8 +115,34 @@ const grid = document.getElementById('grid');
 const searchInput = document.getElementById('searchInput');
 const resultCount = document.getElementById('resultCount');
 const noResult = document.getElementById('noResult');
-const chips = document.getElementById('chips');
+const catGrid = document.getElementById('catGrid');
+const filterGroups = document.getElementById('filterGroups');
+const clearBtn = document.getElementById('clearBtn');
+
 let ALL = [];
+const active = new Set();          // active keyword filters (AND)
+let searchText = '';
+
+// filter dimensions
+const BRAND = [{label:'Stanley', kw:'stanley', ic:'🥤'}];
+const MATERIAL = [
+  {label:'Stainless Steel', kw:'stainless steel', ic:'🍶'},
+  {label:'Plastic', kw:'plastic', ic:'♳'},
+  {label:'Glass', kw:'glass', ic:'🥃'},
+  {label:'Ceramic', kw:'ceramic', ic:'🏺'},
+  {label:'Tritan', kw:'tritan', ic:'🧴'},
+];
+const TYPE = [
+  {label:'Cups', kw:'cup', ic:'🥤'},
+  {label:'Bottles', kw:'bottle', ic:'🍼'},
+  {label:'Mugs', kw:'mug', ic:'☕'},
+  {label:'Tumblers', kw:'tumbler', ic:'🥛'},
+  {label:'Flasks', kw:'flask', ic:'🍾'},
+  {label:'Thermos', kw:'thermos', ic:'🌡️'},
+  {label:'Sport', kw:'sport', ic:'🏃'},
+];
+// big catalog cards = brand + materials
+const CATEGORIES = [...BRAND, ...MATERIAL];
 
 function tagOf(url){
   if (url.indexOf('/products/') === 0) return 'Catalog';
@@ -103,7 +150,77 @@ function tagOf(url){
   return 'Product';
 }
 
-function render(list){
+function countFor(kw){
+  const k = kw.toLowerCase();
+  return ALL.filter(p => p.name.toLowerCase().includes(k)).length;
+}
+
+function buildCatCards(){
+  catGrid.innerHTML = '';
+  CATEGORIES.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'cat-card' + (active.has(c.kw) ? ' active' : '');
+    card.dataset.kw = c.kw;
+    card.innerHTML = '<div class="ic">'+c.ic+'</div><div class="nm">'+c.label+'</div>'+
+                     '<div class="ct" data-ct="'+c.kw+'">'+countFor(c.kw)+' models</div>';
+    card.addEventListener('click', () => toggleKw(c.kw, true));
+    catGrid.appendChild(card);
+  });
+}
+
+function buildFilterGroups(){
+  const groups = [
+    {title:'Brand', items:BRAND},
+    {title:'Material', items:MATERIAL},
+    {title:'Type', items:TYPE},
+  ];
+  filterGroups.innerHTML = '';
+  groups.forEach(g => {
+    const block = document.createElement('div');
+    block.className = 'filter-block';
+    block.innerHTML = '<div class="filter-label">'+g.title+'</div>';
+    const chips = document.createElement('div');
+    chips.className = 'chips';
+    g.items.forEach(it => {
+      const chip = document.createElement('span');
+      chip.className = 'chip' + (active.has(it.kw) ? ' active' : '');
+      chip.dataset.kw = it.kw;
+      chip.textContent = it.label;
+      chip.addEventListener('click', () => toggleKw(it.kw, false));
+      chips.appendChild(chip);
+    });
+    block.appendChild(chips);
+    filterGroups.appendChild(block);
+  });
+}
+
+function toggleKw(kw, scroll){
+  if (active.has(kw)) active.delete(kw);
+  else active.add(kw);
+  syncUI();
+  render();
+  if (scroll) window.scrollTo({top:document.getElementById('filterGroups').offsetTop - 80, behavior:'smooth'});
+}
+
+function syncUI(){
+  // chips
+  document.querySelectorAll('.chip').forEach(c => {
+    c.classList.toggle('active', active.has(c.dataset.kw));
+  });
+  // category cards
+  document.querySelectorAll('.cat-card').forEach(c => {
+    c.classList.toggle('active', active.has(c.dataset.kw));
+  });
+}
+
+function render(){
+  const kws = [...active].map(k => k.toLowerCase());
+  const list = ALL.filter(p => {
+    const n = p.name.toLowerCase();
+    for (const k of kws){ if (!n.includes(k)) return false; }
+    if (searchText && !n.includes(searchText)) return false;
+    return true;
+  });
   grid.innerHTML = '';
   list.forEach(p => {
     const card = document.createElement('a');
@@ -118,22 +235,17 @@ function render(list){
   noResult.style.display = list.length ? 'none' : 'block';
 }
 
-function filterProducts(){
-  const q = searchInput.value.toLowerCase().trim();
-  const list = q ? ALL.filter(p => p.name.toLowerCase().includes(q)) : ALL;
-  render(list);
-}
-
-searchInput.addEventListener('input', filterProducts);
-
-chips.addEventListener('click', e => {
-  const c = e.target.closest('.chip');
-  if (!c) return;
-  [...chips.children].forEach(x => x.classList.remove('active'));
-  c.classList.add('active');
-  searchInput.value = c.dataset.q;
-  filterProducts();
-  window.scrollTo({top:0, behavior:'smooth'});
+searchInput.addEventListener('input', () => {
+  searchText = searchInput.value.toLowerCase().trim();
+  render();
+});
+clearBtn.addEventListener('click', () => {
+  active.clear();
+  searchText = '';
+  searchInput.value = '';
+  buildCatCards();
+  buildFilterGroups();
+  render();
 });
 
 // load data
@@ -141,16 +253,23 @@ fetch('all-products.json')
   .then(r => r.json())
   .then(data => {
     ALL = data;
-    // deep-link ?q= from homepage Products dropdown
+    document.getElementById('totalCount').textContent = ALL.length;
+    // deep-link ?q= from homepage Products dropdown (may be combo via spaces)
     const q = new URLSearchParams(window.location.search).get('q');
     if (q){
-      searchInput.value = q;
-      const chip = [...chips.children].find(x => x.dataset.q && x.dataset.q.toLowerCase() === q.toLowerCase());
-      if (chip) chip.classList.add('active');
-    } else {
-      chips.querySelector('[data-q=""]').classList.add('active');
+      const allItems = [...BRAND, ...MATERIAL, ...TYPE];
+      const ql = q.toLowerCase().trim();
+      const full = allItems.find(x => x.kw === ql);          // whole phrase first
+      if (full) active.add(full.kw);
+      else ql.split(/\s+/).forEach(tok => {                   // then per token
+        const m = allItems.find(x => x.kw === tok);
+        if (m) active.add(m.kw);
+      });
     }
-    filterProducts();
+    buildCatCards();
+    buildFilterGroups();
+    syncUI();
+    render();
   })
   .catch(err => {
     grid.innerHTML = '<p style="color:#c00">Failed to load product data ('+err+'). Please view on the live site.</p>';
