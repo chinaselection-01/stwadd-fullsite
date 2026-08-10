@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insulated Water Bottles & Custom Water Bottle Manufacturer | STWADD</title>
+<meta name="description" content="STWADD - Over 20 years of expertise in manufacturing insulated water bottles, tumblers, wine flasks, and plastic cups. OEM & ODM custom solutions available. Contact us!">
+<meta property="og:title" content="Custom Water Bottle Manufacturer | STWADD">
+<meta property="og:description" content="Leading manufacturer of insulated water bottles, tumblers, and plastic cups with custom OEM/ODM solutions.">
+<meta property="og:url" content="https://www.stwadd.com/">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XE6002FX59"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XE6002FX59');
+</script>
+
+<style>
+/* ═══════════════════  RESET & BASE  ═══════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  color: #333; line-height: 1.6; overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; transition: opacity .2s; }
+a:hover { opacity: .8; }
+img { max-width: 100%; height: auto; display: block; }
+ul { list-style: none; }
+
+/* ═══════════════════  VARIABLES  ═══════════════════ */
+:root {
+  --primary: #c41e3a;        /* STWADD red */
+  --primary-dark: #a01829;
+  --dark: #111111;
+  --dark-lighter: #1a1a1a;
+  --text: #333333;
+  --text-light: #666666;
+  --text-muted: #999999;
+  --bg-light: #f7f7f7;
+  --border: #e5e5e5;
+  --hero-from: #4a90b8;
+  --hero-to: #8ec5d8;
+  --radius: 6px;
+  --shadow: 0 2px 12px rgba(0,0,0,.08);
+  --container: 1200px;
+}
+
+/* ═══════════════════  UTILITIES  ═══════════════════ */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
+.section-title-sm {
+  color: var(--primary); font-size: .85rem; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;
+}
+.section-title-lg {
+  font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800;
+  color: var(--dark); line-height: 1.2; margin-bottom: 20px;
+}
+.btn {
+  display: inline-block; padding: 12px 28px; border-radius: 50px;
+  font-weight: 600; font-size: .95rem; cursor: pointer;
+  transition: all .25s ease; border: none; letter-spacing: .3px;
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 15px rgba(196,30,58,.35); }
+.btn-outline {
+  background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7);
+}
+.btn-outline:hover { background: rgba(255,255,255,.15); border-color: #fff; }
+.btn-dark { background: var(--dark); color: #fff; }
+.btn-dark:hover { background: #333; transform: translateY(-1px); }
+
+/* ═══════════════════  HEADER / NAV  ═══════════════════ */
+.top-bar {
+  background: #fff; border-bottom: 1px solid var(--border);
+  font-size: .8rem; color: var(--text-light); padding: 6px 0;
+}
+.top-bar .container { display: flex; justify-content: space-between; align-items: center; }
+.header-main {
+  background: #fff; position: sticky; top: 0; z-index: 1000;
+  box-shadow: 0 1px 8px rgba(0,0,0,.06);
+}
+.header-main .container {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 70px;
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo img { height: 40px; width: auto; }
+.logo-text {
+  font-size: 1.5rem; font-weight: 800; color: var(--primary);
+  letter-spacing: -0.5px;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-weight: 500; font-size: .95rem; color: var(--text);
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0;
+  height: 2px; background: var(--primary);
+  transition: width .25s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-links .dropdown { position: relative; }
+.nav-links .dropdown::after { content: ' ▾'; font-size: .75rem; }
+
+/* Mobile menu */
+.menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
+
+/* ═══════════════════  HERO  ═══════════════════ */
+.hero {
+  background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-to) 60%, #b8dce8 100%);
+  min-height: 600px; display: flex; align-items: center;
+  position: relative; overflow: hidden;
+}
+.hero .container {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+  align-items: center; padding-top: 80px; padding-bottom: 80px;
+}
+.hero-content { z-index: 2; }
+.hero-content h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800;
+  color: #fff; line-height: 1.15; margin-bottom: 24px;
+  text-shadow: 0 2px 20px rgba(0,0,0,.1);
+}
+.hero-content p {
+  font-size: 1.1rem; color: rgba(255,255,255,.92);
+  line-height: 1.7; margin-bottom: 32px; max-width: 520px;
+}
+.hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-image { position: relative; z-index: 2; }
+.hero-image img {
+  max-height: 500px; object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,.15));
+  animation: float 6s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ═══════════════════  BRAND STRIP  ═══════════════════ */
+.brand-strip {
+  background: #f0f2f5; padding: 32px 0; border-bottom: 1px solid var(--border);
+}
+.brand-strip .container {
+  display: flex; align-items: center; justify-content: center;
+  gap: 48px; flex-wrap: wrap;
+}
+.brand-item {
+  font-size: 1.4rem; font-weight: 700; color: #bbb;
+  filter: grayscale(1); opacity: .55;
+  transition: all .3s;
+}
+.brand-item:hover { opacity: .9; filter: grayscale(0); }
+
+/* ═══════════════════  PRODUCTS  ═══════════════════ */
+.products-section { padding: 80px 0; background: #fff; }
+.products-section .section-header { text-align: center; margin-bottom: 48px; }
+.product-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+.product-card {
+  border-radius: 12px; overflow: hidden; background: #fff;
+  box-shadow: var(--shadow); transition: all .3s ease;
+  cursor: pointer;
+}
+.product-card:hover {
+  transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+.product-card-img {
+  height: 220px; background: linear-gradient(135deg, #e8f0f5, #d4e5ed);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem; color: #99b8cc;
+  overflow: hidden; position: relative;
+}
+.product-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.product-card-body { padding: 20px; }
+.product-card-body h3 {
+  font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 6px;
+}
+.product-card-body p {
+  font-size: .88rem; color: var(--text-light); line-height: 1.5;
+}
+.product-card-link {
+  display: inline-block; margin-top: 12px;
+  color: var(--primary); font-weight: 600; font-size: .88rem;
+}
+.product-card-link::after { content: ' →'; }
+
+/* ═══════════════════  ABOUT / STATS  ═══════════════════ */
+.about-section { padding: 80px 0; background: var(--bg-light); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.about-text h2 { margin-bottom: 20px; }
+.about-text p {
+  color: var(--text-light); margin-bottom: 16px; line-height: 1.8;
+}
+.social-icons { display: flex; gap: 14px; margin-top: 24px; }
+.social-icons a {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: var(--dark); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; transition: all .25s;
+}
+.social-icons a:hover { background: var(--primary); transform: translateY(-2px); }
+
+.stats-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  margin-top: 56px; padding: 40px 0; border-top: 1px solid var(--border);
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800;
+  color: var(--primary); line-height: 1.2;
+}
+.stat-label {
+  font-size: .85rem; color: var(--text-muted); margin-top: 4px;
+}
+
+/* ═══════════════════  WHY CHOOSE (DARK)  ═══════════════════ */
+.why-section {
+  background: var(--dark); color: #fff; padding: 80px 0;
+}
+.why-section .section-header { text-align: center; margin-bottom: 52px; }
+.why-section .section-title-sm { color: var(--primary); }
+.why-section .section-title-lg { color: #fff; }
+.why-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px;
+}
+.why-card {
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px; padding: 36px 28px;
+  transition: all .3s;
+}
+.why-card:hover {
+  background: rgba(255,255,255,.08);
+  transform: translateY(-4px);
+  border-color: rgba(196,30,58,.3);
+}
+.why-icon { font-size: 2.4rem; margin-bottom: 18px; }
+.why-card h3 {
+  font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: #fff;
+}
+.why-card p {
+  font-size: .92rem; color: rgba(255,255,255,.65); line-height: 1.7;
+}
+
+/* ═══════════════════  OEM/ODM  ═══════════════════ */
+.oem-section { padding: 80px 0; background: #fff; }
+.oem-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+}
+.oem-card {
+  background: var(--bg-light); border-radius: 12px; padding: 40px;
+  border-left: 4px solid var(--primary);
+}
+.oem-card h3 { font-size: 1.3rem; margin-bottom: 14px; color: var(--dark); }
+.oem-card p { color: var(--text-light); line-height: 1.7; margin-bottom: 20px; }
+.oem-card ul { padding-left: 0; }
+.oem-card li {
+  padding: 6px 0; color: var(--text-light); font-size: .92rem;
+  position: relative; padding-left: 20px;
+}
+.oem-card li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: 700; }
+
+/* ═══════════════════  FAQ  ═══════════════════ */
+.faq-section { padding: 80px 0; background: var(--bg-light); }
+.faq-list { max-width: 800px; margin: 0 auto; }
+.faq-item {
+  background: #fff; border-radius: 10px; margin-bottom: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04); overflow: hidden;
+}
+.faq-q {
+  padding: 20px 24px; font-weight: 600; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  color: var(--dark); user-select: none; transition: background .2s;
+}
+.faq-q:hover { background: #fafafa; }
+.faq-q .faq-toggle { font-size: 1.3rem; color: var(--primary); transition: transform .3s; }
+.faq-item.active .faq-toggle { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height .35s ease;
+  padding: 0 24px; color: var(--text-light); line-height: 1.7; font-size: .93rem;
+}
+.faq-item.active .faq-a { max-height: 300px; padding: 0 24px 20px; }
+
+/* ═══════════════════  CTA BANNER  ═══════════════════ */
+.cta-banner {
+  background: linear-gradient(135deg, var(--hero-from), var(--hero-to));
+  padding: 72px 0; text-align: center; color: #fff;
+}
+.cta-banner h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 16px; }
+.cta-banner p { font-size: 1.1rem; opacity: .9; margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+/* ═══════════════════  FOOTER  ═══════════════════ */
+.footer { background: var(--dark); color: rgba(255,255,255,.7); padding: 64px 0 0; }
+.footer-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px;
+}
+.footer-col h4 {
+  color: #fff; font-size: 1rem; font-weight: 700; margin-bottom: 20px;
+}
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { font-size: .9rem; color: rgba(255,255,255,.6); transition: color .2s; }
+.footer-col ul a:hover { color: var(--primary); }
+.footer-contact p { font-size: .9rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.footer-contact a { color: var(--primary); }
+.footer-social { display: flex; gap: 10px; margin-top: 16px; }
+.footer-social a {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(255,255,255,.08); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem; transition: all .25s;
+}
+.footer-social a:hover { background: var(--primary); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.08); margin-top: 40px;
+  padding: 20px 0; text-align: center; font-size: .82rem; color: rgba(255,255,255,.4);
+}
+
+/* ═══════════════════  FLOATING BUTTONS  ═══════════════════ */
+.float-btns {
+  position: fixed; right: 20px; bottom: 120px; z-index: 999;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.float-btns a {
+  width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.2rem; box-shadow: 0 3px 12px rgba(0,0,0,.2);
+  transition: transform .25s;
+}
+.float-btns a:hover { transform: scale(1.1); }
+.fb-email { background: var(--primary); }
+.fb-wa { background: #25D366; }
+.fb-phone { background: var(--primary); }
+
+/* ═══════════════════  RESPONSIVE  ═══════════════════ */
+@media (max-width: 1024px) {
+  .hero .container { grid-template-columns: 1fr; text-align: center; }
+  .hero-content p { margin-left: auto; margin-right: auto; }
+  .hero-buttons { justify-content: center; }
+  .hero-image { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: 1fr; }
+  .oem-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
+  .product-grid { grid-template-columns: 1fr 1fr; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .brand-strip .container { gap: 24px; }
+  .brand-item { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .stats-bar { grid-template-columns: 1fr 1fr; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ TOP BAR ═══ -->
+<div class="top-bar">
+  <div class="container">
+    <span>🌍 Custom Water Bottle Solutions Since 2017</span>
+    <span>📧 bob@stwadd.com</span>
+  </div>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header-main">
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="images/1724987713175-logo-150.png" alt="STWADD Logo" onerror="this.style.display='none'">
+      <span class="logo-text">STWADD</span>
+    </a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products ▾</a>
+      <a href="/2026-catalog.html">Catalog</a>
+      <a href="#oem">OEM & ODM</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:sales1@stwadd.com?cc=bob@stwadd.com&subject=Inquiry%20from%20Website" class="btn btn-primary">Inquiry Now</a>
+    </nav>
+    <button class="menu-toggle" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Custom Water Bottle Manufacturer In China</h1>
+      <p>Over 20 years of expertise in manufacturing insulated water bottles, tumblers, wine flasks, and plastic cups. We provide high-quality OEM & ODM custom solutions with competitive prices and reliable delivery.</p>
+      <div class="hero-buttons">
+        <a href="mailto:sales1@stwadd.com?cc=bob@stwadd.com&subject=Inquiry%20from%20Website" class="btn btn-primary">Inquiry Now</a>
+        <a href="/2026-catalog.html" class="btn btn-outline">View Catalog</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- Use existing banner image or placeholder gradient -->
+      <img src="/assets/images/banner-slide-1.jpg" alt="STWADD Water Bottles Collection"
+           onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 400%22><defs><linearGradient id=%22g%22 x1=%220%25%22 y1=%220%25%22 x2=%22100%%22 y2=%22100%%22><stop offset=%220%%22 stop-color=%22%234a90b8%22/><stop offset=%22100%%22 stop-color=%22%238ec5d8%22/></linearGradient></defs><rect fill=%22url(%23g)%22 width=%22400%22 height=%22400%22 rx=%2220%22/><text x=%22200%22 y=%22190%22 fill=%22white%22 font-size=%2240%22 text-anchor=%22middle%22 font-weight=%22bold%22>STWADD</text><text x=%22200%22 y=%22230%22 fill=%22rgba(255,255,255,.8)%22 font-size=%2216%22 text-anchor=%22middle%22>Water Bottles &amp; Tumblers</text></svg>'">
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BRAND / CERT STRIP ═══ -->
+<div class="brand-strip">
+  <div class="container">
+    <span class="brand-item">SGS Certified</span>
+    <span class="brand-item">TUV Verified</span>
+    <span class="brand-item">ISO 9001</span>
+    <span class="brand-item">FDA Compliant</span>
+    <span class="brand-item">BPA Free</span>
+    <span class="brand-item">LFGB Approved</span>
+  </div>
+</div>
+
+<!-- ═══ PRODUCTS ═══ -->
+<section class="products-section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-title-sm">Our Products</div>
+      <h2 class="section-title-lg">STWADD Collections</h2>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-card-img">🍶</div>
+        <div class="product-card-body">
+          <h3>Insulated Water Bottles</h3>
+          <p>Double-wall vacuum stainless steel bottles for hot & cold drinks. Custom logo & colors.</p>
+          <a href="/2026-catalog.html" class="product-card-link">View Products</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">☕</div>
+        <div class="product-card-body">
+          <h3>Tumblers & Mugs</h3>
+          <p>Premium travel tumblers, coffee mugs with leak-proof lids. Perfect for branding.</p>
+          <a href="/2026-catalog.html" class="product-card-link">View Products</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">🍺</div>
+        <div class="product-card-body">
+          <h3>Beer Growlers & Flasks</h3>
+          <p>Stainless steel beer growlers, wine flasks for outdoor enthusiasts.</p>
+          <a href="/2026-catalog.html" class="product-card-link">View Products</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">💧</div>
+        <div class="product-card-body">
+          <h3>Plastic Bottles & Cups</h3>
+          <p>BPA-free plastic water bottles, sports bottles, kids cups in various sizes.</p>
+          <a href="/2026-catalog.html" class="product-card-link">View Products</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">🎒</div>
+        <div class="product-card-body">
+          <h3>Lunch Boxes & Coolers</h3>
+          <p>Insulated lunch boxes, cooler bags for food storage on the go.</p>
+          <a href="/2026-catalog.html" class="product-card-link">View Products</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-card-img">🎨</div>
+        <div class="product-card-body">
+          <h3>Custom Solutions</h3>
+          <p>Fully customizable designs — shape, color, logo printing, packaging.</p>
+          <a href="#oem" class="product-card-link">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT / STATS ═══ -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-title-sm">About Us</div>
+        <h2 class="section-title-lg">Your Reliable Drinkware Manufacturing Partner</h2>
+        <p>Yongkang STWADD Houseware Co., Ltd. was established in 2017, is a research and development, production, sales, and service integrated enterprise.</p>
+        <p>We supply stainless steel bottles, tumblers, explosion-proof thermos bottles, plastic bottles, plastic tumblers, water bottles, and other stable quality products made of metal and plastic. Our products are certified by SGS and TUV.</p>
+        <p>We specialize in providing custom OEM & ODM solutions for brands worldwide, with flexible MOQ and competitive pricing.</p>
+        <div class="social-icons">
+          <a href="#" title="Instagram">📷</a>
+          <a href="#" title="Facebook">📘</a>
+          <a href="#" title="LinkedIn">💼</a>
+          <a href="#" title="YouTube">▶️</a>
+          <a href="#" title="Pinterest">📌</a>
+        </div>
+      </div>
+      <div class="about-stats">
+        <img src="images/1721124717809-oem-bg.jpg" alt="STWADD Factory"
+             style="border-radius:12px;width:100%;height:auto;"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div style="display:none;background:linear-gradient(135deg,#e8f0f5,#d4e5ed);border-radius:12px;height:350px;display:flex;align-items:center;justify-content:center;color:#99b8cc;font-size:1.2rem;text-align:center;padding:20px;">Factory Image<br><small style="color:#bbb">Yongkang, Zhejiang, China</small></div>
+      </div>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num">8+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">167+</div>
+        <div class="stat-label">Product Models</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500K+</div>
+        <div class="stat-label">Monthly Output</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">Countries Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE (DARK) ═══ -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-title-sm">Why Choose STWADD</div>
+      <h2 class="section-title-lg">Your Trusted Drinkware Partner</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">⭐</div>
+        <h3>Strong OEM & ODM Ability</h3>
+        <p>We can customize your brand logo, packaging, finishes, and more. Tell us your ideas and we will make 2D/3D drawings for confirmation. We can sign an NDA to protect your designs. Our R&D team introduces over 50 new designs every year.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🏭</div>
+        <h3>High Efficient Production</h3>
+        <p>Our factory has invested in multiple automated lines operated by robots, which significantly reduces production time, keeps delivery time within manageable limits, and reduces labor costs. This allows us to offer cost-effective solutions to our clients.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h3>Flexible MOQ</h3>
+        <p>MOQ is flexible and can be negotiated. Please send retail orders and drop shipping inquiries if you are interested in our custom water bottle wholesale order. You can rest assured that you will receive the highest quality service at a competitive price.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OEM/ODM ═══ -->
+<section class="oem-section" id="oem">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:48px;">
+      <div class="section-title-sm">Our Services</div>
+      <h2 class="section-title-lg">Let's Build Together: OEM & ODM</h2>
+    </div>
+    <div class="oem-grid">
+      <div class="oem-card">
+        <h3>🏢 OEM Manufacturing Process</h3>
+        <p>Perfect for established brands who have their own designs ready for production.</p>
+        <ul>
+          <li>Your design → Our production</li>
+          <li>Full customization of logo, color, packaging</li>
+          <li>Strict quality control at every step</li>
+          <li>SGS/TUV certified products</li>
+        </ul>
+        <a href="mailto:sales1@stwadd.com?subject=OEM%20Inquiry" class="btn btn-primary">Start OEM Project</a>
+      </div>
+      <div class="oem-card">
+        <h3>💡 ODM Manufacturing Process</h3>
+        <p>Ideal for startups and new brands looking for ready-made designs with customization options.</p>
+        <ul>
+          <li>Choose from 167+ existing models</li>
+          <li>Customize logo, color, surface finish</li>
+          <li>Low MOQ for new businesses</li>
+          <li>Fast sample lead time (5-7 days)</li>
+        </ul>
+        <a href="mailto:sales1@stwadd.com?subject=ODM%20Inquiry" class="btn btn-primary">Explore ODM Options</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-header" style="text-align:center;margin-bottom:44px;">
+      <div class="section-title-sm">FAQs</div>
+      <h2 class="section-title-lg">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item active">
+        <div class="faq-q"><span>What types of water bottles do you manufacture?</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">We manufacture a wide range of drinkware including insulated stainless steel bottles, tumblers, coffee mugs, beer growlers, wine flasks, plastic water bottles, sports bottles, kids bottles, lunch boxes, and cooler bags. All products support custom OEM/ODM services.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>What is your minimum order quantity (MOQ)?</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">MOQ is flexible and can be negotiated based on product type and customization requirements. For standard products with simple logo printing, MOQ can be as low as 500-1000 pieces. For fully customized new molds, we'll discuss based on your specific needs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>Can I get samples before placing a bulk order?</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes, absolutely! Sample lead time is typically 5-7 working days. Samples are charged but will be refunded when you place a bulk order. We also offer free samples for qualified long-term partners.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>What certifications do your products have?</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">Our products are certified by SGS, TUV, FDA, LFGB, and comply with BPA-free standards. We hold ISO 9001 quality management system certification. All materials meet international food-grade safety standards.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>How long is the production lead time?</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">Standard orders take 25-35 days after deposit received. Rush orders can be expedited to 15-20 days depending on product complexity and current production schedule. Sample orders ship within 5-7 days.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span>If I provide my sketches/design, can you sign an NDA?</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes, we take intellectual property protection very seriously. We're happy to sign a Non-Disclosure Agreement (NDA) before receiving any confidential designs or information. Your designs will be fully protected throughout our cooperation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BANNER ═══ -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to Start Your Custom Water Bottle Project?</h2>
+    <p>Contact us today for a free quote and consultation. Our team will respond within 24 hours.</p>
+    <a href="mailto:sales1@stwadd.com?cc=bob@stwadd.com&subject=Inquiry%20from%20Website" class="btn btn-primary" style="font-size:1.05rem;padding:14px 36px;">Get Free Quote →</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo-text" style="font-size:1.8rem;margin-bottom:16px;color:#fff;">STWADD</div>
+        <p style="margin-bottom:16px;font-size:.9rem;">Tell us your idea & needs. We can customize any water bottle business and let your project profit from it.</p>
+        <form action="mailto:sales1@stwadd.com?cc=bob@stwadd.com" method="post" enctype="text/plain" style="display:flex;flex-direction:column;gap:10px;" onsubmit="alert('Thank you! Your inquiry has been sent.');return true;">
+          <input type="text" name="name" placeholder="Full Name" required style="padding:10px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.9rem;">
+          <input type="email" name="email" placeholder="Work Email" required style="padding:10px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.9rem;">
+          <textarea name="message" rows="3" placeholder="Project Details" style="padding:10px 14px;border-radius:6px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-size:.9rem;resize:vertical;"></textarea>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Submit</button>
+        </form>
+        <p style="font-size:.78rem;margin-top:10px;color:rgba(255,255,255,.35);">We respect your privacy.</p>
+      </div>
+      <div class="footer-col">
+        <h4>About STWADD</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#oem">OEM & ODM Service</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/2026-catalog.html">Product Catalog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="/2026-catalog.html">Insulated Bottles</a></li>
+          <li><a href="/2026-catalog.html">Tumblers & Mugs</a></li>
+          <li><a href="/2026-catalog.html">Plastic Bottles</a></li>
+          <li><a href="/2026-catalog.html">Beer Growlers</a></li>
+          <li><a href="/2026-catalog.html">Lunch Boxes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact Us</h4>
+        <p>📍 No.8 Qianjin Industrial Zone,<br>&nbsp;&nbsp;&nbsp;&nbsp;Yongkang City, Zhejiang Province, China</p>
+        <p>👤 Contact Person: BOB</p>
+        <p>📞 TEL: <a href="tel:+8615088288843">+86 150 8822 8843</a></p>
+        <p>📧 E-Mail: <a href="mailto:bob@stwadd.com">bob@stwadd.com</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/8615088288843">+86 150 8822 8843</a></p>
+        <div class="footer-social">
+          <a href="#">in</a>
+          <a href="#">f</a>
+          <a href="#">▶</a>
+          <a href="#">📷</a>
+          <a href="#">P</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2017–2026 Yongkang STWADD Houseware Co., Ltd. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING BUTTONS ═══ -->
+<div class="float-btns">
+  <a href="mailto:sales1@stwadd.com" title="Email Us" class="fb-email">✉</a>
+  <a href="https://wa.me/8615088288843" title="WhatsApp" class="fb-wa" target="_blank">💬</a>
+  <a href="tel:+8615088288843" title="Call Us" class="fb-phone">📞</a>
+</div>
+
+<!-- ═══ FAQ TOGGLE JS ═══ -->
+<script>
+(function() {
+  'use strict';
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var item = this.parentElement;
+      var isActive = item.classList.contains('active');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('active'); });
+      // Toggle clicked
+      if (!isActive) item.classList.add('active');
+    });
+  });
+})();
+</script>
+
+<!-- ═══ static-override.js (form handling) ═══ -->
+<script src="/static-override.js"></script>
+
+</body>
+</html>
