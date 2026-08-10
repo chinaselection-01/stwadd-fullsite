@@ -1,12 +1,32 @@
 /**
- * STWADD Static Site - Form Override
- * Replaces the weyescloud API inquiry forms with mailto: functionality
+ * STWADD Static Site - Form Override + Nav Fix
+ * v20260810: Minimal CSS - only enlarges header nav text.
+ * Original site uses html{font-size:10px} making nav ~12px; we bump to ~16px.
+ * Does NOT modify html root, banner, or any other element.
  */
 (function() {
   'use strict';
 
   var INQUIRY_EMAIL = 'sales1@stwadd.com';
   var INQUIRY_CC = 'bob@stwadd.com';
+
+  /* ── Nav: enlarge text only (original site 10px base makes it too small) ── */
+  function fixNavFontSize() {
+    var id = 'stwadd-nav-fix';
+    if (document.getElementById(id)) return;
+    var s = document.createElement('style');
+    s.id = id;
+    s.textContent = [
+      '@media (min-width: 992px) {',
+      /* Only target the actual nav link text inside the header */
+      '  .unit-header-nav .unit-header-nav__item-link {',
+      '    font-size: 16px !important;',
+      '    font-weight: 600 !important;',
+      '  }',
+      '}'
+    ].join('\n');
+    document.head.appendChild(s);
+  }
 
   function getFormType(form) {
     var id = form.id || '';
@@ -16,8 +36,7 @@
   }
 
   function getProductName() {
-    var title = document.title || 'STWADD Product';
-    return title;
+    return document.title || 'STWADD Product';
   }
 
   function getPageUrl() {
@@ -51,7 +70,7 @@
       return false;
     }
 
-    var subject = getFormType() + ' - ' + getProductName();
+    var subject = getFormType(form) + ' - ' + getProductName();
     var body = 'Product: ' + getProductName() + '\n';
     body += 'Page URL: ' + getPageUrl() + '\n';
     body += '---\n\n';
@@ -71,7 +90,6 @@
 
     window.location.href = mailto;
 
-    // Show feedback
     var btn = form.querySelector('button[type="submit"]');
     if (btn) {
       var originalText = btn.innerHTML;
@@ -86,48 +104,8 @@
     return false;
   }
 
-  function injectNavFix() {
-    var id = 'static-nav-fix';
-    if (document.getElementById(id)) return;
-    var style = document.createElement('style');
-    style.id = id;
-    style.textContent = [
-      '/* Nav fix: larger font for better homepage proportion */',
-      '@media (min-width: 992px) {',
-      '  .unit-header-nav .swiper-container {',
-      '    overflow: visible !important;',
-      '  }',
-      '  .unit-header-nav .swiper-wrapper {',
-      '    display: flex !important;',
-      '    transform: none !important;',
-      '    width: auto !important;',
-      '  }',
-      '  .unit-header-nav .swiper-slide {',
-      '    width: auto !important;',
-      '    margin-right: 0 !important;',
-      '  }',
-      '  .unit-header-nav .swiper-button-prev,',
-      '  .unit-header-nav .swiper-button-next {',
-      '    display: none !important;',
-      '  }',
-      '  .unit-header-nav__item {',
-      '    padding: 18px 24px !important;',
-      '  }',
-      '  .unit-header-nav__item-link,',
-      '  .unit-header-nav__item-link span,',
-      '  .unit-header-nav__item a {',
-      '    font-size: 20px !important;',
-      '    font-weight: 700 !important;',
-      '    letter-spacing: 0.5px !important;',
-      '    text-shadow: 0 1px 3px rgba(0,0,0,0.25) !important;',
-      '  }',
-      '}'
-    ].join('\n');
-    document.head.appendChild(style);
-  }
-
   function init() {
-    injectNavFix();
+    fixNavFontSize();
     var forms = document.querySelectorAll('form[inquiry]');
     for (var i = 0; i < forms.length; i++) {
       forms[i].addEventListener('submit', handleFormSubmit);
