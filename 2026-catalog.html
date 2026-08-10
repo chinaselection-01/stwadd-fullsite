@@ -2530,6 +2530,16 @@ function filterProducts() {
     document.querySelector('.table-wrap').style.display = visible === 0 ? 'none' : '';
 }
 
+// Deep-link filtering from homepage "Products" dropdown (?q=keyword)
+(function applyQueryFilter() {
+  const q = new URLSearchParams(window.location.search).get('q');
+  if (q) {
+    searchInput.value = q;
+    filterProducts();
+    document.querySelector('.toolbar')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+})();
+
 // Add data labels for mobile
 document.querySelectorAll('.product-row td').forEach(td => {
     const cls = td.classList[0];
