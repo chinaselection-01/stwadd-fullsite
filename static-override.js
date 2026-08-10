@@ -29,25 +29,66 @@
   }
 
   /* ── Text layout guard: prevent one-char-per-line collapse ── */
-  /* Defensive fix: ensure .unit-text containers never collapse to */
-  /* near-zero width, which causes each letter to stack vertically. */
+  /* Defensive fix: ensure text containers never collapse to near-zero width. */
+  /* Root cause: on wide screens, nested wrapper divs shrink below the */
+  /* parent .col-* cell, causing text to stack one character per line. */
   function fixTextLayout() {
     var id = 'stwadd-text-layout-guard';
     if (document.getElementById(id)) return;
     var s = document.createElement('style');
     s.id = id;
     s.textContent = [
+      '/* ═══════════════════  GRID / ROW / CELL  ═══════════════════ */',
+      '/* Ensure all grid rows allow children to fill properly */',
+      '.row { flex-wrap: wrap !important; }',
+      '/* Ensure col-* cells in footer/body don\'t shrink below content */',
+      '.col { flex-shrink: 1 !important; }',
+      '',
+      '/* ═══════════════════  INTERMEDIATE WRAPPERS  ════════════════ */',
+      '/* Framework inserts anonymous position:sticky divs between */',
+      '/* .col-* cells and module __wrapper elements. These shrink */',
+      '/* to content width and must be forced to fill parent. */',
+      '.col > div {',
+      '  width: 100% !important;',
+      '  max-width: 100% !important;',
+      '}',
+      '[class*="col-"] > div:not([class]) {',
+      '  width: 100% !important;',
+      '  max-width: 100% !important;',
+      '}',
+
+      '/* ═══════════════════  TEXT UNIT WRAPPERS  ═══════════════════ */',
       '/* Ensure text unit wrappers fill their container */',
       '.unit-text { width: 100% !important; max-width: 100% !important; }',
       '.unit-text__item {',
       '  width: 100% !important;',
       '  max-width: 100% !important;',
-      '  min-width: 0;',
       '  word-break: normal !important;',
       '  overflow-wrap: break-word !important;',
       '  white-space: normal !important;',
       '}',
-      '/* Protect tinymce content divs from collapsing */',
+
+      '/* ═══════════════════  MODULE WRAPPERS (key fix)  ══════════════ */',
+      '/* All __wrapper elements must fill their parent container */',
+      '[class*="__wrapper"] {',
+      '  width: 100% !important;',
+      '  max-width: 100% !important;',
+      '  display: block !important;',
+      '}',
+
+      '/* ═══════════════════  SPECIFIC MODULE FIXES  ══════════════════ */',
+      '/* About/Company info module (footer left column) */',
+      '.module-about-3-unit-2__wrapper {',
+      '  width: 100% !important;',
+      '  max-width: 100% !important;',
+      '}',
+      '/* Superiority module title wrapper */',
+      '.module-superiority-1-unit-1__wrapper {',
+      '  width: 100% !important;',
+      '  max-width: 100% !important;',
+      '}',
+
+      '/* ═══════════════════  TINYMCE CONTENT  ═══════════════════════ */',
       '[tinymce] {',
       '  width: 100% !important;',
       '  max-width: 100% !important;',
@@ -59,15 +100,15 @@
       '  word-break: normal !important;',
       '  overflow-wrap: break-word !important;',
       '}',
-      '/* Superiority module title wrapper - prevent narrow column */',
-      '.module-superiority-1-unit-1__wrapper {',
-      '  width: 100% !important;',
-      '  max-width: 100% !important;',
-      '  display: block !important;',
-      '}',
-      '/* General protection for all module text wrappers */',
+
+      '/* ═══════════════════  GLOBAL TEXT PROTECTION  ══════════════════ */',
+      '/* All package-type=text elements */',
       '[package-type="text"] { width: 100% !important; max-width: 100% !important; }',
-      '[package-unit-type="text"] { width: 100% !important; max-width: 100% !important; }'
+      '[package-unit-type="text"] { width: 100% !important; max-width: 100% !important; }',
+      '',
+      '/* Footer-specific: ensure footer columns have reasonable width */',
+      '[package-type="footer"] .container { max-width: 100% !important; }',
+      '[package-type="footer"] .col-xl-6 { min-width: 200px !important; }'
     ].join('\n');
     document.head.appendChild(s);
   }
