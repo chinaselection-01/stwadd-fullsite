@@ -49,6 +49,7 @@ STWADD explicitly does not provide:
 
 ## Key Information
 
+- [All Products (Big Catalog)](https://www.stwadd.com/all-products.html): Searchable catalog of 850+ products with images, filterable by material (stainless steel, plastic, glass, ceramic, tritan, titanium) and type (cup, bottle, mug, tumbler, flask, thermos, sport)
 - [About Us](https://www.stwadd.com/about-us.html): Company history, factory capabilities, and team
 - [All Products](https://www.stwadd.com/product.html): Complete product catalog with 17 categories
 - [OEM/ODM Services](https://www.stwadd.com/services.html): Customization process, MOQ, and capabilities
@@ -66,6 +67,7 @@ STWADD explicitly does not provide:
 
 - [Sitemap](https://www.stwadd.com/sitemap.xml): Complete site structure for search engines
 - [Robots.txt](https://www.stwadd.com/robots.txt): Crawler directives
+- [llms-full.txt](https://www.stwadd.com/llms-full.txt): Full machine-readable product inventory (850+ products)
 
 
 ## 2026 Product Catalog (167 Products)
