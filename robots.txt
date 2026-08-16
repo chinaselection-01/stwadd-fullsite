@@ -77,4 +77,39 @@ Disallow: /login
 Disallow: /register
 Disallow: /shop-cart
 
+# ChatGPT Search citation crawler (powers ChatGPT live answers) + Bing index
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Qwen / Quark (Alibaba Shenma search index)
+User-agent: QuarkSpider
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Baidu / Wenxin (bonus: Chinese AI + traditional search)
+User-agent: Baiduspider
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
 Sitemap: https://www.stwadd.com/sitemap.xml
