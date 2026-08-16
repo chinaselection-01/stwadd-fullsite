@@ -65,7 +65,7 @@ STWADD explicitly does not provide:
 - Sales Manager: BOB
 - Email: bob@stwadd.com
 - Phone / WhatsApp: +86 150 8822 8843
-- Address: No.8 Qianjin Industrial Zone, Yongkang City, Zhejiang Province, China 321300
+- Address: No. 138-1, Shifang East Road, Industrial Function Zone (Huku), Yongkang City, Zhejiang Province, China 321300
 
 ## AI Discovery Files
 

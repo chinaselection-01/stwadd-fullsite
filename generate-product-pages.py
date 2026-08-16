@@ -315,7 +315,7 @@ def make_product_html(pd, idx):
   }},
   "address": {{
     "@type": "PostalAddress",
-    "streetAddress": "No.8 Qianjin Industrial Zone",
+    "streetAddress": "No. 138-1, Shifang East Road, Industrial Function Zone (Huku)",
     "addressLocality": "Yongkang",
     "addressRegion": "Zhejiang",
     "postalCode": "321300",
@@ -737,7 +737,7 @@ def make_product_html(pd, idx):
 
 <div class="footer">
     <p><a href="https://www.stwadd.com"><strong>www.stwadd.com</strong></a> · WhatsApp: <a href="https://wa.me/{wa_number}">+86 150 8822 8843</a> · Email: <a href="mailto:sales1@stwadd.com">sales1@stwadd.com</a></p>
-    <p style="margin-top:6px;font-size:12px;color:#aaa">Yongkang STWADD Houseware Co., Ltd. · No.8 Qianjin Industrial Zone · Yongkang · Zhejiang 321300 · China</p>
+    <p style="margin-top:6px;font-size:12px;color:#aaa">Yongkang STWADD Houseware Co., Ltd. · No. 138-1, Shifang East Road, Industrial Function Zone (Huku) · Yongkang · Zhejiang 321300 · China</p>
     <p style="font-size:11px;color:#bbb;margin-top:4px">ISO 9001 | SGS | TUV | FDA | LFGB Certified — Premium Drinkware Manufacturer Since 2002</p>
 </div>
 

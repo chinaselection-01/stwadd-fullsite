@@ -45,6 +45,32 @@ Disallow: /login
 Disallow: /register
 Disallow: /shop-cart
 
+# Other Anthropic crawlers: training (ClaudeBot), user-requested (Claude-User),
+# and search-index (Claude-SearchBot)
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Claude-User
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
 User-agent: Google-Extended
 Allow: /
 Disallow: /admin
@@ -54,6 +80,15 @@ Disallow: /register
 Disallow: /shop-cart
 
 User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Perplexity on-demand fetch bot (opens your link mid-answer)
+User-agent: Perplexity-User
 Allow: /
 Disallow: /admin
 Disallow: /inquire
