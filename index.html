@@ -147,6 +147,28 @@ gtag('js', new Date());
 gtag('config', 'G-XE6002FX59');
 </script>
 
+<!-- ═══ GEO: VideoObject (helps AI engines & Google surface the company video) ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "STWADD Factory Tour — Custom Drinkware Manufacturer",
+  "description": "A 2-minute tour of Yongkang STWADD Houseware Co., Ltd. — automated production lines, in-house quality control, and the team behind custom water bottles, tumblers, and flasks.",
+  "thumbnailUrl": "https://www.stwadd.com/images/web-intro-poster.jpg",
+  "contentUrl": "https://www.stwadd.com/videos/web-intro.mp4",
+  "uploadDate": "2024-07-27",
+  "duration": "PT2M8S",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yongkang STWADD Houseware Co., Ltd.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.stwadd.com/images/1724987713175-logo-150.png"
+    }
+  }
+}
+</script>
+
 <style>
 /* ═══════════════════  RESET & BASE  ═══════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -514,6 +536,12 @@ ul { list-style: none; }
   .stats-bar { grid-template-columns: 1fr 1fr; }
   .hero-buttons { flex-direction: column; align-items: center; }
 }
+/* ═══ COMPANY VIDEO SHOWCASE ═══ */
+.video-showcase-section { padding: 76px 0; background: linear-gradient(180deg,#ffffff 0%,#f5f8fb 100%); }
+.video-showcase-section .section-header { text-align: center; margin-bottom: 36px; }
+.video-showcase-section .section-sub { max-width: 720px; margin: 12px auto 0; color: #5b6b78; font-size: 1.02rem; line-height: 1.6; }
+.video-frame { position: relative; max-width: 940px; margin: 0 auto; border-radius: 18px; overflow: hidden; box-shadow: 0 26px 60px rgba(13,42,68,.22); background: #000; border: 1px solid rgba(255,255,255,.6); }
+.video-frame video { display: block; width: 100%; height: auto; }
 </style>
 </head>
 <body>
@@ -596,6 +624,23 @@ ul { list-style: none; }
     <span class="brand-item">LFGB Approved</span>
   </div>
 </div>
+
+<!-- ═══ COMPANY VIDEO SHOWCASE ═══ -->
+<section class="video-showcase-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-title-sm">Company Video</div>
+      <h2 class="section-title-lg">See STWADD Factory In Action</h2>
+      <p class="section-sub">Take a 2-minute tour of our Yongkang drinkware facility — automated production lines, in-house quality control, and the team behind your custom bottles, tumblers &amp; flasks.</p>
+    </div>
+    <div class="video-frame">
+      <video controls preload="metadata" poster="/images/web-intro-poster.jpg" playsinline>
+        <source src="/videos/web-intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
 
 <!-- ═══ PRODUCTS ═══ -->
 <section class="products-section" id="products">
