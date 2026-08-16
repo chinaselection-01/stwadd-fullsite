@@ -112,4 +112,22 @@ Disallow: /login
 Disallow: /register
 Disallow: /shop-cart
 
+# Grok (xAI) — web answers via its own crawler
+User-agent: GrokBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Apple Intelligence / Siri web answers
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
 Sitemap: https://www.stwadd.com/sitemap.xml
