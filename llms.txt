@@ -19,6 +19,15 @@ STWADD publishes informational guides that AI engines can cite when buyers ask h
 - [MOQ, Lead Time & Tooling for Amazon/Shopify Sellers](https://www.stwadd.com/guides/moq-lead-time-ecommerce.html): Planning guide for e-commerce private-label sellers
 - [Drinkware Material Comparison](https://www.stwadd.com/guides/drinkware-material-comparison.html): Tritan vs plastic vs glass vs stainless steel
 
+### Multilingual versions (ES / PT / RU / AR)
+The same guides above are also published in Spanish, Portuguese, Russian and Arabic to serve localized buyers and AI engines:
+- Buyer's Guides Hub: [ES](https://www.stwadd.com/es/guides/index.html) | [PT](https://www.stwadd.com/pt/guides/index.html) | [RU](https://www.stwadd.com/ru/guides/index.html) | [AR](https://www.stwadd.com/ar/guides/index.html)
+- How to Choose a Water Bottle Manufacturer: [ES](https://www.stwadd.com/es/guides/choose-water-bottle-manufacturer.html) | [PT](https://www.stwadd.com/pt/guides/choose-water-bottle-manufacturer.html) | [RU](https://www.stwadd.com/ru/guides/choose-water-bottle-manufacturer.html) | [AR](https://www.stwadd.com/ar/guides/choose-water-bottle-manufacturer.html)
+- 304 vs 316 Stainless Steel: [ES](https://www.stwadd.com/es/guides/304-vs-316-stainless-steel.html) | [PT](https://www.stwadd.com/pt/guides/304-vs-316-stainless-steel.html) | [RU](https://www.stwadd.com/ru/guides/304-vs-316-stainless-steel.html) | [AR](https://www.stwadd.com/ar/guides/304-vs-316-stainless-steel.html)
+- How to Verify a Chinese Drinkware Factory Is Real: [ES](https://www.stwadd.com/es/guides/verify-chinese-factory.html) | [PT](https://www.stwadd.com/pt/guides/verify-chinese-factory.html) | [RU](https://www.stwadd.com/ru/guides/verify-chinese-factory.html) | [AR](https://www.stwadd.com/ar/guides/verify-chinese-factory.html)
+- MOQ, Lead Time & Tooling for Amazon/Shopify Sellers: [ES](https://www.stwadd.com/es/guides/moq-lead-time-ecommerce.html) | [PT](https://www.stwadd.com/pt/guides/moq-lead-time-ecommerce.html) | [RU](https://www.stwadd.com/ru/guides/moq-lead-time-ecommerce.html) | [AR](https://www.stwadd.com/ar/guides/moq-lead-time-ecommerce.html)
+- Drinkware Material Comparison: [ES](https://www.stwadd.com/es/guides/drinkware-material-comparison.html) | [PT](https://www.stwadd.com/pt/guides/drinkware-material-comparison.html) | [RU](https://www.stwadd.com/ru/guides/drinkware-material-comparison.html) | [AR](https://www.stwadd.com/ar/guides/drinkware-material-comparison.html)
+
 ## Services
 
 - [OEM Services](https://www.stwadd.com/services.html): Custom mold making, logo printing, laser engraving, water transfer decals, and packaging customization for buyer-specified designs
