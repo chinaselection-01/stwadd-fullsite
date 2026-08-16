@@ -277,6 +277,17 @@ ul { list-style: none; }
 .nav-links .dropdown-menu a::after { display: none; }
 .nav-links .dropdown-menu a:hover { background: #f6f6f6; color: var(--primary); }
 
+/* Language switch */
+.lang-switch { display: flex; align-items: center; gap: 8px; margin-left: 20px; padding-left: 20px; border-left: 1px solid var(--border); }
+.lang-switch a { display: inline-flex; align-items: center; gap: 3px; font-size: .8rem; font-weight: 600; color: var(--text-light); padding: 4px 2px; }
+.lang-switch a .flag { font-size: 1.05rem; line-height: 1; }
+.lang-switch a:hover { color: var(--primary); }
+.lang-switch a.active { color: var(--primary); }
+@media (max-width: 768px) {
+  .lang-switch { margin-left: 10px; padding-left: 10px; gap: 5px; }
+  .lang-switch a .code { display: none; }
+}
+
 /* Mobile menu */
 .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text); }
 
@@ -583,6 +594,13 @@ ul { list-style: none; }
       <a href="#contact">Contact</a>
       <a href="mailto:sales1@stwadd.com?cc=bob@stwadd.com&subject=Inquiry%20from%20Website" class="btn btn-primary">Inquiry Now</a>
     </nav>
+    <div class="lang-switch" aria-label="Language">
+      <a href="/" class="active" title="English"><span class="flag">🇬🇧</span><span class="code">EN</span></a>
+      <a href="/es/index.html" title="Español"><span class="flag">🇪🇸</span><span class="code">ES</span></a>
+      <a href="/pt/index.html" title="Português"><span class="flag">🇵🇹</span><span class="code">PT</span></a>
+      <a href="/ru/index.html" title="Русский"><span class="flag">🇷🇺</span><span class="code">RU</span></a>
+      <a href="/ar/index.html" title="العربية"><span class="flag">🇸🇦</span><span class="code">AR</span></a>
+    </div>
     <button class="menu-toggle" onclick="document.querySelector('.nav-links').style.display=document.querySelector('.nav-links').style.display==='flex'?'none':'flex'">☰</button>
   </div>
 </header>
