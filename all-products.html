@@ -64,6 +64,13 @@
   .card .name{font-size:.9rem;font-weight:500;line-height:1.35;
     display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:3.6em}
   .card .tag{margin-top:8px;font-size:.72rem;color:var(--primary);font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+  /* External product (1688) styles */
+  .card .img{position:relative}
+  .ext-badge{position:absolute;top:8px;right:8px;background:#ff6a00;color:#fff;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:4px;letter-spacing:.5px}
+  .card .extra{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .card .pri{background:#fff3e0;color:#e65100;font-size:.78rem;font-weight:700;padding:2px 8px;border-radius:4px}
+  .card .cap{background:#e3f2fd;color:#1565c0;font-size:.72rem;padding:2px 8px;border-radius:4px}
+  .ext-src{background:#f5f5f5;color:#777;font-size:.68rem;padding:2px 6px;border-radius:4px}
   .no-result{text-align:center;padding:60px 20px;color:var(--text-light);display:none}
   .no-result .emoji{font-size:2.5rem;margin-bottom:10px}
   .footer{text-align:center;padding:30px;color:#aaa;font-size:13px}
@@ -227,9 +234,20 @@ function render(){
     const card = document.createElement('a');
     card.className = 'card';
     card.href = p.url;
+    const isExt = p.url.startsWith('http');
+    if (isExt) { card.target = '_blank'; card.rel = 'noopener'; }
+    var extraInfo = '';
+    if (p.price) extraInfo += '<span class="pri">'+p.price+'</span>';
+    if (p.capacity) extraInfo += '<span class="cap">'+p.capacity+'</span>';
+    if (p.externalSource) extraInfo += '<span class="ext-src">'+p.externalSource+'</span>';
+    else if (isExt) extraInfo += '<span class="ext-src">External</span>';
     card.innerHTML =
-      '<div class="img"><img loading="lazy" src="'+p.image+'" alt="'+p.name.replace(/"/g,'')+'" onerror="this.style.display=\'none\'"></div>'+
-      '<div class="body"><div class="name">'+p.name+'</div><div class="tag">'+tagOf(p.url)+'</div></div>';
+      '<div class="img"><img loading="lazy" src="'+p.image+'" alt="'+p.name.replace(/"/g,'')+'" onerror="this.style.display=\'none\'">'+
+      (isExt ? '<div class="ext-badge">1688</div>' : '')+
+      '</div>'+
+      '<div class="body"><div class="name">'+p.name+'</div><div class="tag">'+tagOf(p.url)+'</div>'+
+      (extraInfo ? '<div class="extra">'+extraInfo+'</div>' : '')+
+      '</div>';
     grid.appendChild(card);
   });
   resultCount.textContent = list.length + ' / ' + ALL.length + ' products';
