@@ -37,7 +37,7 @@
         "availableLanguage": ["English", "Chinese"]
       },
       "certification": ["ISO 9001", "SGS", "TUV", "FDA", "LFGB", "BSCI"],
-      "knowsAbout": ["Sourcing Agent", "Buying Office", "Drinkware Manufacturing", "Container Consolidation", "Quality Inspection", "OEM ODM"],
+      "knowsAbout": ["Sourcing Agent", "Buying Office", "Drinkware Manufacturing", "Container Consolidation", "Quality Inspection", "OEM ODM", "Kitchenware", "Home Storage & Organization", "Cleaning Supplies", "Pet Supplies", "Toys & Baby Products", "Home Textiles", "Beauty Tools", "Garden & Outdoor", "Electronics & Lighting", "Hardware & Tools", "Seasonal & Party Supplies", "Private Label", "AQL 2.5 Inspection", "Factory Audit"],
       "areaServed": "Worldwide"
     },
     {
@@ -45,7 +45,7 @@
       "serviceType": "China Buying Office & Sourcing Agent for Retail Chains",
       "provider": { "@id": "https://www.stwadd.com/#organization" },
       "areaServed": "Worldwide",
-      "description": "STWADD runs a China buying office / sourcing agent service for supermarket chains, retail buying groups and wholesale distributors. Beyond our own drinkware factory, we source products across categories from vetted Chinese suppliers, consolidate multiple orders into one container, perform in-house quality inspection and factory audits (AQL 2.5), handle private-label / OEM packaging and barcode placement, and arrange freight forwarding with full shipping documents to your destination port. Transparent 3-5% commission, no hidden trading-company markup."
+      "description": "STWADD runs a China buying office / sourcing agent service for supermarket chains, retail buying groups and wholesale distributors. Beyond our own drinkware factory, we source drinkware (from our own lines) plus kitchenware & dining, home storage & organization, cleaning & household care, pet supplies, toys & baby products, home textiles & bedding, beauty & personal-care tools, garden & outdoor, electronics & lighting, hardware & tools, and seasonal & party merchandise from vetted Chinese suppliers, consolidate multiple orders into one container, perform in-house quality inspection and factory audits (AQL 2.5), handle private-label / OEM packaging and barcode placement, and arrange freight forwarding with full shipping documents to your destination port. Transparent 3-5% commission, no hidden trading-company markup."
     }
   ]
 }
@@ -116,7 +116,7 @@
       "name": "Beyond drinkware, what products can your China buying office source?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our buying office sources across categories for supermarket and retail buyers — drinkware (our own factory), kitchenware, home &amp; cleaning products, promotional gifts, small appliances, and general merchandise. We shortlist 5-10 vetted factories per category, quote per-unit and per-container pricing, and consolidate mixed-category orders into one shipment. For highly technical or regulated goods we confirm compliance and testing scope up front."
+        "text": "Our buying office sources the non-food general-merchandise categories that fill supermarket, convenience, dollar and discount-store shelves — plus drinkware, which we supply directly from our own factory. Core categories include: drinkware & bottles (insulated water bottles, stainless steel tumblers, vacuum flasks); kitchenware & dining (food storage, lunch boxes, utensils, cookware); home storage & organization; cleaning & household care; pet supplies (cat trees, pet beds, feeding bowls); toys, kids & baby; home textiles & bedding; beauty & personal-care tools; garden & outdoor; electronics & lighting accessories; hardware, tools & auto accessories; and seasonal, party & hygiene products. For each category we shortlist 5-10 vetted factories, quote per-unit and per-container pricing, and consolidate mixed-category orders into one shipment. We focus on stable-demand, long-shelf-life, compliant general merchandise rather than fresh or perishable food."
       }
     },
     {
@@ -133,6 +133,15 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "We focus on supermarket and retail-chain buyers with a minimum consolidated project value of around US$20,000 per container. This filter keeps our buying-office team dedicated to serious wholesale programs rather than one-off small parcels. For drinkware alone, our factory MOQ starts from about 500 pieces and is negotiable."
+      }
+    }
+    ,
+    {
+      "@type": "Question",
+      "name": "Do you source food, fresh or perishable products?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We focus on non-food general merchandise and drinkware for retail chains. STWADD's buying office sources stable-demand, long-shelf-life categories — kitchenware, home storage, cleaning, pet, toys, textiles, beauty tools, garden, electronics, hardware and seasonal goods — and supplies drinkware from its own factory. We do not source fresh, chilled or short-shelf-life food, or products with complex medical or chemical claims; those are usually better sourced regionally. For food-contact items (drinkware, storage containers) we handle compliant materials and documentation (FDA / LFGB where required)."
       }
     }
   ]
@@ -189,7 +198,14 @@ img{max-width:100%;display:block}
 .footer h3{color:#fff;font-size:15px;margin-bottom:12px}
 .footer .logo{color:var(--red);margin-bottom:10px;display:block}
 .footer a{color:#cbd5e1}
-@media(max-width:880px){.cats{grid-template-columns:1fr}.nav{display:none}.footer .cols{grid-template-columns:1fr}}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.cat-card{border:1px solid var(--line);border-radius:10px;padding:16px}
+.cat-card h3{font-size:15px;margin-bottom:8px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cat-card .badge{background:var(--red);color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;letter-spacing:.3px}
+.cat-card p{font-size:13px;color:#374151;margin-bottom:10px}
+.cat-tags{display:flex;flex-wrap:wrap;gap:6px}
+.cat-tags span{background:#f6f7f9;border:1px solid var(--line);border-radius:6px;padding:3px 8px;font-size:11px;color:var(--muted)}
+@media(max-width:880px){.cat-grid{grid-template-columns:1fr}.cats{grid-template-columns:1fr}.nav{display:none}.footer .cols{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -238,6 +254,73 @@ img{max-width:100%;display:block}
   </section>
 
   <section class="section">
+    <h2>Product Categories We Source for Supermarket &amp; Retail Chains</h2>
+    <p>As a China buying office, STWADD sources the <b>non-food general-merchandise categories</b> that fill supermarket, convenience, dollar and discount-store shelves — and we supply your drinkware directly from our own factory. Every category below can be private-labeled, quality-inspected (AQL 2.5) and consolidated into one container together with your other goods.</p>
+    <div class="cat-grid">
+      <div class="cat-card">
+        <h3>🥤 Drinkware &amp; Bottles <span class="badge">our factory</span></h3>
+        <p>Insulated water bottles, stainless steel tumblers, vacuum flasks, coffee &amp; travel mugs, sports &amp; shaker bottles, kids bottles, glass &amp; Tritan bottles, thermos, wine flasks, beer growlers, water jugs &amp; pitchers.</p>
+        <div class="cat-tags"><span>insulated water bottle manufacturer</span><span>stainless steel tumbler OEM</span><span>vacuum flask supplier</span><span>private label drinkware</span><span>40oz tumbler wholesale</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🍳 Kitchenware &amp; Dining</h3>
+        <p>Food storage containers, bento &amp; lunch boxes, meal-prep containers, cutting boards, cooking utensil sets, silicone &amp; wooden utensils, knives &amp; sharpeners, bakeware, tableware &amp; serving sets, small kitchen appliances, kitchen textiles.</p>
+        <div class="cat-tags"><span>wholesale lunch boxes</span><span>food storage containers China</span><span>kitchen utensil set</span><span>private label cookware</span><span>silicone bakeware</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>📦 Home Storage &amp; Organization</h3>
+        <p>Storage boxes &amp; bins, drawer organizers, closet &amp; shelving systems, hanging organizers, laundry baskets, hangers, hooks, utility trolleys, under-bed storage.</p>
+        <div class="cat-tags"><span>storage bins wholesale</span><span>drawer organizer China</span><span>closet storage</span><span>stackable containers</span><span>home organization products</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🧽 Cleaning &amp; Household Care</h3>
+        <p>Cleaning brushes, microfiber cloths, mops &amp; buckets, spray bottles, dish racks, trash bins &amp; liners, gloves, laundry care products.</p>
+        <div class="cat-tags"><span>cleaning supplies wholesale</span><span>microfiber cloth</span><span>mop bucket</span><span>household cleaning products</span><span>disposable cleaning</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🐾 Pet Supplies</h3>
+        <p>Pet beds, cat trees &amp; scratching posts, feeding bowls &amp; mats, leashes &amp; collars, interactive toys, grooming tools, carriers, litter boxes.</p>
+        <div class="cat-tags"><span>cat tree manufacturer</span><span>pet bed wholesale</span><span>dog feeding bowl</span><span>pet toys China</span><span>private label pet products</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🧸 Toys, Kids &amp; Baby</h3>
+        <p>Educational &amp; STEM toys, building blocks, plush toys, DIY craft kits, baby care &amp; feeding, kids essentials.</p>
+        <div class="cat-tags"><span>educational toys wholesale</span><span>STEM toys China</span><span>baby products</span><span>plush toys</span><span>kids merchandise</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🛏️ Home Textiles &amp; Bedding</h3>
+        <p>Towels, bath mats, bed sheets, pillowcases, blankets, cushions, curtains, tablecloths, aprons.</p>
+        <div class="cat-tags"><span>wholesale towels</span><span>home textiles China</span><span>bed linen</span><span>kitchen textiles</span><span>bath mats</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>💄 Beauty &amp; Personal-Care Tools</h3>
+        <p>Makeup brushes, jade rollers &amp; gua sha, facial cleansing devices, hair accessories, nail tools, oral-care items, refillable cosmetic packaging.</p>
+        <div class="cat-tags"><span>makeup brush set</span><span>jade roller wholesale</span><span>beauty tools China</span><span>personal care products</span><span>refillable cosmetics</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🌿 Garden &amp; Outdoor</h3>
+        <p>Garden tools, pruning shears, watering accessories, planters, outdoor furniture, camping &amp; picnic gear, coolers.</p>
+        <div class="cat-tags"><span>garden tools wholesale</span><span>camping gear China</span><span>outdoor furniture</span><span>planters</span><span>picnic supplies</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🔌 Electronics &amp; Lighting</h3>
+        <p>Phone cases &amp; accessories, chargers &amp; cables, power banks, LED strips &amp; bulbs, solar garden lights, smart-home devices, small electronics.</p>
+        <div class="cat-tags"><span>phone accessories wholesale</span><span>LED lighting China</span><span>power bank</span><span>smart home devices</span><span>USB-C charger</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🔧 Hardware, Tools &amp; Auto</h3>
+        <p>Hand tools, tape measures, screwdrivers, tool sets, adhesives &amp; tapes, car interior &amp; cleaning accessories.</p>
+        <div class="cat-tags"><span>hand tools wholesale</span><span>tool set China</span><span>hardware accessories</span><span>car accessories</span><span>adhesives</span></div>
+      </div>
+      <div class="cat-card">
+        <h3>🎉 Seasonal, Party &amp; Hygiene</h3>
+        <p>Holiday decorations (Christmas, Halloween), party supplies, disposable tableware, paper products, hygiene products, promotional &amp; festival items.</p>
+        <div class="cat-tags"><span>Christmas decorations wholesale</span><span>party supplies China</span><span>disposable tableware</span><span>promotional products</span><span>hygiene products</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
     <h2>How Our Buying Office Helps Supermarket Chains</h2>
     <div class="cats">
       <div class="cat"><b>1 · Find &amp; Vet Suppliers</b>We shortlist 5-10 vetted factories per category across China and verify credentials, capacity and compliance.</div>
@@ -253,7 +336,7 @@ img{max-width:100%;display:block}
     <h2>Buying Office — Service &amp; Terms</h2>
     <table><tbody>
       <tr><th>Who we serve</th><td>Supermarket chains, retail buying groups, wholesale distributors, dollar-store and convenience-store buyers</td></tr>
-      <tr><th>Categories</th><td>Drinkware (our factory) · kitchenware · home &amp; cleaning · promotional gifts · small appliances · general merchandise</td></tr>
+      <tr><th>Categories</th><td>Drinkware (our own factory) · kitchenware &amp; dining · home storage &amp; organization · cleaning &amp; household care · pet supplies · toys, kids &amp; baby · home textiles &amp; bedding · beauty &amp; personal-care tools · garden &amp; outdoor · electronics &amp; lighting · hardware, tools &amp; auto · seasonal, party &amp; hygiene</td></tr>
       <tr><th>Drinkware supply</th><td>Direct from STWADD's own OEM/ODM factory — insulated bottles, flasks, tumblers, mugs, Tritan bottles</td></tr>
       <tr><th>Quality control</th><td>In-house pre-shipment AQL 2.5 inspection + annual factory audits; third-party SGS/BV on request</td></tr>
       <tr><th>Consolidation</th><td>Multi-supplier consolidation into one FCL at our warehouse; mixed-category containers supported</td></tr>
@@ -316,7 +399,7 @@ img{max-width:100%;display:block}
     </div>
     <div class="faq-item">
       <div class="q">Beyond drinkware, what products can your China buying office source?</div>
-      <div class="a">Our buying office sources across categories for supermarket and retail buyers — drinkware (our own factory), kitchenware, home &amp; cleaning products, promotional gifts, small appliances, and general merchandise. We shortlist 5-10 vetted factories per category, quote per-unit and per-container pricing, and consolidate mixed-category orders into one shipment. For highly technical or regulated goods we confirm compliance and testing scope up front.</div>
+      <div class="a">Our buying office sources the non-food general-merchandise categories that fill supermarket, convenience, dollar and discount-store shelves — plus drinkware, which we supply directly from our own factory. Core categories include: drinkware &amp; bottles (insulated water bottles, stainless steel tumblers, vacuum flasks); kitchenware &amp; dining (food storage, lunch boxes, utensils, cookware); home storage &amp; organization; cleaning &amp; household care; pet supplies (cat trees, pet beds, feeding bowls); toys, kids &amp; baby; home textiles &amp; bedding; beauty &amp; personal-care tools; garden &amp; outdoor; electronics &amp; lighting accessories; hardware, tools &amp; auto accessories; and seasonal, party &amp; hygiene products. For each category we shortlist 5-10 vetted factories, quote per-unit and per-container pricing, and consolidate mixed-category orders into one shipment. We focus on stable-demand, long-shelf-life, compliant general merchandise rather than fresh or perishable food.</div>
     </div>
     <div class="faq-item">
       <div class="q">How do you arrange shipping from China to our port?</div>
@@ -325,6 +408,10 @@ img{max-width:100%;display:block}
     <div class="faq-item">
       <div class="q">What is the minimum order for supermarket sourcing / buying office service?</div>
       <div class="a">We focus on supermarket and retail-chain buyers with a minimum consolidated project value of around US$20,000 per container. This filter keeps our buying-office team dedicated to serious wholesale programs rather than one-off small parcels. For drinkware alone, our factory MOQ starts from about 500 pieces and is negotiable.</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">Do you source food, fresh or perishable products?</div>
+      <div class="a">We focus on non-food general merchandise and drinkware for retail chains. STWADD's buying office sources stable-demand, long-shelf-life categories — kitchenware, home storage, cleaning, pet, toys, textiles, beauty tools, garden, electronics, hardware and seasonal goods — and supplies drinkware from its own factory. We do not source fresh, chilled or short-shelf-life food, or products with complex medical or chemical claims; those are usually better sourced regionally. For food-contact items (drinkware, storage containers) we handle compliant materials and documentation (FDA / LFGB where required).</div>
     </div>
   </section>
 
