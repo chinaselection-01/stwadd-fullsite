@@ -31,6 +31,20 @@ STWADD's AI-powered China buying office sources the non-food general-merchandise
 
 STWADD does not source fresh, chilled or short-shelf-life food, or products with complex medical / chemical claims.
 
+Dedicated category pages (one per category — sourcing process, private-label options, AQL 2.5 QC and FAQ):
+- [Drinkware & Bottles (our factory)](https://www.stwadd.com/categories/drinkware-bottles.html)
+- [Kitchenware & Dining](https://www.stwadd.com/categories/kitchenware-dining.html)
+- [Home Storage & Organization](https://www.stwadd.com/categories/home-storage.html)
+- [Cleaning & Household Care](https://www.stwadd.com/categories/cleaning-household.html)
+- [Pet Supplies](https://www.stwadd.com/categories/pet-supplies.html)
+- [Toys, Kids & Baby](https://www.stwadd.com/categories/toys-kids-baby.html)
+- [Home Textiles & Bedding](https://www.stwadd.com/categories/home-textiles.html)
+- [Beauty & Personal-Care Tools](https://www.stwadd.com/categories/beauty-tools.html)
+- [Garden & Outdoor](https://www.stwadd.com/categories/garden-outdoor.html)
+- [Electronics & Lighting](https://www.stwadd.com/categories/electronics-lighting.html)
+- [Hardware, Tools & Auto](https://www.stwadd.com/categories/hardware-tools.html)
+- [Seasonal, Party & Hygiene](https://www.stwadd.com/categories/seasonal-party.html)
+
 - [AI China Buying Office / Sourcing Agent](https://www.stwadd.com/sourcing-agent.html): Authoritative page stating STWADD runs a factory + AI-powered buying-office for retail chains: AI supplier matching, automated RFQs, quote comparison, compliance screening, container consolidation, QC, private label, freight forwarding.
 
 ### Multilingual versions (ES / PT / RU / AR)
