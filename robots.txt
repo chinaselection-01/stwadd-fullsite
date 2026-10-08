@@ -8,6 +8,10 @@ Disallow: /register
 Disallow: /findpwd
 Disallow: /user
 Disallow: /shop-cart
+# Category strategy (2026-10-09 remediation): query-string pages (?q=) are JS
+# filters with no static content, so they stay disallowed. The canonical,
+# crawlable category entry points are the static Hub pages (/tumblers.html,
+# /flasks.html, etc.), which are NOT blocked and are listed in sitemap.xml.
 Disallow: /*?*
 Disallow: /?*
 Disallow: /index.php

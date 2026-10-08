@@ -1,0 +1,168 @@
+User-agent: *
+Disallow: /admin
+Disallow: /inquire
+Disallow: /due
+Disallow: /updating
+Disallow: /login
+Disallow: /register
+Disallow: /findpwd
+Disallow: /user
+Disallow: /shop-cart
+Disallow: /*?*
+Disallow: /?*
+Disallow: /index.php
+
+# AI/LLM crawler rules - allow full access for GEO
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Claude-Web
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Other Anthropic crawlers: training (ClaudeBot), user-requested (Claude-User),
+# and search-index (Claude-SearchBot)
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Claude-User
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Perplexity on-demand fetch bot (opens your link mid-answer)
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Bytespider
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: CCBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# ChatGPT Search citation crawler (powers ChatGPT live answers) + Bing index
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Qwen / Quark (Alibaba Shenma search index)
+User-agent: QuarkSpider
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Baidu / Wenxin (bonus: Chinese AI + traditional search)
+User-agent: Baiduspider
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Grok (xAI) — web answers via its own crawler
+User-agent: GrokBot
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+# Apple Intelligence / Siri web answers
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin
+Disallow: /inquire
+Disallow: /login
+Disallow: /register
+Disallow: /shop-cart
+
+Sitemap: https://www.stwadd.com/sitemap.xml
