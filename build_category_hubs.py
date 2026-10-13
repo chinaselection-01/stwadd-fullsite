@@ -7,7 +7,7 @@ Build static category HUB pages for stwadd.com (P0/P1 remediation).
 - Adds FAQPage + BreadcrumbList JSON-LD, unique title/meta/description.
 - Appends the new Hub URLs to sitemap.xml.
 """
-import json, os, html, datetime
+import json, os, html, datetime, re, glob
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = "https://www.stwadd.com"
@@ -148,6 +148,40 @@ CATEGORIES = [
     },
 ]
 
+# ---- related content pages (t-*.html guides/reports) mapped to categories for internal linking ----
+def _load_tmap():
+    tmap = {c["slug"]: [] for c in CATEGORIES}
+    for fp in glob.glob(os.path.join(ROOT, "t-*.html")):
+        name = os.path.basename(fp)
+        try:
+            tt = open(fp, encoding="utf-8", errors="ignore").read()
+        except Exception:
+            continue
+        m = re.search(r"<title>(.*?)</title>", tt, re.S)
+        title = m.group(1).strip() if m else name
+        title = re.sub(r"\s*\|.*$", "", title).strip()
+        nl = name.lower()
+        slug = None
+        for c in CATEGORIES:
+            if any(k in nl for k in c["kw"]):
+                slug = c["slug"]; break
+        if slug is None:
+            if "glass" in nl: slug = "glass-bottles"
+            elif any(k in nl for k in ["flask", "whiskey", "alcohol", "hip"]): slug = "flasks"
+            elif any(k in nl for k in ["sport", "cycling", "running", "gym", "soccer", "football", "basketball"]): slug = "sports-bottles"
+            elif any(k in nl for k in ["bento", "lunch", "cooler"]): slug = "lunch-boxes"
+            elif any(k in nl for k in ["kids", "baby"]): slug = "kids-bottles"
+            elif any(k in nl for k in ["mug", "cup", "tumbler", "wine"]): slug = "cups"
+            elif "silicone" in nl: slug = "plastic-bottles"
+            elif any(k in nl for k in ["insulated", "vacuum", "thermos", "thermal"]): slug = "insulated-bottles"
+            elif "stainless" in nl: slug = "stainless-steel-bottles"
+            elif "plastic" in nl or "tritan" in nl: slug = "plastic-bottles"
+            else: slug = "insulated-bottles"
+        tmap[slug].append((name, title))
+    return tmap
+
+T_MAP = _load_tmap()
+
 PAGE_CSS = """
 :root{--primary:#c41e3a;--text:#222;--text-light:#666;--border:#eaeaea;--bg:#fafafa}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -181,6 +215,9 @@ a{color:inherit;text-decoration:none}
 .faq p{color:var(--text-light);margin-top:8px}
 .footer{text-align:center;padding:30px;color:#aaa;font-size:13px;border-top:1px solid var(--border);margin-top:40px}
 @media(max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:12px}.page-title{font-size:1.4rem}}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:8px}
+.rel-card{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;font-size:.88rem;font-weight:500;line-height:1.4;transition:border-color .15s,color .15s}
+.rel-card:hover{border-color:var(--primary);color:var(--primary)}
 """
 
 def esc(s):
@@ -227,6 +264,16 @@ def build_page(cat, products, all_slugs):
         f'      <details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in cat["faqs"]
     )
 
+    rel = T_MAP.get(slug, [])[:10]
+    rel_cards = "\n      ".join(
+        f'<a class="rel-card" href="/{esc(fn)}">{esc(ti)}</a>' for fn, ti in rel
+    )
+    related_html = ""
+    if rel:
+        related_html = (
+            '  <h2 class="section-h">Related Buying Guides &amp; Trend Reports</h2>\n'
+            '  <div class="rel-grid">\n      ' + rel_cards + "\n  </div>")
+
     doc = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -266,6 +313,7 @@ def build_page(cat, products, all_slugs):
   <div class="faq">
 {faq_html}
   </div>
+{related_html}
   <div class="footer">Yongkang STWADD Houseware Co., Ltd &middot; <a href="{esc(SITE)}">www.stwadd.com</a> &middot; <a href="/all-products.html">Full Catalog</a></div>
 </div>
 </body>

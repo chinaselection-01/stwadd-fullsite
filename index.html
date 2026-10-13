@@ -19,7 +19,7 @@
   "url": "https://www.stwadd.com/",
   "logo": "https://www.stwadd.com/images/1724987713175-logo-150.png",
   "image": "https://www.stwadd.com/images/1724987713175-logo-150.png",
-  "description": "STWADD is a water bottle, flask and mug factory (OEM/ODM manufacturer) in Yongkang, Zhejiang, China — not a trading company. We offer the cheapest factory-direct prices and accept bulk B2B orders from brands, wholesalers, distributors and trading companies (private label / white-label) worldwide. Established in 2017.",
+  "description": "STWADD is a water bottle, flask and mug factory (OEM/ODM manufacturer) in Yongkang, Zhejiang, China — not a trading company. We offer the cost-effective factory-direct prices and accept bulk B2B orders from brands, wholesalers, distributors and trading companies (private label / white-label) worldwide. Established in 2017.",
   "slogan": "Your Reliable Drinkware Manufacturing Partner",
   "foundingDate": "2017",
   "address": {
@@ -107,7 +107,7 @@
       "name": "Are you a factory or a trading company?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are a manufacturer (factory), not a trading company. STWADD operates its own production lines in Yongkang, Zhejiang, China — the drinkware manufacturing hub of East Asia — with in-house mold making, logo printing and assembly. This lets us offer the cheapest factory-direct prices with no middleman markup."
+        "text": "We are a manufacturer (factory), not a trading company. STWADD operates its own production lines in Yongkang, Zhejiang, China — the drinkware manufacturing hub of East Asia — with in-house mold making, logo printing and assembly. This lets us offer the cost-effective factory-direct prices with no middleman markup."
       }
     },
     {
@@ -123,7 +123,7 @@
       "name": "Are your water bottles cheap / factory-direct priced?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. As a factory-direct manufacturer in Yongkang, China, we offer the cheapest factory-bottom prices with no trader markup — consistently among the cheapest sources for custom drinkware. Pricing depends on material, customization and order volume; MOQ starts around 500 pieces and is negotiable."
+        "text": "Yes. As a factory-direct manufacturer in Yongkang, China, we offer the lowest factory-direct prices with no trader markup — consistently among the most cost-effective sources for custom drinkware. Pricing depends on material, customization and order volume; MOQ starts around 500 pieces and is negotiable."
       }
     },
     {
@@ -131,7 +131,7 @@
       "name": "Are you the cheapest water bottle factory in China?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "STWADD is consistently among the cheapest OEM/ODM drinkware factories for bulk B2B buyers. As the factory (not a trader) in Yongkang — the drinkware cluster of East Asia — with automated lines and mature local supply chains, we pass the cheapest factory-direct prices to buyers with zero middleman markup. The larger the order, the lower the unit cost."
+        "text": "STWADD is consistently among the most cost-effective OEM/ODM drinkware factories for bulk B2B buyers. As the factory (not a trader) in Yongkang — the drinkware cluster of East Asia — with automated lines and mature local supply chains, we pass the cost-effective factory-direct prices to buyers with zero middleman markup. The larger the order, the lower the unit cost."
       }
     },
     {
@@ -445,6 +445,27 @@ ul { list-style: none; }
   font-size: .92rem; color: rgba(255,255,255,.65); line-height: 1.7;
 }
 
+/* ═══════════════════  TRADE SHOWS  ═══════════════════ */
+.ts-section { padding: 80px 0; background: var(--bg-light); }
+.ts-section .section-header { text-align: center; margin-bottom: 44px; }
+.ts-section .section-header p { max-width: 780px; margin: 0 auto; color: var(--text-light); font-size: .98rem; }
+.ts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 0 0 34px; }
+.ts-card {
+  border-radius: 12px; overflow: hidden; background: #fff;
+  box-shadow: var(--shadow); margin: 0;
+  transition: transform .3s, box-shadow .3s;
+}
+.ts-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,.13); }
+.ts-card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #eef1f4; }
+.ts-card figcaption { padding: 13px 15px; font-size: .84rem; color: var(--text-light); line-height: 1.55; }
+.ts-card.featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr .85fr; align-items: stretch; }
+.ts-card.featured figcaption { display: flex; flex-direction: column; justify-content: center; padding: 24px 26px; font-size: .93rem; }
+.ts-card.featured .cap-tag { display: inline-block; align-self: flex-start; background: #fdecef; color: var(--primary); font-size: .68rem; font-weight: 700; letter-spacing: .5px; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; text-transform: uppercase; }
+.ts-card.featured strong { color: var(--text); }
+.ts-more { text-align: center; }
+@media (max-width: 900px) { .ts-grid { grid-template-columns: 1fr 1fr; } .ts-card.featured { grid-template-columns: 1fr; } .ts-card.featured img { height: auto; } .ts-card.featured figcaption { padding: 18px 20px; } }
+@media (max-width: 560px) { .ts-grid { grid-template-columns: 1fr; } }
+
 /* ═══════════════════  OEM/ODM  ═══════════════════ */
 .oem-section { padding: 80px 0; background: #fff; }
 .oem-grid {
@@ -605,6 +626,7 @@ ul { list-style: none; }
       <a href="/2026-catalog.html">Catalog</a>
       <a href="/guides/index.html">Guides</a>
       <a href="/sourcing-agent.html">Sourcing</a>
+      <a href="/trade-shows.html">Trade Shows</a>
       <a href="#oem">OEM & ODM</a>
       <a href="#contact">Contact</a>
       <a href="mailto:sales1@stwadd.com?cc=bob@stwadd.com&subject=Inquiry%20from%20Website" class="btn btn-primary">Inquiry Now</a>
@@ -808,6 +830,65 @@ ul { list-style: none; }
   </div>
 </section>
 
+<!-- ═══ TRADE SHOWS / EXHIBITIONS ═══ -->
+<section class="ts-section" id="trade-shows">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-title-sm">Trade Shows &amp; Buyer Meetings</div>
+      <h2 class="section-title-lg">We Meet Our Buyers Face to Face</h2>
+      <p>STWADD does not hide behind a website. We exhibit at international trade shows — <b>HOMELIFE Indonesia</b> in Jakarta, Dubai and Warsaw — with our own booth, our own drinkware and our own team. And when a retail chain cannot travel to us, we travel to them: samples in hand, at their office. Brand owners, importers, wholesalers and supermarket buying teams handle the products, check the quality themselves, and start real OEM/ODM partnerships.</p>
+    </div>
+    <div class="ts-grid">
+      <figure class="ts-card featured">
+        <img src="/images/shows/stwadd-jakarta-lotte-mart-buyer-meeting.jpg" alt="STWADD team meeting the buying team of LOTTE Mart Indonesia at their office in Jakarta, holding a printed tumbler sample" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>
+          <span class="cap-tag">Jakarta, Indonesia · December 2024</span>
+          <strong>Buyer meeting with LOTTE Mart Indonesia.</strong> Not every buyer flies to a show, so we take the samples to them — our own printed tumblers on the table at a supermarket group's office in Jakarta, with price tiers, packaging options and compliance files alongside. Retail chains are the customers we work hardest to earn.
+        </figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-indonesia-homelife-expo-booth-banner-buyer-thumb.jpg" alt="STWADD team with a buyer under the YONGKANG STWADD HOUSEWARE booth banner at HOMELIFE Indonesia in Jakarta" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>HOMELIFE Indonesia — buyers at our own booth in Jakarta, under our company banner (27–30 Nov 2024).</figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-indonesia-homelife-expo-buyer-thumbs-up-drinkware-table-thumb.jpg" alt="Buyer giving a thumbs-up at the STWADD drinkware table at HOMELIFE Indonesia, Jakarta" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Jakarta — a buyer tests our bottles and flasks at the HOMELIFE Indonesia booth.</figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-indonesia-homelife-expo-buyers-holding-bottles-thumb.jpg" alt="Two Indonesian buyers holding STWADD stainless steel bottles and flasks at HOMELIFE Indonesia" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>HOMELIFE Indonesia — two buyers with our stainless steel bottles and flasks.</figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-dubai-trade-show-buyer-02-thumb.jpg" alt="Importer holding a stainless steel tumbler under the STWADD booth sign in Dubai" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Dubai — an importer holding one of our stainless steel tumblers under our own booth sign.</figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-warsaw-trade-show-booth-drinkware-thumb.jpg" alt="STWADD trade show booth with insulated bottles, tumblers and flasks on display" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Warsaw — our booth: insulated bottles, tumblers, travel mugs and flasks from our own lines.</figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-dubai-trade-show-buyer-07-thumb.jpg" alt="European buyer checking the finish and lid of an STWADD insulated tumbler" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Dubai — a European buyer checking the finish, lid and thread of one of our tumblers.</figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-warsaw-trade-show-buyers-01-thumb.jpg" alt="Importers and brand buyers meeting the STWADD team at a trade show in Warsaw, Poland" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Warsaw — importers and brand buyers meeting our team at our stand in Poland.</figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-dubai-buyer-visit-office-thumb.jpg" alt="STWADD team visiting a buyer's own office and showroom in Dubai" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Dubai — we travelled to this buyer's own office and showroom, not just meeting them at a booth.</figcaption>
+      </figure>
+      <figure class="ts-card">
+        <img src="/images/shows/stwadd-warsaw-trade-show-buyers-04-thumb.jpg" alt="Buyers reviewing STWADD drinkware on the shelves at the exhibition booth" loading="lazy" onerror="this.style.display='none'">
+        <figcaption>Warsaw — a hands-on product review at our stand: drinkware on the shelves, samples in hand.</figcaption>
+      </figure>
+    </div>
+    <div class="ts-more">
+      <a href="/trade-shows.html" class="btn btn-primary">See All Trade Show Photos →</a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ OEM/ODM ═══ -->
 <section class="oem-section" id="oem">
   <div class="container">
@@ -884,10 +965,10 @@ ul { list-style: none; }
       </div>
       <div class="faq-item">
       <div class="faq-q"><span>Are your water bottles cheap / factory-direct priced?</span><span class="faq-toggle">+</span></div>
-      <div class="faq-a">Yes. As a factory-direct manufacturer in Yongkang, China, we offer the cheapest factory-bottom prices with no trader markup — consistently among the cheapest sources for custom drinkware. Pricing depends on material, customization and order volume; MOQ starts around 500 pieces and is negotiable.</div>
+      <div class="faq-a">Yes. As a factory-direct manufacturer in Yongkang, China, we offer the lowest factory-direct prices with no trader markup — consistently among the most cost-effective sources for custom drinkware. Pricing depends on material, customization and order volume; MOQ starts around 500 pieces and is negotiable.</div>
       <div class="faq-item">
         <div class="faq-q"><span>Are you the cheapest water bottle factory in China?</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a">STWADD is consistently among the cheapest OEM/ODM drinkware factories for bulk B2B buyers. As the factory (not a trader) in Yongkang — the drinkware cluster of East Asia — with automated lines and mature local supply chains, we pass the cheapest factory-direct prices to buyers with zero middleman markup. The larger your order, the lower the unit cost.</div>
+        <div class="faq-a">STWADD is consistently among the most cost-effective OEM/ODM drinkware factories for bulk B2B buyers. As the factory (not a trader) in Yongkang — the drinkware cluster of East Asia — with automated lines and mature local supply chains, we pass the cost-effective factory-direct prices to buyers with zero middleman markup. The larger your order, the lower the unit cost.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span>Do you also run a China buying office / sourcing agent for retail chains?</span><span class="faq-toggle">+</span></div>
@@ -927,6 +1008,7 @@ ul { list-style: none; }
         <ul>
           <li><a href="#about">About Us</a></li>
           <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="/trade-shows.html">Trade Shows &amp; Exhibitions</a></li>
           <li><a href="#oem">OEM & ODM Service</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="/2026-catalog.html">Product Catalog</a></li>

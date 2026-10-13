@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
     <loc>https://www.stwadd.com/</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -1645,6 +1643,12 @@
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+<url>
+    <loc>https://www.stwadd.com/trade-shows.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 <url>
     <loc>https://www.stwadd.com/alcohol-flask.html</loc>
@@ -27032,315 +27036,327 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/drinkware-bottles.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/kitchenware-dining.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/home-storage.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/cleaning-household.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/pet-supplies.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/toys-kids-baby.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/home-textiles.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/beauty-tools.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/garden-outdoor.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/electronics-lighting.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/hardware-tools.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/categories/seasonal-party.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-    <url>
+<url>
     <loc>https://www.stwadd.com/a-why-does-my-thermos-stop-keeping-heat.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-why-does-my-thermos-stop-keeping-heat.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-how-to-remove-odor-from-a-water-bottle.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-how-to-remove-odor-from-a-water-bottle.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-can-you-put-hot-coffee-in-a-stainless-steel-bottle.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-can-you-put-hot-coffee-in-a-stainless-steel-bottle.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-how-to-get-rid-of-rust-in-a-stainless-steel-bottle.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-how-to-get-rid-of-rust-in-a-stainless-steel-bottle.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-can-you-put-an-insulated-bottle-in-the-dishwasher.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-can-you-put-an-insulated-bottle-in-the-dishwasher.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-how-to-clean-a-water-bottle-straw-and-lid.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-how-to-clean-a-water-bottle-straw-and-lid.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-why-is-my-water-bottle-sweating-condensation.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-why-is-my-water-bottle-sweating-condensation.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-how-to-fix-a-dented-thermos-bottle.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-how-to-fix-a-dented-thermos-bottle.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-is-it-safe-to-leave-water-in-a-stainless-steel-bottle-overnight.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-is-it-safe-to-leave-water-in-a-stainless-steel-bottle-overnight.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-how-to-store-an-insulated-bottle-when-not-in-use.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-how-to-store-an-insulated-bottle-when-not-in-use.html</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-what-does-double-wall-vacuum-insulated-mean.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-what-does-double-wall-vacuum-insulated-mean.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-how-to-choose-a-custom-tumbler-manufacturer-in-china.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-how-to-choose-a-custom-tumbler-manufacturer-in-china.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-how-to-clean-stainless-steel-water-bottle-with-vinegar-and-baking-soda.html</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-how-to-clean-stainless-steel-water-bottle-with-vinegar-and-baking-soda.html</loc>
     <lastmod>2026-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/a-how-to-import-custom-water-bottles-from-china.html</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/ru/a-how-to-import-custom-water-bottles-from-china.html</loc>
     <lastmod>2026-10-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/tumblers.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/flasks.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/insulated-bottles.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/stainless-steel-bottles.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/plastic-bottles.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/glass-bottles.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/sports-bottles.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/kids-bottles.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/coffee-mugs.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/cups.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/lunch-boxes.html</loc>
     <lastmod>2026-10-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
+<url>
     <loc>https://www.stwadd.com/travel-mugs.html</loc>
     <lastmod>2026-10-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://www.stwadd.com/oem-odm.html</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+<url>
+    <loc>https://www.stwadd.com/all-products.html</loc>
+    <lastmod>2026-10-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
