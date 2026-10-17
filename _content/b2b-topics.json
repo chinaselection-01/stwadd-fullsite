@@ -1,0 +1,530 @@
+{
+  "note": "B2B 采购决策类选题库。每条对应买家真实搜索意图（多为高意图长尾词）。字段：slug / title / meta_desc / angle（切入角度，禁止灌水）/ faq（3 问，必须是买家真会问的）。已发布题目必须回填 published_log.md，不得重复。",
+  "topics": [
+    {
+      "slug": "factory-direct-vs-trading-company-how-to-tell",
+      "title": "Factory Direct vs Trading Company: How to Tell Which One You Are Actually Dealing With",
+      "meta_desc": "A factory quotes lower and controls quality; a trading company resells someone else's goods. Nine concrete ways to tell which one you are dealing with before you place an order.",
+      "angle": "买家最怕付了工厂价却买到二道货。给可操作的鉴别动作：要求视频连线看产线、查出口记录抬头、要求提供增值税发票、MOQ 与打样费谁收、模具归谁、验厂时能否进车间、报错价格时的反应、售后能否直接对接工厂、要求提供上游工厂名称。",
+      "faq": [
+        [
+          "Can I ask a supplier whether they are a factory or a trading company?",
+          "You should ask directly, but verify the answer rather than trusting it. A genuine factory will offer a live video walkthrough of the production floor, name the machines it owns, and allow a third-party auditor to inspect. A trading company will usually restrict you to a showroom, be vague about machinery, and discourage third-party inspection."
+        ],
+        [
+          "Is a trading company ever a better choice than a factory?",
+          "Yes, occasionally. If you order small quantities across many categories, a buying office or sourcing agent can consolidate multiple suppliers into one container and handle inspection and freight for you. The trade-off is a commission, typically 3-5%, and less control over which actual factory makes your goods."
+        ],
+        [
+          "Why do factories quote lower than trading companies?",
+          "A factory quotes its own production cost plus a margin it controls. A trading company buys from a factory, adds its own margin, and adds handling and risk. For a simple logo-printed tumbler that markup can be 15-30%, or several times more on orders that involve multiple suppliers."
+        ]
+      ],
+      "opening": "A factory quotes your product cost plus a margin it controls. A trading company buys that same product, adds its own margin, and adds handling and risk on top. The unit price looks similar, so how do you tell which one you are actually dealing with before your money moves?"
+    },
+    {
+      "slug": "aql-2-5-inspection-explained-for-novice-buyers",
+      "title": "AQL 2.5 Inspection Explained: What It Means and How to Write the Clause Into Your PO",
+      "meta_desc": "AQL 2.5 is the most common defect tolerance in drinkware, but most buyers do not specify it correctly. Here is what AQL 2.5 actually permits and the exact wording to put in your purchase order.",
+      "angle": "写清 AQL 抽样标准的实际含义（LTPD/AQL 关系、Critical/Major/Minor 缺陷分级），给出可直接抄进 PO 的条款文本，强调结果不等于免检责任，并说明第三方验货须在装柜前做，以及发现超标时的正确处理流程（返工/挑选/让步接收）。",
+      "faq": [
+        [
+          "What does AQL 2.5 mean in practice?",
+          "AQL 2.5 means the inspection accepts a shipment if the defect rate for major defects stays at or below 2.5 per hundred units sampled. It does not mean you may receive a 2.5% defect rate; the actual number of defective units allowed depends on lot size and the sampling plan table. Critical defects are usually set to 0."
+        ],
+        [
+          "Who pays for a third-party inspection?",
+          "Usually the buyer, typically USD 200-400 per man-day for a drinkware factory inspection, sometimes split 50/50 if the agreement says so. It is standard to write it into the purchase order as a cost line so it is not negotiated late."
+        ],
+        [
+          "What if goods fail an AQL 2.5 inspection?",
+          "Do not refuse the container outright. Require the factory to sort or rework, then re-inspect, or agree a written concession for the defective units with a price deduction. Always have the re-inspection and the agreement in writing before the goods leave the factory."
+        ]
+      ],
+      "opening": "AQL 2.5 is written into almost every drinkware purchase order, and most buyers sign it without knowing what it permits. This is what the number actually means, and the exact wording that makes it enforceable."
+    },
+    {
+      "slug": "how-to-verify-a-china-supplier-is-real",
+      "title": "How to Verify a Chinese Supplier Is Real: A 7-Step Due Diligence Checklist",
+      "meta_desc": "Business licence photos are easy to fake. Seven verification steps that actually expose a fake supplier: registry lookup, licence check, export records, video audit, third-party inspection, sample testing and protected payment terms.",
+      "angle": "纠正看营业执照照片就放心的常见错误。给出 7 步可验证流程：中国企业信用信息公示系统查真伪、授权书与法人信息一致、查出口记录、要求视频连线到产线而非展厅、第三方验厂、先打样再批量、不可撤销信用证或 30% 定金尾款见提单副本。",
+      "faq": [
+        [
+          "How do I check if a Chinese company is registered?",
+          "Search the company name in China's National Enterprise Credit Information Publicity System at gsxt.gov.cn. It shows registration status, registered capital, legal representative and any penalties or abnormal-operations records. Cross-check that the business scope covers manufacture or trading of your product category."
+        ],
+        [
+          "Is a business licence photo proof of anything?",
+          "No. Licence images are easy to obtain or forge, and a real licence can belong to a company that does not manufacture your product at all. A licence only proves the entity exists; it does not prove it has the capacity, the machinery or the export history you need."
+        ],
+        [
+          "What is the safest payment method for a first order?",
+          "For a first order, use an irrevocable letter of credit, or pay a 30% deposit with the balance against a copy of the bill of lading. Avoid full prepayment to an account that does not match the contract entity, and avoid payment methods with no recourse such as Western Union."
+        ]
+      ],
+      "opening": "A business licence photo proves almost nothing. Any company can produce one, and a genuine licence can belong to a factory that never touches your product. Here is a due diligence sequence that actually exposes whether the supplier behind the website is real."
+    },
+    {
+      "slug": "incoterms-fob-exw-ddp-explained-for-importers",
+      "title": "EXW vs FOB vs DDP: Incoterms for Drinkware Imports and Who Bears What",
+      "meta_desc": "EXW, FOB and DDP are not interchangeable; they decide who pays freight, insurance, duty and customs clearance. A practical comparison for importers of drinkware.",
+      "angle": "讲清责任与费用转移点：EXW（工厂交货，买方全包）、FOB（装运港船上）、CIF、DDP（含关税+派送到门）。给实际成本差与常见误区：低报 HS 编码被查验、FOB 下工厂不做出口报关导致退税与单证问题、DDP 下发票合规性。",
+      "faq": [
+        [
+          "What is the difference between FOB and EXW?",
+          "With EXW the seller hands the goods to you at the factory door, so you arrange and pay for everything including the export declaration. With FOB the seller delivers the goods loaded on the vessel at the port of shipment, and risk plus freight to that point sit with the seller. Most drinkware buyers use FOB Ningbo or FOB Shanghai."
+        ],
+        [
+          "Is DDP always cheaper for a buyer?",
+          "No. DDP looks simple because everything is bundled into one price, but freight and duty are hidden in the unit price and you cannot see the breakdown. If your duty rate is high, DDP often costs more than FOB plus your own forwarder. Ask for FOB, duty and freight separately so you can compare."
+        ],
+        [
+          "What happens if the factory quotes FOB but the HS code is wrong?",
+          "Customs may hold the container for inspection, demand back duty and issue a penalty if the declared value or code does not match the actual goods. This is common with drinkware because vacuum and non-vacuum bottles can fall under different tariff lines. Confirm the code with your broker before shipping."
+        ]
+      ],
+      "opening": "EXW, FOB and DDP are not interchangeable. They decide who pays for inland trucking, ocean freight, insurance, duty and customs clearance, and who carries the risk at each step. Choosing the wrong one can quietly add thousands to a single container."
+    },
+    {
+      "slug": "why-your-quoted-price-is-not-what-you-pay",
+      "title": "Why Your Quoted Price Is Not What You Pay: Hidden Costs in China Sourcing",
+      "meta_desc": "Unit price is rarely the real cost. Tooling, samples, inspection, packaging, inland freight, duty and demurrage can add 15 to 40 percent. Here is every cost line to demand before you compare quotes.",
+      "angle": "把成本拆全：模具费/开版费、样品费是否退还、彩盒彩箱、喷印/激光/移印工费、第三方验货费、内陆拖车、报关单证费、海运费、关税、清关代理、堆场滞留费。给要求报全成本清单的话术，并解释低报价陷阱（201 冒充 304、减薄壁厚、更换内胆材质）。",
+      "faq": [
+        [
+          "What costs are buyers usually surprised by?",
+          "The most common surprises are tooling or mould fees assumed to be free, sample charges, custom packaging and printing, third-party inspection fees, inland trucking from factory to port, and demurrage if the container sits too long. Together these can add 15-40% to the unit price you negotiated."
+        ],
+        [
+          "Is a much lower quote always suspicious?",
+          "Not always; volume and design simplicity explain a lot. But an outlier 30-40% below every other quote deserves questions, not excitement. Ask for the steel grade certificate, wall thickness, lid specification and unit weight. The most common trick is quoting 201 stainless instead of 304, or a thinner wall than the sample."
+        ],
+        [
+          "Can packaging and printing be included in the unit price?",
+          "It depends on the factory. Some include a standard white box at no cost, others charge per unit. Always ask for the price broken into product, printing, packaging and tooling so you are comparing like with like across suppliers."
+        ]
+      ],
+      "opening": "The unit price is the easiest number to compare and the least useful one. Tooling, samples, packaging, printing, inspection, inland trucking, duty and demurrage all sit outside it, and together they can add 15 to 40 percent to what you thought you negotiated."
+    },
+    {
+      "slug": "fda-lfgb-prop65-compliance-for-us-and-eu",
+      "title": "FDA, LFGB and Prop 65: What Drinkware Compliance Actually Requires",
+      "meta_desc": "Food-contact compliance is not one certificate but a set of tests. What FDA, LFGB, REACH and California Prop 65 mean for drinkware, and how to avoid buying stock test reports.",
+      "angle": "讲清不同市场不同要求：美国 FDA/LFGB 不等于食品级证书，加州 Prop 65 关注铅镉，欧盟 REACH SVHC 声明；检测报告必须针对你自己产品型号的第三方报告，不能通用。给索要报告的清单要素：报告编号、型号、日期、检测项目、实验室资质。",
+      "faq": [
+        [
+          "Is there such a thing as a universal food grade certificate?",
+          "There is no single global certificate, and generic food grade certificates are usually meaningless. What matters is third-party test reports issued against your specific product model, dated recently, from an accredited laboratory, covering the items your market requires."
+        ],
+        [
+          "What is California Prop 65 and does it apply to water bottles?",
+          "It is a California law requiring warnings for exposure to listed chemicals including lead and cadmium. For drinkware, the practical requirement is that lead and cadmium migration from paint, coating and decorative parts stays within limits. Buyers selling into California should request a Prop 65 report on the finished product."
+        ],
+        [
+          "Can I use a supplier's existing test reports from another factory?",
+          "No. A report is valid only for the product model, material and colourway it was issued for. Reusing a report for a different batch, colour or model is a compliance risk, and retailers or customs may ask for the report to match your actual product."
+        ]
+      ],
+      "opening": "There is no universal food grade certificate, and the phrase on a supplier's PDF often means nothing. What actually matters is a set of dated third-party test reports covering your specific product and the market you sell into. Here is what to demand."
+    },
+    {
+      "slug": "moq-and-tooling-for-private-label-drinkware",
+      "title": "MOQ and Tooling for Private Label Drinkware: What to Negotiate Before Ordering",
+      "meta_desc": "How MOQ is calculated for drinkware, when tooling is required, how to negotiate a lower first order, and the mould-ownership clause that protects you if you move suppliers.",
+      "angle": "拆解 MOQ 构成：现货开模 500-1000pcs、新开模 3000-5000pcs；模具费是否可摊入单价、模具归谁（关键条款）、改模费用、二次开模与交期。给首次小单谈判策略：先做 logo 印刷不开模、用现有模具、混款拼柜。",
+      "faq": [
+        [
+          "Why is the MOQ higher for custom shapes?",
+          "A custom shape requires new steel moulds or plastic tooling, which can cost from roughly USD 1,500 to USD 3,000 per part, plus a first run producing more units than you need. The factory amortises that cost and raises the minimum. Stock shapes with only your logo printed need no tooling, so their MOQ can be much lower."
+        ],
+        [
+          "Who owns the mould once I have paid for it?",
+          "You should own it, and this must be written into the contract: the mould is paid for by the buyer, listed as buyer property in the factory, physically marked with your name, and you may take it with you if you move production. Without that written clause the factory can retain it and force you to re-order at their price."
+        ],
+        [
+          "Can I mix different designs in one order to hit MOQ?",
+          "Usually yes. Most factories calculate MOQ per design but will often accept a mixed container where the total meets their threshold and each style has a reasonable minimum. Ask explicitly whether the MOQ applies per design or per total order, and get the answer in writing."
+        ]
+      ],
+      "opening": "Minimum order quantity is not a factory decision you have to accept. It is a function of tooling, production scheduling and how badly the factory wants your slot, and all three of those can be negotiated if you know what to ask."
+    },
+    {
+      "slug": "when-to-use-a-china-buying-office-sourcing-agent",
+      "title": "When a China Buying Office Beats a Factory Direct: The Honest Comparison",
+      "meta_desc": "For multi-category buying, a China buying office can consolidate suppliers, inspect and ship for 3-5 percent. Here is when that is worth it and when factory direct is cheaper.",
+      "angle": "诚实对比不推销买办：什么情况划算（多品类、小批量、无中国团队、要一站式）；什么情况工厂直采更便宜（单品类、大货、模具归你、开模沟通）。给成本模型：3-5% 佣金 vs 自己承担内陆运输+验货+拼柜管理的时间成本。",
+      "faq": [
+        [
+          "When is a sourcing agent cheaper than ordering from a factory direct?",
+          "A buying office pays off when you buy across several categories, when quantities per factory are small, when you have no one in China to inspect and consolidate, or when you cannot commit to a large single-factory order. If you are ordering one product in volume from one plant, direct is almost always cheaper."
+        ],
+        [
+          "What does a buying office actually do that I cannot do myself?",
+          "Matching your specification to qualified suppliers, automating RFQs, comparing quotes side by side, screening compliance and landed cost, consolidating multiple suppliers into one container, running AQL 2.5 inspection, arranging private-label packaging and booking freight to your port. The value is coordination, not a secret source of cheaper products."
+        ],
+        [
+          "How transparent should the commission be?",
+          "A buying office should state the commission up front, typically 3-5% of order value, and show you the factory's actual invoice so you can see the markup. If they refuse to disclose the factory or the underlying invoice, you cannot verify whether you are paying a fair price."
+        ]
+      ],
+      "opening": "Sometimes a sourcing agent is the cheapest way to buy and sometimes it is an expensive way to do what a factory would have done for free. The difference comes down to whether you are buying one product in volume or several categories in small quantities."
+    },
+    {
+      "slug": "container-consolidation-multi-supplier-shipping",
+      "title": "Container Consolidation: How to Ship from Multiple Chinese Factories in One Container",
+      "meta_desc": "Buying from five factories does not require five containers. How consolidation works for multi-supplier orders, what it costs, and how to avoid damage and customs trouble.",
+      "angle": "讲清拼柜的价值与坑：单品类小批量分散采购的运输成本占比；拼柜流程（各厂送货到集货仓→统一报关→统一装柜→目的港分批）；风险（货值混装、破损责任不清、申报品名不一致被查验）。给适合拼柜的品类特征与非食品/易碎品注意点。",
+      "faq": [
+        [
+          "What is container consolidation in China sourcing?",
+          "It is combining goods from several factories or suppliers into one container so you pay for one shipment instead of several. A buying office or consolidator receives each supplier's goods at their warehouse, handles one export declaration, and ships the whole container to your destination."
+        ],
+        [
+          "What are the risks of consolidating goods from different factories?",
+          "Damage attribution is harder if something breaks, liability between the consolidator and each factory is unclear, and mixing different product categories under one declaration can attract a customs inspection. Declare each item accurately even when consolidated, and keep separate photographs and packing lists per supplier."
+        ],
+        [
+          "When is consolidation not worth it?",
+          "It is not worth it when your total volume already fills a container from one factory, when every item is fragile and needs careful separation, or when the consolidator charges a fee that exceeds the freight you saved. Ask for the delivered cost comparison, not just the freight rate."
+        ]
+      ],
+      "opening": "Ordering from five factories does not require five containers and five freight invoices. It also does not automatically work. Consolidation solves a real cost problem when the goods are handled carefully and declared honestly, and creates real problems when they are not."
+    },
+    {
+      "slug": "quality-claims-and-refund-negotiation",
+      "title": "Goods Failed Inspection: How to Negotiate Refunds or Replacement With a China Supplier",
+      "meta_desc": "A container arrived with leaking lids and dents. How to document the problem, present a claim, and negotiate a refund, replacement or credit a supplier will honour.",
+      "angle": "给索赔实操路径：到货开箱拍照录像+抽样记录+第三方公证检验、合同条款主张、谈判阶梯（返工/挑选/补货/折让/退款）、避免包装磨损不予退换这类条款陷阱（提醒在合同里排除该免责）。",
+      "faq": [
+        [
+          "What evidence do I need before raising a quality claim?",
+          "Photographs and video of the opened cartons, sample units showing the defect, retained samples from inspection, carton counts, and ideally a report from an independent inspection company. Evidence collected at the port before the container is released is far stronger than descriptions sent after the fact."
+        ],
+        [
+          "Can a supplier refuse a claim because packaging was damaged?",
+          "Sometimes, because many contracts exclude claims for surface damage caused by transport or by the absence of original packaging. This is why you should narrow such clauses at contract stage: require that functional defects such as leakage, failure to retain heat, or missing parts are always covered regardless of packaging condition."
+        ],
+        [
+          "What outcomes can I realistically negotiate?",
+          "Common outcomes are sorting or rework before you accept, replacement units shipped with the next order, a price concession on affected units, store credit, or a partial refund. A full refund on delivered goods is hardest to obtain. Choose your ask based on whether you still want the product."
+        ]
+      ],
+      "opening": "The container arrived, the lids leak and you are thousands of kilometres from the factory. What happens next depends almost entirely on the evidence you collected before opening the door and the clauses you negotiated before the goods shipped."
+    },
+    {
+      "slug": "patent-safe-oem-designs-for-branded-drinkware",
+      "title": "Stanley and Owala Lookalikes: How to Get a Similar Look Without Infringing Patents",
+      "meta_desc": "Copying the shape of a bestselling bottle can get your shipment seized. How to brief a factory on a patent-safe OEM design that still looks premium.",
+      "angle": "解释设计专利与实用专利的区别，说明为什么改一点仍可能侵权（整体视觉印象 test）；给替代设计方向（比例、盖型、把手、纹理、颜色分布）；要求工厂提供 FTO 声明；提醒在售产品也可能已被注册。",
+      "faq": [
+        [
+          "Can I sell a bottle that looks like a Stanley or Owala?",
+          "Not if the design copies protected features. Even a simplified version can infringe if the overall visual impression is substantially similar, and a cheap-looking clone damages your brand as well as exposing you legally. The safe route is to brief the factory on the look you want while explicitly avoiding the protected features."
+        ],
+        [
+          "What does a patent-safe OEM design mean in practice?",
+          "It means the factory designs around the patented features rather than copying them: different proportions, different lid structure, different handle geometry, different surface texture or a distinct silhouette. A capable factory will produce something that reads as premium in your market without replicating a competitor's registered design."
+        ],
+        [
+          "Should I ask the factory for a Freedom to Operate statement?",
+          "Yes, and get it in writing before tooling. A factory that has genuinely designed around the patents will confirm it confidently. If they refuse or say it is unnecessary, that is a signal to choose another supplier rather than proceed."
+        ]
+      ],
+      "opening": "The bestselling bottle on the market is protected, and the shape you liked is probably covered by a design or utility patent. Copying it can get your shipment seized or your brand sued. The alternative is not to abandon the look, but to brief the factory differently."
+    },
+    {
+      "slug": "first-time-import-order-timeline",
+      "title": "Your First China Import Order: A Realistic Timeline From Inquiry to Delivery",
+      "meta_desc": "How long does a private label drinkware order actually take? A week-by-week timeline covering sampling, production, inspection, shipping and customs clearance.",
+      "angle": "给真实时间账：规格确认 3-5 天、打样 7-15 天（含模具）、确认样品+产前样 5-7 天、生产 20-35 天、验货 2-3 天、订舱装柜 3-5 天、海运 25-45 天、清关 3-10 天。指出旺季需加 2-4 周，以及提前多少个月备货最稳。",
+      "faq": [
+        [
+          "How long does a private label water bottle order take end to end?",
+          "Realistically 10 to 16 weeks. Sampling and any tooling take one to three weeks, production 20 to 35 days, inspection two to three days, and ocean transit 25 to 45 days depending on origin and destination. Air freight cuts transit to days but is only sensible for samples and urgent top-ups."
+        ],
+        [
+          "When should I place an order for peak season?",
+          "For Christmas and Black Friday retail, place your production order at least three to four months before you need goods in your warehouse. Peak shipping season adds congestion and higher freight rates in the second half of the year, so late orders often pay more and arrive later than planned."
+        ],
+        [
+          "What is the difference between a pre-production sample and a bulk sample?",
+          "A pre-production sample is made on the production line after tooling is finished but before the full run, so you can approve the real thing. A bulk sample is taken from finished goods after production. Approving the pre-production sample is what protects you; it is the last point where changes are still free."
+        ]
+      ],
+      "opening": "Most first-time importers underestimate the total elapsed time by roughly half. The production itself is rarely the slowest part, and the part buyers forget is the one that sits on the water for a month while their launch date arrives anyway."
+    },
+    {
+      "slug": "how-to-read-a-factory-quotation",
+      "title": "How to Read a China Factory Quotation: Line Items That Reveal Everything",
+      "meta_desc": "Quotations look comparable but rarely are. The specific line items to check so you can compare quotes from different factories on equal terms.",
+      "angle": "拆解报价单必看项：材质牌号（304/201）与壁厚、容量公差、单重(g)、盖型与配件、彩盒/白盒、印刷工费、MOQ、样品费与退还、模具费与归属、交期、付款条件、有效期、是否含出口包装。指出单价低但配置不同的陷阱（盖子降级、内胆换 201、少了硅胶圈）。",
+      "faq": [
+        [
+          "How do I compare quotations from different factories fairly?",
+          "Make each factory quote the same specification line by line: steel grade, wall thickness, capacity and tolerance, unit weight, lid type, included packaging, decoration method, MOQ, tooling fee, sample policy, production time and payment terms. If one quotation omits a line it is not comparable, and the gap is usually hidden in that missing line."
+        ],
+        [
+          "What does unit weight tell me about quality?",
+          "Unit weight is a fast sanity check. A thinner wall or lower-grade interior shows up as a lighter unit than a comparable product. If two factories quote the same specification and one is noticeably lighter, ask which steel and which wall thickness they used before treating the price gap as a bargain."
+        ],
+        [
+          "Why is a quotation only valid for a few days?",
+          "Because quotations depend on material prices, currency exchange and labour costs at the time they were issued. A supplier who holds a price for months is absorbing risk. Ask how long the quote is valid and have the price reconfirmed in the contract rather than relying on an old email."
+        ]
+      ],
+      "opening": "Two quotations can look comparable and contain entirely different products. One includes a colour box and the other does not, one specifies 304 and the other says stainless steel. This is how to read a quotation line by line so you can actually compare suppliers."
+    },
+    {
+      "slug": "custom-branding-printing-methods-for-drinkware",
+      "title": "Logo Branding Methods for Drinkware: Laser, Silk Screen, UV and Pad Printing Compared",
+      "meta_desc": "Laser engraving, silk screen, UV printing and pad printing each suit different surfaces and budgets. Durability, MOQ and cost per unit compared.",
+      "angle": "对比四种 logo 工艺：激光（金属/不锈钢，永久，高单价，小单可做）、丝印（成本低，颜色限制）、UV（全彩图案，小批量）、移印（曲面，色数限制）。给按订单量与材质的选型建议，并提醒深色/镜面不锈钢需特殊处理。",
+      "faq": [
+        [
+          "Which branding method is most durable for a stainless steel bottle?",
+          "Laser engraving is the most durable because it marks the steel itself rather than adding a layer on top, so it cannot scratch or peel off. Screen printing and UV printing sit on the surface and can wear with abrasion, though both are acceptable for moderate use if the coating is cured properly."
+        ],
+        [
+          "Can I print a full-colour photo design on a tumbler?",
+          "UV printing handles full-colour artwork and even photographs, and it works at small quantities without screen setup cost. Screen printing is cheaper above roughly one thousand units but is limited by the number of colours and requires a separate screen per colour. Pad printing suits curved surfaces with few colours."
+        ],
+        [
+          "Do dark or mirror-finish surfaces need special printing treatment?",
+          "Yes. On mirror or dark surfaces a print can look patchy because it is translucent, so factories often apply a base coat first, which adds cost and slightly changes the colour. Ask for a printed sample on the exact colourway you intend to order, not a sample of a different colour."
+        ]
+      ],
+      "opening": "The logo is the part buyers agonise over most and understand least. Laser, screen printing, UV and pad printing differ in durability, colour range and cost per unit, and the right choice depends on your material, your artwork and your order quantity."
+    },
+    {
+      "slug": "buyer-guide-stainless-steel-grade-304-vs-201",
+      "title": "304 vs 201 Stainless Steel for Drinkware: What Changes and What It Costs",
+      "meta_desc": "The grade difference that quietly affects safety, corrosion resistance and price. When 304 is required, when 201 is acceptable, and how to verify which you received.",
+      "angle": "讲清成分差异（304 含镍约 8%、201 镍低）、耐腐蚀与析出风险、适用场景（酸性饮品不建议 201）、价格差；给验证方法：要求材质报告、磁铁测试的局限（316/430 也可吸磁）。重点：合同写明 304 内外胆，验收抽查。",
+      "faq": [
+        [
+          "Is 201 stainless steel unsafe for water bottles?",
+          "It is not automatically unsafe, but it has lower corrosion resistance and is a poor choice for acidic drinks such as juice or tea over long storage. For drinking water and general use it is common, but 304 is the safer baseline and 316 is the premium option. Specify the grade in the contract rather than assuming it."
+        ],
+        [
+          "Can I test stainless steel grade with a magnet?",
+          "Only roughly. A magnet distinguishes magnetic 201 and 430 grades from non-magnetic austenitic 304 and 316, so it can rule 201 in or out. It cannot confirm 304 specifically, and it cannot detect a thin 304 shell over a 201 body. For certainty you need a material certificate or a laboratory XRF test."
+        ],
+        [
+          "How do I stop a supplier substituting 201 for 304?",
+          "Put the grade into the contract and the purchase order as an explicit requirement, request a material test report for the production batch, and spot-check unit weight against the approved sample, since 201 is lighter for the same dimensions. Rejection rights should be written into the quality clause of the contract."
+        ]
+      ],
+      "opening": "The grade of stainless steel is the quietest specification on a drinkware order and one of the most expensive to get wrong. 201 and 304 look identical, weigh differently, corrode differently and cost differently, and the substitution is easy because nobody checks."
+    },
+    {
+      "slug": "how-to-negotiate-moq-with-chinese-factories",
+      "title": "How to Negotiate a Lower MOQ With a Chinese Factory Without Losing the Price",
+      "meta_desc": "MOQ is often negotiable, especially for first orders and mixed designs. Practical levers for reducing it and what to trade in exchange.",
+      "angle": "给可操作筹码组合：提高单价换低 MOQ、接受现货模具不加 logo、用混款拼单、接受更长交期换更低单价、分批走货先小单试单、放弃独家。说明哪些不该让（质量、交期、付款条件）。提醒 MOQ 必须写进合同，不能只是口头承诺。",
+      "faq": [
+        [
+          "Is MOQ really negotiable?",
+          "Often yes. Factories price in a minimum because they must set up a production run, and they will sometimes accept a smaller run at a higher unit price, especially if you are a credible repeat buyer or the design is simple and uses stock tooling."
+        ],
+        [
+          "What can I offer in exchange for a lower MOQ?",
+          "Useful levers include accepting a longer lead time, paying a slightly higher unit price, using stock moulds with a simple print instead of full custom tooling, combining several designs into one mixed container, or committing to a repeat order schedule. What you should not trade are quality, inspection rights or payment protection."
+        ],
+        [
+          "Why do factories quote a high MOQ and then accept less?",
+          "The initial MOQ is often the target for efficient scheduling rather than a hard technical limit. If the gap between your quantity and their minimum is small, they may accept it to fill a production slot that would otherwise run partly empty. Ask directly what quantity they would actually accept on one line."
+        ]
+      ],
+      "opening": "Factories quote a minimum because it makes production scheduling efficient, not because it is a physical limit. If you know what levers you can pull and what you must not trade away, that number moves more often than buyers expect."
+    },
+    {
+      "slug": "food-grade-testing-what-labs-actually-check",
+      "title": "What Food Contact Testing Actually Checks: Migration Tests Explained Simply",
+      "meta_desc": "Lead, BPA, phthalates, migration: what these tests mean, how long they take, and why two factories can give you reports that differ wildly.",
+      "angle": "科普化解释检测项目：总迁移、总萃取物、specific migration（铅镉镍、邻苯二甲酸酯、双酚A）、迁移量单位。说明抽检比例、测试周期（15-30 天）、报告有效性（对应型号/颜色/批次），以及报告不是越多越好，关键是覆盖销售国要求。",
+      "faq": [
+        [
+          "What does a food contact migration test actually measure?",
+          "It measures how much of a substance can migrate from the material into food or a food simulant, reported in mg per square decimetre or mg per kilogram. Limits exist for metals such as lead, cadmium and nickel, and for plastics such as BPA and phthalates, and they differ by market."
+        ],
+        [
+          "How long does laboratory testing take?",
+          "Typically two to four weeks depending on the number of test items and the queue at the laboratory. If you need certificates for retail or customs, build that time into your schedule before the goods are ready rather than discovering the delay when the container is already at sea."
+        ],
+        [
+          "Does a report cover all colours and models?",
+          "No. A report is issued for the specific model, material and colourway tested. A red tumbler and a blue tumbler with the same pigment on the body but different printing can have different results. Ask whether your colourways are covered, or test the most representative one and declare the others on the same basis."
+        ]
+      ],
+      "opening": "Lead, BPA, phthalates, migration: these are the words on a report you are asked to trust without understanding. Here is what each test measures, how long it takes, and why two competent factories can produce reports that look completely different."
+    },
+    {
+      "slug": "private-label-packaging-for-drinkware-brands",
+      "title": "Private Label Packaging for Drinkware: Colour Boxes, Labels and Branding Compliance",
+      "meta_desc": "Private label means more than putting your logo on the bottle. Colour box design, labelling requirements and the mistakes that lead to rejected retail stock.",
+      "angle": "讲包装维度：彩盒设计+印刷（CMYK/Pantone）、说明书与多语言标签、条码/EAN、标签合规（成分、产地、容量标注、回收标识、欧盟标签语言）、跌落测试。强调文案合规（不要写 FDA approved 这类违规表述）。",
+      "faq": [
+        [
+          "What labelling is required on a private label drinkware product?",
+          "At minimum: product name, capacity, material, country of origin, manufacturer or importer name and address, and a barcode. For the EU, labels must be in the local language and include food-contact statements; for the US, claims must be accurate and Prop 65 warnings included where applicable."
+        ],
+        [
+          "Is it illegal to write FDA approved on my packaging?",
+          "Yes, it is misleading and risky. The FDA does not approve individual products, so this claim can be treated as false advertising and may trigger regulatory action. Use precise wording such as Food grade materials, tested to applicable US food contact requirements, based on your actual test reports."
+        ],
+        [
+          "Can I supply my own artwork for the colour box?",
+          "Yes, most factories work from customer-supplied print-ready files with bleed and CMYK or Pantone specification. Supplying your own artwork usually costs less than having the factory design it, but you remain responsible for print quality and for any regulatory text on the box. Always approve a physical pre-production box before the run."
+        ]
+      ],
+      "opening": "Private label is not a logo printed on a bottle. It is a colour box, a barcode, a set of label statements in the right language and a claim that will not get your retailer or your customs broker to reject the stock."
+    },
+    {
+      "slug": "shipping-from-china-port-of-loading-explained",
+      "title": "Ports of Loading for Drinkware from China: Ningbo, Shanghai and Yantian Compared",
+      "meta_desc": "The port of loading affects freight cost and transit time more than buyers expect. Practical comparison of Ningbo, Shanghai and Yantian for European and US destinations.",
+      "angle": "对比三大港口：宁波（近永康/金华，内陆拖运短）、上海（班期最密、驳船多）、盐田（华南出口）。给对欧洲（鹿特丹/汉堡）与美国（洛杉矶/纽约）的航线差异与典型时效，并说明工厂报的 FOB 港要与货代确认一致，避免港差费用。",
+      "faq": [
+        [
+          "Which port should a factory load at when I am near Ningbo?",
+          "Ningbo is usually most practical because it is closest to Yongkang and Jinhua, so inland trucking is shorter and cheaper. Shanghai offers more frequent sailings and better consolidation options. Confirm the exact port your forwarder is booking, because the difference in inland cost can exceed the difference in ocean freight."
+        ],
+        [
+          "What is the realistic transit time to Europe from Ningbo?",
+          "Typically 30 to 40 days to Rotterdam or Hamburg, depending on transshipment and sailing schedule. Direct services are limited, so many shipments go via Singapore or a transshipment hub, which adds days. If your delivery date is fixed, check the schedule before you commit to the production date."
+        ],
+        [
+          "What happens if the goods arrive at a different port than quoted?",
+          "It is common for the factory's quotation to name a nearby port and the forwarder to book a different one for cost reasons. The extra inland haulage then appears as a surprise charge. Ask for the FOB port to be named explicitly in the contract and confirm it matches your forwarder's booking."
+        ]
+      ],
+      "opening": "The port of loading changes your freight cost more than most buyers expect, because the distance from the factory to that port is part of your bill. For drinkware made in Yongkang, the difference between Ningbo and Shanghai is short trucking, not ocean freight."
+    },
+    {
+      "slug": "how-to-read-a-sample-approval",
+      "title": "How to Approve a Sample Properly So Production Cannot Go Wrong",
+      "meta_desc": "The sample you approve defines the goods you receive. A structured checklist covering appearance, function, insulation, leaks, finish and packaging.",
+      "angle": "给样品验收清单：外观（色差、喷印位置、logo 清晰度）、功能（密封性、漏水、盖子开合、吸管）、保温（实测）、手感（壁厚重量）、包装（彩盒跌落）。强调书面确认样（golden sample）做法：留样双方各一份并签字，写入合同作为验收基准。",
+      "faq": [
+        [
+          "What is a golden sample and why does it matter?",
+          "It is the physically approved sample that production is measured against. Both you and the factory keep a sealed copy, and the contract states that mass production must match it. Without it, disputes about colour shade, lid stiffness or print quality become opinions rather than comparisons."
+        ],
+        [
+          "How should I test insulation before approving?",
+          "Fill the bottle with boiling water and check after six and twelve hours, then repeat with ice water and check the reverse. Record the actual readings and compare them against the factory's stated retention time. If retention is the reason you are buying, do not approve on appearance alone."
+        ],
+        [
+          "What should I check on packaging before approving?",
+          "Print sharpness and colour accuracy against your artwork, barcode scannability, box strength by pressing the sides and lifting by the strap, and the fit of the product inside the box so it does not move in transit. A box that flexes means goods will arrive with dents."
+        ]
+      ],
+      "opening": "The sample you approve defines the goods you receive, and the moment you approve it without a written record is the moment you lose the ability to argue about colour shade, lid stiffness or print quality. Approving a sample properly takes twenty minutes and prevents a dispute that takes months."
+    },
+    {
+      "slug": "seasonal-production-planning-for-drinkware",
+      "title": "Planning Drinkware Production Around Peak Season: A Month by Month Guide",
+      "meta_desc": "When to place orders for summer outdoor, back-to-school and Christmas retail seasons, and how factory capacity affects your lead time.",
+      "angle": "按零售季倒推：夏季户外（4-5月到仓，备货1-3月）、返校季（8-9月）、圣诞/黑五（9-11月生产，10-12月到仓）。指出7-9月是中国工厂旺季（排产紧、模具排队、成本上升），建议淡季（2-4月）谈价格与开模。给倒推表逻辑。",
+      "faq": [
+        [
+          "When is the best time to place a drinkware order for summer?",
+          "To have stock in your warehouse before the summer season starts selling, place the production order three to four months earlier. For a European buyer targeting June sales, that means completing production in January or February and shipping by sea so the goods land before the season starts."
+        ],
+        [
+          "Why do factories get slower in the second half of the year?",
+          "Orders concentrate before Christmas and the back-to-school period, so factories run near capacity, tooling queues lengthen, and some raise prices to fill limited slots. Booking early locks your slot and your price, whereas booking late means competing for the same capacity as everyone else."
+        ],
+        [
+          "Is it cheaper to negotiate in low season?",
+          "Yes. February to April is typically the quiet period, and factories have more incentive on price because they need to keep lines running. Tooling quotes and unit prices negotiated in low season are usually easier than the same request in peak season."
+        ]
+      ],
+      "opening": "Factories are not equally available in every month of the year, and the price you pay in November is not the price you would have paid in February. Planning backwards from your retail calendar is the single cheapest thing a drinkware buyer can do."
+    },
+    {
+      "slug": "how-to-handle-a-supplier-that-delays-production",
+      "title": "When Your Supplier Delays: How to Protect Your Launch Date and Your Deposit",
+      "meta_desc": "Production slipped, the container missed its sailing, and peak season is coming. Practical steps to recover the schedule and protect your deposit.",
+      "angle": "给延期应对路径：第一时间要书面新排期、要求产能证明（现场视频/空机）、分批出运（先出已完成部分）、改港/改船期、要求空运补差协商、押金条款主张。谈判原则：不要立刻威胁换厂，先拿新排期和补救方案；同时准备 Plan B（第二供应商/现货替代）。",
+      "faq": [
+        [
+          "What should I do first when a supplier delays production?",
+          "Get the new schedule in writing with specific dates, and ask what changed: material shortage, a machine breakdown, a full production queue or a loss of an order they were prioritising. A supplier who explains the cause and offers a recovery plan is more reliable than one who only promises a new date without detail."
+        ],
+        [
+          "Can I ask for partial shipment to save my launch date?",
+          "Often yes. If part of your order is finished, request that the completed portion ships first, usually at your cost for the extra handling. It is a reasonable ask because it protects both parties, and many factories prefer it to losing the whole shipment slot."
+        ],
+        [
+          "How do I protect my deposit if production never happens?",
+          "This is what the deposit clause is for. Specify in the contract that the deposit is refundable if the supplier fails to deliver by an agreed date, and that any refund must be returned within a stated number of days. Without that clause, recovering a deposit from a Chinese supplier can be slow and expensive."
+        ]
+      ],
+      "opening": "The production is late, the sailing was missed, and your peak season has a date on it. What you do in the first twenty-four hours matters more than how angry you are. Getting a written recovery plan is the priority, not an ultimatum."
+    },
+    {
+      "slug": "custom-mould-development-process-for-branded-bottles",
+      "title": "Custom Mould Development: From Drawing to First Shot for Branded Bottles",
+      "meta_desc": "How custom tooling works: 2D drawings, 3D modelling, DFM review, first shot, sample rounds and the approval gate before mass production.",
+      "angle": "讲开模全流程：你提供 2D/3D 图或选现有模→工厂 DFM 评估与改模建议→报价与打样周期→first shot 首件→样品确认（通常 2-3 轮）→签golden sample→量产。提醒确认单点（如真空度、漏水测试）、模具钢材与寿命、修改模具的收费规则。",
+      "faq": [
+        [
+          "How long does custom mould development take for a water bottle?",
+          "Typically four to eight weeks from approved drawing to a sample you are happy with, assuming the design is not highly complex. Steel moulds for vacuum bottles take longer than plastic tooling. Add two to three sample rounds into that estimate, because the first sample is rarely approved as-is."
+        ],
+        [
+          "What should I provide to the factory for tooling?",
+          "At minimum a clear 2D drawing with dimensions and tolerances, the intended capacity and material, and the lid or closure type. A 3D file helps but is not essential, since experienced factories can model from a 2D specification. State the insulation requirement if the bottle is vacuum insulated, because that affects the double-wall geometry."
+        ],
+        [
+          "How many sample rounds should I expect?",
+          "Two to three rounds is normal for a custom design. The first sample reveals proportion and assembly issues, the second usually fixes them, and the third confirms. Be suspicious of a factory that promises a perfect first sample, and be prepared to pay for a pre-production sample on the actual production line before the full run."
+        ]
+      ],
+      "opening": "Custom tooling is where most first-time buyers underestimate both the cost and the calendar. Between your drawing and a sample you are willing to mass produce there are usually two or three rounds of revisions, and each one has to fit inside your launch date."
+    },
+    {
+      "slug": "how-to-compare-two-suppliers-side-by-side",
+      "title": "Comparing Two Factory Quotes Side by Side Without Choosing Wrong",
+      "meta_desc": "A simple scoring method for comparing suppliers on specification compliance, total cost, risk and communication, so the cheapest is not the only variable.",
+      "angle": "给打分表框架：规格符合度（30%）、总成本（25%）、交期与产能（20%）、配合度与响应（15%）、合规与验厂配合（10%）。强调把三样东西并排写：报价拆解表、样品实测数据、书面承诺条款。指出「沟通快的供应商不一定差」，用可验证指标代替感觉。",
+      "faq": [
+        [
+          "How do I choose between two factories with similar prices?",
+          "Score them on written criteria rather than impressions: specification compliance, total delivered cost, confirmed production capacity and lead time, responsiveness on technical questions, and willingness to accept third-party inspection. Then check whether their answers match their quotation. A supplier who answers precisely is usually more reliable than one who is vague but cheap."
+        ],
+        [
+          "Should I choose the lowest bid?",
+          "Only if the specifications are identical and verified. The lowest bid is frequently not the lowest total cost once tooling, inspection, freight and duty are included, and it is sometimes a different specification altogether. Ask both factories to quote the same specification line by line before comparing."
+        ],
+        [
+          "How much does communication style matter?",
+          "It matters more than buyers expect, because every unresolved question becomes an instruction the factory has to guess at. A supplier who answers directly, admits what they cannot do, and puts commitments in writing will produce fewer surprises than one who agrees to everything immediately."
+        ]
+      ],
+      "opening": "Choosing between two factories should not come down to who replied fastest or who quoted lower. It comes down to a small number of written criteria you can actually verify, applied to both suppliers in the same format."
+    },
+    {
+      "slug": "china-supplier-contracts-terms-that-matter",
+      "title": "The Contract Clauses That Matter When Buying Drinkware From China",
+      "meta_desc": "Specification, tolerances, AQL, packaging, IP ownership, delivery dates, payment milestones and defect remedies: the clauses worth arguing over.",
+      "angle": "逐条讲关键条款：规格附件（图纸+golden sample）、数量与容差、交期与延期违约、AQL 与验收标准、包装与唛头、知识产权与模具归属、付款节点、异议期限、争议解决（仲裁地）。指出「合同附件里写清楚」比「邮件里说清楚」更重要，因为附件是可举证的标准。",
+      "faq": [
+        [
+          "What should be attached to the purchase contract?",
+          "At minimum: a specification sheet with dimensions and tolerances, a signed golden sample reference, the artwork or print file for packaging, the packing list format, and the agreed AQL level. Attachments turn opinions into standards, and they are what you can point to when a dispute arises months later."
+        ],
+        [
+          "How should late delivery be handled in the contract?",
+          "State a delivery date with a reasonable tolerance, a notice period for schedule changes, and a remedy such as air freight at the supplier's cost if the delay is theirs. Avoid penalties so severe the supplier will refuse to sign or will start using subcontracted production you cannot inspect."
+        ],
+        [
+          "Which payment milestones are safest?",
+          "Commonly 30% deposit with the balance against a copy of the bill of lading, or payment by irrevocable letter of credit. Avoid full prepayment on a first order, and ensure the receiving bank account belongs to the contracting entity rather than a different company or an individual."
+        ]
+      ],
+      "opening": "Most disputes with overseas suppliers are not about the product. They are about what was written down. These are the clauses worth spending an extra day negotiating before you sign, because each one removes a specific way for the order to go wrong."
+    }
+  ]
+}
