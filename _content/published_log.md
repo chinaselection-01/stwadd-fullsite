@@ -7,3 +7,4 @@
 | slug | 发布日期 |
 |---|---|
 | factory-direct-vs-trading-company-how-to-tell | 2026-10-17 |
+| aql-2-5-inspection-explained-for-novice-buyers | 2026-10-17 |

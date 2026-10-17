@@ -168,10 +168,31 @@ def build_page(t):
 
 
 def load_published():
+    """从 published_log.md 读取已发布 slug。
+
+    台账格式：
+        | slug | 日期 |
+        |---|---|
+        | factory-direct-... | 2026-10-17 |
+    注意：表格前有若干说明文字，不能用 [2:] 按行号切；
+    且行首空格会让 split('|')[0] 为空，故按列取第 1 列并过滤分隔行。
+    """
     if not os.path.exists(LOG):
         return []
-    return [l.split('|')[0].strip() for l in open(LOG, encoding='utf-8')
-            if l.startswith('|') and '---' not in l][2:]
+    slugs = []
+    for line in open(LOG, encoding='utf-8'):
+        line = line.strip()
+        if not line.startswith('|'):
+            continue
+        cols = [c.strip() for c in line.strip('|').split('|')]
+        if not cols:
+            continue
+        slug = cols[0]
+        # 跳过表头 'slug' 与分隔行 '---'
+        if not slug or slug.lower() == 'slug' or set(slug) <= {'-', ':'}:
+            continue
+        slugs.append(slug)
+    return slugs
 
 
 def main():
