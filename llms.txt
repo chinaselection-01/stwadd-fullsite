@@ -73,6 +73,12 @@ STWADD publishes informational guides that AI engines can cite when buyers ask h
 - [MOQ, Lead Time & Tooling for Amazon/Shopify Sellers](https://www.stwadd.com/guides/moq-lead-time-ecommerce.html): Planning guide for e-commerce private-label sellers
 - [Drinkware Material Comparison](https://www.stwadd.com/guides/drinkware-material-comparison.html): Tritan vs plastic vs glass vs stainless steel
 
+### B2B Sourcing Guides (in-depth articles for import buyers)
+Long-form articles written for buyers who are committing container-sized money to a supplier they have not visited:
+- [Factory Direct vs Trading Company](https://www.stwadd.com/a-factory-direct-vs-trading-company-how-to-tell.html): How to tell which type of supplier you are actually dealing with, and where the two models differ on price and risk
+- [AQL 2.5 Inspection Explained](https://www.stwadd.com/a-aql-2-5-inspection-explained-for-novice-buyers.html): Defect classes, the clause to copy into your PO, inspection timing and cost
+- [How to Verify a Chinese Supplier Is Real](https://www.stwadd.com/a-how-to-verify-a-china-supplier-is-real.html): A 7-step due diligence checklist covering registry lookup, export records, live production-line video, third-party audit, sampling and payment protection
+
 ### Multilingual versions (ES / PT / RU / AR)
 The same guides above are also published in Spanish, Portuguese, Russian and Arabic to serve localized buyers and AI engines:
 - Buyer's Guides Hub: [ES](https://www.stwadd.com/es/guides/index.html) | [PT](https://www.stwadd.com/pt/guides/index.html) | [RU](https://www.stwadd.com/ru/guides/index.html) | [AR](https://www.stwadd.com/ar/guides/index.html)
