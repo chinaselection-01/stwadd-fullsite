@@ -1,0 +1,93 @@
+{
+  "note": "STWADD 公开记录台账（媒体报道 / 第三方报道 / 公司公告）。新增条目时必须同步四处：① /press.html 的 coverage records 与 newsroom；② /llms.txt 的 'Press, Media & Newsroom' 段；③ /sitemap.xml；④ 对应详情页。type 只能是 editorial_media / creator_video / company_announcement 三种之一。**严禁把 creator_video 写成 editorial_media，也严禁编造不存在的媒体报道**。每条 coverage 必须写明 published_by（谁发布的）。",
+  "last_updated": "2026-10-21",
+  "tally": {
+    "editorial_media": 0,
+    "creator_video": 1,
+    "company_announcement": 6,
+    "fabricated_testimonials": 0
+  },
+  "coverage": [
+    {
+      "id": "cov-2026-10-21-dubai-tiktok",
+      "type": "creator_video",
+      "label": "Creator & video coverage",
+      "title": "Interview at a Dubai trade show, filmed by MO-ECOM (Mohamed Halusi)",
+      "date": "2026-10-21",
+      "setting": "A trade show in Dubai, UAE — STWADD exhibiting at its own booth",
+      "filmed_by": {
+        "person": "Mohamed Halusi",
+        "org": "MO-ECOM",
+        "org_url": "https://mo-ecom.com/",
+        "account": "@mo.ecommercee",
+        "account_url": "https://www.tiktok.com/@mo.ecommercee",
+        "followers": 15500,
+        "likes": 283800,
+        "note": "荷兰语电商教练（B2C 做品牌 + B2B 卖给零售连锁），现居迪拜；粉丝数/点赞数为 2026-10 截图值"
+      },
+      "published_by": "STWADD — on its own TikTok account @stwadd.com",
+      "original_url": "https://www.tiktok.com/@stwadd.com/video/7596028293137157397",
+      "embed_iframe": "https://www.tiktok.com/embed/v2/7596028293137157397",
+      "detail_page": "/press-tiktok-interview-dubai-trade-show.html",
+      "labelling_rule": "必须写成：第三方拍摄、由我们自己发布 → 属 creator & video coverage，不是 editorial media coverage。",
+      "what_it_does_not_prove": [
+        "自有工厂所有权（我们是 factory-backed，产能来自永康合作工厂）",
+        "财务实力",
+        "特定批次的合规性",
+        "不是独立验厂/审计"
+      ],
+      "open_facts": [
+        "视频里主播的具体原话（尚未取得 → 页面里不得写任何逐字引语）",
+        "该迪拜展会的名称与年份（未确认 → 页面只写 'a trade show in Dubai'）"
+      ]
+    }
+  ],
+  "announcements": [
+    {
+      "date": "2026-10-21",
+      "title": "STWADD publishes its first third-party on-camera interview",
+      "verify": "/press-tiktok-interview-dubai-trade-show.html"
+    },
+    {
+      "date": "2026-10-19",
+      "title": "China buying office service goes live alongside seven buyer-intent pages",
+      "verify": "/sourcing-agent.html"
+    },
+    {
+      "date": "2026-10",
+      "title": "2026 catalogue reaches 191 models, with the 24 newest listed first",
+      "verify": "/2026-catalog.html"
+    },
+    {
+      "date": "2026-10",
+      "title": "Ready-stock dispatch (3-7 days) and AQL 2.5 inspection become standard stated terms",
+      "verify": "/reviews.html"
+    },
+    {
+      "date": "2024-12-02",
+      "title": "Buyer meeting at LOTTE Mart Indonesia's own office, Jakarta",
+      "verify": "/trade-shows.html"
+    },
+    {
+      "date": "2024-11-27",
+      "title": "Exhibiting at the 8th HOMELIFE Indonesia, JIExpo Kemayoran, Jakarta (27-30 Nov 2024)",
+      "verify": "/trade-shows.html"
+    },
+    {
+      "date": "2017",
+      "title": "STWADD established in Yongkang, Zhejiang",
+      "verify": "gsxt.gov.cn — see /reviews.html verification checklist"
+    }
+  ],
+  "press_contact": {
+    "name": "Bob — Sales Manager",
+    "email": "bob@stwadd.com",
+    "whatsapp": "+86 150 8822 8843",
+    "languages": "English, Chinese"
+  },
+  "media_kit": {
+    "html": "/media-kit.html",
+    "pdf": "/media-kit.pdf",
+    "updated": "2026-10-21"
+  }
+}
