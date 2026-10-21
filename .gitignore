@@ -1,3 +1,7 @@
 .DS_Store
 *.log
 __MACOSX/
+
+# 本地备份与工具目录，不上线
+_content/img-backup/
+.workbuddy/
