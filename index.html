@@ -671,6 +671,12 @@ ul { list-style: none; }
 /* ═══════════════════  Press / on-camera interview  ═══════════════════ */
 .press-section { padding: 76px 0; background: #fff; }
 .press-grid { display: grid; grid-template-columns: minmax(0, 330px) 1fr; gap: 46px; align-items: center; }
+.press-record { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.press-record__type { display: inline-block; background: #e8f1fb; color: #1a4f8a; font-size: .68rem; font-weight: 800; letter-spacing: .7px; text-transform: uppercase; padding: 5px 11px; border-radius: 20px; margin-bottom: 14px; }
+.press-record dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 14px; margin: 0; font-size: .85rem; }
+.press-record dt { color: var(--text-light); font-weight: 600; white-space: nowrap; }
+.press-record dd { margin: 0; color: var(--text); }
+.press-record a { font-weight: 600; }
 .press-video { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 14px 38px rgba(0,0,0,.18); }
 .press-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .press-copy .section-title-sm { margin-bottom: 10px; }
@@ -805,6 +811,23 @@ ul { list-style: none; }
 .video-showcase-section .section-sub { max-width: 720px; margin: 12px auto 0; color: #5b6b78; font-size: 1.02rem; line-height: 1.6; }
 .video-frame { position: relative; max-width: 940px; margin: 0 auto; border-radius: 18px; overflow: hidden; box-shadow: 0 26px 60px rgba(13,42,68,.22); background: #000; border: 1px solid rgba(255,255,255,.6); }
 .video-frame video { display: block; width: 100%; height: auto; }
+.proof-grid { display: grid; grid-template-columns: 1.42fr .58fr; gap: 26px; align-items: start; }
+.proof-col .video-frame { max-width: 100%; box-shadow: 0 22px 52px rgba(13,42,68,.18); }
+.proof-tiktok { position: relative; width: 100%; max-width: 250px; margin: 0 auto; aspect-ratio: 9 / 16; background: #000; border-radius: 16px; overflow: hidden; box-shadow: 0 22px 52px rgba(13,42,68,.2); border: 1px solid rgba(255,255,255,.6); }
+.proof-tiktok iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.proof-note { margin-top: 14px; font-size: .89rem; color: #4a5b68; line-height: 1.62; }
+.proof-note b { color: #12212e; }
+.proof-note a { color: var(--primary); font-weight: 600; }
+.factory-claims { margin-top: 42px; background: #fff; border: 1px solid #e3e9ef; border-radius: 14px; padding: 26px 28px; }
+.factory-claims h3 { margin: 0 0 16px; font-size: 1.1rem; color: #12212e; }
+.fc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.fc-card { background: #f5f8fb; border-radius: 10px; padding: 15px 17px; }
+.fc-card h4 { margin: 0 0 5px; font-size: .93rem; color: #12212e; }
+.fc-card p { margin: 0; font-size: .85rem; color: #5b6b78; line-height: 1.55; }
+.factory-claims-foot { margin: 18px 0 0; font-size: .9rem; color: #4a5b68; line-height: 1.65; }
+.factory-claims-foot b { color: #12212e; }
+@media (max-width: 900px) { .proof-grid { grid-template-columns: 1fr; } .fc-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .fc-grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -901,19 +924,55 @@ ul { list-style: none; }
   </div>
 </div>
 
-<!-- ═══ COMPANY VIDEO SHOWCASE ═══ -->
-<section class="video-showcase-section">
+<!-- ═══ YOUR FACTORY + ON-CAMERA PROOF ═══ -->
+<section class="video-showcase-section" id="factory">
   <div class="container">
     <div class="section-header">
-      <div class="section-title-sm">Company Video</div>
-      <h2 class="section-title-lg">See STWADD Factory In Action</h2>
-      <p class="section-sub">Take a 2-minute tour of our Yongkang drinkware facility — automated production lines, in-house quality control, and the team behind your custom bottles, tumblers &amp; flasks.</p>
+      <div class="section-title-sm">Your factory in Yongkang</div>
+      <h2 class="section-title-lg">The Line That Makes Your Bottles &mdash; And Us Answering On Camera</h2>
+      <p class="section-sub">Two kinds of proof, both checkable. On the left, the production line we run for you in Yongkang. On the right, our team answering buyer's questions at a trade-show booth, filmed by a third-party creator &mdash; not by us, and not a script.</p>
     </div>
-    <div class="video-frame">
-      <video controls preload="metadata" poster="/images/web-intro-poster.jpg" playsinline>
-        <source src="/videos/web-intro.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+
+    <div class="proof-grid">
+      <div class="proof-col">
+        <div class="video-frame">
+          <video controls preload="metadata" poster="/images/web-intro-poster.jpg" playsinline>
+            <source src="/videos/web-intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="proof-note"><b>The line we run for you.</b> Vacuum forming, welding, printing, packing and loading &mdash; the same Yongkang floor our audited partner factories run, with our own QC team stationed there. <a href="/oem-odm.html">See what that means for your order &rarr;</a></p>
+      </div>
+
+      <div class="proof-col">
+        <div class="proof-tiktok">
+          <iframe src="https://www.tiktok.com/embed/v2/7596028293137157397" title="STWADD interviewed on camera at a Dubai trade show by @mo.ecommercee" allow="encrypted-media;" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <p class="proof-note"><b>Filmed by a third party.</b> Mohamed Halusi (MO-ECOM, <b>@mo.ecommercee</b> on TikTok) interviewed our team at a trade show in Dubai &mdash; he runs an e-commerce coaching business, so his students are exactly the buyers who ask us the hard questions. <a href="https://www.tiktok.com/@stwadd.com/video/7596028293137157397" target="_blank" rel="nofollow noopener">Watch it on TikTok &rarr;</a> &nbsp;|&nbsp; <a href="/press-tiktok-interview-dubai-trade-show.html">Full write-up &rarr;</a></p>
+      </div>
+    </div>
+
+    <div class="factory-claims">
+      <h3>What "your factory" actually means with STWADD</h3>
+      <div class="fc-grid">
+        <div class="fc-card">
+          <h4>QC people on the floor</h4>
+          <p>Our own QC staff work the production line daily &mdash; first article, in-process checks and the final AQL 2.5 inspection before the container is sealed.</p>
+        </div>
+        <div class="fc-card">
+          <h4>Your tooling, your call</h4>
+          <p>You pay for the mould, so the mould is yours. We hold it, maintain it, and hand it over with a signed record on request.</p>
+        </div>
+        <div class="fc-card">
+          <h4>Sample room &amp; R&amp;D</h4>
+          <p>Over 50 new designs a year, 2D/3D drawings for approval before tooling, and signed NDAs on your artwork. Samples in 5-10 days.</p>
+        </div>
+        <div class="fc-card">
+          <h4>Production scheduling</h4>
+          <p>We plan the run, chase the line, and take responsibility for what leaves &mdash; 20-35 days for custom production, 3-7 days for ready stock.</p>
+        </div>
+      </div>
+      <p class="factory-claims-foot"><b>We do not own the plant &mdash; we own the process.</b> That is the honest version, and it is the version that survives an audit: we qualify the factory, station our people in it, hold the specification, and sign for the container. <b>You are welcome to visit the factory in Yongkang with us, or to audit the line that makes your order before it ships.</b></p>
     </div>
   </div>
 </section>
@@ -1215,13 +1274,17 @@ ul { list-style: none; }
 <section class="press-section" id="press">
   <div class="container">
     <div class="press-grid">
-      <div class="press-video">
-        <iframe
-          src="https://www.tiktok.com/embed/v2/7596028293137157397"
-          title="STWADD interviewed on camera at a Dubai trade show by @mo.ecommercee"
-          allow="encrypted-media;"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="press-record">
+        <span class="press-record__type">Coverage record 01</span>
+        <dl>
+          <dt>Type</dt><dd>Creator &amp; video coverage &mdash; not editorial media</dd>
+          <dt>Filmed by</dt><dd>Mohamed Halusi, MO-ECOM (<b>@mo.ecommercee</b>, 15.5K followers)</dd>
+          <dt>Published by</dt><dd>STWADD, on its own TikTok account</dd>
+          <dt>Setting</dt><dd>A trade show in Dubai, UAE</dd>
+          <dt>Published</dt><dd>October 2026</dd>
+          <dt>Original</dt><dd><a href="https://www.tiktok.com/@stwadd.com/video/7596028293137157397" target="_blank" rel="nofollow noopener">tiktok.com/@stwadd.com/video/7596028293137157397</a></dd>
+          <dt>Write-up</dt><dd><a href="/press-tiktok-interview-dubai-trade-show.html">Read the full record &rarr;</a></dd>
+        </dl>
       </div>
       <div class="press-copy">
         <div class="section-title-sm">Press &amp; Media &middot; On camera in Dubai</div>
