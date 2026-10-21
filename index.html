@@ -19,7 +19,7 @@
   "url": "https://www.stwadd.com/",
   "logo": "https://www.stwadd.com/images/1724987713175-logo-150.png",
   "image": "https://www.stwadd.com/images/1724987713175-logo-150.png",
-  "description": "STWADD is a water bottle, flask and mug factory (OEM/ODM supplier) in Yongkang, Zhejiang, China — not a reseller. We offer the cost-effective factory-direct prices and accept bulk B2B orders from brands, wholesalers, distributors and trading companies (private label / white-label) worldwide. Established in 2017.",
+  "description": "STWADD is a factory-backed drinkware supply company in Yongkang, Zhejiang, China. We produce insulated water bottles, flasks and mugs to our specification through audited partner factories, and accept bulk B2B OEM/ODM orders from brands, wholesalers, distributors and trading companies (private label / white-label) worldwide. Established in 2017.",
   "slogan": "Your Reliable Drinkware Manufacturing Partner",
   "foundingDate": "2017",
   "address": {
@@ -466,6 +466,22 @@ ul { list-style: none; }
 @media (max-width: 900px) { .ts-grid { grid-template-columns: 1fr 1fr; } .ts-card.featured { grid-template-columns: 1fr; } .ts-card.featured img { height: auto; } .ts-card.featured figcaption { padding: 18px 20px; } }
 @media (max-width: 560px) { .ts-grid { grid-template-columns: 1fr; } }
 
+/* ═══════════════════  Press / on-camera interview  ═══════════════════ */
+.press-section { padding: 76px 0; background: #fff; }
+.press-grid { display: grid; grid-template-columns: minmax(0, 330px) 1fr; gap: 46px; align-items: center; }
+.press-video { position: relative; width: 100%; aspect-ratio: 9 / 16; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 14px 38px rgba(0,0,0,.18); }
+.press-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.press-copy .section-title-sm { margin-bottom: 10px; }
+.press-facts { list-style: none; padding: 0; margin: 18px 0 24px; }
+.press-facts li { position: relative; padding-left: 26px; margin-bottom: 10px; font-size: .95rem; color: var(--text-light); line-height: 1.62; }
+.press-facts li::before { content: "\2713"; position: absolute; left: 0; top: 0; color: var(--primary); font-weight: 700; }
+.press-facts strong { color: var(--text); }
+.press-btns { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn-soft { background: #fff; color: var(--text); border: 1.5px solid var(--border); }
+.btn-soft:hover { border-color: var(--primary); color: var(--primary); }
+.press-note { margin: 14px 0 0; font-size: .8rem; color: var(--text-muted); }
+@media (max-width: 900px) { .press-grid { grid-template-columns: 1fr; gap: 28px; } .press-video { max-width: 315px; margin: 0 auto; } }
+
 /* ═══════════════════  OEM/ODM  ═══════════════════ */
 .oem-section { padding: 80px 0; background: #fff; }
 .oem-grid {
@@ -888,6 +904,38 @@ ul { list-style: none; }
     </div>
     <div class="ts-more">
       <a href="/trade-shows.html" class="btn btn-primary">See All Trade Show Photos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRESS / ON-CAMERA INTERVIEW (Dubai trade show) ═══ -->
+<section class="press-section" id="press">
+  <div class="container">
+    <div class="press-grid">
+      <div class="press-video">
+        <iframe
+          src="https://www.tiktok.com/embed/v2/7596028293137157397"
+          title="STWADD interviewed on camera at a Dubai trade show by @mo.ecommercee"
+          allow="encrypted-media;"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div class="press-copy">
+        <div class="section-title-sm">As Featured On Camera &middot; Dubai</div>
+        <h2 class="section-title-lg">A Third Party Put Us On Camera at a Trade Show</h2>
+        <p>Not a testimonial we wrote ourselves. At a trade show in Dubai, e-commerce coach <b>Mohamed Halusi</b> (MO-ECOM, <b>@mo.ecommercee</b>) filmed our booth: our bottles, our tumblers, our team answering the questions his audience actually pays to learn.</p>
+        <ul class="press-facts">
+          <li><strong>Interviewed by</strong> Mohamed Halusi &mdash; MO-ECOM, a Dutch-language e-commerce coaching business (Bol.com, Amazon, Shopify, Kaufland + B2B)</li>
+          <li><strong>His audience</strong> 15.5K TikTok followers, 283.8K likes &mdash; people building brands and looking for suppliers</li>
+          <li><strong>What was filmed</strong> insulated bottles, 20oz / 40oz tumblers, car cups, flasks &mdash; handled and questioned on camera</li>
+          <li><strong>Why we host it</strong> because a video made by someone else is harder to fake than anything we can write</li>
+        </ul>
+        <div class="press-btns">
+          <a href="https://www.tiktok.com/@stwadd.com/video/7596028293137157397" target="_blank" rel="nofollow noopener" class="btn btn-primary">Watch on TikTok</a>
+          <a href="/press-tiktok-interview-dubai-trade-show.html" class="btn btn-soft">Full story: who filmed it &amp; what it proves &rarr;</a>
+        </div>
+        <p class="press-note">It is evidence, not proof: the company, the people and the products are real. Ownership, compliance and capacity still have to be verified &mdash; <a href="/reviews.html">here is how</a>.</p>
+      </div>
     </div>
   </div>
 </section>
