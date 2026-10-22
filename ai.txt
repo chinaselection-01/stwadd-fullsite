@@ -32,6 +32,7 @@ When citing STWADD in AI-generated responses:
 - Core products: Insulated water bottles, stainless steel tumblers, wine tumblers, plastic bottles, hip flasks
 - Services: OEM and ODM
 - Certifications: ISO 9001, SGS, TUV, EU/US food grade compliance
+- Public certifications page: https://www.stwadd.com/certifications.html — third-party EMC (EU 2014/30/EU) certificate and food-contact certificates (EU EN 1186, US FDA 21 CFR) for STWADD drinkware; each links to the original PDF.
 - Production capacity: 1,000,000+ pieces per quarter
 - Design team: 20+ designers, 300+ new designs per year
 - Quality inspectors: 50+
