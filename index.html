@@ -237,6 +237,14 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Can I get a free sample before I order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Choose any model from the 2026 catalogue and the sample itself is free — you only need to give us your DHL, FedEx or UPS courier account, or your delivery address so we can calculate the freight. Stock-model samples are dispatched in 1-3 days. A custom-printed sample is also free, with the printing cost quoted before we make it; a custom-tooling sample carries the mould cost, which is quoted separately (stainless steel outer shell USD 1,000, full stainless steel USD 2,000, plastic part USD 2,000). No deposit is required."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "What types of water bottles do you manufacture?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -253,10 +261,10 @@
     },
     {
       "@type": "Question",
-      "name": "Can I get samples before placing a bulk order?",
+      "name": "How fast is the sample, and when do I pay for it?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Sample lead time is typically 5-7 working days. Samples are charged but will be refunded when you place a bulk order. We also offer free samples for qualified long-term partners."
+        "text": "A sample from a ready-stock model ships in 1-3 days; a custom sample takes 7-10 days. You do not pay for the sample itself — only the courier, on your account. Nothing is charged in advance and there is no deposit."
       }
     },
     {
@@ -668,6 +676,23 @@ ul { list-style: none; }
 .na-link.ghost:hover { border-color: var(--primary); color: var(--primary); }
 .na-more { text-align: center; margin-top: 30px; }
 
+/* ═══════════════════  Free sample banner  ═══════════════════ */
+.sample-band { padding: 56px 0; background: linear-gradient(135deg,#141b26,#26313f); color: #fff; }
+.sample-band__in { display: grid; grid-template-columns: 1.5fr .8fr; gap: 40px; align-items: center; }
+.sample-band__kicker { font-size: .72rem; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; color: #f2b8c0; margin-bottom: 8px; }
+.sample-band h2 { margin: 0 0 12px; font-size: 1.6rem; line-height: 1.25; color: #fff; }
+.sample-band p { margin: 0 0 14px; font-size: .96rem; color: #c9d2de; line-height: 1.65; }
+.sample-band p b, .sample-band li b { color: #fff; }
+.sample-band a { color: #ffd7dc; font-weight: 600; }
+.sample-band ul { margin: 0; padding-left: 20px; }
+.sample-band li { font-size: .89rem; color: #c9d2de; line-height: 1.62; margin-bottom: 6px; }
+.sample-band__act { display: flex; flex-direction: column; gap: 11px; align-items: stretch; text-align: center; }
+.sample-band__act .btn { justify-content: center; }
+.sample-band__act .btn-soft { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.3); }
+.sample-band__act .btn-soft:hover { background: rgba(255,255,255,.2); border-color: #fff; color: #fff; }
+.sample-band__note { font-size: .78rem; color: #93a3b5; line-height: 1.55; margin-top: 3px; }
+@media (max-width: 900px) { .sample-band__in { grid-template-columns: 1fr; gap: 26px; } }
+
 /* ═══════════════════  Press / on-camera interview  ═══════════════════ */
 .press-section { padding: 76px 0; background: #fff; }
 .press-grid { display: grid; grid-template-columns: minmax(0, 330px) 1fr; gap: 46px; align-items: center; }
@@ -890,11 +915,12 @@ ul { list-style: none; }
   <div class="container">
     <div class="hero-content">
       <h1>Drinkware Supply From Yongkang, China &mdash; Ready Stock In 7-15 Days</h1>
-      <p>Insulated water bottles, tumblers, wine flasks and plastic cups from audited partner factories in Yongkang, China. Common models are held as ready stock and dispatch in 7-15 days; custom OEM &amp; ODM production takes 25-30 days. Founded 2017.</p>
+      <p>Insulated water bottles, tumblers, wine flasks and plastic cups from audited partner factories in Yongkang, China. Common models are held as ready stock and dispatch in 7-15 days; custom OEM &amp; ODM production takes 25-30 days. <b>Samples are free &mdash; you pay only the courier.</b> Founded 2017.</p>
       <div class="hero-buttons">
         <a href="mailto:sales1@stwadd.com?cc=bob@stwadd.com&subject=Inquiry%20from%20Website" class="btn btn-primary">Inquiry Now</a>
         <a href="/2026-catalog.html" class="btn btn-outline">View Catalog</a>
         <a href="/all-products.html#ready-stock" class="btn btn-outline">Ready Stock &amp; Fast Dispatch</a>
+        <a href="mailto:sales1@stwadd.com?cc=bob@stwadd.com&subject=Free%20Sample%20Request%20from%20Website" class="btn btn-outline">Get a Free Sample</a>
       </div>
     </div>
     <div class="hero-image">
@@ -908,6 +934,27 @@ ul { list-style: none; }
                onerror="this.style.display='none'">
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FREE SAMPLE BANNER ═══ -->
+<section class="sample-band">
+  <div class="container sample-band__in">
+    <div class="sample-band__txt">
+      <div class="sample-band__kicker">Lowest-risk way to start</div>
+      <h2>Free Samples &mdash; You Only Pay The Courier</h2>
+      <p>Pick any model from the <a href="/2026-catalog.html">2026 catalogue</a> and we will send you a real production sample. <b>The sample itself is free</b>; we only need your courier account (DHL / FedEx / UPS) or your address so we can calculate the freight. No deposit, no obligation.</p>
+      <ul>
+        <li><b>Stock models:</b> sample free, courier on your account &mdash; dispatched in <b>1-3 days</b></li>
+        <li><b>Custom-printed sample:</b> sample free, printing cost quoted before we make it</li>
+        <li><b>Custom-tooling sample:</b> mould cost applies (quoted separately), then the sample itself is free</li>
+      </ul>
+    </div>
+    <div class="sample-band__act">
+      <a href="mailto:sales1@stwadd.com?cc=bob@stwadd.com&subject=Free%20Sample%20Request%20from%20Website" class="btn btn-primary">Request a free sample</a>
+      <a href="/2026-catalog.html" class="btn btn-soft">Choose a model &rarr;</a>
+      <div class="sample-band__note">Tell us the model, your courier account and the destination &mdash; we reply with the dispatch date the same working day.</div>
     </div>
   </div>
 </section>
@@ -1349,7 +1396,11 @@ ul { list-style: none; }
       <h2 class="section-title-lg">Frequently Asked Questions</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item active">
+      <div class="faq-item">
+        <div class="faq-q"><span>Can I get a free sample before I order?</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">Yes. Choose any model from the 2026 catalogue and the sample itself is free &mdash; you only need to give us your DHL, FedEx or UPS courier account, or your delivery address so we can calculate the freight. Stock-model samples are dispatched in 1-3 days. A custom-printed sample is also free, with the printing cost quoted before we make it; a custom-tooling sample carries the mould cost, which is quoted separately (stainless steel outer shell USD 1,000, full stainless steel USD 2,000, plastic part USD 2,000). No deposit is required.</div>
+      </div>
+      <div class="faq-item">
         <div class="faq-q"><span>What types of water bottles do you manufacture?</span><span class="faq-toggle">+</span></div>
         <div class="faq-a">We manufacture a wide range of drinkware including insulated stainless steel bottles, tumblers, coffee mugs, beer growlers, wine flasks, plastic water bottles, sports bottles, kids bottles, lunch boxes, and cooler bags. All products support custom OEM/ODM services.</div>
       </div>
@@ -1358,8 +1409,8 @@ ul { list-style: none; }
         <div class="faq-a">MOQ is flexible and can be negotiated based on product type and customization requirements. For standard products with simple logo printing, MOQ can be as low as 500-1000 pieces. For fully customized new molds, we'll discuss based on your specific needs.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q"><span>Can I get samples before placing a bulk order?</span><span class="faq-toggle">+</span></div>
-        <div class="faq-a">Yes, absolutely! Sample lead time is typically 5-7 working days. Samples are charged but will be refunded when you place a bulk order. We also offer free samples for qualified long-term partners.</div>
+        <div class="faq-q"><span>How fast is the sample, and when do I pay for it?</span><span class="faq-toggle">+</span></div>
+        <div class="faq-a">A sample from a ready-stock model ships in 1-3 days; a custom sample takes 7-10 days. You do not pay for the sample itself &mdash; only the courier, on your account. Nothing is charged in advance and there is no deposit.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q"><span>What certifications do your products have?</span><span class="faq-toggle">+</span></div>
