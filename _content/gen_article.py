@@ -49,10 +49,9 @@ def build_body(t):
     # NOTE: t['angle'] 是给 AI 的中文写作指令，绝不能出现在英文正文里。
     # 正文开头改用英文引言，由 opening() 按题目生成。
     def faq_html():
-        out = ['<p>These are the questions buyers ask most often on this topic.</p>', '<ul>']
+        out = []
         for q, ans in faq:
-            out.append(f'<li><strong>{q}</strong> {ans}</li>')
-        out.append('</ul>')
+            out.append(f'<p><strong>{q}</strong> {ans}</p>')
         return '\n'.join(out)
 
     return f"""<p>{opening(t)}</p>
@@ -77,7 +76,7 @@ def build_body(t):
 <p>The most frequent sourcing errors are avoidable. Quoting from a low-quality photograph instead of a specification leads to substitutions. Comparing quotations that omit different line items leads to false comparisons. Approving a sample without a written record leads to arguments during production. And leaving quality terms out of the contract leads to disputes after the container has sailed, when your leverage is weakest.</p>
 <p>None of these are complicated. They simply require a buyer who asks the second question.</p>
 
-<h2>Quick FAQ</h2>
+<h2>Frequently Asked Questions</h2>
 {faq_html()}
 
 <h2>Talk to the Factory Directly</h2>

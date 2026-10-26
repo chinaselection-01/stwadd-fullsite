@@ -81,6 +81,14 @@
         [
           "What happens if the factory quotes FOB but the HS code is wrong?",
           "Customs may hold the container for inspection, demand back duty and issue a penalty if the declared value or code does not match the actual goods. This is common with drinkware because vacuum and non-vacuum bottles can fall under different tariff lines. Confirm the code with your broker before shipping."
+        ],
+        [
+          "Should I use FOB or FCA for a container shipment?",
+          "For a full container, FCA is technically the better fit. Under FOB the seller carries risk until the container is on board the vessel, but in practice the seller loses control of the box when it reaches the export terminal, days before loading, so there is a gap where nobody is responsible. FCA transfers risk when the goods are handed to your carrier at the named terminal. Many buyers still use FOB because their letter of credit requires an on-board bill of lading; Incoterms 2020 resolves this by letting you instruct your carrier to issue an on-board bill of lading to the seller under FCA."
+        ],
+        [
+          "Who acts as importer of record under DDP, and what happens if the supplier cannot?",
+          "Under DDP the seller is responsible for import clearance and duty, which in practice means the seller or its agent must be able to act as importer of record in your country. That requires a registered entity there or a broker willing to import on the seller's behalf. Where the supplier cannot arrange this, the container arrives with nobody legally able to clear it and is held. This is the most common reason a DDP quote turns into a customs problem."
         ]
       ],
       "opening": "EXW, FOB and DDP are not interchangeable. They decide who pays for inland trucking, ocean freight, insurance, duty and customs clearance, and who carries the risk at each step. Choosing the wrong one can quietly add thousands to a single container."
