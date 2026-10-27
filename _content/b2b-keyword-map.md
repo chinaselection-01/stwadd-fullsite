@@ -6,25 +6,44 @@
 
 ---
 
-## 一、GSC 截图里 10 个词的处置决定
+## 一、GSC 热门查询处置（28 天数据，2026-10-27 更新）
 
-| 词（曝光/点击） | 性质 | 决定 | 处置 |
-|---|---|---|---|
-| **aql chart 2.5**（34 曝光 / 0 点击） | ★ B2B 采购标准词 | **做** | 已发 `a-aql-2-5-sampling-chart-for-drinkware` —— 标题直接对上 "AQL 2.5 Sampling Chart"，正文给 ISO 2859-1 完整抽样表（14 行 Ac/Re）+ PO 条款 |
-| **where to buy rugged vacuum-insulated bottles for outdoor adventures**（5 曝光 / 0 点击） | ★ 纯采购意图（"where to buy" = 找供应商） | **做** | 已发 `a-where-to-buy-rugged-vacuum-insulated-bottles-for-outdoor-adventures` —— 给 6 条耐用规格 + 场景对照表 + 验货方法 |
-| **stainless steel tumbler rust**（8 曝光 / 0 点击） | ★ 采购疑虑词 | **做** | 已发 `a-will-304-stainless-steel-tumbler-rust` —— 5 个真实成因 + 304/316 对照 + 材质条款 |
-| **rust in water bottle**（6 曝光 / 0 点击） | 同上 | **并入**上一篇 | 不单独做，避免自我重复 |
-| **stainless steel flask repair**（4 曝光 / 2 点击） | ★ 售后词，**唯一有点击的** | **做** | 已发 `a-stainless-flask-warranty-and-after-sales` —— 4 种失效形态 + 4 小时验证法 + 保修条款模板 |
-| vodka insulated pot（5 曝光 / 0 点击） | 🟡 餐饮/酒吧定制 | **暂不做** | 我们只有冰桶/醒酒器，词不精准；等做"酒吧吧台定制"专题时一起做 |
-| tanque aislado al vacío（7 曝光 / 0 点击） | ❌ **错词** | **不做** | 西班牙语"工业真空绝热储罐"，跟水杯不是一个品类，来了也不采购 |
-| tanques de almacenamiento aislados al vacío（6 曝光 / 0 点击） | ❌ **错词** | **不做** | 同上 |
-| como arreglar un termo de plástico（7 曝光 / 0 点击） | ❌ **C 端维修** | **不做** | "怎么修塑料保温杯"= DIY 消费内容，转化率极低 |
-| do hip flasks keep drinks cold（5 曝光 / 0 点击） | 🟡 C 端功能疑问 | **不做** | 已有 230+ 篇覆盖，再做是自我重复 |
+| 词 | 28 天曝光/点击 | 性质 | 决定 | 处置 |
+|---|---|---|---|---|
+| **aql chart 2.5** | **59** / 0 | ★ B2B 采购标准词 | **做** | `a-aql-2-5-sampling-chart-for-drinkware` —— 标题直接对上，ISO 2859-1 完整 14 行抽样表 + PO 条款 |
+| **hiking flask for liquor** | **32** / 0 | ★ 纯采购意图（烈酒壶批发/定制） | **做** | `a-hiking-flask-for-liquor-buyers-guide` —— 单层 vs 双层真空对照 + 8 条采购规格 + 合规边界 + 供应商提问清单 |
+| **stainless steel tumbler rust** | **32** / 0 | ★ 采购疑虑词 | **做** | `a-will-304-stainless-steel-tumbler-rust` —— 5 个真实成因 + 304/316 表 + 材质条款 |
+| **stainless steel flask repair** | **21** / **2 点击** | ★ 售后词，唯一有点击 | **做** | `a-stainless-flask-warranty-and-after-sales` —— 4 种失效形态 + 4 小时验证法 + 保修条款 |
+| **rust in water bottle** | **20** / 0 | 同上 | **并入**锈蚀篇 | 不单独做，避免自我重复 |
+| **do hip flasks keep drinks cold** | **19** / 0 | 🟡 C 端功能疑问 | **不做** | 已有 230+ 篇覆盖，再做是自我重复 |
+| **tanque aislado al vacio** | **19** / 0 | ❌ **错词** | **不做** | 西语"工业真空绝热储罐"，非水杯品类 |
+| **tanques de almacenamiento aislados al vacio** | **15** / 0 | ❌ **错词** | **不做** | 同上 |
+| **where to buy rugged vacuum-insulated bottles** | **14** / 0 | ★ 纯采购意图 | **做** | `a-where-to-buy-rugged-vacuum-insulated-bottles-for-outdoor-adventures` |
+| **insulated hip flask** | **14** / 0 | ★ 品类采购词 | **做** | `a-insulated-hip-flask-wholesale-private-label-guide` —— 私牌真实成本结构 + 5 条降本 + PO 条款 |
+| vodka insulated pot | 5 / 0 | 🟡 餐饮定制 | **暂不做** | 词不精准，等做"酒吧吧台定制"专题时一起做 |
+| como arreglar un termo de plástico | 7 / 0 | ❌ C 端 DIY 维修 | **不做** | 转化率极低 |
 
-**结论：这 10 个词里 4 个值得做（已做），3 个是错词，3 个不值得做。**
-点击几乎全在 C 端和错词上 —— 说明现在这套"泛科普模板文"把流量引到了不转化的地方。
+**曝光趋势验证**：上轮做的 4 个词曝光全部大涨（aql 34→59、tumbler rust 8→32、flask repair 4→21、where to buy 5→14），说明这些词是**稳定需求不是偶发**，判断正确。
 
----
+**点击几乎全落在 C 端和错词上** —— 这正是"泛科普模板文"把流量引到不转化之处的证据。
+
+### 已发的 6 篇（全部含"可直接抄进采购合同"的条款模板）
+
+| 文章 | 主目标词 | 给了买家什么 |
+|---|---|---|
+| a-aql-2-5-sampling-chart-for-drinkware | aql chart 2.5 | ISO 2859-1 完整 14 行抽样表 + 缺陷分级 + PO 检验条款 |
+| a-hiking-flask-for-liquor-buyers-guide | hiking flask for liquor | 单层/双层真空对照 + 8 条采购规格 + 6 条供应商提问 |
+| a-insulated-hip-flask-wholesale-private-label-guide | insulated hip flask / wholesale | 私牌四条成本线 + 5 条降本 + 渠道对照 + PO 条款 |
+| a-will-304-stainless-steel-tumbler-rust | stainless steel tumbler rust | 5 成因 + 304/316 场景表 + 材质条款 |
+| a-stainless-flask-warranty-and-after-sales | stainless steel flask repair | 失效形态表 + 4 小时验证法 + 保修条款 |
+| a-where-to-buy-rugged-vacuum-insulated-bottles-... | where to buy rugged... | 6 条耐用规格 + 场景对照 + 提问清单 |
+
+### 顺带加厚的 2 个产品页（承接新文章内链）
+
+| 产品页 | 加厚前 | 加厚后 |
+|---|---|---|
+| 304 扁酒壶（Personalised Liquor Flagon） | 292 词 | **866 词** + 10 行规格 + FAQPage + 新标题 |
+| 9oz 方形喷漆户外壶 | 303 词 | **821 词** + 10 行规格 + FAQPage + 新标题 |
 
 ## 二、铺词矩阵：5 类采购意图 × 4 类品类
 
