@@ -72,7 +72,7 @@
 | AQL 抽样表 | aql chart 2.5 / ISO 2859-1 sample size table | ✅ 已做 |
 | 缺陷分级 | defect classification guide drinkware / critical major minor drinkware | 待做 |
 | 认证名词 | LFGB vs FDA food contact difference / what is SGS testing | 待做 |
-| HS 编码 | HS code for stainless steel water bottles / China export code insulated flask | 待做（买家清关要用） |
+| HS 编码 | HS code for stainless steel water bottles / China export code insulated flask | ✅ 已做 `a-hs-code-for-stainless-steel-water-bottles-importers-guide` (2026-10-29) |
 | 社会责任 | am I for BSCI audit / SEDEX factory audit difference | 待做（我们能说"可按需安排"） |
 
 ### D 类｜成本与钱（决策最后一步）
