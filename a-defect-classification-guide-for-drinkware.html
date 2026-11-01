@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Critical, Major, Minor: A Defect Classification Guide for Drinkware</title>
+  <meta name="description" content="How to grade drinkware defects before AQL acceptance: critical, major and minor classes with a real bottle defect table, how grading drives the AQL call, and a defect-handling clause for your PO.">
+  <meta property="og:title" content="Critical, Major, Minor: A Defect Classification Guide for Drinkware">
+  <meta property="og:description" content="How to grade drinkware defects before AQL acceptance: critical, major and minor classes with a real bottle defect table, how grading drives the AQL call, and a defect-handling clause for your PO.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.stwadd.com/a-defect-classification-guide-for-drinkware.html">
+  <meta property="og:site_name" content="STWADD">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://www.stwadd.com/images/1717584497713-inspection.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.stwadd.com/images/1717584497713-inspection.jpeg">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <link rel="canonical" href="https://www.stwadd.com/a-defect-classification-guide-for-drinkware.html">
+  <link rel="stylesheet" href="/css/page-0832842f.css">
+<style>
+.rpt{max-width:880px;margin:0 auto;padding:8px 22px 56px;font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;}
+.rpt-cover{border-bottom:3px solid #1f5fa6;padding:42px 0 26px;margin-bottom:8px;}
+.rpt-kicker{font-size:12px;font-weight:700;letter-spacing:.2em;color:#1f5fa6;text-transform:uppercase;margin-bottom:14px;}
+.rpt-title{font-family:Georgia,"Times New Roman",serif;font-size:33px;line-height:1.18;font-weight:700;color:#13202b;margin:0 0 16px;letter-spacing:-.01em;}
+.rpt-sub{font-size:17px;line-height:1.6;color:#51606d;margin:0 0 18px;max-width:760px;}
+.rpt-meta{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:12.5px;color:#7c8b98;padding-top:14px;border-top:1px solid #eef1f4;}
+.rpt-meta b{color:#3c4a57;font-weight:600;}
+.rpt-cover-fig{margin:26px 0 0;}
+.rpt-cover-fig img{width:100%;height:auto;border-radius:12px;display:block;box-shadow:0 8px 26px rgba(20,40,60,.14);}
+.rpt-fig{margin:26px 0;}
+.rpt-fig img{width:100%;height:auto;border-radius:10px;display:block;box-shadow:0 4px 16px rgba(20,40,60,.10);}
+.rpt-cover-fig figcaption,.rpt-fig figcaption{font-size:12.5px;color:#82909c;margin-top:9px;line-height:1.5;font-style:italic;}
+.rpt-toc{background:#f5f9fd;border:1px solid #e6eef6;border-radius:12px;padding:18px 22px;margin:30px 0 8px;font-size:14px;}
+.rpt-toc .rpt-toc-h{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#1f5fa6;font-weight:700;margin-bottom:10px;}
+.rpt-toc ol{margin:0;padding-left:20px;color:#3c4a57;columns:2;column-gap:30px;}
+.rpt-toc li{margin:4px 0;break-inside:avoid;}
+.rpt-toc a{color:#1f5fa6;text-decoration:none;}
+.rpt-content{font-size:16.5px;line-height:1.82;color:#283642;text-align:left;letter-spacing:.003em;margin-top:18px;}
+.rpt-content p{margin:0 0 17px;}
+.rpt-content h2{font-size:23px;line-height:1.32;color:#13202b;font-weight:700;margin:40px 0 14px;padding-bottom:11px;border-bottom:1px solid #e7eef5;display:flex;align-items:center;gap:14px;}
+.rpt-num{font-family:Georgia,serif;font-size:14px;font-weight:700;color:#fff;background:#1f5fa6;min-width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;margin-top:2px;}
+.rpt-content h3{font-size:18.5px;color:#1f3a4d;margin:26px 0 10px;font-weight:700;}
+.rpt-content ul,.rpt-content ol{margin:0 0 18px;padding-left:22px;color:#283642;}
+.rpt-content li{margin:7px 0;line-height:1.7;}
+.rpt-content a{color:#1f5fa6;text-decoration:none;border-bottom:1px solid #cfe0f0;}
+.rpt-content a:hover{color:#16406f;}
+.rpt-content strong{color:#13202b;}
+.rpt-content table{width:100%;border-collapse:collapse;margin:22px 0 26px;font-size:14.5px;background:#fff;border:1px solid #dde6ef;border-radius:10px;overflow:hidden;}
+.rpt-content thead th{background:#1f5fa6;color:#fff;font-weight:600;text-align:left;padding:12px 15px;font-size:13.5px;letter-spacing:.01em;}
+.rpt-content tbody td{padding:11px 15px;border-top:1px solid #eef1f4;vertical-align:top;}
+.rpt-content tbody tr:nth-child(even){background:#f7fafc;}
+.rpt-content tbody tr:hover{background:#eef5fb;}
+.rpt-callout{border-left:4px solid #1f5fa6;background:#f1f7fd;padding:15px 19px;border-radius:0 10px 10px 0;margin:24px 0;font-size:15.5px;line-height:1.7;color:#274252;}
+.rpt-callout b{color:#1f3a4d;}
+.rpt-warning{border-left:4px solid #c2410c;background:#fef4ee;padding:15px 19px;border-radius:0 10px 10px 0;margin:24px 0;font-size:15.5px;line-height:1.7;}
+.rpt-warning b{color:#9a3412;}
+.rpt-quote{border-left:4px solid #94a3b8;background:#f8fafc;padding:16px 20px;margin:24px 0;border-radius:0 10px 10px 0;font-size:15.5px;line-height:1.7;color:#33414d;}
+.rpt-quote p{margin:0;}
+.rpt-quote .rpt-quote-tag{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#64748b;margin-bottom:8px;font-weight:700;}
+.rpt-cta{background:linear-gradient(135deg,#1f5fa6,#143a63);color:#fff;border-radius:16px;padding:28px 30px;margin:36px 0 8px;}
+.rpt-cta h3{color:#fff;font-size:20px;margin:0 0 12px;}
+.rpt-cta p{color:#e9f1fb;font-size:15.5px;margin:0 0 12px;}
+.rpt-cta ul{color:#e9f1fb;margin:0 0 8px;padding-left:20px;}
+.rpt-cta li{color:#e9f1fb;margin:5px 0;}
+.rpt-cta a{color:#fff;font-weight:700;text-decoration:underline;}
+.rpt-cta .rpt-cta-line{margin-top:16px;font-size:13.5px;color:#cfe0f3;}
+.rpt-faq{margin-top:30px;border-top:2px solid #1f5fa6;padding-top:18px;}
+.rpt-faq h2{border:0;padding:0;margin:0 0 16px;}
+.rpt-faq .rpt-faq-q{font-weight:700;color:#13202b;margin:16px 0 4px;font-size:16.5px;}
+.rpt-faq .rpt-faq-a{color:#3c4a57;margin:0 0 12px;font-size:15.5px;}
+.rpt-tag{display:inline-block;background:#e8f1fb;color:#1f5fa6;font-size:11px;font-weight:700;letter-spacing:.06em;padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:middle;}
+@media(max-width:640px){
+  .rpt-title{font-size:25px;}
+  .rpt-content{font-size:15.5px;line-height:1.75;}
+  .rpt-content h2{font-size:20px;}
+  .rpt-toc ol{columns:1;}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Critical, Major, Minor: A Defect Classification Guide for Drinkware",
+  "description": "How to grade drinkware defects before AQL acceptance: critical, major and minor classes with a real bottle defect table, how grading drives the AQL call, and a defect-handling clause for your PO.",
+  "url": "https://www.stwadd.com/a-defect-classification-guide-for-drinkware.html",
+  "datePublished": "2026-11-02",
+  "dateModified": "2026-11-02",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "Yongkang STWADD Houseware Co., Ltd.",
+    "url": "https://www.stwadd.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yongkang STWADD Houseware Co., Ltd.",
+    "url": "https://www.stwadd.com"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.stwadd.com/a-defect-classification-guide-for-drinkware.html"
+  },
+  "image": "https://www.stwadd.com/images/1717584497713-inspection.jpeg",
+  "articleSection": "Buyer's guide"
+}
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.stwadd.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Buyer's Guides",
+      "item": "https://www.stwadd.com/guides/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Defect Classification Guide for Drinkware",
+      "item": "https://www.stwadd.com/a-defect-classification-guide-for-drinkware.html"
+    }
+  ]
+}
+    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between a critical, a major and a minor defect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A critical defect makes the product unsafe, unfit for use, or in breach of a regulation — for a bottle that means vacuum failure, leakage, foreign matter inside, non-food-grade material, or a sharp edge. A major defect is usable but clearly below the agreed spec and affects function or your brand — a dent, rust spot, wrong colour or print, or a lid that leaks under pressure. A minor defect is cosmetic and within normal commercial tolerance — a light scratch, slight colour shift, or a small coating bubble."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a lot pass AQL sampling but still be rejected for a critical defect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it should be. Critical defects normally carry an acceptance number of zero — a single found defect can reject or trigger a 100% sort of the lot, regardless of how the major/minor sample came out. AQL sampling controls how many you inspect and the acceptance number for major and minor defects; it does not waive critical ones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who decides whether a defect is major or minor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You do, in advance. The classification is not a judgement call made on the factory floor — it is written into the inspection specification you and the supplier agree before production. That is why the defect table and the AQL plan belong in the same purchase-order attachment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does STWADD use this classification on its own inspections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every batch at our audited partner lines is inspected against an agreed defect classification and AQL plan before the container is sealed, with critical defects at acceptance number zero. The same classification we apply is what we propose in the inspection specification for your order, so there is no gap between what we check and what you sign off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if my shipment arrives with critical defects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With the defect-handling clause in the purchase order, a critical defect found at the port lets you reject the affected lot, require a 100% sort at the supplier's cost, or claim against the order. The clause is what turns a dispute into a defined procedure — without it, every claim becomes a negotiation."
+      }
+    }
+  ]
+}
+    </script>
+<script type="application/ld+json">
+{
+  "@type": "Organization",
+  "name": "Yongkang STWADD Houseware Co., Ltd.",
+  "url": "https://www.stwadd.com",
+  "email": "bob@stwadd.com",
+  "telephone": "+86-150-8822-8843",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "No. 138-1, Shifang East Road, Industrial Function Zone (Huku)",
+    "addressLocality": "Yongkang",
+    "addressRegion": "Zhejiang",
+    "postalCode": "321300",
+    "addressCountry": "CN"
+  },
+  "sameAs": [
+    "https://www.tiktok.com/@stwadd.com"
+  ]
+}
+    </script>
+</head>
+<body>
+
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col col-12 col-md-12 col-xl-12">
+      <div class="unit-ai-article-detail rpt">
+
+        <div class="rpt-cover">
+          <div class="rpt-kicker">Buyer's Guide · 2026 Edition</div>
+          <h1 class="rpt-title">Critical, Major, Minor: A Defect Classification Guide for Drinkware</h1>
+          <p class="rpt-sub">AQL tells you how many to inspect. Classification tells you what fails. This guide grades drinkware defects the way a QC inspector does — with a real bottle defect table, how grading drives the AQL call, and a defect-handling clause for your purchase order.</p>
+          <div class="rpt-meta">
+            <span>By <b>STWADD Sourcing &amp; Quality Desk</b></span>
+            <span>Updated <b>02 Nov 2026</b></span>
+            <span><b>9-min</b> read</span>
+          </div>
+          <figure class="rpt-cover-fig">
+            <img src="images/1717584497713-inspection.jpeg" alt="Line inspection of stainless steel bottles at an audited partner line">
+            <figcaption>Line inspection at an audited partner line — the stage where every finished bottle is graded against the defect classification before it is cartoned.</figcaption>
+          </figure>
+        </div>
+
+        <div class="rpt-toc">
+          <div class="rpt-toc-h">In this guide</div>
+          <ol>
+            <li><a href="#s1">Why grading matters as much as sampling</a></li>
+            <li><a href="#s2">The three severity levels</a></li>
+            <li><a href="#s3">A real drinkware defect table</a></li>
+            <li><a href="#s4">How classification drives the AQL call</a></li>
+            <li><a href="#s5">Documents to attach to your PO</a></li>
+            <li><a href="#s6">The defect-handling clause</a></li>
+            <li><a href="#s7">Talk to STWADD about inspection</a></li>
+          </ol>
+        </div>
+
+        <div class="unit-ai-article-detail__detail_html rpt-content">
+
+<p>Most buyers know they need an AQL sampling plan — how many units to pull and inspect. Far fewer write down <i>what counts as a failure</i>. That gap is where disputes start. Two defective bottles out of 200 means something completely different if one has lost its vacuum and the other has a faint scratch. This guide sets the grading standard first, then shows how it plugs into the sampling plan.</p>
+
+<h2 id="s1"><span class="rpt-num">01</span> Why Grading Matters as Much as Sampling</h2>
+<p>A sampling plan without a classification standard is blind. It tells you the count of rejects; it does not tell you whether a reject is a safety problem or a cosmetic one. The same "2 defects" can be:</p>
+<ul>
+<li><b>two critical</b> — the lot is unsafe and must not ship;</li>
+<li><b>two minor</b> — within commercial tolerance, the lot is fine;</li>
+<li><b>one of each</b> — reject the unsafe unit and decide on the cosmetic one by the AQL plan.</li>
+</ul>
+<p>You cannot make that call until the classes are defined. Define them before production, not during the argument at the port.</p>
+
+<h2 id="s2"><span class="rpt-num">02</span> The Three Severity Levels</h2>
+<table>
+<thead><tr><th>Class</th><th>Definition</th><th>Typical outcome</th></tr></thead>
+<tbody>
+<tr><td><b>Critical</b></td><td>Unsafe, unfit for use, or in breach of a food-contact or product-safety regulation.</td><td>Acceptance number 0 — any found unit rejects or triggers a 100% sort.</td></tr>
+<tr><td><b>Major</b></td><td>Usable but clearly below the agreed specification; affects function or your brand.</td><td>Controlled by the AQL plan (e.g. AQL 2.5) with a defined accept/reject number.</td></tr>
+<tr><td><b>Minor</b></td><td>Cosmetic, within normal commercial tolerance; does not affect function.</td><td>Controlled by a looser AQL (e.g. AQL 4.0) or accepted within limits.</td></tr>
+</tbody>
+</table>
+<div class="rpt-callout"><b>Set the AQL per class, not per product.</b> A common, defensible setup for drinkware is AQL 0 for critical, AQL 2.5 for major, and AQL 4.0 for minor. The exact numbers are yours to agree; the principle — tighter on what matters — is not negotiable.</div>
+
+<h2 id="s3"><span class="rpt-num">03</span> A Real Drinkware Defect Table</h2>
+<p>This is the table to attach to your inspection specification. It is written the way an inspector reads it: a defect, its class, and why.</p>
+<table>
+<thead><tr><th>Defect</th><th>Class</th><th>Why it lands there</th></tr></thead>
+<tbody>
+<tr><td>Vacuum failure — will not hold temperature</td><td>Critical</td><td>Product fails its core function; unusable as advertised</td></tr>
+<tr><td>Leakage at seam or lid</td><td>Critical</td><td>Spills; unsafe in a bag; breaches the basic promise</td></tr>
+<tr><td>Foreign matter inside the vessel</td><td>Critical</td><td>Hygiene and food-safety breach</td></tr>
+<tr><td>Non-food-grade material in contact with liquid</td><td>Critical</td><td>Regulatory breach (FDA / LFGB / EU)</td></tr>
+<tr><td>Sharp edge or burr on rim or lip</td><td>Critical</td><td>Injury risk</td></tr>
+<tr><td>Dent on body or base</td><td>Major</td><td>Visible, affects resale and perceived quality</td></tr>
+<tr><td>Rust spot on steel surface</td><td>Major</td><td>Signals material or process fault</td></tr>
+<tr><td>Wrong colour or print vs approved sample</td><td>Major</td><td>Brand mismatch, cannot sell as specified</td></tr>
+<tr><td>Misaligned or crooked logo</td><td>Major</td><td>Brand defect</td></tr>
+<tr><td>Lid seal leaks under pressure</td><td>Major</td><td>Functional but below spec</td></tr>
+<tr><td>Light surface scratch</td><td>Minor</td><td>Cosmetic, within tolerance</td></tr>
+<tr><td>Slight colour deviation vs master</td><td>Minor</td><td>Cosmetic, within commercial tolerance</td></tr>
+<tr><td>Small coating bubble</td><td>Minor</td><td>Cosmetic, not structural</td></tr>
+</tbody>
+</table>
+<figure class="rpt-fig">
+  <img src="images/1717584359008-temperature-test.jpeg" alt="Temperature and insulation test of a vacuum bottle">
+  <figcaption>A vacuum or insulation test is how a critical defect — loss of temperature retention — is caught before the bottle leaves the line. If this fails, the unit is critical, not major.</figcaption>
+</figure>
+
+<h2 id="s4"><span class="rpt-num">04</span> How Classification Drives the AQL Call</h2>
+<p>The sampling plan (see our <a href="/a-aql-2-5-sampling-chart-for-drinkware.html">AQL 2.5 sampling chart for drinkware</a>) answers: <i>from a lot of N, inspect n, accept up to c.</i> Classification answers: <i>which defects count toward c, and which don't.</i></p>
+<ul>
+<li>Critical defects are scored separately and usually at acceptance number 0 — they are not pooled into the major/minor count.</li>
+<li>Major defects are scored against the AQL 2.5 accept/reject number for your lot size.</li>
+<li>Minor defects are scored against the looser AQL you agreed (often 4.0).</li>
+</ul>
+<p>A lot can have an acceptable major/minor count and still be rejected because one critical defect was found. That is correct behaviour, and it is why the two documents must travel together.</p>
+<figure class="rpt-fig">
+  <img src="images/1717584359151-vacuuming.jpeg" alt="Vacuum-pumping process for flasks and bottles">
+  <figcaption>The vacuum-pumping stage is where a critical defect is born or prevented — if the chamber is not sealed correctly, the bottle fails the temperature test in the previous step.</figcaption>
+</figure>
+
+<h2 id="s5"><span class="rpt-num">05</span> Documents to Attach to Your PO</h2>
+<p>Put all three in the same purchase-order attachment so there is no ambiguity at inspection time:</p>
+<ul>
+<li><b>The defect classification table</b> above, with your own product-specific additions.</li>
+<li><b>The AQL sampling plan</b> — lot-size band, sample size, and the accept/reject number per class.</li>
+<li><b>The inspection method</b> — how vacuum, leakage and coating are tested, and which approved sample is the reference.</li>
+</ul>
+
+<h2 id="s6"><span class="rpt-num">06</span> The Defect-Handling Clause</h2>
+<p>Copy this and fill the brackets. It turns a dispute into a defined procedure:</p>
+<div class="rpt-quote">
+  <span class="rpt-quote-tag">Purchase-order clause</span>
+  <p><b>Defect handling:</b> Goods are inspected against the agreed defect classification (critical / major / minor) and AQL plan [AQL 0 critical, AQL 2.5 major, AQL 4.0 minor]. Any <b>critical</b> defect found in the inspected sample entitles the buyer to reject the affected lot, require a 100% sort at the supplier's cost, or claim against the order. <b>Major</b> defects are governed by the AQL accept/reject number; where the lot is accepted with major defects, the buyer may negotiate a price adjustment of [agreed %]. <b>Minor</b> defects within the agreed AQL are accepted without adjustment. Claims must be raised within [days] of arrival at the destination port, with photographic evidence and the inspection report.</p>
+</div>
+
+<h2 id="s7"><span class="rpt-num">07</span> Talk to STWADD About Inspection</h2>
+<div class="rpt-cta">
+  <h3>Get an inspection specification for your order <span class="rpt-tag">Free sample</span></h3>
+  <p>Send us your product and target market and we will return, in writing:</p>
+  <ul>
+    <li>the defect classification table tailored to your model (critical / major / minor);</li>
+    <li>the AQL plan for your lot size, with the accept/reject number per class;</li>
+    <li>the test method for vacuum, leakage and coating, and the approved-sample reference.</li>
+  </ul>
+  <p>Sample policy: we send a sample <b>free of charge</b> — you pay only the freight, no deposit. Every batch we ship is inspected against an agreed classification and AQL plan before the container is sealed.</p>
+  <p class="rpt-cta-line">WhatsApp <a href="https://wa.me/8615088228843">+86 150 8822 8843</a> &nbsp;·&nbsp; Email <a href="mailto:bob@stwadd.com">bob@stwadd.com</a></p>
+</div>
+<p>We are a factory-backed supply company in Yongkang, Zhejiang: production runs to your specification at audited partner factories we qualify and work with directly, and every batch passes the inspection plan before the container is sealed. Our <a href="/oem-odm.html">OEM and ODM page</a> covers sampling, lead times and inspection, and our <a href="/a-aql-2-5-sampling-chart-for-drinkware.html">AQL 2.5 sampling chart</a> is the companion reference for the sampling side of the same plan.</p>
+
+<div class="rpt-faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="rpt-faq-q">What is the difference between a critical, a major and a minor defect?</div>
+  <div class="rpt-faq-a">A critical defect makes the product unsafe, unfit for use, or in breach of a regulation — for a bottle that means vacuum failure, leakage, foreign matter inside, non-food-grade material, or a sharp edge. A major defect is usable but clearly below the agreed spec and affects function or your brand — a dent, rust spot, wrong colour or print, or a lid that leaks under pressure. A minor defect is cosmetic and within normal commercial tolerance — a light scratch, slight colour shift, or a small coating bubble.</div>
+  <div class="rpt-faq-q">Can a lot pass AQL sampling but still be rejected for a critical defect?</div>
+  <div class="rpt-faq-a">Yes, and it should be. Critical defects normally carry an acceptance number of zero — a single found defect can reject or trigger a 100% sort of the lot, regardless of how the major/minor sample came out. AQL sampling controls how many you inspect and the acceptance number for major and minor defects; it does not waive critical ones.</div>
+  <div class="rpt-faq-q">Who decides whether a defect is major or minor?</div>
+  <div class="rpt-faq-a">You do, in advance. The classification is not a judgement call made on the factory floor — it is written into the inspection specification you and the supplier agree before production. That is why the defect table and the AQL plan belong in the same purchase-order attachment.</div>
+  <div class="rpt-faq-q">Does STWADD use this classification on its own inspections?</div>
+  <div class="rpt-faq-a">Yes. Every batch at our audited partner lines is inspected against an agreed defect classification and AQL plan before the container is sealed, with critical defects at acceptance number zero. The same classification we apply is what we propose in the inspection specification for your order, so there is no gap between what we check and what you sign off.</div>
+  <div class="rpt-faq-q">What happens if my shipment arrives with critical defects?</div>
+  <div class="rpt-faq-a">With the defect-handling clause in the purchase order, a critical defect found at the port lets you reject the affected lot, require a 100% sort at the supplier's cost, or claim against the order. The clause is what turns a dispute into a defined procedure — without it, every claim becomes a negotiation.</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p><a href="https://www.stwadd.com"><strong>www.stwadd.com</strong></a> · WhatsApp: <a href="https://wa.me/8615088228843">+86 150 8822 8843</a> · Email: <a href="mailto:bob@stwadd.com">bob@stwadd.com</a></p>
+  <p style="margin-top:6px;font-size:12px;color:#aaa">Yongkang STWADD Houseware Co., Ltd. · No. 138-1, Shifang East Road, Industrial Function Zone (Huku) · Yongkang · Zhejiang 321300 · China</p>
+</div>
+
+</body>
+</html>

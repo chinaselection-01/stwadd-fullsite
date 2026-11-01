@@ -70,7 +70,7 @@
 | 词型 | 示例 | 状态 |
 |---|---|---|
 | AQL 抽样表 | aql chart 2.5 / ISO 2859-1 sample size table | ✅ 已做 |
-| 缺陷分级 | defect classification guide drinkware / critical major minor drinkware | 待做 |
+| 缺陷分级 | defect classification guide drinkware / critical major minor drinkware | ✅ 已做 `a-defect-classification-guide-for-drinkware` (2026-11-02) |
 | 认证名词 | LFGB vs FDA food contact difference / what is SGS testing | 待做 |
 | HS 编码 | HS code for stainless steel water bottles / China export code insulated flask | ✅ 已做 `a-hs-code-for-stainless-steel-water-bottles-importers-guide` (2026-10-29) |
 | 社会责任 | am I for BSCI audit / SEDEX factory audit difference | 待做（我们能说"可按需安排"） |
@@ -88,7 +88,7 @@
 |---|---|---|
 | 保修条款 | vacuum flask warranty terms / how to claim defective bottle | ✅ 已做 |
 | 质量异议 | will 304 stainless steel rust / why does my bottle leak | ✅ 已做 |
-| 验厂 | what does a factory audit actually check | 待做 |
+| 验厂 | what does a factory audit actually check | ✅ 已做 `a-factory-audit-checklist-for-drinkware-buyers` (2026-11-02) |
 | 供应商核查 | how to verify a China supplier is real | ✅ 已有 |
 | 纠纷 | what to do if goods fail AQL inspection | 待做 |
 
