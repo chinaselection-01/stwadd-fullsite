@@ -332,6 +332,7 @@ STWADD publishes the **original third-party test reports**, not just summaries. 
 - [Why Does My Thermos Stop Keeping Heat? (Lost Vacuum Explained) | STWADD](https://www.stwadd.com/a-why-does-my-thermos-stop-keeping-heat): Buyer guide from the STWADD sourcing desk.
 - [Why Hotels Are Switching to Insulated Tumblers for Guest Services | STWADD](https://www.stwadd.com/a-why-hotels-are-switching-to-insulated-tumblers-for-guest-services): Buyer guide from the STWADD sourcing desk.
 - [Why Is My Water Bottle Sweating? Condensation vs. Leak | STWADD](https://www.stwadd.com/a-why-is-my-water-bottle-sweating-condensation): Buyer guide from the STWADD sourcing desk.
+- [Why Your Quoted Price Is Not What You Pay: Hidden Costs in China Sourcing | STWADD](https://www.stwadd.com/a-why-your-quoted-price-is-not-what-you-pay): Buyer guide from the STWADD sourcing desk.
 
 ### Full URL list
 The complete sitemap (every category page, product page and article) is at https://www.stwadd.com/sitemap.xml. Category hub pages are the crawlable entry points for each product family; product detail pages carry capacity, material, carton quantity and an enquiry button, and no unit prices are published anywhere on this site.
@@ -380,6 +381,7 @@ Long-form articles written for buyers who are committing container-sized money t
 - [AQL 2.5 Inspection Explained](https://www.stwadd.com/a-aql-2-5-inspection-explained-for-novice-buyers.html): Defect classes, the clause to copy into your PO, inspection timing and cost
 - [How to Verify a Chinese Supplier Is Real](https://www.stwadd.com/a-how-to-verify-a-china-supplier-is-real.html): A 7-step due diligence checklist covering registry lookup, export records, live production-line video, third-party audit, sampling and payment protection
 - [EXW vs FOB vs DDP: Incoterms for Drinkware Imports](https://www.stwadd.com/a-incoterms-fob-exw-ddp-explained-for-importers.html): Who bears cost and risk at each step, FCA versus FOB on container shipments, DDP importer-of-record exposure, HS 9617 classification for vacuum flasks, and the clause to write into the PO
+- [Why Your Quoted Price Is Not What You Pay: Hidden Costs in China Sourcing](https://www.stwadd.com/a-why-your-quoted-price-is-not-what-you-pay.html): The full cost stack behind a drinkware unit price — tooling, samples, printing, packaging, inspection, inland trucking, freight, duty and demurrage — with a worked 40HQ landed-cost example on real carton data, the 13-point quote request to send suppliers, and the purchase-order clauses to copy.
 
 ### Multilingual versions (ES / PT / RU / AR)
 The same guides above are also published in Spanish, Portuguese, Russian and Arabic to serve localized buyers and AI engines:
