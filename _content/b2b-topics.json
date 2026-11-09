@@ -130,15 +130,23 @@
       "faq": [
         [
           "Is there such a thing as a universal food grade certificate?",
-          "There is no single global certificate, and generic food grade certificates are usually meaningless. What matters is third-party test reports issued against your specific product model, dated recently, from an accredited laboratory, covering the items your market requires."
+          "No, and generic food grade certificates are usually meaningless. The US has no product certificate, California regulates exposure rather than issuing approvals, and the EU requires a Declaration of Compliance that you make as the business operator placing the product on the market. What has value is dated third-party test reports issued against your specific model, from a laboratory with a name and an address, covering the items your market actually requires."
         ],
         [
-          "What is California Prop 65 and does it apply to water bottles?",
-          "It is a California law requiring warnings for exposure to listed chemicals including lead and cadmium. For drinkware, the practical requirement is that lead and cadmium migration from paint, coating and decorative parts stays within limits. Buyers selling into California should request a Prop 65 report on the finished product."
+          "What does California Proposition 65 require for a water bottle?",
+          "It requires a clear and reasonable warning if a consumer is knowingly exposed to a listed chemical above the applicable safe harbour level. For drinkware the relevant levels include 0.5 micrograms per day for lead and 4.1 micrograms per day for cadmium by the oral route. Because it is an exposure test rather than a content limit, there is no single parts-per-million figure that clears every bottle. The practical approach is a content screen of inks, coatings and pigments plus a compliant warning on the label and the online listing, and note that the revised short-form warning rules have applied since 1 January 2025 with full requirements from 1 January 2028."
         ],
         [
-          "Can I use a supplier's existing test reports from another factory?",
-          "No. A report is valid only for the product model, material and colourway it was issued for. Reusing a report for a different batch, colour or model is a compliance risk, and retailers or customs may ask for the report to match your actual product."
+          "Can I use a supplier's existing test report for a different model or colour?",
+          "No. A report is valid for the model, material and colourway it was issued for, so a report for a blue tumbler with a polypropylene lid does not cover a red one with a silicone lid. If you run several variants off one body, test the worst case and declare the rest on the same basis, or test each variant. Reusing a report is the single most common cause of a compliance problem discovered after the goods have shipped."
+        ],
+        [
+          "Do I need separate testing for the United States, California and the European Union?",
+          "Often yes, and for different reasons. US federal compliance and California Proposition 65 are different tests, and neither one substitutes for the EU Declaration of Compliance. Germany adds LFGB on top of the EU framework, which means a broader set of simulants and a sensory check that EU testing alone will not cover. The efficient approach is to test the materials and the model once at the highest common denominator, then add only the market-specific items each destination genuinely requires, rather than commissioning three parallel test programmes."
+        ],
+        [
+          "Is LFGB worth paying for if I only sell across the EU?",
+          "It is worth paying for if Germany is one of your markets or if a European retail chain's buying office sits in Germany, because the sensory requirement in Section 4 catches problems that chemical migration testing does not, and because German buyers ask for it as standard. If Germany is genuinely not in your plan and no buyer will ask, spend the budget on a test your market does require instead. The decision is a commercial one, and it is better made with the target list in front of you than by default."
         ]
       ],
       "opening": "There is no universal food grade certificate, and the phrase on a supplier's PDF often means nothing. What actually matters is a set of dated third-party test reports covering your specific product and the market you sell into. Here is what to demand."
