@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>圣瓦达询盘收件箱 · STWADD Inbox</title>
+<meta name="robots" content="noindex, nofollow" />
+<style>
+  :root{--red:#c41e3a;--ink:#1f2933;--muted:#5b6b7a;--line:#e4e8ec;--bg:#f5f7f9;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  #gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,#1b2733,#0d141c)}
+  .gate-card{background:#fff;border-radius:16px;padding:34px 30px;width:340px;max-width:90vw;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+  .gate-card .logo{width:52px;height:52px;border-radius:12px;background:var(--red);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:18px}
+  .gate-card h1{font-size:18px;margin:0 0 6px}
+  .gate-card p{color:var(--muted);font-size:13px;margin:0 0 18px}
+  .gate-card input{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:9px;font-size:14px;outline:none}
+  .gate-card input:focus{border-color:var(--red)}
+  .gate-card button{width:100%;margin-top:12px;background:var(--red);color:#fff;border:0;border-radius:9px;padding:12px;font-size:14px;font-weight:600;cursor:pointer}
+  .err{color:var(--red);font-size:12px;min-height:16px;margin:10px 0 0}
+  header{position:sticky;top:0;background:#141b26;color:#fff;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;z-index:10;flex-wrap:wrap;gap:8px}
+  header strong{font-size:15px}
+  header #updated{color:#9fb0c3;font-size:12px;margin-left:10px}
+  header button{background:rgba(255,255,255,.12);border:0;color:#fff;border-radius:7px;padding:7px 12px;font-size:13px;cursor:pointer;margin-left:8px}
+  .banner{background:#fdecea;color:#a11;padding:10px 14px;font-size:13px;margin:0 18px 10px;border-radius:8px;display:none}
+  .stats{display:flex;gap:12px;flex-wrap:wrap;padding:16px 18px 4px}
+  .stat{flex:1;min-width:120px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .stat .n{font-size:24px;font-weight:700}
+  .stat .l{font-size:12px;color:var(--muted);margin-top:2px}
+  .filters{display:flex;gap:8px;padding:12px 18px;flex-wrap:wrap}
+  .filters button{border:1px solid var(--line);background:#fff;color:var(--muted);padding:7px 14px;border-radius:16px;font-size:13px;cursor:pointer}
+  .filters button.on{background:var(--red);border-color:var(--red);color:#fff}
+  #list{padding:4px 18px 40px;display:flex;flex-direction:column;gap:14px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;position:relative}
+  .card.read{opacity:.72}
+  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:20px;margin-right:8px}
+  .tag.drink{background:#e7f0ff;color:#1a5fd6}
+  .tag.src{background:#fff1e0;color:#c47a16}
+  .tag.new{background:#e6f6ec;color:#1a7f43}
+  .card h3{margin:6px 0 4px;font-size:16px;line-height:1.4}
+  .card .meta{font-size:12.5px;color:var(--muted);margin:2px 0;word-break:break-word}
+  .card .meta b{color:var(--ink);font-weight:600}
+  .card .msg{background:#f6f8fa;border-left:3px solid var(--red);padding:9px 11px;border-radius:6px;font-size:13px;margin-top:8px;white-space:pre-wrap;word-break:break-word}
+  .actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .actions button{border:1px solid var(--line);background:#fff;color:var(--ink);padding:7px 12px;border-radius:8px;font-size:13px;cursor:pointer}
+  .actions button.primary{background:var(--red);border-color:var(--red);color:#fff}
+  .att{display:inline-flex;align-items:center;gap:7px;background:#eef4f6;color:#0a7ea4;border:1px solid #d7e7ec;padding:6px 10px;border-radius:8px;font-size:12.5px;margin:6px 8px 0 0}
+  .att button{background:transparent;border:0;color:#0a7ea4;text-decoration:underline;cursor:pointer;font-size:12.5px;padding:0}
+  .conv{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;display:none}
+  .conv.on{display:block}
+  .bub{max-width:82%;padding:8px 11px;border-radius:11px;margin:7px 0;font-size:13px;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+  .bub.u{background:var(--red);color:#fff;margin-left:auto;border-bottom-right-radius:3px}
+  .bub.a{background:#fff;border:1px solid var(--line);border-bottom-left-radius:3px}
+  .bub.l{background:#fff7e6;color:#8a5a00;margin:0 auto;font-size:12px;text-align:center;max-width:90%}
+  #empty{padding:30px;color:var(--muted);text-align:center}
+  a{color:#1a5fd6}
+</style>
+</head>
+<body>
+  <div id="gate">
+    <div class="gate-card">
+      <div class="logo">STW</div>
+      <h1>圣瓦达询盘收件箱</h1>
+      <p>内部使用 · 请输入访问码</p>
+      <input id="code" type="password" placeholder="访问码" autocomplete="off" />
+      <button id="enter">进入收件箱</button>
+      <p id="err" class="err"></p>
+    </div>
+  </div>
+
+  <div id="app" hidden>
+    <header>
+      <div><strong>STWADD 询盘收件箱</strong><span id="updated"></span></div>
+      <div>
+        <button id="refresh">刷新</button>
+        <button id="lock">锁定</button>
+      </div>
+    </header>
+    <div class="banner" id="banner"></div>
+    <section class="stats" id="stats"></section>
+    <div class="filters" id="filters">
+      <button data-f="all" class="on">全部</button>
+      <button data-f="unread">未读</button>
+      <button data-f="drinkware">杯壶询盘</button>
+      <button data-f="sourcing">采购请求</button>
+    </div>
+    <main id="list"></main>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@tencent-ai/workbuddy-cloud-sdk@dev/lib/index.global.js"></script>
+<script>
+(function(){
+  "use strict";
+  // 访问码已做 base64 混淆，仅作"防君子"级遮挡：anon 角色本身可读数据。
+  // 修改访问码：把下面 GATE 的 base64 改成 atob("你的新码base64") 即可。
+  var GATE = atob("c3R3YWRkMjAyNg=="); // stwadd2026
+  var PUBLIC_CONFIG = {
+    endpoint: "https://stwadd-chat.app.workbuddy.host",
+    oauthRelayBaseUrl: "https://www.workbuddy.cn/v2/as/genie-baas/oauth",
+    publishableKey: "wbpk_J6ky3EWeJsnmORWHsXGmDY_PLHjgvRuyhmQKeU6NLyw3btiPQ40q3cy"
+  };
+  var cloud = null;
+  var state = { leads: [], messages: [], attachments: [], filter: "all" };
+  var timer = null;
+
+  function $(id){ return document.getElementById(id); }
+  function readArr(){ try{ return JSON.parse(localStorage.getItem("stw_inbox_read")||"[]"); }catch(e){ return []; } }
+  function isRead(id){ return readArr().indexOf(id) >= 0; }
+  function markRead(id){ var a=readArr(); if(a.indexOf(id)<0){ a.push(id); localStorage.setItem("stw_inbox_read", JSON.stringify(a)); } }
+  function unmark(id){ var a=readArr(); var i=a.indexOf(id); if(i>=0){ a.splice(i,1); localStorage.setItem("stw_inbox_read", JSON.stringify(a)); } }
+  function sourceOf(lead){ if(lead && lead.message && lead.message.indexOf("[SOURCING") >= 0) return "sourcing"; return "drinkware"; }
+  function esc(s){ return String(s==null?"":s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+  function fmt(t){ try{ return new Date(t).toLocaleString("zh-CN"); }catch(e){ return String(t); } }
+  function mb(bytes){ if(!bytes) return ""; return (bytes/1048576).toFixed(1)+" MB"; }
+
+  function initCloud(){
+    try { cloud = WorkBuddyCloud.createWorkBuddyCloud(PUBLIC_CONFIG); }
+    catch(e){ banner("无法连接云端：" + (e && e.message ? e.message : e)); }
+  }
+  function banner(msg){ var b=$("banner"); b.textContent=msg; b.style.display = msg ? "block":"none"; }
+  function setUpdated(t){ $("updated").textContent = t; }
+
+  function load(){
+    if(!cloud){ banner("云端未连接，无法读取。请刷新后重试。"); return; }
+    setUpdated("加载中…");
+    Promise.all([
+      cloud.database.from("stwadd_leads").select("id,session_id,name,email,company,country,city,whatsapp,product_interest,quantity,target_port,message,page_url,lang,status,created_at").order("created_at",{ascending:false}),
+      cloud.database.from("stwadd_messages").select("id,session_id,role,content,created_at").order("created_at",{ascending:true}),
+      cloud.database.from("stwadd_attachments").select("id,session_id,filename,mime,size_bytes,created_at").order("created_at",{ascending:false})
+    ]).then(function(res){
+      var lr=res[0], mr=res[1], ar=res[2];
+      if(lr.error) throw lr.error;
+      if(mr.error) throw mr.error;
+      if(ar.error) throw ar.error;
+      state.leads = lr.data || [];
+      state.messages = mr.data || [];
+      state.attachments = ar.data || [];
+      render();
+      setUpdated("更新于 " + new Date().toLocaleString("zh-CN"));
+      banner("");
+    }).catch(function(e){
+      banner("读取失败：" + (e && e.message ? e.message : JSON.stringify(e)) + "（可能 RLS 策略未生效，需技术复核）");
+      setUpdated("读取失败");
+    });
+  }
+
+  function stat(n,l){ return '<div class="stat"><div class="n">'+n+'</div><div class="l">'+l+'</div></div>'; }
+  function meta(k,v){ return '<div class="meta"><b>'+k+'：</b>'+esc(v)+'</div>'; }
+  function convHtml(msgs){
+    if(!msgs.length) return '<p style="color:#5b6b7a;font-size:13px">（无对话记录）</p>';
+    return msgs.map(function(m){
+      if(m.role==="user") return '<div class="bub u">'+esc(m.content)+'</div>';
+      if(m.role==="assistant") return '<div class="bub a">'+esc(m.content)+'</div>';
+      if(m.role==="lead") return '<div class="bub l">🔔 '+esc(m.content)+'</div>';
+      return '<div class="bub a">'+esc(m.content)+'</div>';
+    }).join("");
+  }
+
+  function render(){
+    var leads = state.leads;
+    var msgMap = {}; state.messages.forEach(function(m){ (msgMap[m.session_id]=msgMap[m.session_id]||[]).push(m); });
+    var attMap = {}; state.attachments.forEach(function(a){ (attMap[a.session_id]=attMap[a.session_id]||[]).push(a); });
+
+    var total = leads.length;
+    var unread = leads.filter(function(l){ return !isRead(l.id); }).length;
+    var srcCount = leads.filter(function(l){ return sourceOf(l)==="sourcing"; }).length;
+    var dwCount = total - srcCount;
+    $("stats").innerHTML = stat(total,"总询盘") + stat(unread,"未读") + stat(dwCount,"杯壶询盘") + stat(srcCount,"采购请求");
+
+    var f = state.filter;
+    var list = leads.filter(function(l){
+      if(f==="unread") return !isRead(l.id);
+      if(f==="sourcing") return sourceOf(l)==="sourcing";
+      if(f==="drinkware") return sourceOf(l)==="drinkware";
+      return true;
+    });
+
+    if(!list.length){ $("list").innerHTML = '<div id="empty">该筛选下暂无询盘。</div>'; return; }
+
+    $("list").innerHTML = list.map(function(l){
+      var src = sourceOf(l);
+      var sid = l.session_id;
+      var msgs = msgMap[sid] || [];
+      var atts = attMap[sid] || [];
+      var read = isRead(l.id);
+      var tag = src==="sourcing" ? '<span class="tag src">采购请求</span>' : '<span class="tag drink">杯壶询盘</span>';
+      var newTag = read ? "" : '<span class="tag new">未读</span>';
+      var lines = [];
+      if(l.company) lines.push(meta("公司", l.company));
+      if(l.country || l.city) lines.push(meta("国家/城市", (l.country||"") + (l.city?(" / "+l.city):"")));
+      if(l.product_interest) lines.push(meta("产品", l.product_interest));
+      if(l.quantity) lines.push(meta("数量", l.quantity));
+      if(l.target_port) lines.push(meta("目的港", l.target_port));
+      if(l.whatsapp) lines.push(meta("WhatsApp/电话", l.whatsapp));
+      if(l.page_url) lines.push('<div class="meta">来源页：<a href="'+esc(l.page_url)+'" target="_blank" rel="noopener">'+esc(l.page_url)+'</a></div>');
+      var attHtml = atts.length ? ('<div style="margin-top:8px">'+atts.map(function(a){
+        return '<span class="att">📎 '+esc(a.filename)+' '+mb(a.size_bytes)+' <button onclick="window.__viewAtt('+a.id+',this)">查看</button></span>';
+      }).join("")+'</div>') : "";
+      var note = l.message ? '<div class="msg">'+esc(l.message)+'</div>' : "";
+      return ''+
+        '<div class="card'+(read?" read":"")+'">'+
+          tag + newTag +
+          '<h3>'+esc(l.name||"（未留姓名）")+(l.email?' <a href="mailto:'+esc(l.email)+'">'+esc(l.email)+'</a>':'')+'</h3>'+
+          lines.join("") + note + attHtml +
+          '<div class="actions">'+
+            '<button class="primary" onclick="window.__toggleConv('+l.id+')">查看对话 ('+msgs.length+')</button>'+
+            (read?'<button onclick="window.__unread('+l.id+')">标为未读</button>':'<button onclick="window.__read('+l.id+')">标记已读</button>')+
+          '</div>'+
+          '<div class="conv" id="conv-'+l.id+'">'+convHtml(msgs)+'</div>'+
+        '</div>';
+    }).join("");
+  }
+
+  window.__toggleConv = function(id){ var c=$("conv-"+id); if(c) c.classList.toggle("on"); };
+  window.__read = function(id){ markRead(id); render(); };
+  window.__unread = function(id){ unmark(id); render(); };
+  window.__viewAtt = function(id, btn){
+    if(!cloud) return;
+    btn.disabled=true; var old=btn.textContent; btn.textContent="加载中…";
+    cloud.database.from("stwadd_attachments").select("filename,mime,data_url").eq("id",id).limit(1).then(function(r){
+      btn.disabled=false; btn.textContent=old;
+      if(r.error){ alert("加载失败："+ (r.error.message||r.error)); return; }
+      var d = r.data && r.data[0];
+      if(d && d.data_url){ window.open(d.data_url, "_blank"); }
+      else alert("该附件无内容");
+    });
+  };
+
+  function openApp(){
+    $("gate").style.display="none"; $("app").hidden=false;
+    initCloud(); load();
+    timer = setInterval(load, 90000);
+  }
+
+  $("enter").onclick = function(){
+    var v = $("code").value.trim().toLowerCase();
+    if(v === GATE){ sessionStorage.setItem("stw_inbox_open","1"); openApp(); }
+    else { $("err").textContent = "访问码错误，请重试。"; }
+  };
+  $("code").addEventListener("keydown", function(e){ if(e.key==="Enter") $("enter").click(); });
+  $("refresh").onclick = load;
+  $("lock").onclick = function(){ sessionStorage.removeItem("stw_inbox_open"); $("app").hidden=true; $("gate").style.display="flex"; clearInterval(timer); };
+  document.querySelectorAll("#filters button").forEach(function(b){
+    b.onclick = function(){
+      document.querySelectorAll("#filters button").forEach(function(x){ x.classList.remove("on"); });
+      b.classList.add("on"); state.filter=b.getAttribute("data-f"); render();
+    };
+  });
+
+  window.addEventListener("load", function(){
+    if(sessionStorage.getItem("stw_inbox_open")==="1"){ openApp(); }
+  });
+})();
+</script>
+</body>
+</html>
