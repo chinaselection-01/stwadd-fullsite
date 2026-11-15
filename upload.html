@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>圣瓦达图片上传中心 — STWADD Image Upload</title>
+<style>
+  :root{
+    --red:#c41e3a; --red-dark:#9e1730; --navy:#12212e; --muted:#5b6b78;
+    --bg:#f5f8fb; --card:#ffffff; --line:#e4ebf1; --ok:#0f7b53; --amber:#b45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;color:var(--navy);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  header{background:var(--navy);color:#fff;padding:26px 0}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand{font-size:20px;font-weight:800;letter-spacing:1px}
+  .brand span{color:#ff5a6e}
+  header a.back{font-size:14px;color:#bcd0dd;text-decoration:none;border:1px solid #3a4f5e;padding:7px 14px;border-radius:8px;transition:.2s}
+  header a.back:hover{color:#fff;border-color:#7a93a3}
+  .hero{background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);color:#fff;padding:46px 0 42px;text-align:center}
+  .hero h1{font-size:32px;font-weight:800;margin-bottom:12px;letter-spacing:.5px}
+  .hero p{font-size:16px;opacity:.94;max-width:600px;margin:0 auto}
+  .hero .badge{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:5px 14px;border-radius:20px;font-size:13px;margin-bottom:16px}
+  main{padding:40px 0 60px}
+  .intro{background:#fff8e9;border:1px solid #f2dcae;border-left:4px solid var(--amber);border-radius:10px;padding:16px 20px;margin-bottom:28px;font-size:14.5px;color:#6b5217}
+  .intro b{color:#7a3d05}
+  .steps{display:grid;gap:18px;margin-bottom:30px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;display:flex;gap:18px;box-shadow:0 2px 10px rgba(18,33,46,.04)}
+  .step .num{flex:0 0 46px;height:46px;border-radius:50%;background:var(--red);color:#fff;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:18px;margin-bottom:6px}
+  .step p{font-size:15px;color:var(--muted)}
+  .step code{background:#eef3f7;padding:2px 7px;border-radius:5px;font-size:13.5px;color:#1d4e6b;word-break:break-all}
+  .cta{display:block;text-align:center;background:var(--red);color:#fff;text-decoration:none;font-size:19px;font-weight:800;padding:18px 24px;border-radius:12px;margin:6px 0 8px;box-shadow:0 6px 18px rgba(196,30,58,.28);transition:.2s}
+  .cta:hover{background:var(--red-dark);transform:translateY(-2px);box-shadow:0 9px 24px rgba(196,30,58,.36)}
+  .cta small{display:block;font-size:13px;font-weight:400;opacity:.9;margin-top:4px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:22px;box-shadow:0 2px 10px rgba(18,33,46,.04)}
+  .card h2{font-size:19px;margin-bottom:14px;padding-left:12px;border-left:4px solid var(--red)}
+  .linkbuilder{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+  .linkbuilder input{flex:1 1 260px;font-size:15px;padding:11px 13px;border:1px solid #cdd9e2;border-radius:8px;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--navy)}
+  .linkbuilder button{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:11px 18px;font-size:15px;cursor:pointer;transition:.2s}
+  .linkbuilder button:hover{background:#22394b}
+  .prefix{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:14px;color:var(--ok);background:#e9f7f0;padding:8px 12px;border-radius:7px;word-break:break-all;display:block;margin-top:8px}
+  .tip{list-style:none;font-size:14.5px;color:var(--muted)}
+  .tip li{padding:7px 0 7px 26px;position:relative;border-bottom:1px dashed var(--line)}
+  .tip li:last-child{border-bottom:none}
+  .tip li:before{content:"✓";position:absolute;left:2px;color:var(--ok);font-weight:800}
+  .tip li.warn:before{content:"!";color:var(--amber)}
+  .copybox{background:#eef3f7;border:1px dashed #b9cad6;border-radius:8px;padding:12px 14px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13.5px;color:#1d4e6b;word-break:break-all;margin-top:10px}
+  .fallback{background:#f0f5f9;border-radius:12px;padding:20px;font-size:15px}
+  .fallback a{color:var(--red);font-weight:700;text-decoration:none}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:26px 20px;border-top:1px solid var(--line)}
+  .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:12px 24px;border-radius:30px;font-size:15px;opacity:0;transition:.3s;pointer-events:none;z-index:99}
+  .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+  @media(max-width:600px){.hero h1{font-size:25px}.step{padding:18px}.cta{font-size:17px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">STWADD <span>图片上传中心</span></div>
+    <a class="back" href="/">← 返回官网首页</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge">内部工具 · 仅自己和团队使用</div>
+    <h1>把图片放到 stwadd.com</h1>
+    <p>三分钟学会，图片直接存在我们自己的网站上，永久有效、不依赖任何外部图床。全程只需一个 GitHub 账号。</p>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <div class="intro">
+    <b>为什么要这样做？</b> 以前图片放在别人家的图床（yfisher / UCloud 桶），对方不稳定、图可能裂。现在全部改存到我们自己的 <b>stwadd.com</b>，图从自己的网站发出，又快又稳，也不再给别人做嫁衣。
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <div>
+        <h3>点下面这个红色大按钮</h3>
+        <p>它会自动打开我们仓库里专门放图片的文件夹（<code>images/uploads</code>），已经帮你定位好了，不用自己找。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <div>
+        <h3>把图片拖进去，然后提交</h3>
+        <p>打开后把图片文件直接拖到网页上（可一次传多张）→ 拉到页面最下方 → 在 <code>Commit changes</code> 上面随便写一句说明（如 <code>add product photos</code>）→ 点绿色的 <code>Commit changes</code> 按钮。等 1–2 分钟即可。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <div>
+        <h3>拿到图片链接</h3>
+        <p>用下面这个工具，输入你刚传的文件名，点复制，就得到图片的公网链接了。发给我、贴在产品介绍里、放进画册都行。</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="cta" href="https://github.com/chinaselection-01/stwadd-fullsite/upload/main/images/uploads" target="_blank" rel="noopener">
+    🚀 打开上传页面（点这里开始传图）
+    <small>会在新窗口打开 GitHub · 需要先登录你的账号 chinaselection-01</small>
+  </a>
+
+  <div class="card" style="margin-top:30px">
+    <h2>图片链接生成工具</h2>
+    <p style="font-size:14.5px;color:var(--muted)">传完图后，在这里输入文件名（含扩展名），自动生成可复制的图片地址：</p>
+    <div class="linkbuilder">
+      <input id="fname" type="text" placeholder="例如：tumbler-40oz-red.jpg" autocomplete="off">
+      <button id="genBtn" type="button">生成链接</button>
+      <button id="copyBtn" type="button">复制</button>
+    </div>
+    <span class="prefix" id="prefix">https://stwadd.com/images/uploads/</span>
+    <div class="copybox" id="result">完整链接会显示在这里…</div>
+  </div>
+
+  <div class="card">
+    <h2>文件命名规范（很重要）</h2>
+    <ul class="tip">
+      <li>用<b>英文小写 + 数字 + 连字符</b>，例如 <code>tumbler-40oz-red.jpg</code></li>
+      <li class="warn">不要用中文、空格、括号 —— 否则链接会变复杂，容易出错</li>
+      <li>常用格式：jpg / png / webp / svg 都支持</li>
+      <li>单张图片尽量小于 10MB，网站加载更快</li>
+      <li>提交后等 1–2 分钟再访问链接（GitHub 需要时间发布）</li>
+    </ul>
+  </div>
+
+  <div class="card fallback">
+    <b>不想自己传？</b> 直接把图片发给我（微信 / 邮件 <a href="mailto:bob@stwadd.com">bob@stwadd.com</a>），告诉我用途，我帮你传好并把链接发回给你 —— 一样的效果，你什么都不用装。
+  </div>
+
+</main>
+
+<footer>
+  STWADD · 圣瓦达 &nbsp;|&nbsp; 图片上传中心 &nbsp;|&nbsp; 图片存于本站 images/uploads 目录
+</footer>
+
+<div class="toast" id="toast">已复制 ✓</div>
+
+<script>
+(function(){
+  var PREFIX = 'https://stwadd.com/images/uploads/';
+  var fname = document.getElementById('fname');
+  var result = document.getElementById('result');
+  var toast = document.getElementById('toast');
+
+  function build(){
+    var name = (fname.value || '').trim();
+    if(!name){ showToast('请先输入文件名'); return ''; }
+    var url = PREFIX + encodeURIComponent(name);
+    result.textContent = url;
+    return url;
+  }
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function(){ toast.classList.remove('show'); }, 1800);
+  }
+  document.getElementById('genBtn').addEventListener('click', build);
+  fname.addEventListener('keydown', function(e){ if(e.key==='Enter'){ build(); } });
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var url = result.textContent.indexOf('https://')===0 ? result.textContent : build();
+    if(!url) return;
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){ showToast('链接已复制 ✓'); });
+    }else{
+      var ta=document.createElement('textarea'); ta.value=url; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); document.body.removeChild(ta); showToast('链接已复制 ✓');
+    }
+  });
+})();
+</script>
+</body>
+</html>
