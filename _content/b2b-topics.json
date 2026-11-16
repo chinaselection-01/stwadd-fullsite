@@ -159,15 +159,23 @@
       "faq": [
         [
           "Why is the MOQ higher for custom shapes?",
-          "A custom shape requires new steel moulds or plastic tooling, which can cost from roughly USD 1,500 to USD 3,000 per part, plus a first run producing more units than you need. The factory amortises that cost and raises the minimum. Stock shapes with only your logo printed need no tooling, so their MOQ can be much lower."
+          "A new shape needs new steel tooling or new plastic tooling, and the cost of cutting that tool has to be recovered across the first run. That is why a new mould carries a higher minimum than a stock shape with your logo on it, and why the tool cost should fall away on your second order. Stock shapes need no tooling, so their minimum is set only by production scheduling, which is a much softer constraint."
         ],
         [
           "Who owns the mould once I have paid for it?",
-          "You should own it, and this must be written into the contract: the mould is paid for by the buyer, listed as buyer property in the factory, physically marked with your name, and you may take it with you if you move production. Without that written clause the factory can retain it and force you to re-order at their price."
+          "You do, but only if the purchase order says so. The tool should be listed as buyer property, physically marked with your name, stored and maintained by the supplier while you order, and returned to you or destroyed with written certification if you end the relationship. Without that written clause the supplier can keep it, and the only way back is to pay them again. Use the clause from our tooling cost guide rather than writing your own."
         ],
         [
-          "Can I mix different designs in one order to hit MOQ?",
-          "Usually yes. Most factories calculate MOQ per design but will often accept a mixed container where the total meets their threshold and each style has a reasonable minimum. Ask explicitly whether the MOQ applies per design or per total order, and get the answer in writing."
+          "Can I mix different designs in one order to hit the minimum?",
+          "Usually yes. Most factories apply the minimum to the total order with a smaller floor per design, commonly 100 to 250 pieces, which is why mixed containers are offered. Ask explicitly whether the minimum is per design or for the whole order, get the answer in writing, and require a packing list broken down by design with the carton count for each. Expect the per-unit price to be slightly higher on a mixed order, because the line has to change over between SKUs."
+        ],
+        [
+          "Is the MOQ per design or for the whole order?",
+          "It depends on the factory and you must ask, because both versions are common and the answer can change your order size by a factor of three or four. The question that gets a straight answer is: \"If I order four designs of 250 pieces each in one container, is that acceptable, and what is the per-design floor?\" A factory that replies with a specific number is telling you it operates the total-order model."
+        ],
+        [
+          "Do I pay the tooling fee again on the second order?",
+          "You should not, and the purchase order should say so explicitly. A one-time tool is a one-time charge; only the per-colour spray and print setups recur, because they are production setups rather than tools. If a supplier's quote carries the same per-unit tooling spread on the reorder, ask them to restate the price with the spread removed, and if it does not come out, you are paying twice for one tool."
         ]
       ],
       "opening": "Minimum order quantity is not a factory decision you have to accept. It is a function of tooling, production scheduling and how badly the factory wants your slot, and all three of those can be negotiated if you know what to ask."
