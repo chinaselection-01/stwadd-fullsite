@@ -1,0 +1,42 @@
+/* =====================================================================
+ * STWADD — Global mobile responsiveness patch (conservative)
+ * Loaded on every page, AFTER the page's own CSS.
+ * Goal: contain horizontal overflow on legacy template pages without
+ *       disturbing pages whose responsive CSS is already correct.
+ * Only low-risk, widely-used rules here. No blanket `*` overrides.
+ * ===================================================================== */
+
+/* 1. The page itself never scrolls sideways */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 2. Media always fits its column */
+img, video, canvas, svg, picture, iframe, embed, object {
+  max-width: 100% !important;
+  height: auto;
+}
+iframe { height: auto; }
+
+/* 3. Tables never exceed their container; long text wraps */
+table { max-width: 100%; }
+pre, code { white-space: pre-wrap; word-break: break-all; }
+a, p, li, td, th, span { overflow-wrap: break-word; word-break: break-word; }
+
+@media (max-width: 768px) {
+  /* 4. Cap oversized fixed widths set inline by legacy templates */
+  [style*="width: 6"], [style*="width:6"],
+  [style*="width: 7"], [style*="width:7"],
+  [style*="width: 8"], [style*="width:8"],
+  [style*="width: 9"], [style*="width:9"],
+  [style*="width: 10"], [style*="width:10"] { max-width: 100% !important; }
+
+  /* 5. Common legacy two-column grids stack on phones */
+  .unit-grid-2, .unit-cols-2, .two-col, .col-2,
+  .grid-2, .cols-2 { grid-template-columns: 1fr !important; }
+
+  /* 6. Headings scale down */
+  h1 { font-size: clamp(1.45rem, 6vw, 2rem) !important; line-height: 1.25 !important; }
+  h2 { font-size: clamp(1.25rem, 5vw, 1.7rem) !important; line-height: 1.3 !important; }
+}
