@@ -15,6 +15,24 @@
   var INQUIRY_EMAIL = 'sales1@stwadd.com';
   var INQUIRY_CC = 'bob@stwadd.com';
 
+  /* ── 网易外贸通留资上报 (requestClue) ──
+     SDK 异步加载，用户提交时可能尚未就绪 → 轮询等待，最多约 6 秒；
+     全程 try/catch，绝不阻断原有的发邮件 / 存库流程。 */
+  function reportClueToNetease(name, email, company) {
+    if (!email) return;
+    var tries = 0;
+    (function attempt() {
+      try {
+        var sdk = window.__siteSDK__;
+        if (sdk && typeof sdk.requestClue === 'function') {
+          sdk.requestClue({ name: name || '', company: company || '', mail: email });
+          return;
+        }
+      } catch (e) {}
+      if (++tries < 30) setTimeout(attempt, 200);
+    })();
+  }
+
   /* ── Nav: enlarge text only ── */
   function fixNavFontSize() {
     var id = 'stwadd-nav-fix';
@@ -192,6 +210,17 @@
     }
 
     body += '\n---\nSent from stwadd.com';
+
+    // 网易外贸通留资上报（不影响发信）
+    var clueName = '', clueEmail = '', clueCompany = '';
+    for (var dk in data) {
+      if (!data.hasOwnProperty(dk)) continue;
+      var lk = dk.toLowerCase().replace(/^\s+|\s+$/g, '');
+      if (lk === 'email' || lk.indexOf('mail') > -1) clueEmail = data[dk];
+      else if (lk.indexOf('company') > -1) clueCompany = data[dk];
+      else if (lk === 'name' || lk.indexOf('name') > -1) clueName = data[dk];
+    }
+    reportClueToNetease(clueName, clueEmail, clueCompany);
 
     var mailto = 'mailto:' + INQUIRY_EMAIL +
       '?cc=' + INQUIRY_CC +

@@ -386,6 +386,21 @@
     if (!cloud) return;
     try { cloud.database.from("stwadd_attachments").insert({ session_id: sessionId, filename: f.name, mime: f.mime, size_bytes: f.size, data_url: f.dataUrl }).then(function () {}, function () {}); } catch (e) {}
   }
+  // 网易外贸通留资上报：SDK 异步加载，轮询等待，绝不阻断存库/提示
+  function reportClueToNetease(name, email, company) {
+    if (!email) return;
+    var tries = 0;
+    (function attempt() {
+      try {
+        var sdk = window.__siteSDK__;
+        if (sdk && typeof sdk.requestClue === 'function') {
+          sdk.requestClue({ name: name || "", company: company || "", mail: email });
+          return;
+        }
+      } catch (e) {}
+      if (++tries < 30) setTimeout(attempt, 200);
+    })();
+  }
   function saveLead(data) {
     return cloud.database.from("stwadd_leads").insert({
       session_id: sessionId, name: data.name || null, email: data.email || null, company: data.company || null,
@@ -513,6 +528,8 @@
       port: document.getElementById("fPort").value.trim(),
       msg: document.getElementById("fMsg").value.trim()
     };
+    // 网易外贸通留资上报（不影响云端存库/提示）
+    reportClueToNetease(data.name, data.email, data.company);
     pendingFiles.forEach(saveAttachment);
     if (!cloud) {
       document.getElementById("formWrap").style.display = "none";
