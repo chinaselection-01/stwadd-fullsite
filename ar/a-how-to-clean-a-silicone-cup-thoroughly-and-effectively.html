@@ -2972,6 +2972,29 @@ WhatsApp:86 150 8822 8843
 <script src="/static-override.js"></script>
 
   <script defer src="/js/stwadd-chat-widget.js"></script>
+<!-- ═══ NetEase 外贸通 site SDK（访客识别/页面浏览统计）═══ -->
+<script type="text/javascript">
+(function(w, d, n, a, j, s) {
+w[n] =
+w[n] ||
+function() {
+return (w[n].a = w[n].a || []).push(arguments);
+};
+j = d.createElement('script');
+j.async = true;
+j.src = 'https://sirius-it-site.lx.netease.com/site-sdk.js';
+j.onload = function() {
+setTimeout(()=> {
+__siteSDK__.setDefaultConfig({
+outerKey: 'key6fe02c5af0e44ae086740e9e574f3f5c',
+});
+__siteSDK__.init();
+}, 500);
+};
+s = d.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(j, s);
+})(window, document, '__siteSDK__');
+</script>
 </body>
 
 </html>
