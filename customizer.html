@@ -108,6 +108,7 @@
     <a href="/oem-odm.html">OEM/ODM</a>
     <a href="/color-finder.html">Color Finder</a>
     <a href="/customizer.html">Design Studio</a>
+    <a href="/cup-vectors.html">Vector Shapes</a>
     <a href="/contact-us.html" class="cta">Get a Quote</a>
   </nav>
 </div></header>
@@ -133,9 +134,12 @@
     <div class="fgroup">
       <h3>1 · Bottle shape</h3>
       <div class="cup-tabs" id="cupTabs">
-        <button data-cup="tumbler" class="active">Tumbler</button>
-        <button data-cup="bottle">Bottle</button>
-        <button data-cup="mug">Mug</button>
+        <button data-cup="straight-flask-720" class="active">Straight 720</button>
+        <button data-cup="sport-flask-800">Sport 800</button>
+        <button data-cup="space-flask">Space Flask</button>
+        <button data-cup="milk-coffee-360">Coffee 360</button>
+        <button data-cup="dual-drink-400">Dual-Drink 400</button>
+        <button data-cup="dual-drink-600">Dual-Drink 600</button>
       </div>
       <div class="hint" id="areaHint">Printable area shown as dashed box.</div>
     </div>
@@ -224,72 +228,33 @@ j.onload = function() { setTimeout(function(){ __siteSDK__.setDefaultConfig({out
 s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(j, s);
 })(window, document, '__siteSDK__');
 </script>
+<script src="/js/cup-vector-shapes.js"></script>
 <script>
 (function(){
   "use strict";
   var $ = function(id){ return document.getElementById(id); };
   $("yr").textContent = new Date().getFullYear();
 
-  // ---- cup definitions: SVG body + printable rectangle (viewBox 400x560) ----
-  var CUPS = {
-    tumbler: {
-      name:'Tumbler',
-      area:{x:126,y:215,w:148,h:232},
-      svg:
-      '<defs>'+
-        '<linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">'+
-          '<stop offset="0" stop-color="#d9dee3"/><stop offset="0.18" stop-color="#f4f6f8"/>'+
-          '<stop offset="0.5" stop-color="#c9d0d7"/><stop offset="0.82" stop-color="#eef1f4"/>'+
-          '<stop offset="1" stop-color="#b9c1c9"/>'+
-        '</linearGradient>'+
-        '<linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">'+
-          '<stop offset="0" stop-color="#3b444d"/><stop offset="0.5" stop-color="#6b757f"/><stop offset="1" stop-color="#2f373e"/>'+
-        '</linearGradient>'+
-      '</defs>'+
-      '<ellipse cx="200" cy="523" rx="86" ry="12" fill="#d7dde2" opacity="0.55"/>'+
-      '<path d="M110 118 L290 118 L276 500 Q274 514 258 514 L142 514 Q126 514 124 500 Z" fill="url(#steel)" stroke="#aeb7bf" stroke-width="1.5"/>'+
-      '<rect x="105" y="92" width="190" height="30" rx="9" fill="url(#lid)"/>'+
-      '<ellipse cx="200" cy="92" rx="95" ry="13" fill="#7d8791"/>'+
-      '<ellipse cx="200" cy="90" rx="88" ry="9" fill="#5c666f"/>'+
-      '<rect x="196" y="72" width="8" height="22" rx="4" fill="#6b757f"/>'
-    },
-    bottle: {
-      name:'Bottle',
-      area:{x:150,y:230,w:100,h:214},
-      svg:
-      '<defs>'+
-        '<linearGradient id="steel2" x1="0" y1="0" x2="1" y2="0">'+
-          '<stop offset="0" stop-color="#cfd6dc"/><stop offset="0.22" stop-color="#f4f6f8"/>'+
-          '<stop offset="0.55" stop-color="#c4ccd3"/><stop offset="0.85" stop-color="#edf0f3"/>'+
-          '<stop offset="1" stop-color="#b6bec6"/>'+
-        '</linearGradient>'+
-      '</defs>'+
-      '<ellipse cx="200" cy="522" rx="70" ry="11" fill="#d7dde2" opacity="0.55"/>'+
-      '<rect x="132" y="150" width="136" height="366" rx="46" fill="url(#steel2)" stroke="#aeb7bf" stroke-width="1.5"/>'+
-      '<rect x="146" y="106" width="108" height="52" rx="12" fill="#4a545e"/>'+
-      '<rect x="150" y="100" width="100" height="16" rx="8" fill="#6d7781"/>'+
-      '<path d="M170 106 q30 -26 60 0" fill="none" stroke="#8b959e" stroke-width="5" stroke-linecap="round"/>'
-    },
-    mug: {
-      name:'Mug',
-      area:{x:136,y:250,w:126,h:196},
-      svg:
-      '<defs>'+
-        '<linearGradient id="mg" x1="0" y1="0" x2="1" y2="0">'+
-          '<stop offset="0" stop-color="#e7eaed"/><stop offset="0.3" stop-color="#ffffff"/>'+
-          '<stop offset="0.7" stop-color="#e4e8ec"/><stop offset="1" stop-color="#cfd5db"/>'+
-        '</linearGradient>'+
-      '</defs>'+
-      '<ellipse cx="198" cy="500" rx="82" ry="11" fill="#d7dde2" opacity="0.55"/>'+
-      '<path d="M282 250 q54 6 54 60 q0 58 -54 62" fill="none" stroke="#dfe4e9" stroke-width="20"/>'+
-      '<path d="M282 250 q46 6 46 60 q0 50 -46 54" fill="none" stroke="#ffffff" stroke-width="12"/>'+
-      '<path d="M118 182 L280 182 L274 486 Q272 500 256 500 L142 500 Q126 500 124 486 Z" fill="url(#mg)" stroke="#b9c0c7" stroke-width="1.5"/>'+
-      '<ellipse cx="199" cy="182" rx="81" ry="15" fill="#f2f4f6" stroke="#b9c0c7" stroke-width="1.5"/>'+
-      '<ellipse cx="199" cy="182" rx="70" ry="10" fill="#d8dee4"/>'
-    }
-  };
+  // ---- cup definitions loaded from shared real-product vector library ----
+  // js/cup-vector-shapes.js defines window.CUP_VECTOR_SHAPES (6 real shapes).
+  // Each shape's .svg is a full <svg>...</svg>; we use its inner markup here
+  // with the print-guide rect kept visible as a layout aid.
+  var CUPS = {};
+  var cupOrder = [];
+  (window.CUP_VECTOR_SHAPES || []).forEach(function(shape){
+    var inner = shape.svg
+      .replace(/^\s*<svg[^>]*>/i,'')
+      .replace(/<\/svg>\s*$/i,'');
+    CUPS[shape.id] = { name: shape.short || shape.name, fullName: shape.name,
+                       area: shape.printArea, svg: inner };
+    cupOrder.push(shape.id);
+  });
+  if(!cupOrder.length){
+    CUPS.fallback = { name:'Tumbler', area:{x:126,y:215,w:148,h:232}, svg:'' };
+    cupOrder = ['fallback'];
+  }
 
-  var cupKey = 'tumbler';
+  var cupKey = cupOrder[0];
   var elements = [];   // {type,x,y,scale,rot,color,text,font,weight,img}
   var selected = -1;
   var dragging = false, dragOffX=0, dragOffY=0;
@@ -516,7 +481,11 @@ s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(j, s);
     var off=document.createElement('canvas'); off.width=W*2; off.height=H*2;
     var c=off.getContext('2d'); c.scale(2,2);
     c.fillStyle='#ffffff'; c.fillRect(0,0,W,H);
-    var xml=new XMLSerializer().serializeToString(svg);
+    // export a clone with the red print-guide removed — it is a layout aid only
+    var exportSvg = svg.cloneNode(true);
+    var guides = exportSvg.querySelectorAll('.print-guide');
+    for(var gi=0; gi<guides.length; gi++){ guides[gi].parentNode.removeChild(guides[gi]); }
+    var xml=new XMLSerializer().serializeToString(exportSvg);
     var url=URL.createObjectURL(new Blob([xml],{type:'image/svg+xml;charset=utf-8'}));
     var bg=new Image();
     bg.onload=function(){
