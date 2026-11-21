@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script>(function(){if(location.protocol==='http:'){location.replace('https://'+location.host+location.pathname+location.search+location.hash);}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Custom Drinkware Design Preview | Print Area Studio | STWADD</title>
+<meta name="description" content="Design your custom water bottle online: add text or upload your logo, resize and position it inside the printable area, and preview the result. Free tool by STWADD.">
+<link rel="canonical" href="https://stwadd.com/customizer.html">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/mobile-responsive-patch.css">
+<style>
+  :root{
+    --red:#c41e3a; --red-dark:#9e1530; --navy:#12212e; --ink:#1c2b3a;
+    --line:#e3e9ef; --bg:#f5f8fb; --muted:#5b6b78; --white:#fff;
+    --ok:#1a7a37; --warn:#d99a00; --shadow:0 4px 20px rgba(18,33,46,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:15px}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .container{max-width:1220px;margin:0 auto;padding:0 20px}
+  .top-bar{background:var(--navy);color:#cfe0ec;font-size:12px;padding:7px 0}
+  .top-bar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .header-main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .header-main .container{display:flex;align-items:center;justify-content:space-between;min-height:66px;gap:16px}
+  .logo img{height:38px;display:block}
+  .nav-links{display:flex;gap:20px;align-items:center;font-size:14px;font-weight:600;flex-wrap:wrap}
+  .nav-links a:hover{color:var(--red)}
+  .nav-links .cta{background:var(--red);color:#fff;padding:9px 16px;border-radius:6px}
+  .nav-links .cta:hover{background:var(--red-dark);color:#fff}
+
+  .hero{background:linear-gradient(135deg,#12212e 0%,#1c3247 100%);color:#fff;padding:38px 0 34px}
+  .hero h1{margin:0 0 8px;font-size:clamp(24px,3.6vw,36px);line-height:1.2}
+  .hero p{margin:0;max-width:800px;color:#c9d9e6;font-size:15px}
+  .hero .badge{display:inline-block;background:rgba(196,30,58,.18);border:1px solid rgba(196,30,58,.5);color:#ff9aab;font-size:12px;padding:4px 11px;border-radius:20px;margin-bottom:12px;letter-spacing:.3px}
+  .notice{max-width:1220px;margin:18px auto 0;padding:11px 18px;background:#fff8e6;border:1px solid #f0d99a;border-left:4px solid #d99a00;border-radius:8px;color:#6b5410;font-size:13px}
+  .notice b{color:#8a6a00}
+
+  .wrap{max-width:1220px;margin:0 auto;padding:24px 20px 60px}
+  .studio{display:grid;grid-template-columns:330px 1fr;gap:22px;align-items:start}
+  @media(max-width:900px){.studio{grid-template-columns:1fr}}
+
+  .panel{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+  .panel h2{margin:0 0 3px;font-size:17px;color:var(--navy)}
+  .panel .sub{margin:0 0 16px;color:var(--muted);font-size:12.5px}
+  .fgroup{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+  .fgroup:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .fgroup h3{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+  .cup-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .cup-tabs button{border:1px solid var(--line);background:#fff;border-radius:7px;padding:9px 4px;font-size:12px;cursor:pointer;color:var(--muted);font-weight:600}
+  .cup-tabs button.active{border-color:var(--red);background:#fff2f4;color:var(--red)}
+  label.field{display:block;font-size:12px;font-weight:600;color:var(--muted);margin:0 0 5px}
+  input[type=text],select,textarea{width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:7px;font-size:14px;font-family:inherit;margin-bottom:9px}
+  input[type=text]:focus,select:focus,textarea:focus{outline:2px solid rgba(196,30,58,.25);border-color:var(--red)}
+  input[type=color]{width:100%;height:38px;border:1px solid var(--line);border-radius:7px;padding:3px;cursor:pointer;background:#fff;margin-bottom:9px}
+  input[type=range]{width:100%;accent-color:var(--red);margin:2px 0 8px}
+  .range-row{display:flex;align-items:center;gap:10px}
+  .range-row .val{font-size:12px;color:var(--muted);min-width:52px;text-align:right;font-family:ui-monospace,monospace}
+  .btn{background:var(--red);color:#fff;border:0;border-radius:8px;padding:11px 16px;font-size:14px;font-weight:600;cursor:pointer;width:100%}
+  .btn:hover{background:var(--red-dark)}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .btn.ghost{background:#fff;color:var(--red);border:1px solid var(--red)}
+  .btn.ghost:hover{background:#fff2f4}
+  .btn.dark{background:var(--navy)}
+  .btn.dark:hover{background:#0a1620}
+  .btn.sm{padding:9px 12px;font-size:13px;margin-top:8px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .hint{font-size:11px;color:var(--muted);line-height:1.5;margin-top:6px}
+
+  /* stage */
+  .stage-wrap{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:18px}
+  .stage-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .stage-head h2{margin:0;font-size:17px;color:var(--navy)}
+  .stage-head .selinfo{font-size:12px;color:var(--muted)}
+  .canvas-holder{position:relative;width:100%;max-width:440px;margin:0 auto;aspect-ratio:400/560;background:linear-gradient(180deg,#fff,#f0f3f6);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  #cupSvg,#designCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+  #designCanvas{touch-action:none;cursor:crosshair}
+  .stage-foot{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+  .stage-foot .btn{width:auto;flex:1;min-width:130px}
+  .status{margin-top:10px;font-size:12px;min-height:18px;color:var(--muted)}
+  .status.bad{color:#b01732;font-weight:600}
+  .status.good{color:var(--ok)}
+
+  .elements{margin-top:4px}
+  .el-item{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:8px;margin-bottom:7px;cursor:pointer;font-size:13px}
+  .el-item.active{border-color:var(--red);background:#fff5f6}
+  .el-item .thumb{width:34px;height:34px;border-radius:6px;background:#eef2f6;flex:none;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted);overflow:hidden}
+  .el-item .thumb img{width:100%;height:100%;object-fit:contain}
+  .el-item .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .el-item .del{border:0;background:none;color:#b01732;font-size:17px;cursor:pointer;line-height:1;padding:2px 5px}
+
+  .footer{background:var(--navy);color:#c9d6e0;padding:32px 0 22px;font-size:13px}
+  .footer .container{text-align:center}
+  .footer .fbot{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:#8fa3b3}
+</style>
+</head>
+<body>
+
+<div class="top-bar"><div class="container"><span>🌍 Custom Drinkware Design Studio Since 2017</span><span>📧 bob@stwadd.com</span></div></div>
+<header class="header-main"><div class="container">
+  <a href="/" class="logo"><img src="/images/stwadd-logo.png" alt="STWADD Logo"></a>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/all-products.html">Products</a>
+    <a href="/oem-odm.html">OEM/ODM</a>
+    <a href="/color-finder.html">Color Finder</a>
+    <a href="/customizer.html">Design Studio</a>
+    <a href="/contact-us.html" class="cta">Get a Quote</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="container">
+  <span class="badge">FREE TOOL · DESIGN YOUR BOTTLE</span>
+  <h1>Custom Drinkware Design Studio</h1>
+  <p>Add your text or upload your logo, drag and resize it inside the printable area, and see how it looks on the bottle. Download the preview and send it to us — we'll take it from there.</p>
+</div></section>
+
+<div class="notice">
+  <b>⚠️ Preview note:</b> This is a <b>flat, approximate layout preview</b>. Real printing wraps around a curved bottle, so the final look varies by shape, material, print method (silkscreen / UV / laser / heat transfer) and color. The dashed box marks a <b>typical printable area</b> — actual limits depend on the exact model. <b>We always make a physical sample for your approval before production.</b>
+</div>
+
+<div class="wrap">
+<div class="studio">
+
+  <!-- LEFT PANEL -->
+  <div class="panel">
+    <h2>Design controls</h2>
+    <p class="sub">Pick a bottle, then add text or your logo. Select an item on the bottle to edit it.</p>
+
+    <div class="fgroup">
+      <h3>1 · Bottle shape</h3>
+      <div class="cup-tabs" id="cupTabs">
+        <button data-cup="tumbler" class="active">Tumbler</button>
+        <button data-cup="bottle">Bottle</button>
+        <button data-cup="mug">Mug</button>
+      </div>
+      <div class="hint" id="areaHint">Printable area shown as dashed box.</div>
+    </div>
+
+    <div class="fgroup">
+      <h3>2 · Add elements</h3>
+      <label class="field">Text</label>
+      <input type="text" id="textInput" placeholder="Your brand / message" maxlength="40">
+      <div class="two">
+        <select id="fontSel">
+          <option value="Arial, sans-serif">Arial</option>
+          <option value="Georgia, serif">Georgia</option>
+          <option value="'Times New Roman', serif">Times New Roman</option>
+          <option value="Impact, sans-serif">Impact</option>
+          <option value="'Courier New', monospace">Courier</option>
+          <option value="'Trebuchet MS', sans-serif">Trebuchet</option>
+        </select>
+        <input type="color" id="textColor" value="#12212e" title="Text color">
+      </div>
+      <button class="btn ghost sm" id="addTextBtn">＋ Add text</button>
+      <label class="field" style="margin-top:12px">Logo / image</label>
+      <input type="file" id="logoFile" accept="image/*" style="display:none">
+      <button class="btn ghost sm" id="addImgBtn">🖼️ Upload logo (PNG / JPG)</button>
+      <div class="hint">Transparent PNG works best. We accept artwork after you send the preview.</div>
+    </div>
+
+    <div class="fgroup" id="editGroup">
+      <h3>3 · Selected element</h3>
+      <div id="noSel" class="hint" style="color:var(--muted)">Nothing selected. Click an element on the bottle or in the list below.</div>
+      <div id="editControls" style="display:none">
+        <label class="field">Text content</label>
+        <input type="text" id="editText" maxlength="40">
+        <label class="field">Size</label>
+        <div class="range-row"><input type="range" id="sizeRange" min="20" max="260" value="100"><span class="val" id="sizeVal">100%</span></div>
+        <label class="field">Rotation</label>
+        <div class="range-row"><input type="range" id="rotRange" min="-180" max="180" value="0"><span class="val" id="rotVal">0°</span></div>
+        <label class="field">Color</label>
+        <input type="color" id="editColor" value="#12212e">
+        <div class="two">
+          <button class="btn ghost sm" id="frontBtn">Send back</button>
+          <button class="btn ghost sm" id="deleteBtn" style="color:#b01732;border-color:#b01732">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="fgroup">
+      <h3>Layers</h3>
+      <div class="elements" id="elements"></div>
+      <button class="btn ghost sm" id="resetBtn">↺ Reset design</button>
+    </div>
+  </div>
+
+  <!-- RIGHT STAGE -->
+  <div class="stage-wrap">
+    <div class="stage-head">
+      <h2>Live preview</h2>
+      <span class="selinfo" id="stageInfo">Tumbler · 0 elements</span>
+    </div>
+    <div class="canvas-holder" id="holder">
+      <svg id="cupSvg" viewBox="0 0 400 560" xmlns="http://www.w3.org/2000/svg"></svg>
+      <canvas id="designCanvas" width="400" height="560"></canvas>
+    </div>
+    <div class="status" id="status">Add text or a logo to start. Drag to move; use the sliders to resize &amp; rotate.</div>
+    <div class="stage-foot">
+      <button class="btn dark" id="downloadBtn">⬇ Download preview PNG</button>
+      <button class="btn ghost" id="specBtn">📋 Copy design spec</button>
+    </div>
+    <div class="hint">Then email the PNG + spec to <b>bob@stwadd.com</b> (or WhatsApp +86 150 8822 8843). We'll confirm the print area on the real model and send you a physical sample before production.</div>
+  </div>
+
+</div>
+</div>
+
+<footer class="footer"><div class="container">
+  <div>© <span id="yr"></span> Yongkang STWADD Houseware Co., Ltd. · Custom drinkware manufacturer &amp; sourcing partner</div>
+  <div class="fbot">Flat layout preview only. Final artwork and print area confirmed on a physical sample. Pantone® is a trademark of Pantone LLC; STWADD is not affiliated.</div>
+</div></footer>
+
+<script src="/js/stwadd-chat-widget.js" defer></script>
+<script type="text/javascript">
+(function(w, d, n, a, j, s) {
+w[n] = w[n] || function() { return (w[n].a = w[n].a || []).push(arguments); };
+j = d.createElement('script'); j.async = true;
+j.src = 'https://sirius-it-site.lx.netease.com/site-sdk.js';
+j.onload = function() { setTimeout(function(){ __siteSDK__.setDefaultConfig({outerKey:'key6fe02c5af0e44ae086740e9e574f3f5c'}); __siteSDK__.init(); }, 500); };
+s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(j, s);
+})(window, document, '__siteSDK__');
+</script>
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  $("yr").textContent = new Date().getFullYear();
+
+  // ---- cup definitions: SVG body + printable rectangle (viewBox 400x560) ----
+  var CUPS = {
+    tumbler: {
+      name:'Tumbler',
+      area:{x:126,y:215,w:148,h:232},
+      svg:
+      '<defs>'+
+        '<linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">'+
+          '<stop offset="0" stop-color="#d9dee3"/><stop offset="0.18" stop-color="#f4f6f8"/>'+
+          '<stop offset="0.5" stop-color="#c9d0d7"/><stop offset="0.82" stop-color="#eef1f4"/>'+
+          '<stop offset="1" stop-color="#b9c1c9"/>'+
+        '</linearGradient>'+
+        '<linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">'+
+          '<stop offset="0" stop-color="#3b444d"/><stop offset="0.5" stop-color="#6b757f"/><stop offset="1" stop-color="#2f373e"/>'+
+        '</linearGradient>'+
+      '</defs>'+
+      '<ellipse cx="200" cy="523" rx="86" ry="12" fill="#d7dde2" opacity="0.55"/>'+
+      '<path d="M110 118 L290 118 L276 500 Q274 514 258 514 L142 514 Q126 514 124 500 Z" fill="url(#steel)" stroke="#aeb7bf" stroke-width="1.5"/>'+
+      '<rect x="105" y="92" width="190" height="30" rx="9" fill="url(#lid)"/>'+
+      '<ellipse cx="200" cy="92" rx="95" ry="13" fill="#7d8791"/>'+
+      '<ellipse cx="200" cy="90" rx="88" ry="9" fill="#5c666f"/>'+
+      '<rect x="196" y="72" width="8" height="22" rx="4" fill="#6b757f"/>'
+    },
+    bottle: {
+      name:'Bottle',
+      area:{x:150,y:230,w:100,h:214},
+      svg:
+      '<defs>'+
+        '<linearGradient id="steel2" x1="0" y1="0" x2="1" y2="0">'+
+          '<stop offset="0" stop-color="#cfd6dc"/><stop offset="0.22" stop-color="#f4f6f8"/>'+
+          '<stop offset="0.55" stop-color="#c4ccd3"/><stop offset="0.85" stop-color="#edf0f3"/>'+
+          '<stop offset="1" stop-color="#b6bec6"/>'+
+        '</linearGradient>'+
+      '</defs>'+
+      '<ellipse cx="200" cy="522" rx="70" ry="11" fill="#d7dde2" opacity="0.55"/>'+
+      '<rect x="132" y="150" width="136" height="366" rx="46" fill="url(#steel2)" stroke="#aeb7bf" stroke-width="1.5"/>'+
+      '<rect x="146" y="106" width="108" height="52" rx="12" fill="#4a545e"/>'+
+      '<rect x="150" y="100" width="100" height="16" rx="8" fill="#6d7781"/>'+
+      '<path d="M170 106 q30 -26 60 0" fill="none" stroke="#8b959e" stroke-width="5" stroke-linecap="round"/>'
+    },
+    mug: {
+      name:'Mug',
+      area:{x:136,y:250,w:126,h:196},
+      svg:
+      '<defs>'+
+        '<linearGradient id="mg" x1="0" y1="0" x2="1" y2="0">'+
+          '<stop offset="0" stop-color="#e7eaed"/><stop offset="0.3" stop-color="#ffffff"/>'+
+          '<stop offset="0.7" stop-color="#e4e8ec"/><stop offset="1" stop-color="#cfd5db"/>'+
+        '</linearGradient>'+
+      '</defs>'+
+      '<ellipse cx="198" cy="500" rx="82" ry="11" fill="#d7dde2" opacity="0.55"/>'+
+      '<path d="M282 250 q54 6 54 60 q0 58 -54 62" fill="none" stroke="#dfe4e9" stroke-width="20"/>'+
+      '<path d="M282 250 q46 6 46 60 q0 50 -46 54" fill="none" stroke="#ffffff" stroke-width="12"/>'+
+      '<path d="M118 182 L280 182 L274 486 Q272 500 256 500 L142 500 Q126 500 124 486 Z" fill="url(#mg)" stroke="#b9c0c7" stroke-width="1.5"/>'+
+      '<ellipse cx="199" cy="182" rx="81" ry="15" fill="#f2f4f6" stroke="#b9c0c7" stroke-width="1.5"/>'+
+      '<ellipse cx="199" cy="182" rx="70" ry="10" fill="#d8dee4"/>'
+    }
+  };
+
+  var cupKey = 'tumbler';
+  var elements = [];   // {type,x,y,scale,rot,color,text,font,weight,img}
+  var selected = -1;
+  var dragging = false, dragOffX=0, dragOffY=0;
+  var W=400, H=560;
+
+  var svg = $("cupSvg"), canvas = $("designCanvas"), ctx = canvas.getContext('2d');
+  var holder = $("holder");
+
+  function area(){ return CUPS[cupKey].area; }
+
+  function renderCup(){
+    svg.innerHTML = CUPS[cupKey].svg;
+    $("areaHint").textContent = CUPS[cupKey].name + ' · dashed box = typical print area';
+  }
+
+  // ---- coordinate helpers ----
+  function toCanvas(e){
+    var r = canvas.getBoundingClientRect();
+    var pt = e.touches ? e.touches[0] : e;
+    return { x:(pt.clientX - r.left) * (W / r.width), y:(pt.clientY - r.top) * (H / r.height) };
+  }
+  function baseSize(el){
+    if(el.type === 'text') return { w: el.text.length * el.baseFont * 0.62, h: el.baseFont };
+    return { w: el.img.naturalWidth, h: el.img.naturalHeight };
+  }
+  function drawEl(c, el, forExport){
+    var b = baseSize(el);
+    var w = b.w * el.scale, h = b.h * el.scale;
+    c.save();
+    c.translate(el.x, el.y);
+    c.rotate((el.rot||0) * Math.PI/180);
+    if(el.type === 'text'){
+      var px = el.baseFont * el.scale;
+      c.font = (el.weight||'') + ' ' + px + 'px ' + el.font;
+      c.fillStyle = el.color;
+      c.textAlign = 'center'; c.textBaseline = 'middle';
+      c.fillText(el.text, 0, 0);
+    } else {
+      c.drawImage(el.img, -w/2, -h/2, w, h);
+    }
+    c.restore();
+    return {w:w,h:h};
+  }
+  function outOfArea(el){
+    var b = baseSize(el), w=b.w*el.scale, h=b.h*el.scale;
+    var a = area();
+    // 以中心点+半尺寸做粗略边界判断（旋转放宽）
+    var pad = 6;
+    return (el.x - w/2 < a.x - pad || el.x + w/2 > a.x+a.w + pad ||
+            el.y - h/2 < a.y - pad || el.y + h/2 > a.y+a.h + pad);
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    var a = area();
+    // printable area dashed box (display only)
+    ctx.save();
+    ctx.strokeStyle = 'rgba(196,30,58,.75)';
+    ctx.lineWidth = 2; ctx.setLineDash([8,6]);
+    ctx.strokeRect(a.x,a.y,a.w,a.h);
+    ctx.fillStyle = 'rgba(196,30,58,.06)';
+    ctx.fillRect(a.x,a.y,a.w,a.h);
+    ctx.setLineDash([]);
+    ctx.fillStyle = 'rgba(196,30,58,.85)';
+    ctx.font = '600 12px sans-serif'; ctx.textAlign='left'; ctx.textBaseline='top';
+    ctx.fillText('PRINT AREA', a.x, a.y-18);
+    ctx.restore();
+
+    elements.forEach(function(el,i){
+      var box = drawEl(ctx, el, false);
+      if(i === selected){
+        ctx.save();
+        ctx.strokeStyle = outOfArea(el) ? '#d4324f' : '#2b7fff';
+        ctx.lineWidth = 2; ctx.setLineDash([5,4]);
+        ctx.strokeRect(el.x-box.w/2-5, el.y-box.h/2-5, box.w+10, box.h+10);
+        ctx.setLineDash([]);
+        // corner handle
+        ctx.fillStyle = ctx.strokeStyle;
+        ctx.beginPath(); ctx.arc(el.x+box.w/2+5, el.y+box.h/2+5, 6, 0, Math.PI*2); ctx.fill();
+        ctx.restore();
+      }
+    });
+
+    var bad = elements.some(outOfArea);
+    var st = $("status");
+    if(bad){ st.textContent = '⚠ Part of the design is outside the print area — drag it back inside.'; st.className='status bad'; }
+    else if(elements.length){ st.textContent = '✓ Design fits inside the print area. Download the preview when ready.'; st.className='status good'; }
+    else { st.textContent = 'Add text or a logo to start. Drag to move; use the sliders to resize & rotate.'; st.className='status'; }
+
+    $("stageInfo").textContent = CUPS[cupKey].name + ' · ' + elements.length + ' element(s)';
+    renderLayers();
+  }
+
+  function renderLayers(){
+    var box = $("elements"); box.innerHTML='';
+    if(!elements.length){ box.innerHTML='<div class="hint">No elements yet.</div>'; return; }
+    elements.forEach(function(el,i){
+      var d=document.createElement('div');
+      d.className='el-item'+(i===selected?' active':'');
+      var thumb = el.type==='text'
+        ? '<span style="font-size:13px;color:'+el.color+'">T</span>'
+        : '<img src="'+el.img.src+'" alt="">';
+      var nm = el.type==='text' ? el.text : 'Logo image';
+      d.innerHTML='<span class="thumb">'+thumb+'</span><span class="nm">'+escapeHtml(nm)+'</span><button class="del" title="Delete">×</button>';
+      d.addEventListener('click',function(e){
+        if(e.target.classList.contains('del')){ elements.splice(i,1); if(selected>=elements.length)selected=elements.length-1; syncControls(); draw(); return; }
+        selected=i; syncControls(); draw();
+      });
+      box.appendChild(d);
+    });
+  }
+  function escapeHtml(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+
+  // ---- hit test (topmost first) ----
+  function hitTest(p){
+    for(var i=elements.length-1;i>=0;i--){
+      var el=elements[i], b=baseSize(el), w=b.w*el.scale, h=b.h*el.scale;
+      // inverse rotate point around element center
+      var dx=p.x-el.x, dy=p.y-el.y, r=-(el.rot||0)*Math.PI/180;
+      var lx=dx*Math.cos(r)-dy*Math.sin(r), ly=dx*Math.sin(r)+dy*Math.cos(r);
+      if(Math.abs(lx)<=w/2+6 && Math.abs(ly)<=h/2+6) return i;
+    }
+    return -1;
+  }
+
+  function onDown(e){
+    var p=toCanvas(e), idx=hitTest(p);
+    if(idx>=0){ selected=idx; dragging=true; dragOffX=p.x-elements[idx].x; dragOffY=p.y-elements[idx].y; syncControls(); draw(); }
+    else { selected=-1; syncControls(); draw(); }
+    e.preventDefault();
+  }
+  function onMove(e){
+    if(!dragging || selected<0) return;
+    var p=toCanvas(e), el=elements[selected];
+    el.x=p.x-dragOffX; el.y=p.y-dragOffY;
+    // keep element roughly within stage
+    el.x=Math.max(10,Math.min(W-10,el.x)); el.y=Math.max(10,Math.min(H-10,el.y));
+    draw(); e.preventDefault();
+  }
+  function onUp(){ dragging=false; }
+
+  canvas.addEventListener('mousedown',onDown); window.addEventListener('mousemove',onMove); window.addEventListener('mouseup',onUp);
+  canvas.addEventListener('touchstart',onDown,{passive:false}); window.addEventListener('touchmove',onMove,{passive:false}); window.addEventListener('touchend',onUp);
+
+  // ---- controls ----
+  function addText(){
+    var t=$("textInput").value.trim();
+    if(!t){ alert('Please type some text first.'); $("textInput").focus(); return; }
+    var a=area();
+    // auto-fit text width to ~88% of print area so it looks right immediately
+    var baseFont=46;
+    var estW=t.length*baseFont*0.62;
+    var fitScale=Math.min(1, (a.w*0.88)/estW);
+    elements.push({
+      type:'text', text:t, font:$("fontSel").value, color:$("textColor").value,
+      weight:'700', baseFont:baseFont, scale:fitScale, rot:0,
+      x:a.x+a.w/2, y:a.y+a.h/2
+    });
+    selected=elements.length-1; syncControls(); draw();
+  }
+  $("addTextBtn").addEventListener('click',addText);
+  $("textInput").addEventListener('keydown',function(e){ if(e.key==='Enter')addText(); });
+
+  $("addImgBtn").addEventListener('click',function(){ $("logoFile").click(); });
+  $("logoFile").addEventListener('change',function(e){
+    var f=e.target.files[0]; if(!f)return;
+    var reader=new FileReader();
+    reader.onload=function(ev){
+      var img=new Image();
+      img.onload=function(){
+        var a=area();
+        // scale image to fit ~60% of print area width
+        var target=a.w*0.6;
+        var base=target/img.naturalWidth;
+        elements.push({type:'image',img:img,scale:base,rot:0,x:a.x+a.w/2,y:a.y+a.h/2});
+        selected=elements.length-1; syncControls(); draw();
+      };
+      img.src=ev.target.result;
+    };
+    reader.readAsDataURL(f);
+    $("logoFile").value='';
+  });
+
+  function syncControls(){
+    var has = selected>=0 && elements[selected];
+    $("noSel").style.display = has?'none':'block';
+    $("editControls").style.display = has?'block':'none';
+    if(!has) return;
+    var el=elements[selected];
+    $("sizeRange").value = has?Math.round((el.type==='text'?el.scale:el.scale)*100):100;
+    $("sizeVal").textContent = Math.round(el.scale*100)+'%';
+    $("rotRange").value = el.rot||0; $("rotVal").textContent=(el.rot||0)+'°';
+    if(el.type==='text'){ $("editText").value=el.text; $("editColor").value=el.color; }
+    else { $("editText").value='(image)'; $("editText").disabled=true; }
+    $("editText").disabled = el.type!=='text';
+  }
+  $("sizeRange").addEventListener('input',function(){
+    if(selected<0)return; elements[selected].scale=parseInt(this.value,10)/100; $("sizeVal").textContent=this.value+'%'; draw();
+  });
+  $("rotRange").addEventListener('input',function(){
+    if(selected<0)return; elements[selected].rot=parseInt(this.value,10); $("rotVal").textContent=this.value+'°'; draw();
+  });
+  $("editText").addEventListener('input',function(){ if(selected>=0&&elements[selected].type==='text'){elements[selected].text=this.value;draw();} });
+  $("editColor").addEventListener('input',function(){ if(selected>=0&&elements[selected].type==='text'){elements[selected].color=this.value;draw();} });
+  $("deleteBtn").addEventListener('click',function(){ if(selected<0)return; elements.splice(selected,1); selected=Math.min(selected,elements.length-1); syncControls(); draw(); });
+  $("frontBtn").addEventListener('click',function(){
+    if(selected<0)return; var el=elements.splice(selected,1)[0]; elements.unshift(el); selected=0; syncControls(); draw();
+  });
+  $("resetBtn").addEventListener('click',function(){
+    if(!elements.length)return;
+    if(!confirm('Clear all elements and start over?'))return;
+    elements=[]; selected=-1; syncControls(); draw();
+  });
+
+  $("cupTabs").addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b)return;
+    cupKey=b.getAttribute('data-cup');
+    Array.prototype.forEach.call(this.querySelectorAll('button'),function(x){x.classList.toggle('active',x===b);});
+    renderCup(); draw();
+  });
+
+  // ---- export PNG ----
+  $("downloadBtn").addEventListener('click',function(){
+    var off=document.createElement('canvas'); off.width=W*2; off.height=H*2;
+    var c=off.getContext('2d'); c.scale(2,2);
+    c.fillStyle='#ffffff'; c.fillRect(0,0,W,H);
+    var xml=new XMLSerializer().serializeToString(svg);
+    var url=URL.createObjectURL(new Blob([xml],{type:'image/svg+xml;charset=utf-8'}));
+    var bg=new Image();
+    bg.onload=function(){
+      c.drawImage(bg,0,0,W,H);
+      elements.forEach(function(el){ drawEl(c,el,true); });
+      URL.revokeObjectURL(url);
+      var link=document.createElement('a');
+      link.download='stwadd-'+cupKey+'-design-preview.png';
+      link.href=off.toDataURL('image/png');
+      link.click();
+    };
+    bg.onerror=function(){ URL.revokeObjectURL(url); alert('Could not render the bottle preview. Please try again.'); };
+    bg.src=url;
+  });
+
+  $("specBtn").addEventListener('click',function(){
+    var a=area();
+    var lines=['STWADD — Custom drinkware design spec','','Bottle: '+CUPS[cupKey].name,
+      'Typical print area: '+a.w+' × '+a.h+' (relative units)','','Elements:'];
+    if(!elements.length) lines.push('(none yet)');
+    elements.forEach(function(el,i){
+      var pctX=Math.round((el.x-a.x)/a.w*100), pctY=Math.round((el.y-a.y)/a.h*100);
+      if(el.type==='text') lines.push((i+1)+'. Text "'+el.text+'" — font: '+el.font.split(',')[0]+', color: '+el.color+', size: '+Math.round(el.scale*100)+'%, rotation: '+(el.rot||0)+'°, center at '+pctX+'% / '+pctY+'% of print area');
+      else lines.push((i+1)+'. Logo image — size: '+Math.round(el.scale*100)+'%, rotation: '+(el.rot||0)+'°, center at '+pctX+'% / '+pctY+'% of print area');
+    });
+    lines.push('','Note: flat preview only. Confirm print area & colors on a physical sample before production.');
+    var txt=lines.join('\n');
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(function(){ alert('Design spec copied. Paste it into your email to bob@stwadd.com along with the downloaded PNG.'); });
+    } else {
+      window.prompt('Copy this design spec:',txt);
+    }
+  });
+
+  // init
+  renderCup(); syncControls(); draw();
+})();
+</script>
+</body>
+</html>
