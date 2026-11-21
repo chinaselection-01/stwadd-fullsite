@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script>(function(){if(location.protocol==='http:'){location.replace('https://'+location.host+location.pathname+location.search+location.hash);}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pantone Color Finder | C &amp; U Series | STWADD</title>
+<meta name="description" content="Search Pantone C (Coated) and U (Uncoated) color codes, or pick a color to find the closest matching Pantone reference. Free tool by STWADD for custom drinkware color selection.">
+<link rel="canonical" href="https://stwadd.com/color-finder.html">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/mobile-responsive-patch.css">
+<style>
+  :root{
+    --red:#c41e3a; --red-dark:#9e1530; --navy:#12212e; --ink:#1c2b3a;
+    --line:#e3e9ef; --bg:#f5f8fb; --muted:#5b6b78; --white:#fff;
+    --shadow:0 4px 20px rgba(18,33,46,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:15px}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  .container{max-width:1180px;margin:0 auto;padding:0 20px}
+
+  /* top bar + header */
+  .top-bar{background:var(--navy);color:#cfe0ec;font-size:12px;padding:7px 0}
+  .top-bar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .header-main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .header-main .container{display:flex;align-items:center;justify-content:space-between;min-height:66px;gap:16px}
+  .logo img{height:38px;display:block}
+  .nav-links{display:flex;gap:22px;align-items:center;font-size:14px;font-weight:600;flex-wrap:wrap}
+  .nav-links a:hover{color:var(--red)}
+  .nav-links .cta{background:var(--red);color:#fff;padding:9px 16px;border-radius:6px}
+  .nav-links .cta:hover{background:var(--red-dark);color:#fff}
+
+  /* hero */
+  .hero{background:linear-gradient(135deg,#12212e 0%,#1c3247 100%);color:#fff;padding:46px 0 40px}
+  .hero h1{margin:0 0 10px;font-size:clamp(26px,4vw,40px);line-height:1.2}
+  .hero p{margin:0;max-width:760px;color:#c9d9e6;font-size:16px}
+  .hero .badge{display:inline-block;background:rgba(196,30,58,.18);border:1px solid rgba(196,30,58,.5);color:#ff9aab;font-size:12px;padding:4px 11px;border-radius:20px;margin-bottom:14px;letter-spacing:.3px}
+
+  /* disclaimer */
+  .notice{max-width:1180px;margin:20px auto 0;padding:12px 18px;background:#fff8e6;border:1px solid #f0d99a;border-left:4px solid #d99a00;border-radius:8px;color:#6b5410;font-size:13px}
+  .notice b{color:#8a6a00}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 60px}
+
+  /* card */
+  .card{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:22px;margin-bottom:22px}
+  .card h2{margin:0 0 4px;font-size:20px;color:var(--navy)}
+  .card .sub{margin:0 0 18px;color:var(--muted);font-size:13px}
+
+  /* tabs */
+  .tabs{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:18px}
+  .tabs button{border:0;background:#fff;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;color:var(--muted)}
+  .tabs button.active{background:var(--red);color:#fff}
+
+  /* search */
+  .searchbar{display:flex;gap:10px;flex-wrap:wrap}
+  .searchbar input[type=text]{flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:15px}
+  .searchbar input[type=text]:focus{outline:2px solid rgba(196,30,58,.3);border-color:var(--red)}
+  .btn{background:var(--red);color:#fff;border:0;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:600;cursor:pointer}
+  .btn:hover{background:var(--red-dark)}
+  .btn.ghost{background:#fff;color:var(--red);border:1px solid var(--red)}
+  .btn.ghost:hover{background:#fff2f4}
+
+  /* grid */
+  .grid-toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0 12px;flex-wrap:wrap}
+  .grid-toolbar .count{color:var(--muted);font-size:13px}
+  .sortsel{padding:8px 10px;border:1px solid var(--line);border-radius:7px;font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(108px,1fr));gap:9px;max-height:620px;overflow-y:auto;padding:4px 4px 4px 0}
+  .swatch{border:1px solid var(--line);border-radius:9px;overflow:hidden;cursor:pointer;background:#fff;transition:transform .1s,box-shadow .1s}
+  .swatch:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(18,33,46,.15)}
+  .swatch .chip{height:62px;position:relative}
+  .swatch .chip .cp{position:absolute;bottom:4px;right:4px;background:rgba(0,0,0,.55);color:#fff;font-size:9px;padding:1px 5px;border-radius:4px;opacity:0;transition:opacity .15s}
+  .swatch:hover .chip .cp{opacity:1}
+  .swatch .meta{padding:6px 7px;font-size:11.5px;line-height:1.35}
+  .swatch .code{font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .swatch .hex{color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px}
+  .swatch.picked{outline:3px solid var(--red);outline-offset:1px}
+
+  /* picker + match */
+  .picker-layout{display:grid;grid-template-columns:300px 1fr;gap:26px}
+  @media(max-width:820px){.picker-layout{grid-template-columns:1fr}}
+  .picker-box{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px}
+  .picker-box label{display:block;font-size:12px;font-weight:700;color:var(--muted);margin:0 0 7px;text-transform:uppercase;letter-spacing:.4px}
+  .picker-preview{height:90px;border-radius:9px;border:1px solid var(--line);margin-bottom:14px;position:relative;display:flex;align-items:flex-end;justify-content:center}
+  .picker-preview span{background:rgba(0,0,0,.55);color:#fff;font-size:12px;padding:3px 9px;border-radius:5px;margin-bottom:7px;font-family:ui-monospace,monospace}
+  .hexrow{display:flex;gap:8px;align-items:center;margin-bottom:12px}
+  .hexrow input[type=text]{flex:1;min-width:0;padding:10px;border:1px solid var(--line);border-radius:7px;font-family:ui-monospace,monospace;font-size:14px;text-transform:uppercase}
+  .hexrow input[type=color]{width:46px;height:40px;border:1px solid var(--line);border-radius:7px;padding:2px;cursor:pointer;background:#fff}
+  .toolrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+  .toolbtn{flex:1;min-width:120px;border:1px solid var(--line);background:#fff;border-radius:7px;padding:9px 10px;font-size:13px;cursor:pointer;color:var(--navy)}
+  .toolbtn:hover{border-color:var(--red);color:var(--red)}
+  .toolbtn:disabled{opacity:.45;cursor:not-allowed}
+  .hint{font-size:11.5px;color:var(--muted);margin-top:6px}
+  .match-scope{display:flex;gap:8px;margin-bottom:14px}
+  .match-scope label{display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600;margin:0;text-transform:none;letter-spacing:0;color:var(--ink)}
+
+  .results h3{margin:0 0 4px;font-size:15px;color:var(--navy)}
+  .result-group{margin-bottom:18px}
+  .match-row{display:flex;align-items:center;gap:11px;padding:9px;border:1px solid var(--line);border-radius:9px;margin-bottom:7px;background:#fff}
+  .match-row .mchip{width:46px;height:46px;border-radius:7px;border:1px solid var(--line);flex:none}
+  .match-row .minfo{flex:1;min-width:0}
+  .match-row .mcode{font-weight:700;font-size:14px;color:var(--navy)}
+  .match-row .mhex{font-size:11.5px;color:var(--muted);font-family:ui-monospace,monospace}
+  .match-row .de{font-size:12px;font-weight:700;padding:4px 9px;border-radius:20px;white-space:nowrap}
+  .de.good{background:#e6f6ea;color:#1a7a37}
+  .de.ok{background:#fff4e0;color:#9a6700}
+  .de.far{background:#fbe9ec;color:#b01732}
+  .matches-empty{color:var(--muted);font-size:13px;padding:16px;border:1px dashed var(--line);border-radius:8px;text-align:center}
+
+  /* compare tray */
+  .tray{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:2px solid var(--red);box-shadow:0 -6px 24px rgba(18,33,46,.14);z-index:60;transform:translateY(110%);transition:transform .25s;padding:12px 0}
+  .tray.show{transform:translateY(0)}
+  .tray .container{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .tray h4{margin:0;font-size:13px;color:var(--navy);white-space:nowrap}
+  .tray-items{display:flex;gap:8px;flex:1;overflow-x:auto}
+  .tray-item{position:relative;flex:none;text-align:center;font-size:10.5px;color:var(--muted)}
+  .tray-item .tc{width:52px;height:52px;border-radius:6px;border:1px solid var(--line)}
+  .tray-item .tx{background:#fff;color:var(--red);border:1px solid var(--red);border-radius:50%;width:18px;height:18px;line-height:16px;position:absolute;top:-7px;right:-7px;cursor:pointer;font-weight:700;font-size:12px}
+  .tray .btn{padding:9px 14px;white-space:nowrap}
+
+  /* modal */
+  .modal{display:none;position:fixed;inset:0;background:rgba(18,33,46,.55);z-index:80;align-items:center;justify-content:center;padding:20px}
+  .modal.show{display:flex}
+  .modal-box{background:#fff;border-radius:14px;max-width:520px;width:100%;padding:24px;box-shadow:0 20px 60px rgba(0,0,0,.3);max-height:90vh;overflow-y:auto}
+  .modal-box .bigchip{height:130px;border-radius:10px;border:1px solid var(--line);margin-bottom:14px}
+  .modal-box h3{margin:0 0 3px;font-size:22px;color:var(--navy)}
+  .modal-box .hexline{font-family:ui-monospace,monospace;color:var(--muted);margin-bottom:16px}
+  .copyrow{display:flex;gap:8px;margin-bottom:9px}
+  .copyrow input{flex:1;padding:9px 11px;border:1px solid var(--line);border-radius:7px;font-family:ui-monospace,monospace;font-size:13px;background:var(--bg)}
+  .copyrow button{padding:9px 13px;border:1px solid var(--red);color:var(--red);background:#fff;border-radius:7px;cursor:pointer;font-size:13px;font-weight:600}
+  .modal-close{float:right;border:0;background:none;font-size:24px;line-height:1;cursor:pointer;color:var(--muted)}
+
+  /* footer */
+  .footer{background:var(--navy);color:#c9d6e0;padding:34px 0 24px;font-size:13px}
+  .footer .container{text-align:center}
+  .footer a{color:#ff9aab}
+  .footer .fbot{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:#8fa3b3}
+
+  @media(max-width:768px){
+    .nav-links{gap:12px;font-size:12.5px}
+    .nav-links a:not(.cta){display:none}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(92px,1fr))}
+    .card{padding:16px}
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar"><div class="container"><span>🌍 Custom Drinkware Color Solutions Since 2017</span><span>📧 bob@stwadd.com</span></div></div>
+<header class="header-main"><div class="container">
+  <a href="/" class="logo"><img src="/images/stwadd-logo.png" alt="STWADD Logo"></a>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/all-products.html">Products</a>
+    <a href="/oem-odm.html">OEM/ODM</a>
+    <a href="/color-finder.html">Color Finder</a>
+    <a href="/contact-us.html" class="cta">Get a Quote</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="container">
+  <span class="badge">FREE TOOL · FOR CUSTOM DRINKWARE</span>
+  <h1>Pantone Color Finder</h1>
+  <p>Search Pantone <b>C</b> (Coated) and <b>U</b> (Uncoated) color codes, or pick any color to find its closest Pantone reference. Built for selecting and confirming custom water bottle colors.</p>
+</div></section>
+
+<div class="notice">
+  <b>⚠️ Important note:</b> Pantone® color values shown here are <b>unofficial, approximate screen representations</b> compiled from public color libraries. Pantone does not publish official RGB/HEX values. Monitor, lighting and material (coated vs uncoated, stainless steel, powder coat, plastic) all shift the final look. <b>Always confirm against a physical Pantone swatch and a physical sample before production.</b> "Pantone" is a trademark of Pantone LLC; STWADD is not affiliated with Pantone.
+</div>
+
+<div class="wrap">
+
+  <!-- SEARCH / BROWSE -->
+  <div class="card">
+    <h2>1 · Search &amp; browse color codes</h2>
+    <p class="sub">Type a number like <b>186</b>, <b>2935</b>, a name like <b>red</b>, or a hex like <b>#c41e3a</b>. Click any swatch to see details and add it to your comparison tray.</p>
+    <div class="tabs">
+      <button id="tabC" class="active" data-series="C">C · Coated</button>
+      <button id="tabU" data-series="U">U · Uncoated</button>
+    </div>
+    <div class="searchbar">
+      <input type="text" id="searchInput" placeholder="Search code / name / hex — e.g. 186 C, reflex blue, #ff0000" autocomplete="off">
+      <button class="btn ghost" id="clearSearch">Clear</button>
+    </div>
+    <div class="grid-toolbar">
+      <span class="count" id="countLabel">—</span>
+      <select class="sortsel" id="sortSel">
+        <option value="code">Sort: color number</option>
+        <option value="hue">Sort: hue spectrum</option>
+      </select>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <!-- PICKER / MATCH -->
+  <div class="card">
+    <h2>2 · Pick a color &amp; find the closest Pantone</h2>
+    <p class="sub">Enter a hex, use the color picker, or sample a color from your screen or an image. We compute perceptual color difference (CIEDE2000) to rank the nearest matches.</p>
+    <div class="picker-layout">
+      <div class="picker-box">
+        <label>Your color</label>
+        <div class="picker-preview" id="pickPreview"><span id="pickHex">#C41E3A</span></div>
+        <div class="hexrow">
+          <input type="text" id="hexInput" value="#C41E3A" maxlength="7" spellcheck="false">
+          <input type="color" id="colorInput" value="#c41e3a" title="Color picker">
+        </div>
+        <div class="toolrow">
+          <button class="toolbtn" id="eyedropBtn">💧 Pick from screen</button>
+          <button class="toolbtn" id="imageBtn">🖼️ Pick from image</button>
+        </div>
+        <input type="file" id="imageFile" accept="image/*" style="display:none">
+        <div class="hint" id="dropHint">"Pick from screen" works in Chrome/Edge over HTTPS. Image sampling opens a file—click any point to grab its color.</div>
+        <div id="imagePickArea" style="display:none;margin-top:12px">
+          <canvas id="imgCanvas" style="max-width:100%;border:1px solid var(--line);border-radius:8px;cursor:crosshair;display:block"></canvas>
+          <div class="hint">Click anywhere on the image to sample that pixel's color.</div>
+        </div>
+        <div class="match-scope" style="margin-top:14px">
+          <label><input type="checkbox" id="scopeC" checked> C series</label>
+          <label><input type="checkbox" id="scopeU" checked> U series</label>
+        </div>
+        <button class="btn" id="matchBtn" style="width:100%;margin-top:12px">Find closest Pantone →</button>
+      </div>
+      <div class="results" id="results">
+        <h3>Closest matches</h3>
+        <div class="matches-empty">Enter or pick a color, then click “Find closest Pantone”.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- compare tray -->
+<div class="tray" id="tray"><div class="container">
+  <h4>Compare selected:</h4>
+  <div class="tray-items" id="trayItems"></div>
+  <button class="btn ghost" id="clearTray">Clear</button>
+</div></div>
+
+<!-- detail modal -->
+<div class="modal" id="modal"><div class="modal-box">
+  <button class="modal-close" id="modalClose">&times;</button>
+  <div class="bigchip" id="mBigchip"></div>
+  <h3 id="mCode">—</h3>
+  <div class="hexline" id="mHex">—</div>
+  <div class="copyrow"><input id="mHexVal" readonly><button data-copy="mHexVal">Copy HEX</button></div>
+  <div class="copyrow"><input id="mRgbVal" readonly><button data-copy="mRgbVal">Copy RGB</button></div>
+  <button class="btn" id="mAddTray" style="width:100%;margin-top:6px">＋ Add to compare</button>
+</div></div>
+
+<footer class="footer"><div class="container">
+  <div>© <span id="yr"></span> Yongkang STWADD Houseware Co., Ltd. · Custom drinkware manufacturer &amp; sourcing partner</div>
+  <div class="fbot">Unofficial color reference tool. Pantone® is a trademark of Pantone LLC. Screen colors are approximate — confirm with physical swatches and samples.</div>
+</div></footer>
+
+<script src="/js/pantone-data.js"></script>
+  <script defer src="/js/stwadd-chat-widget.js"></script>
+<!-- ═══ NetEase 外贸通 site SDK（访客识别/页面浏览统计）═══ -->
+<script type="text/javascript">
+(function(w, d, n, a, j, s) {
+w[n] =
+w[n] ||
+function() {
+return (w[n].a = w[n].a || []).push(arguments);
+};
+j = d.createElement('script');
+j.async = true;
+j.src = 'https://sirius-it-site.lx.netease.com/site-sdk.js';
+j.onload = function() {
+setTimeout(()=> {
+__siteSDK__.setDefaultConfig({
+outerKey: 'key6fe02c5af0e44ae086740e9e574f3f5c',
+});
+__siteSDK__.init();
+}, 500);
+};
+s = d.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(j, s);
+})(window, document, '__siteSDK__');
+</script>
+<script>
+(function(){
+  "use strict";
+  var DATA = window.PANTONE_DATA || {C:[],U:[]};
+  var series = "C";
+  var picked = [];           // {code,hex,series}
+  var currentModal = null;
+
+  var $ = function(id){return document.getElementById(id);};
+  var grid=$("grid"), searchInput=$("searchInput"), countLabel=$("countLabel"), sortSel=$("sortSel");
+  $("yr").textContent = new Date().getFullYear();
+
+  function hex2rgb(h){
+    h=h.replace('#','');
+    if(h.length===3) h=h[0]+h[0]+h[1]+h[1]+h[2]+h[2];
+    return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];
+  }
+  function normalizeHex(v){
+    if(!v) return null;
+    v=v.trim().replace(/^#/,'');
+    if(/^[0-9a-fA-F]{3}$/.test(v)) v=v[0]+v[0]+v[1]+v[1]+v[2]+v[2];
+    if(!/^[0-9a-fA-F]{6}$/.test(v)) return null;
+    return '#'+v.toLowerCase();
+  }
+  function lum(hex){var c=hex2rgb(hex);return (c[0]*299+c[1]*587+c[2]*114)/1000;}
+  function textColor(hex){return lum(hex)>150?'#12212e':'#ffffff';}
+
+  // ---- render grid ----
+  function hueOf(hex){
+    var r=hex2rgb(hex),R=r[0]/255,G=r[1]/255,B=r[2]/255;
+    var mx=Math.max(R,G,B),mn=Math.min(R,G,B),d=mx-mn,h=0;
+    if(d===0)h=0; else if(mx===R)h=60*(((G-B)/d)%6); else if(mx===G)h=60*((B-R)/d+2); else h=60*((R-G)/d+4);
+    if(h<0)h+=360; return h;
+  }
+  function render(){
+    var q=searchInput.value.trim().toLowerCase();
+    var arr=DATA[series].slice();
+    if(q){
+      var hexQ = q.charAt(0)==='#'?q:null;
+      arr=arr.filter(function(o){
+        return o.c.toLowerCase().indexOf(q)>=0 || o.h.indexOf(q)>=0 ||
+               (hexQ && o.h===hexQ);
+      });
+    }
+    if(sortSel.value==='hue') arr.sort(function(a,b){return hueOf(a.h)-hueOf(b.h);});
+    countLabel.textContent = arr.length+" colors · "+series+" ("+(series==='C'?'Coated':'Uncoated')+")";
+    var frag=document.createDocumentFragment();
+    arr.forEach(function(o){
+      var d=document.createElement('div');
+      d.className='swatch';
+      var pickedFlag = picked.some(function(p){return p.code===o.c && p.series===series;});
+      if(pickedFlag) d.className+=' picked';
+      d.innerHTML='<div class="chip" style="background:'+o.h+'"><span class="cp">'+textColor(o.h)+'</span></div>'+
+                  '<div class="meta"><div class="code">'+o.c+'</div><div class="hex">'+o.h.toUpperCase()+'</div></div>';
+      d.addEventListener('click',function(){openModal(o.c,o.h,series);});
+      frag.appendChild(d);
+    });
+    grid.innerHTML=''; grid.appendChild(frag);
+  }
+
+  // ---- tabs ----
+  function setSeries(s){
+    series=s;
+    $("tabC").classList.toggle('active',s==='C');
+    $("tabU").classList.toggle('active',s==='U');
+    render();
+  }
+  $("tabC").addEventListener('click',function(){setSeries('C');});
+  $("tabU").addEventListener('click',function(){setSeries('U');});
+  searchInput.addEventListener('input',render);
+  $("clearSearch").addEventListener('click',function(){searchInput.value='';render();searchInput.focus();});
+  sortSel.addEventListener('change',render);
+
+  // ---- modal ----
+  function rgbText(hex){var c=hex2rgb(hex);return 'rgb('+c.join(', ')+')';}
+  function openModal(code,hex,ser){
+    currentModal={code:code,hex:hex,series:ser};
+    $("mBigchip").style.background=hex;
+    $("mCode").textContent=code;
+    $("mHex").textContent=hex.toUpperCase()+" · "+(ser==='C'?'Coated (C)':'Uncoated (U)');
+    $("mHexVal").value=hex.toUpperCase();
+    $("mRgbVal").value=rgbText(hex);
+    $("modal").classList.add('show');
+  }
+  function closeModal(){$("modal").classList.remove('show');currentModal=null;}
+  $("modalClose").addEventListener('click',closeModal);
+  $("modal").addEventListener('click',function(e){if(e.target===this)closeModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var inp=$(b.getAttribute('data-copy'));
+      try{inp.select();document.execCommand('copy');b.textContent='Copied!';}catch(e){}
+      setTimeout(function(){b.textContent=b.textContent.indexOf('HEX')>=0?'Copy HEX':'Copy RGB';},1200);
+    });
+  });
+
+  // ---- compare tray ----
+  function renderTray(){
+    var t=$("tray");
+    t.classList.toggle('show',picked.length>0);
+    var box=$("trayItems"); box.innerHTML='';
+    picked.forEach(function(p,idx){
+      var d=document.createElement('div'); d.className='tray-item';
+      d.innerHTML='<div class="tx" data-idx="'+idx+'">&times;</div><div class="tc" style="background:'+p.hex+'"></div><div>'+p.code+'</div>';
+      box.appendChild(d);
+    });
+    box.querySelectorAll('.tx').forEach(function(x){
+      x.addEventListener('click',function(){picked.splice(parseInt(x.getAttribute('data-idx')),1);renderTray();render();});
+    });
+  }
+  function addToTray(p){
+    if(picked.some(function(x){return x.code===p.code&&x.series===p.series;}))return;
+    if(picked.length>=8){alert('You can compare up to 8 colors at a time.');return;}
+    picked.push(p); renderTray(); render();
+  }
+  $("mAddTray").addEventListener('click',function(){if(currentModal)addToTray({code:currentModal.code,hex:currentModal.hex,series:currentModal.series});closeModal();});
+  $("clearTray").addEventListener('click',function(){picked=[];renderTray();render();});
+
+  // ---- picker ----
+  var pickHex="#c41e3a";
+  function setPick(hex){
+    hex=normalizeHex(hex); if(!hex)return;
+    pickHex=hex;
+    $("pickPreview").style.background=hex;
+    $("pickHex").textContent=hex.toUpperCase();
+    $("pickHex").style.color=textColor(hex);
+    $("hexInput").value=hex.toUpperCase();
+    $("colorInput").value=hex;
+    $("results").innerHTML='<h3>Closest matches</h3><div class="matches-empty">Color updated — click “Find closest Pantone”.</div>';
+  }
+  $("hexInput").addEventListener('input',function(){var h=normalizeHex(this.value);if(h)setPick(h);});
+  $("hexInput").addEventListener('blur',function(){this.value=pickHex.toUpperCase();});
+  $("colorInput").addEventListener('input',function(){setPick(this.value);});
+
+  // EyeDropper (Chrome/Edge)
+  var EyeDropper=window.EyeDropper;
+  if(!EyeDropper){$("eyedropBtn").disabled=true;$("eyedropBtn").title="Not supported in this browser — use Chrome or Edge";}
+  $("eyedropBtn").addEventListener('click',async function(){
+    if(!EyeDropper)return;
+    try{
+      var ed=new EyeDropper();
+      var res=await ed.open();
+      setPick(res.sRGBHex);
+    }catch(e){/* user cancelled */}
+  });
+
+  // Image sampling
+  $("imageBtn").addEventListener('click',function(){$("imageFile").click();});
+  $("imageFile").addEventListener('change',function(e){
+    var f=e.target.files[0]; if(!f)return;
+    var img=new Image();
+    img.onload=function(){
+      var cv=$("imgCanvas"),ctx=cv.getContext('2d');
+      var maxW=560, scale=Math.min(1,maxW/img.width);
+      cv.width=Math.round(img.width*scale); cv.height=Math.round(img.height*scale);
+      ctx.drawImage(img,0,0,cv.width,cv.height);
+      $("imagePickArea").style.display='block';
+      $("imagePickArea").scrollIntoView({behavior:'smooth',block:'center'});
+    };
+    img.src=URL.createObjectURL(f);
+  });
+  $("imgCanvas").addEventListener('click',function(e){
+    var r=this.getBoundingClientRect();
+    var x=Math.floor((e.clientX-r.left)/r.width*this.width);
+    var y=Math.floor((e.clientY-r.top)/r.height*this.height);
+    var d=this.getContext('2d').getImageData(x,y,1,1).data;
+    var hex='#'+[d[0],d[1],d[2]].map(function(v){return ('0'+v.toString(16)).slice(-2);}).join('');
+    setPick(hex);
+  });
+
+  // ---- CIEDE2000 matching ----
+  // sRGB hex -> Lab (D65)
+  function hex2lab(hex){
+    var c=hex2rgb(hex).map(function(v){v/=255;return v<=0.04045?v/12.92:Math.pow((v+0.055)/1.055,2.4);});
+    var X=(c[0]*0.4124564+c[1]*0.3575761+c[2]*0.1804375)/0.95047;
+    var Y=(c[0]*0.2126729+c[1]*0.7151522+c[2]*0.0721750);
+    var Z=(c[0]*0.0193339+c[1]*0.1191920+c[2]*0.9503041)/1.08883;
+    function f(t){return t>0.008856?Math.pow(t,1/3):(7.787*t+16/116);}
+    var fx=f(X),fy=f(Y),fz=f(Z);
+    return [116*fy-16,500*(fx-fy),200*(fy-fz)];
+  }
+  function ciede2000(lab1,lab2){
+    var L1=lab1[0],a1=lab1[1],b1=lab1[2],L2=lab2[0],a2=lab2[1],b2=lab2[2];
+    var kL=1,kC=1,kH=1;
+    var C1=Math.sqrt(a1*a1+b1*b1),C2=Math.sqrt(a2*a2+b2*b2),Cb=(C1+C2)/2;
+    var G=0.5*(1-Math.sqrt(Math.pow(Cb,7)/(Math.pow(Cb,7)+Math.pow(25,7))));
+    var a1p=(1+G)*a1,a2p=(1+G)*a2;
+    var C1p=Math.sqrt(a1p*a1p+b1*b1),C2p=Math.sqrt(a2p*a2p+b2*b2);
+    function hp(bb,aa){var h=Math.atan2(bb,aa)*180/Math.PI;return h<0?h+360:h;}
+    var h1p=C1p===0?0:hp(b1,a1p),h2p=C2p===0?0:hp(b2,a2p);
+    var dLp=L2-L1,dCp=C2p-C1p,dhp;
+    if(C1p*C2p===0)dhp=0;
+    else{var dh=h2p-h1p;if(dh>180)dh-=360;else if(dh<-180)dh+=360;dhp=dh;}
+    var dHp=2*Math.sqrt(C1p*C2p)*Math.sin(dhp*Math.PI/360);
+    var Lbp=(L1+L2)/2,Cbp=(C1p+C2p)/2,hbp;
+    if(C1p*C2p===0)hbp=h1p+h2p;
+    else{var hs=h1p+h2p;if(Math.abs(h1p-h2p)>180)hs+=(hs<360?360:-360);hbp=hs/2;}
+    var T=1-0.17*Math.cos((hbp-30)*Math.PI/180)+0.24*Math.cos(2*hbp*Math.PI/180)+0.32*Math.cos((3*hbp+6)*Math.PI/180)-0.20*Math.cos((4*hbp-63)*Math.PI/180);
+    var dTheta=30*Math.exp(-Math.pow((hbp-275)/25,2));
+    var Rc=2*Math.sqrt(Math.pow(Cbp,7)/(Math.pow(Cbp,7)+Math.pow(25,7)));
+    var Sl=1+(0.015*Math.pow(Lbp-50,2))/Math.sqrt(20+Math.pow(Lbp-50,2));
+    var Sc=1+0.045*Cbp,Sh=1+0.015*Cbp*T;
+    var Rt=-Math.sin(2*dTheta*Math.PI/180)*Rc;
+    return Math.sqrt(Math.pow(dLp/(kL*Sl),2)+Math.pow(dCp/(kC*Sc),2)+Math.pow(dHp/(kH*Sh),2)+Rt*(dCp/(kC*Sc))*(dHp/(kH*Sh)));
+  }
+  function match(){
+    var lab=hex2lab(pickHex);
+    var out='<h3>Closest matches to <span style="color:var(--red)">'+pickHex.toUpperCase()+'</span></h3>';
+    var groups=[];
+    if($("scopeC").checked)groups.push(['C','Coated']);
+    if($("scopeU").checked)groups.push(['U','Uncoated']);
+    if(!groups.length){$("results").innerHTML=out+'<div class="matches-empty">Select at least one series (C or U).</div>';return;}
+    groups.forEach(function(g){
+      var ser=g[0];
+      var ranked=DATA[ser].map(function(o){
+        var de=ciede2000(lab,[o.l[0],o.l[1],o.l[2]]);
+        return {code:o.c,hex:o.h,de:de};
+      }).sort(function(a,b){return a.de-b.de;}).slice(0,6);
+      out+='<div class="result-group"><div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:8px">'+g[1]+' · '+ser+' series</div>';
+      ranked.forEach(function(r){
+        var cls=r.de<2?'good':(r.de<5?'ok':'far');
+        var label=r.de<2?'Very close':(r.de<5?'Close':'Approximate');
+        out+='<div class="match-row"><div class="mchip" style="background:'+r.hex+'"></div>'+
+             '<div class="minfo"><div class="mcode">'+r.code+'</div><div class="mhex">'+r.hex.toUpperCase()+'</div></div>'+
+             '<span class="de '+cls+'">ΔE '+r.de.toFixed(1)+' · '+label+'</span></div>';
+      });
+      out+='</div>';
+    });
+    out+='<p class="hint">ΔE (CIEDE2000): &lt;2 very close · 2–5 close · &gt;5 approximate. These are screen approximations — verify on a physical swatch &amp; production sample.</p>';
+    $("results").innerHTML=out;
+    // 让匹配结果里的行可点击加入对比
+    Array.prototype.forEach.call($("results").querySelectorAll('.match-row'),function(row){
+      var code=row.querySelector('.mcode').textContent;
+      var hex=row.querySelector('.mhex').textContent.toLowerCase();
+      var ser=row.closest('.result-group').textContent.indexOf('Coated')>=0?'C':'U';
+      row.style.cursor='pointer';
+      row.addEventListener('click',function(){addToTray({code:code,hex:hex,series:ser});});
+    });
+  }
+  $("matchBtn").addEventListener('click',match);
+
+  // init
+  setPick(pickHex);
+  render();
+})();
+</script>
+</body>
+</html>
