@@ -110,18 +110,18 @@
       name: '360ml Milk Coffee Tumbler', short: 'Coffee 360',
       zh: '360ml 牛奶咖啡杯',
       cap: '360ml',
-      desc: 'Tapered tumbler, wide top narrowing to base. Flat press lid.',
-      printArea: { x: 150, y: 220, w: 100, h: 264 },
+      desc: 'Near-straight tumbler, only slightly narrower at the base. Flat press lid.',
+      printArea: { x: 140, y: 220, w: 120, h: 264 },
       svg: svgWrap('mk', `
-        <path d="M118,162 L152,500 Q155,514 168,516 L232,516 Q245,514 248,500 L282,162 Z" fill="url(#mk-body)" stroke="#828b95" stroke-width="1.3"/>
-        <path d="M138,176 L167,494 Q169,504 175,508 L181,508 L154,176 Z" fill="url(#mk-light)" opacity="0.5"/>
-        <path d="M262,176 L234,494 Q232,504 227,508 L222,508 L246,176 Z" fill="#000" opacity="0.05"/>
+        <path d="M118,162 L124,492 Q126,512 142,515 L258,515 Q274,512 276,492 L282,162 Z" fill="url(#mk-body)" stroke="#828b95" stroke-width="1.3"/>
+        <path d="M138,176 L144,486 Q146,500 154,505 L162,505 L150,176 Z" fill="url(#mk-light)" opacity="0.5"/>
+        <path d="M262,176 L256,486 Q254,500 246,505 L238,505 L250,176 Z" fill="#000" opacity="0.05"/>
         <ellipse cx="200" cy="162" rx="82" ry="13" fill="#c4ccd4" stroke="#828b95" stroke-width="1.2"/>
         <path d="M114,162 L114,138 Q200,126 286,138 L286,162 Q200,174 114,162 Z" fill="url(#mk-lid)"/>
         <ellipse cx="200" cy="137" rx="70" ry="10" fill="#2b3137" stroke="#0d1013" stroke-width="1"/>
         <rect x="182" y="130" width="36" height="8" rx="4" fill="#6b737b"/>
-        <path d="M168,516 Q200,522 232,516" fill="none" stroke="#6f7882" stroke-width="1" opacity="0.6"/>
-        <rect class="print-guide" x="150" y="220" width="100" height="264" rx="6" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
+        <path d="M142,515 Q200,522 258,515" fill="none" stroke="#6f7882" stroke-width="1" opacity="0.6"/>
+        <rect class="print-guide" x="140" y="220" width="120" height="264" rx="6" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
       `)
     },
     {
@@ -129,19 +129,19 @@
       name: '400ml Dual-Drink Coffee Cup', short: 'Dual-Drink 400',
       zh: '400ml 双饮咖啡杯',
       cap: '400ml',
-      desc: 'Tapered coffee cup with flip lid, carry loop and colour lock button.',
-      printArea: { x: 150, y: 222, w: 100, h: 258 },
+      desc: 'Gently barrelled coffee cup — mouth and base nearly equal width, not a cone. Flip lid, carry loop and colour lock button.',
+      printArea: { x: 145, y: 222, w: 110, h: 258 },
       svg: svgWrap('dd', `
-        <path d="M122,168 L152,498 Q155,512 168,514 L232,514 Q245,512 248,498 L278,168 Z" fill="url(#dd-body)" stroke="#828b95" stroke-width="1.3"/>
-        <path d="M140,182 L168,492 Q170,502 176,506 L182,506 L156,182 Z" fill="url(#dd-light)" opacity="0.5"/>
-        <path d="M260,182 L233,492 Q231,502 226,506 L221,506 L245,182 Z" fill="#000" opacity="0.05"/>
-        <ellipse cx="200" cy="168" rx="78" ry="12" fill="#c4ccd4" stroke="#828b95" stroke-width="1.2"/>
-        <path d="M118,168 L118,140 Q200,128 282,140 L282,168 Q200,180 118,168 Z" fill="url(#dd-lid)"/>
+        <path d="M120,168 C116,290 120,410 132,492 Q136,510 152,512 L248,512 Q264,510 268,492 C280,410 284,290 280,168 Z" fill="url(#dd-body)" stroke="#828b95" stroke-width="1.3"/>
+        <path d="M138,182 C134,290 138,405 148,492 L161,492 C151,405 148,290 151,182 Z" fill="url(#dd-light)" opacity="0.5"/>
+        <path d="M262,182 C266,290 262,405 252,492 L239,492 C249,405 252,290 249,182 Z" fill="#000" opacity="0.05"/>
+        <ellipse cx="200" cy="168" rx="80" ry="12" fill="#c4ccd4" stroke="#828b95" stroke-width="1.2"/>
+        <path d="M116,168 L116,140 Q200,128 284,140 L284,168 Q200,180 116,168 Z" fill="url(#dd-lid)"/>
         <path d="M156,140 Q156,116 200,114 Q244,116 244,140 Z" fill="#2b3137" stroke="#0d1013" stroke-width="1"/>
         <rect x="178" y="100" width="44" height="12" rx="6" fill="none" stroke="#23282d" stroke-width="6"/>
         <rect x="187" y="158" width="26" height="9" rx="3" fill="#c0392b" stroke="#7d2418" stroke-width="0.8"/>
-        <path d="M168,514 Q200,520 232,514" fill="none" stroke="#6f7882" stroke-width="1" opacity="0.6"/>
-        <rect class="print-guide" x="150" y="222" width="100" height="258" rx="6" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
+        <path d="M152,512 Q200,518 248,512" fill="none" stroke="#6f7882" stroke-width="1" opacity="0.6"/>
+        <rect class="print-guide" x="145" y="222" width="110" height="258" rx="6" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
       `)
     },
     {
