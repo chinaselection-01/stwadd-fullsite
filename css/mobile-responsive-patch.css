@@ -19,10 +19,36 @@ img, video, canvas, svg, picture, iframe, embed, object {
 }
 iframe { height: auto; }
 
-/* 3. Tables never exceed their container; long text wraps */
+/* 3. Tables never exceed their container; long text wraps.
+ * NOTE: do NOT apply word-break to `a` / `span` globally — in flex nav bars
+ * it shreds links into one-letter vertical columns. Only prose wraps. */
 table { max-width: 100%; }
 pre, code { white-space: pre-wrap; word-break: break-all; }
-a, p, li, td, th, span { overflow-wrap: break-word; word-break: break-word; }
+p, li, td, th { overflow-wrap: break-word; }
+
+/* Navigation must never break a link label into stacked letters */
+.nav-links a, .lang-switch a, .btn,
+.nav a, .top-bar a { white-space: nowrap; word-break: keep-all !important; }
+.lang-switch { flex-shrink: 0; }
+.logo { flex-shrink: 0; }
+/* Dropdown caret is written in the HTML label; hide the inherited underline
+ * ::after on dropdown parents so it cannot render a stray red caret/block. */
+.nav-links .dropdown > a::after { display: none; }
+
+/* 3b. Header: 14 nav items + logo + language switch cannot fit on one line
+ *     inside the 1200px container. Wrap into two clean rows at every
+ *     desktop width instead of squashing links into vertical letters. */
+@media (min-width: 769px) {
+  .header-main .container {
+    flex-wrap: wrap; height: auto; padding-top: 10px; padding-bottom: 10px;
+  }
+  .nav-links {
+    order: 3; width: 100%; flex-wrap: wrap; justify-content: center;
+    gap: 10px 20px; padding-top: 12px; margin-top: 6px;
+    border-top: 1px solid var(--border, #e5e7eb);
+  }
+  .nav-links a { font-size: .9rem; }
+}
 
 @media (max-width: 768px) {
   /* 4. Cap oversized fixed widths set inline by legacy templates */
@@ -31,6 +57,26 @@ a, p, li, td, th, span { overflow-wrap: break-word; word-break: break-word; }
   [style*="width: 8"], [style*="width:8"],
   [style*="width: 9"], [style*="width:9"],
   [style*="width: 10"], [style*="width:10"] { max-width: 100% !important; }
+
+  /* 4b. Expanded hamburger menu: stack vertically instead of horizontal
+   *     flex row that overflows the phone screen. */
+  .nav-links[style*="flex"] {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: flex-start;
+    gap: 0; width: 100%; max-height: calc(100vh - 90px); overflow-y: auto;
+    background: #fff; padding: 8px 20px 18px;
+    box-shadow: 0 12px 32px rgba(0,0,0,.14); z-index: 1100;
+  }
+  .nav-links[style*="flex"] > a,
+  .nav-links[style*="flex"] > .dropdown > a {
+    display: block; width: 100%; padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0; font-size: 1rem;
+  }
+  .nav-links[style*="flex"] .dropdown-menu {
+    position: static; opacity: 1; visibility: visible; transform: none;
+    box-shadow: none; min-width: 0; padding: 4px 0 8px 14px;
+  }
+  .nav-links[style*="flex"] .lang-switch, .lang-switch { margin-left: 0; }
 
   /* 5. Common legacy two-column grids stack on phones */
   .unit-grid-2, .unit-cols-2, .two-col, .col-2,
