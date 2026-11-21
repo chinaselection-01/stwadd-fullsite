@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script>(function(){if(location.protocol==='http:'){location.replace('https://'+location.host+location.pathname+location.search+location.hash);}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cup Color Studio | STWADD Drinkware</title>
+<meta name="description" content="Interactive cup colour configurator — recolour the lid, spout and body of STWADD bottle shapes, split the body into 2–3 colour zones with gradient or solid-blocking finishes.">
+<link rel="canonical" href="https://stwadd.com/cup-color-studio.html">
+<link rel="icon" href="/images/favicon.ico">
+<link rel="stylesheet" href="/css/mobile-responsive-patch.css">
+<style>
+  :root{--red:#c41e3a;--red-dark:#9e1530;--navy:#12212e;--ink:#1c2b3a;--line:#e3e9ef;--bg:#f5f8fb;--muted:#5b6b78;--white:#fff;--shadow:0 4px 20px rgba(18,33,46,.08)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:15px}
+  a{color:inherit;text-decoration:none}
+  img,svg{max-width:100%}
+  .container{max-width:1220px;margin:0 auto;padding:0 20px}
+  .top-bar{background:var(--navy);color:#cfe0ec;font-size:12px;padding:7px 0}
+  .top-bar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .header-main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .header-main .container{display:flex;align-items:center;justify-content:space-between;min-height:66px;gap:16px;flex-wrap:wrap}
+  .logo img{height:38px;display:block}
+  .nav-links{display:flex;gap:20px;align-items:center;font-size:14px;font-weight:600;flex-wrap:wrap}
+  .nav-links a:hover{color:var(--red)}
+  .nav-links .cta{background:var(--red);color:#fff;padding:9px 16px;border-radius:6px}
+  .nav-links .cta:hover{background:var(--red-dark);color:#fff}
+  .hero{background:linear-gradient(135deg,#12212e 0%,#1c3247 100%);color:#fff;padding:34px 0 30px}
+  .hero h1{margin:0 0 8px;font-size:clamp(24px,3.6vw,36px);line-height:1.2}
+  .hero p{margin:0;max-width:860px;color:#c9d9e6;font-size:15px}
+  .hero .badge{display:inline-block;background:rgba(196,30,58,.18);border:1px solid rgba(196,30,58,.5);color:#ff9aab;font-size:12px;padding:4px 11px;border-radius:20px;margin-bottom:12px}
+  .notice{max-width:1220px;margin:18px auto 0;padding:11px 18px;background:#fff8e6;border:1px solid #f0d99a;border-left:4px solid #d99a00;border-radius:8px;color:#6b5410;font-size:13px}
+  .notice b{color:#8a6a00}
+
+  .studio{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;margin:24px auto 10px;max-width:1220px;align-items:start}
+  @media(max-width:900px){.studio{grid-template-columns:1fr}}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:20px}
+  .panel h2{margin:0 0 3px;font-size:18px}
+  .panel .sub{margin:0 0 16px;color:var(--muted);font-size:12.5px}
+
+  .cup-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+  .cup-tabs button{border:1px solid var(--line);background:#f7fafc;border-radius:8px;padding:9px 6px;font-size:12px;font-weight:600;color:#33485a;cursor:pointer;line-height:1.25}
+  .cup-tabs button:hover{border-color:var(--red)}
+  .cup-tabs button.active{background:var(--red);color:#fff;border-color:var(--red)}
+  .cup-tabs button small{display:block;font-weight:400;opacity:.8;font-size:10.5px}
+
+  .stage{background:radial-gradient(circle at 50% 40%,#ffffff 0%,#e9eff4 100%);border:1px solid var(--line);border-radius:12px;min-height:430px;display:flex;align-items:center;justify-content:center;padding:12px;position:relative}
+  .stage svg{height:430px;width:auto;max-width:100%}
+  .stage .hint{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(18,33,46,.82);color:#fff;font-size:11.5px;padding:6px 12px;border-radius:20px;white-space:nowrap;pointer-events:none}
+  .cp-part{cursor:pointer;transition:filter .15s}
+  .cp-part:hover{filter:drop-shadow(0 0 4px rgba(196,30,58,.7))}
+  .cp-part.sel{filter:drop-shadow(0 0 5px rgba(196,30,58,.95))}
+
+  .group{margin-bottom:18px}
+  .group>label.title{display:block;font-weight:700;font-size:13.5px;margin-bottom:8px;color:#243746}
+  .group>label.title .pill-sel{background:var(--red);color:#fff;font-size:10.5px;padding:2px 8px;border-radius:12px;margin-left:6px;font-weight:600}
+  .seg{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .seg button{flex:1;border:none;background:#fff;padding:9px 6px;font-size:12.5px;font-weight:600;color:#33485a;cursor:pointer}
+  .seg button+button{border-left:1px solid var(--line)}
+  .seg button.active{background:var(--navy);color:#fff}
+  .zones{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .zone{display:flex;flex-direction:column;align-items:center;gap:5px;font-size:11.5px;color:var(--muted)}
+  .zone input[type=color]{width:52px;height:44px;border:1px solid var(--line);border-radius:8px;padding:2px;background:#fff;cursor:pointer}
+  .row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px}
+  .row .swatch{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+  .row .swatch input[type=color]{width:56px;height:40px;border:1px solid var(--line);border-radius:8px;padding:2px;cursor:pointer}
+  .hex{font-family:ui-monospace,monospace;font-size:12px;border:1px solid var(--line);border-radius:6px;padding:7px 8px;width:92px;text-align:center}
+  .opacity-row{display:flex;align-items:center;gap:10px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+  .opacity-row input[type=range]{flex:1}
+  .parts-list{display:flex;flex-direction:column;gap:8px}
+  .part-btn{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fff;border-radius:9px;padding:9px 11px;cursor:pointer;text-align:left;width:100%}
+  .part-btn:hover{border-color:var(--red)}
+  .part-btn.sel{border-color:var(--red);box-shadow:0 0 0 2px rgba(196,30,58,.12)}
+  .part-btn .dot{width:20px;height:20px;border-radius:50%;border:1px solid #c7d0d9;flex:0 0 auto}
+  .part-btn .lbl{font-size:13px;font-weight:600;color:#243746;flex:1}
+  .part-btn .lbl small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+  .part-btn .chev{color:var(--muted)}
+
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .btn{border:none;border-radius:8px;padding:11px 18px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s}
+  .btn.primary{background:var(--red);color:#fff}
+  .btn.primary:hover{background:var(--red-dark)}
+  .btn.ghost{background:#eef3f7;color:#243746}
+  .btn.ghost:hover{background:#dde7ef}
+  .status{font-size:12.5px;color:var(--muted);margin-top:10px;min-height:18px}
+  .status.ok{color:#0a7a3d;font-weight:600}
+  .spec{background:#f7fafc;border:1px solid var(--line);border-radius:8px;padding:12px;font-family:ui-monospace,monospace;font-size:11.5px;color:#33485a;white-space:pre-wrap;margin-top:10px;display:none;max-height:180px;overflow:auto}
+  .spec.show{display:block}
+  .foot-note{max-width:1220px;margin:4px auto 34px;color:var(--muted);font-size:12.5px}
+  footer{background:var(--navy);color:#9ab0c1;padding:26px 0;font-size:13px;text-align:center}
+  footer a{color:#d5e4ef;text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="container"><span>🌍 Custom Drinkware Solutions Since 2017</span><span>📧 bob@stwadd.com</span></div></div>
+<header class="header-main"><div class="container">
+  <a href="/" class="logo"><img src="/images/stwadd-logo.png" alt="STWADD Logo"></a>
+  <nav class="nav-links">
+    <a href="/">Home</a>
+    <a href="/all-products.html">Products</a>
+    <a href="/color-finder.html">Color Finder</a>
+    <a href="/customizer.html">Design Studio</a>
+    <a href="/cup-vectors.html">Vector Shapes</a>
+    <a href="/cup-color-studio.html">Color Studio</a>
+    <a href="/contact-us.html" class="cta">Get a Quote</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="container">
+  <span class="badge">INTERACTIVE · LIVE COLOUR PREVIEW</span>
+  <h1>Cup Color Studio</h1>
+  <p>Click any part of the cup — lid, drinking spout, carry loop or body — to recolour it. Split the body into 2 or 3 colour zones and switch between a smooth gradient or bold colour blocking. Export a preview to show your buyer.</p>
+</div></section>
+
+<div class="notice">
+  <b>Note:</b> These are illustrative vector outlines based on product photos. On-screen colours are for reference only — confirm final colours against a physical sample (screen and material finishes differ). <b>Mouthpiece / spout is shown translucent by default.</b>
+</div>
+
+<div class="studio">
+  <!-- LEFT: cup + shape tabs -->
+  <div class="panel">
+    <h2>Preview</h2>
+    <p class="sub">Choose a shape, then click a part on the cup to edit its colour.</p>
+    <div class="cup-tabs" id="cupTabs"></div>
+    <div class="stage" id="stage"><div class="hint">👆 Click a part of the cup to recolour it</div></div>
+  </div>
+
+  <!-- RIGHT: controls -->
+  <div class="panel">
+    <h2>Colours &amp; finish</h2>
+    <p class="sub" id="editHint">Select a part on the cup, or pick one below.</p>
+
+    <div class="group" id="bodyGroup" style="display:none">
+      <label class="title">Body zones <span class="pill-sel" id="bodySelTag">editing</span></label>
+      <div class="seg" id="zoneSeg">
+        <button data-z="1" class="active">1 zone</button>
+        <button data-z="2">2 zones</button>
+        <button data-z="3">3 zones</button>
+      </div>
+      <div class="seg" id="finishSeg" style="margin-top:8px">
+        <button data-f="block" class="active">Colour block</button>
+        <button data-f="gradient">Gradient</button>
+      </div>
+      <div class="zones" id="zoneColors"></div>
+    </div>
+
+    <div class="group" id="partGroup">
+      <label class="title">Cup parts</label>
+      <div class="parts-list" id="partsList"></div>
+      <div id="partEditor" style="display:none;margin-top:14px;padding:14px;border:1px solid var(--line);border-radius:10px;background:#fbfdff">
+        <div style="font-weight:700;font-size:13px;margin-bottom:4px" id="peTitle">Part</div>
+        <div class="row">
+          <div class="swatch"><input type="color" id="peColor"><input type="text" class="hex" id="peHex" maxlength="7" spellcheck="false"></div>
+        </div>
+        <div class="opacity-row" id="peOpacityRow" style="display:none">
+          <span>Transparency</span><input type="range" id="peOpacity" min="5" max="100" value="100"><span id="peOpacityVal">100%</span>
+        </div>
+        <div class="row" id="peTransWrap" style="display:none">
+          <label class="swatch"><input type="checkbox" id="peTransparent"> Show as clear / transparent</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn primary" id="exportPng">Download preview PNG</button>
+      <button class="btn ghost" id="copySpec">Copy colour spec</button>
+      <button class="btn ghost" id="resetBtn">Reset</button>
+    </div>
+    <div class="spec" id="specBox"></div>
+    <div class="status" id="status"></div>
+  </div>
+</div>
+
+<p class="foot-note">Want this colourway made as a real sample? Send us the spec — custom-printed samples ship in 7–10 days, and the sample itself is free (you only cover courier). <a href="/contact-us.html" style="color:var(--red);font-weight:600">Contact us →</a></p>
+
+<script src="/js/cup-color-config.js"></script>
+<script>
+(function(){
+  "use strict";
+  var CFG=window.CUP_COLOR_CONFIG||{viewBox:'0 0 400 560',cups:[]};
+  var cups=CFG.cups, vb=CFG.viewBox;
+  var state={cup:0, zones:1, finish:'block', colors:['#c4ccd4','#2b3137','#8a929c'], sel:'body', part:{}};
+  var stage=document.getElementById('stage');
+
+  function hex2rgb(h){h=h.replace('#','');if(h.length===3)h=h.split('').map(function(c){return c+c}).join('');return {r:parseInt(h.slice(0,2),16),g:parseInt(h.slice(2,4),16),b:parseInt(h.slice(4,6),16)};}
+  function shade(hex,f){var c=hex2rgb(hex),cl=function(v){return Math.max(0,Math.min(255,Math.round(v)))};return 'rgb('+cl(c.r*f)+','+cl(c.g*f)+','+cl(c.b*f)+')';}
+  function validHex(v){return /^#[0-9a-f]{6}$/i.test(v)||/^#[0-9a-f]{3}$/i.test(v);}
+
+  function cloneParts(cup){
+    var p={};
+    cup.parts.forEach(function(x){p[x.id]={color:x.color,opacity:(x.opacity==null?100:Math.round(x.opacity*100)),transparent:false};});
+    return p;
+  }
+  function loadCup(i){
+    state.cup=i; state.zones=1; state.finish='block'; state.sel='body';
+    state.colors=['#c4ccd4','#2b3137','#8a929c'];
+    state.part=cloneParts(cups[i]);
+    document.querySelectorAll('#cupTabs button').forEach(function(b,idx){b.classList.toggle('active',idx===i);});
+    document.querySelectorAll('#zoneSeg button').forEach(function(b){b.classList.toggle('active',+b.dataset.z===1);});
+    document.querySelectorAll('#finishSeg button').forEach(function(b){b.classList.toggle('active',b.dataset.f==='block');});
+    render(); renderParts(); renderEditor();
+  }
+
+  function shapeTag(s,attrs){
+    var a=attrs||'';
+    if(s.t==='path') return '<path d="'+s.d+'" '+a+'/>';
+    if(s.t==='ellipse') return '<ellipse cx="'+s.cx+'" cy="'+s.cy+'" rx="'+s.rx+'" ry="'+s.ry+'" '+a+'/>';
+    if(s.t==='rect') return '<rect x="'+s.x+'" y="'+s.y+'" width="'+s.w+'" height="'+s.h+'" rx="'+(s.r||0)+'" '+a+'/>';
+    return '';
+  }
+
+  function bodyFillDefs(cup){
+    var b=cup.body, h=b.bottom-b.top;
+    if(state.finish==='gradient'&&state.zones>1){
+      var stops='';
+      var cols=state.colors.slice(0,state.zones);
+      if(cols.length===2){
+        stops='<stop offset="0" stop-color="'+cols[0]+'"/><stop offset="1" stop-color="'+cols[1]+'"/>';
+      }else{
+        stops='<stop offset="0" stop-color="'+cols[0]+'"/><stop offset="0.5" stop-color="'+cols[1]+'"/><stop offset="1" stop-color="'+cols[2]+'"/>';
+      }
+      return {defs:'<linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">'+stops+'</linearGradient>',
+              rect:'<rect x="0" y="'+b.top+'" width="400" height="'+h+'" fill="url(#bodyGrad)"/>'};
+    }
+    // block / single: one rect per zone
+    var n=state.zones, seg=h/n, out='';
+    for(var i=0;i<n;i++){
+      out+='<rect x="0" y="'+(b.top+seg*i)+'" width="400" height="'+(seg+1)+'" fill="'+state.colors[i]+'"/>';
+    }
+    return {defs:'',rect:out};
+  }
+
+  function render(){
+    var cup=cups[state.cup];
+    var bf=bodyFillDefs(cup);
+    var s='<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+vb+'" role="img" aria-label="'+cup.name+' colour preview">';
+    s+='<defs>'+bf.defs+'<clipPath id="bodyClip"><path d="'+cup.body.path+'"/></clipPath></defs>';
+    // body (clipped colour zones) — clickable
+    s+='<g class="cp-part'+(state.sel==='body'?' sel':'')+'" data-part="body">';
+    s+='<g clip-path="url(#bodyClip)">'+bf.rect+'</g>';
+    s+='<path d="'+cup.body.path+'" fill="none" stroke="#828b95" stroke-width="1.3"/>';
+    // decor highlights
+    (cup.decor||[]).forEach(function(d){
+      s+=shapeTag(d,'fill="'+d.fill+'" opacity="'+d.op+'"');
+    });
+    s+='</g>';
+    // other parts
+    cup.parts.forEach(function(p){
+      var st=state.part[p.id]||{color:p.color,opacity:100,transparent:false};
+      var fill = st.transparent ? '#eef4f8' : st.color;
+      var op = st.transparent ? 0.45 : (st.opacity/100);
+      var attrs='';
+      if(p.kind==='stroke'){
+        attrs='fill="none" stroke="'+fill+'" stroke-width="'+(p.sw||6)+'" stroke-linecap="round" opacity="'+op+'"';
+      }else{
+        attrs='fill="'+fill+'" opacity="'+op+'"'+(p.stroke?' stroke="'+p.stroke+'" stroke-width="'+p.sw+'"':'');
+      }
+      s+='<g class="cp-part'+(state.sel===p.id?' sel':'')+'" data-part="'+p.id+'">'+p.shapes.map(function(sh){return shapeTag(sh,attrs)}).join('')+'</g>';
+    });
+    s+='</svg>';
+    var hint=stage.querySelector('.hint');
+    stage.innerHTML=s;
+    if(hint) stage.appendChild(hint);
+    // bind clicks
+    stage.querySelectorAll('.cp-part').forEach(function(g){
+      g.addEventListener('click',function(){ select(g.getAttribute('data-part')); });
+    });
+  }
+
+  function renderParts(){
+    var cup=cups[state.cup], list=document.getElementById('partsList'); list.innerHTML='';
+    cup.parts.forEach(function(p){
+      var st=state.part[p.id];
+      var b=document.createElement('button'); b.className='part-btn'+(state.sel===p.id?' sel':''); b.type='button';
+      var col=st.transparent?'transparent':st.color;
+      b.innerHTML='<span class="dot" style="background:'+(st.transparent?'repeating-linear-gradient(45deg,#eee,#eee 4px,#ccc 4px,#ccc 8px)':col)+'"></span>'+
+                  '<span class="lbl">'+p.label+'<small>'+p.zh+'</small></span><span class="chev">›</span>';
+      b.addEventListener('click',function(){select(p.id)});
+      list.appendChild(b);
+    });
+  }
+
+  function select(id){
+    state.sel=id;
+    render();renderParts();renderEditor();
+  }
+
+  function renderEditor(){
+    var isBody=state.sel==='body';
+    document.getElementById('bodyGroup').style.display=isBody?'block':'none';
+    document.getElementById('bodySelTag').style.display=isBody?'inline':'none';
+    var cup=cups[state.cup];
+    var part=null; cup.parts.forEach(function(p){if(p.id===state.sel)part=p;});
+    var pe=document.getElementById('partEditor');
+    if(isBody){
+      document.getElementById('editHint').textContent='Body — choose 1/2/3 zones, then set each colour.';
+      renderZoneColors(); pe.style.display='none';
+    }else if(part){
+      document.getElementById('editHint').textContent='Editing: '+part.label;
+      pe.style.display='block';
+      var st=state.part[part.id];
+      document.getElementById('peTitle').textContent=part.label+' ('+part.zh+')';
+      document.getElementById('peColor').value=validHex(st.color)?st.color:'#888888';
+      document.getElementById('peHex').value=st.color;
+      document.getElementById('peOpacity').value=st.opacity;
+      document.getElementById('peOpacityVal').textContent=st.opacity+'%';
+      document.getElementById('peOpacityRow').style.display=(part.isMouth||st.transparent)?'flex':'none';
+      document.getElementById('peTransWrap').style.display=part.isMouth?'flex':'none';
+      document.getElementById('peTransparent').checked=!!st.transparent;
+    }
+  }
+
+  function renderZoneColors(){
+    var box=document.getElementById('zoneColors'); box.innerHTML='';
+    var labels=['Top','Middle','Bottom'];
+    for(var i=0;i<state.zones;i++){
+      (function(i){
+        var d=document.createElement('div');d.className='zone';
+        d.innerHTML='<input type="color" value="'+state.colors[i]+'"><span>'+(state.zones===1?'Body':labels[i])+'</span>';
+        d.querySelector('input').addEventListener('input',function(){state.colors[i]=this.value;render();});
+        box.appendChild(d);
+      })(i);
+    }
+  }
+
+  // init tabs
+  var tabs=document.getElementById('cupTabs');
+  cups.forEach(function(c,i){
+    var b=document.createElement('button');b.type='button';
+    b.innerHTML=c.name+'<small>'+c.zh+'</small>';
+    b.addEventListener('click',function(){loadCup(i)});
+    tabs.appendChild(b);
+  });
+
+  document.getElementById('zoneSeg').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    state.zones=+b.dataset.z;
+    document.querySelectorAll('#zoneSeg button').forEach(function(x){x.classList.toggle('active',x===b)});
+    renderZoneColors();render();
+  });
+  document.getElementById('finishSeg').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    state.finish=b.dataset.f;
+    document.querySelectorAll('#finishSeg button').forEach(function(x){x.classList.toggle('active',x===b)});
+    render();
+  });
+
+  function currentPart(){var p=null;cups[state.cup].parts.forEach(function(x){if(x.id===state.sel)p=x});return p;}
+  document.getElementById('peColor').addEventListener('input',function(){
+    var p=currentPart();if(!p)return;state.part[p.id].color=this.value;state.part[p.id].transparent=false;
+    document.getElementById('peHex').value=this.value;render();renderParts();
+  });
+  document.getElementById('peHex').addEventListener('change',function(){
+    var p=currentPart();if(!p)return;var v=this.value.trim();if(v[0]!=='#')v='#'+v;
+    if(!validHex(v)){this.value=state.part[p.id].color;return;}
+    state.part[p.id].color=v;state.part[p.id].transparent=false;
+    document.getElementById('peColor').value=v;render();renderParts();
+  });
+  document.getElementById('peOpacity').addEventListener('input',function(){
+    var p=currentPart();if(!p)return;state.part[p.id].opacity=+this.value;
+    document.getElementById('peOpacityVal').textContent=this.value+'%';render();
+  });
+  document.getElementById('peTransparent').addEventListener('change',function(){
+    var p=currentPart();if(!p)return;state.part[p.id].transparent=this.checked;
+    document.getElementById('peOpacityRow').style.display=(this.checked||p.isMouth)?'flex':'none';render();renderParts();
+  });
+
+  function specText(){
+    var cup=cups[state.cup], lines=['STWADD · '+cup.name+' — colour spec','Body: '+state.zones+' zone(s), '+(state.finish==='gradient'?'gradient':'colour block')];
+    for(var i=0;i<state.zones;i++)lines.push('  Zone '+(i+1)+': '+state.colors[i]);
+    cup.parts.forEach(function(p){var st=state.part[p.id];lines.push(p.label+': '+(st.transparent?'clear / transparent':st.color+(st.opacity<100?' @ '+st.opacity+'%':'')));});
+    return lines.join('\n');
+  }
+  document.getElementById('copySpec').addEventListener('click',function(){
+    var t=specText(), box=document.getElementById('specBox'), st=document.getElementById('status');
+    box.textContent=t;box.classList.add('show');
+    try{navigator.clipboard.writeText(t).then(function(){st.className='status ok';st.textContent='✓ Colour spec copied — paste it into your email to us.'},function(){st.textContent='Spec shown below — select and copy it.'})}catch(e){st.textContent='Spec shown below — select and copy it.'}
+  });
+  document.getElementById('resetBtn').addEventListener('click',function(){loadCup(state.cup);document.getElementById('specBox').classList.remove('show');document.getElementById('status').textContent='';});
+
+  document.getElementById('exportPng').addEventListener('click',function(){
+    var svg=stage.querySelector('svg');if(!svg)return;
+    var st=document.getElementById('status');st.className='status';st.textContent='Rendering…';
+    var clone=svg.cloneNode(true);
+    clone.setAttribute('width','800');clone.setAttribute('height','1120');
+    var xml=new XMLSerializer().serializeToString(clone);
+    var url=URL.createObjectURL(new Blob([xml],{type:'image/svg+xml;charset=utf-8'}));
+    var img=new Image();
+    img.onload=function(){
+      var c=document.createElement('canvas');c.width=800;c.height=1120;
+      var ctx=c.getContext('2d');ctx.fillStyle='#eef3f7';ctx.fillRect(0,0,800,1120);
+      ctx.drawImage(img,0,0,800,1120);
+      URL.revokeObjectURL(url);
+      var a=document.createElement('a');a.href=c.toDataURL('image/png');a.download=cups[state.cup].id+'-colourway.png';
+      document.body.appendChild(a);a.click();document.body.removeChild(a);
+      st.className='status ok';st.textContent='✓ Preview downloaded.';
+    };
+    img.onerror=function(){URL.revokeObjectURL(url);st.textContent='Export failed — try Copy colour spec.'};
+    img.src=url;
+  });
+
+  loadCup(0);
+})();
+</script>
+<footer>© 2017–2026 Yongkang STWADD Houseware Co., Ltd. · <a href="/cup-vectors.html">Vector shapes</a> · <a href="/customizer.html">Design studio</a> · <a href="/all-products.html">All products</a></footer>
+</body>
+</html>
