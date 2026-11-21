@@ -63,6 +63,42 @@
   .guide-key{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted);margin-left:auto}
   .guide-key i{display:inline-block;width:22px;border-top:2px dashed var(--red)}
 
+  /* ---- AI mockup request CTA + form ---- */
+  .mockup-cta{background:linear-gradient(135deg,#c41e3a 0%,#9e1530 100%);color:#fff;border-radius:14px;padding:24px 28px;margin:26px auto 6px;max-width:1220px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;box-shadow:var(--shadow)}
+  .mockup-cta .m-icon{font-size:34px;line-height:1;flex:0 0 auto}
+  .mockup-cta .m-text{flex:1 1 320px}
+  .mockup-cta h2{margin:0 0 5px;font-size:20px}
+  .mockup-cta p{margin:0;color:#ffe3e9;font-size:13.5px;max-width:660px}
+  .mockup-cta .m-btn{background:#fff;color:#a3142c;border:none;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap}
+  .mockup-cta .m-btn:hover{background:#fff4f6}
+  .mockup-free{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.45);border-radius:20px;font-size:11px;padding:3px 10px;margin-bottom:8px;letter-spacing:.3px}
+
+  .mockup-panel{max-width:1220px;margin:20px auto 40px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:26px 28px;display:none}
+  .mockup-panel.open{display:block}
+  .mockup-panel h2{margin:0 0 4px;font-size:21px}
+  .mockup-panel .sub{margin:0 0 20px;color:var(--muted);font-size:13.5px}
+  .mf-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:620px){.mf-grid{grid-template-columns:1fr}}
+  .mf-field{display:flex;flex-direction:column;gap:5px}
+  .mf-field.full{grid-column:1/-1}
+  .mf-field label{font-size:12.5px;font-weight:600;color:#33485a}
+  .mf-field label .req{color:var(--red)}
+  .mf-field input,.mf-field select,.mf-field textarea{border:1px solid #d7e0e8;border-radius:7px;padding:10px 11px;font-size:14px;font-family:inherit;color:var(--ink);background:#fff;outline:none}
+  .mf-field input:focus,.mf-field select:focus,.mf-field textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(196,30,58,.1)}
+  .mf-field textarea{resize:vertical;min-height:70px}
+  .mf-upload{border:2px dashed #cfdae3;border-radius:9px;padding:16px;text-align:center;color:var(--muted);font-size:13px;cursor:pointer;transition:.2s}
+  .mf-upload:hover{border-color:var(--red);color:var(--red);background:#fff8fa}
+  .mf-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  .mf-thumbs img{width:64px;height:64px;object-fit:cover;border-radius:6px;border:1px solid var(--line)}
+  .mf-submit{margin-top:18px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .mf-submit button{background:var(--red);color:#fff;border:none;border-radius:8px;padding:13px 26px;font-size:15px;font-weight:700;cursor:pointer}
+  .mf-submit button:hover{background:var(--red-dark)}
+  .mf-submit button:disabled{opacity:.6;cursor:default}
+  .mf-status{font-size:13.5px;font-weight:600}
+  .mf-status.ok{color:#0a7a3d}
+  .mf-status.err{color:#b3152c}
+  .mf-note{font-size:12px;color:var(--muted);margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+
   footer{background:var(--navy);color:#9ab0c1;padding:28px 0;font-size:13px;text-align:center}
   footer a{color:#d5e4ef;text-decoration:underline}
 </style>
@@ -91,6 +127,43 @@
   <b>⚠️ Please note:</b> These are <b>illustrative vector outlines based on product photos</b>, not engineering drawings. The dashed rectangle is an <b>indicative</b> printable area — the real print zone varies by model and printing method. <b>Always confirm artwork against a physical sample before production.</b>
 </div>
 
+<div class="mockup-cta">
+  <div class="m-icon">🎨</div>
+  <div class="m-text">
+    <span class="mockup-free">FREE DESIGN PREVIEW</span>
+    <h2>Not sure how your logo will look? Let us render it for you.</h2>
+    <p>Pick a cup shape, upload your logo, and our team will make an AI mockup showing your artwork on the actual cup — sent back to you by email. No cost, no obligation.</p>
+  </div>
+  <button class="m-btn" id="mockupOpenBtn" type="button">Get my free mockup →</button>
+</div>
+
+<div class="mockup-panel" id="mockupPanel">
+  <h2>Free AI Logo Mockup</h2>
+  <p class="sub">Tell us the shape and upload your logo. We'll place it on the cup and email you a realistic preview within 1 business day.</p>
+  <form id="mockupForm" novalidate>
+    <div class="mf-grid">
+      <div class="mf-field"><label>Your name <span class="req">*</span></label><input type="text" id="mkName" autocomplete="name" required></div>
+      <div class="mf-field"><label>Email <span class="req">*</span></label><input type="email" id="mkEmail" autocomplete="email" required></div>
+      <div class="mf-field"><label>Company</label><input type="text" id="mkCompany" autocomplete="organization"></div>
+      <div class="mf-field"><label>WhatsApp / phone</label><input type="text" id="mkWhatsapp"></div>
+      <div class="mf-field"><label>Cup shape</label><select id="mkShape"></select></div>
+      <div class="mf-field"><label>Estimated quantity</label><input type="text" id="mkQty" placeholder="e.g. 500 pcs"></div>
+      <div class="mf-field full">
+        <label>Upload your logo (up to 3 images, JPG / PNG / WEBP)</label>
+        <div class="mf-upload" id="mkDrop">Click to choose logo images, or drop them here</div>
+        <input type="file" id="mkFile" accept="image/*" multiple style="display:none">
+        <div class="mf-thumbs" id="mkThumbs"></div>
+      </div>
+      <div class="mf-field full"><label>How would you like it placed? (optional)</label><textarea id="mkMessage" placeholder="e.g. centered on the front, about 6 cm wide, in white; or: wrap around, two colours"></textarea></div>
+    </div>
+    <div class="mf-submit">
+      <button type="submit" id="mkSubmit">Send request</button>
+      <span class="mf-status" id="mkStatus"></span>
+    </div>
+    <div class="mf-note">We only use these details to prepare and send your mockup. Your logo and artwork stay confidential. Prefer to talk now? Email <b>bob@stwadd.com</b>.</div>
+  </form>
+</div>
+
 <div class="toolbar">
   <div><h2>Available shapes</h2><div class="count" id="count"></div></div>
   <div class="guide-key"><i></i> dashed line = indicative print area</div>
@@ -99,11 +172,73 @@
 <div class="container"><div class="grid" id="grid"></div></div>
 
 <script src="/js/cup-vector-shapes.js"></script>
+<script src="/js/ai-mockup-request.js"></script>
 <script>
 (function(){
   var grid=document.getElementById('grid');
   var shapes=window.CUP_VECTOR_SHAPES||[];
   document.getElementById('count').textContent=shapes.length+' vector cup shapes · free SVG download';
+
+  // ---- free AI mockup request panel ----
+  var M = window.STWADD_MOCKUP || {};
+  var panel=document.getElementById('mockupPanel');
+  var shapeSel=document.getElementById('mkShape');
+  M.fillShapes(shapeSel, shapes);
+  function openPanel(shape){
+    panel.classList.add('open');
+    if(shape) M.pickShape(shapeSel, shape);
+    panel.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  document.getElementById('mockupOpenBtn').addEventListener('click',function(){ openPanel(); });
+
+  var fileInput=document.getElementById('mkFile');
+  var thumbs=document.getElementById('mkThumbs');
+  var picked=[];
+  document.getElementById('mkDrop').addEventListener('click',function(){ fileInput.click(); });
+  ['dragover','dragenter'].forEach(function(ev){
+    document.getElementById('mkDrop').addEventListener(ev,function(e){ e.preventDefault(); });
+  });
+  document.getElementById('mkDrop').addEventListener('drop',function(e){
+    e.preventDefault(); fileInput.files=e.dataTransfer.files; onFiles();
+  });
+  fileInput.addEventListener('change',onFiles);
+  function onFiles(){
+    M.readImages(fileInput.files, function(imgs){
+      picked=imgs; thumbs.innerHTML='';
+      imgs.forEach(function(f){ var im=document.createElement('img'); im.src=f.dataUrl; im.alt=f.name; thumbs.appendChild(im); });
+    });
+  }
+
+  document.getElementById('mockupForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var status=document.getElementById('mkStatus');
+    var name=document.getElementById('mkName').value.trim();
+    var email=document.getElementById('mkEmail').value.trim();
+    if(!name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+      status.className='mf-status err'; status.textContent='Please enter your name and a valid email.'; return;
+    }
+    var btn=document.getElementById('mkSubmit');
+    btn.disabled=true; status.className='mf-status'; status.textContent='Sending…';
+    M.submit({
+      name:name, email:email,
+      company:document.getElementById('mkCompany').value.trim(),
+      whatsapp:document.getElementById('mkWhatsapp').value.trim(),
+      shape:shapeSel.value,
+      quantity:document.getElementById('mkQty').value.trim(),
+      message:document.getElementById('mkMessage').value.trim()
+    }, picked, function(ok){
+      btn.disabled=false;
+      if(ok){
+        status.className='mf-status ok';
+        status.textContent='✓ Received! We will email your mockup within 1 business day.';
+        document.getElementById('mockupForm').reset(); thumbs.innerHTML=''; picked=[];
+      }else{
+        status.className='mf-status err';
+        status.textContent='Could not send right now. Please email bob@stwadd.com with your logo.';
+      }
+    });
+  });
+
   function download(name,content){
     var blob=new Blob([content],{type:'image/svg+xml;charset=utf-8'});
     var url=URL.createObjectURL(blob),a=document.createElement('a');
@@ -123,10 +258,12 @@
         '<div class="actions">'+
           '<button class="btn primary" data-k="guide">SVG + print guide</button>'+
           '<button class="btn" data-k="clean">Clean SVG</button>'+
+          '<button class="btn" data-k="mockup" style="background:#12212e;color:#fff">Get AI mockup</button>'+
         '</div>'+
       '</div>';
     card.querySelectorAll('button').forEach(function(b){
       b.addEventListener('click',function(){
+        if(b.dataset.k==='mockup'){ openPanel(s.name); return; }
         var withGuide=b.dataset.k==='guide';
         download(s.id+(withGuide?'-print-guide':'-clean')+'.svg',
                  withGuide?s.svg:window.cupVectorCleanSVG(s));
