@@ -165,6 +165,46 @@
         <path d="M130,518 Q200,526 270,518" fill="none" stroke="#6f7882" stroke-width="1" opacity="0.6"/>
         <rect class="print-guide" x="130" y="245" width="140" height="250" rx="6" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
       `)
+    },
+    {
+      id: 'tumbler-40oz',
+      name: '40oz Quencher Tumbler', short: '40oz Tumbler',
+      zh: '40oz 大肚吸管杯',
+      cap: '40oz / 1200ml',
+      desc: 'Stanley-style quencher: wide tapered body narrowing to a cup-holder base, large D-shaped side handle, wide rotating straw lid with flip tab.',
+      printArea: { x: 128, y: 220, w: 144, h: 250 },
+      svg: svgWrap('40z', `
+        <path d="M112,168 C112,250 128,360 138,436 L138,492 Q138,516 156,520 L244,520 Q262,516 262,492 L262,436 C272,360 288,250 288,168 Z" fill="url(#40z-body)" stroke="#828b95" stroke-width="1.3"/>
+        <path d="M130,178 C130,255 144,360 152,436 L152,488 Q153,502 160,508 L168,508 L158,178 Z" fill="url(#40z-light)" opacity="0.5"/>
+        <path d="M270,178 C270,255 256,360 248,436 L248,488 Q247,502 240,508 L232,508 L242,178 Z" fill="#000" opacity="0.05"/>
+        <ellipse cx="200" cy="168" rx="88" ry="14" fill="#c4ccd4" stroke="#828b95" stroke-width="1.2"/>
+        <path d="M108,168 L108,146 Q200,134 292,146 L292,168 Q200,182 108,168 Z" fill="url(#40z-lid)" stroke="#0d1013" stroke-width="0.8"/>
+        <ellipse cx="200" cy="146" rx="76" ry="11" fill="#343b42" stroke="#0d1013" stroke-width="1"/>
+        <path d="M182,142 L218,142 L214,132 L186,132 Z" fill="#4a525a" stroke="#0d1013" stroke-width="0.8"/>
+        <rect x="170" y="112" width="12" height="26" rx="6" fill="#8a929c" transform="rotate(-8 176 125)"/>
+        <path d="M292,196 Q332,196 332,238 L332,318 Q332,356 292,356" fill="none" stroke="url(#40z-metal)" stroke-width="15" stroke-linecap="round"/>
+        <path d="M292,196 Q332,196 332,238 L332,318 Q332,356 292,356" fill="none" stroke="#828b95" stroke-width="1" opacity="0.5"/>
+        <path d="M156,520 Q200,527 244,520" fill="none" stroke="#6f7882" stroke-width="1" opacity="0.6"/>
+        <rect class="print-guide" x="128" y="220" width="144" height="250" rx="6" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
+      `)
+    },
+    {
+      id: 'narrow-bottle-500',
+      name: '500ml Narrow-Mouth Bottle', short: 'Narrow 500',
+      zh: '500ml 小口瓶',
+      cap: '500ml',
+      desc: 'Classic narrow-mouth bottle: slim straight body, rounded shoulder into a short neck, stainless screw cap with a small carry ring.',
+      printArea: { x: 152, y: 232, w: 96, h: 262 },
+      svg: svgWrap('nb', `
+        <path d="M148,214 C148,196 168,184 184,180 L184,166 L216,166 L216,180 C232,184 252,196 252,214 L252,492 Q252,516 236,520 L164,520 Q148,516 148,492 Z" fill="url(#nb-body)" stroke="#828b95" stroke-width="1.3"/>
+        <path d="M164,216 C164,202 180,192 190,189 L190,490 Q191,504 196,508 L176,508 L164,216 Z" fill="url(#nb-light)" opacity="0.5"/>
+        <path d="M236,216 C236,202 220,192 210,189 L210,490 Q209,504 204,508 L224,508 L236,216 Z" fill="#000" opacity="0.05"/>
+        <rect x="182" y="150" width="36" height="20" rx="3" fill="url(#nb-metal)" stroke="#8b939b" stroke-width="1"/>
+        <path d="M178,150 Q178,142 200,140 Q222,142 222,150 L222,152 Q200,146 178,152 Z" fill="#f0f3f5" stroke="#8b939b" stroke-width="0.8"/>
+        <path d="M214,146 Q232,142 236,158" fill="none" stroke="#9aa2aa" stroke-width="5" stroke-linecap="round"/>
+        <path d="M164,520 Q200,527 236,520" fill="none" stroke="#6f7882" stroke-width="1" opacity="0.6"/>
+        <rect class="print-guide" x="152" y="232" width="96" height="262" rx="5" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
+      `)
     }
   ];
 
