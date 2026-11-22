@@ -66,6 +66,15 @@
   .status.bad{background:#fff4f4;color:#9e172e}
   .empty{display:flex;align-items:center;justify-content:center;min-height:220px;color:var(--muted);font-size:14px;text-align:center;padding:20px}
   .legend{font-size:12px;color:var(--muted);margin-top:10px}
+  .srcmap{margin-top:14px;background:#f7f9fb;border:1px solid var(--line);border-radius:9px;padding:10px}
+  .srcmap-cap{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:7px}
+  .srcmap canvas{display:block;width:100%;height:auto;border-radius:5px}
+  .srcmap-legend{font-size:11px;color:var(--muted);margin-top:7px;display:flex;flex-wrap:wrap;gap:10px;line-height:1.5}
+  .srcmap-legend i.ln{display:inline-block;width:15px;height:0;border-top:2px solid;margin-right:4px;vertical-align:middle}
+  .srcmap-legend i.blue{border-color:#2563eb}
+  .srcmap-legend i.red{border-color:#e11d48;border-top-style:dashed}
+  .srcmap-legend i.band{width:11px;height:11px;border:0;background:rgba(37,99,235,.18);border-radius:2px}
+  .portrait-hint{display:none;background:#fff8e6;border:1px solid #f0d99a;color:#6b5410;border-radius:8px;padding:10px 11px;font-size:12px;margin-top:10px;line-height:1.5}
   .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
   .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
   @media(max-width:720px){.steps{grid-template-columns:1fr}}
@@ -152,6 +161,18 @@
           <option value="stretch">Stretch to fit (one full wrap)</option>
           <option value="repeat">Tile / repeat around</option>
         </select>
+
+        <div class="srcmap">
+          <div class="srcmap-cap">Your artwork — where the front and the seam land</div>
+          <canvas id="mapC" width="640" height="300"></canvas>
+          <div class="srcmap-legend">
+            <span><i class="ln blue"></i>front centre</span>
+            <span><i class="ln red"></i>seam (left + right edge)</span>
+            <span><i class="band"></i>what the front view shows</span>
+          </div>
+          <div class="hint">The blue line is the exact middle of your image — that is what faces the buyer. If the person you want is not on the blue line, drag “Rotate the wrap” until they are.</div>
+        </div>
+        <div class="portrait-hint" id="portraitHint">Your image is tall (portrait). A real 360° wrap is a wide panorama — its width should be about 1.4× its height for this bottle. A portrait photo will look stretched. Send us the photo and we will set the repeat / placement for you, or use <a href="/customizer.html">Design a cup</a> for a single front image.</div>
       </div>
 
       <div class="hint" style="margin-top:14px">No artwork handy? <a href="/cup-vectors.html">Browse our cup shapes</a> or <a href="/customizer.html">design a cup with text</a>.</div>
@@ -174,7 +195,7 @@
         </div>
       </div>
       <div class="status" id="status">Upload your wrap artwork to preview the cylinder and inspect the back seam.</div>
-      <div class="legend">The dashed red line on the back view and seam close-up marks <b>the seam</b> — the vertical line where the start and end of your artwork meet. A visible colour or line break here is what you want to catch before printing.</div>
+      <div class="legend">Only <b>the dashed red line on the back view</b> and the seam close-up are drawn by this tool — they mark <b>the seam</b>, where the two ends of your artwork meet. Any other line you see inside the picture is <b>already in your uploaded image</b> (for example two photos joined together); we cannot remove it, we just show it where it lands on the bottle. A colour or line break at the seam is what you want to catch before printing.</div>
 
       <div class="cta-row" id="ctaRow" style="display:none">
         <button class="btn" id="toCustomizer">Use this design on a cup →</button>
@@ -218,6 +239,7 @@
       var ir = img.naturalWidth/img.naturalHeight, tr = idealRatio();
       var diff = Math.abs(ir-tr)/tr;
       $('ratioWarn').style.display = diff>0.25 ? 'block':'none';
+      $('portraitHint').style.display = ir < 1.05 ? 'block':'none';
     }
   }
   ['dia','pheight'].forEach(function(id){ $(id).addEventListener('input',function(){ updateCalc(); if(img) renderAll(); }); });
@@ -342,9 +364,50 @@
     c.textAlign='right'; c.fillText('START OF ARTWORK', W-12, 24); c.textAlign='left';
   }
 
+  // ---- source artwork map: where the front centre and the seam fall on the flat image ----
+  function drawMap(){
+    var canvas = $('mapC'), c = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    c.clearRect(0,0,W,H);
+    if(!img) return;
+    var imgW=img.naturalWidth, imgH=img.naturalHeight;
+    var top=8, bottom=H-30, drawH=bottom-top;
+    var imgDrawW = drawH * (imgW/imgH);
+    // fit to width if needed, keep whole image visible
+    if(imgDrawW > W-4){ imgDrawW = W-4; drawH = imgDrawW*(imgH/imgW); }
+    var x0 = (W-imgDrawW)/2;
+    c.drawImage(img, x0, top, imgDrawW, drawH);
+    var rot = (parseFloat($('rot').value)||0);
+    // front centre samples u = 0.5 + rot/360 ; front view shows ±90° => u ±0.25
+    var uFrontRaw = 0.5 + rot/360;
+    var uFront = uFrontRaw - Math.floor(uFrontRaw);
+    var uA = uFrontRaw - 0.25, uB = uA + 0.5; // visible band on the front (unwrapped)
+    // highlight the half of the artwork the front view shows (may wrap across an edge)
+    c.fillStyle='rgba(37,99,235,.16)';
+    for(var k=Math.floor(uA); k<=Math.floor(uB); k++){
+      var a=Math.max(uA,k), b=Math.min(uB,k+1);
+      if(b>a) c.fillRect(x0+(a-k)*imgDrawW, top, (b-a)*imgDrawW, drawH);
+    }
+    // seam = left + right edge of the artwork
+    c.save(); c.strokeStyle='#e11d48'; c.lineWidth=2; c.setLineDash([7,5]);
+    c.beginPath(); c.moveTo(x0,top); c.lineTo(x0,top+drawH);
+    c.moveTo(x0+imgDrawW,top); c.lineTo(x0+imgDrawW,top+drawH); c.stroke(); c.restore();
+    // front centre line
+    var fx=x0+uFront*imgDrawW;
+    c.save(); c.strokeStyle='#2563eb'; c.lineWidth=2.5;
+    c.beginPath(); c.moveTo(fx,top); c.lineTo(fx,top+drawH); c.stroke();
+    c.fillStyle='#2563eb'; c.font='600 12px sans-serif';
+    c.textAlign = fx>W-110 ? 'right':'left';
+    c.fillText('FRONT CENTRE', fx + (fx>W-110?-5:5), top+15); c.textAlign='left'; c.restore();
+    // end labels
+    c.fillStyle='#6b7a87'; c.font='11px sans-serif';
+    c.textAlign='left'; c.fillText('artwork START', x0, H-9);
+    c.textAlign='right'; c.fillText('artwork END', x0+imgDrawW, H-9); c.textAlign='left';
+  }
+
   function renderAll(){
     if(!img){
-      [$('frontC'),$('backC'),$('seamC')].forEach(function(cv){
+      [$('frontC'),$('backC'),$('seamC'),$('mapC')].forEach(function(cv){
         var c=cv.getContext('2d'); c.clearRect(0,0,cv.width,cv.height);
       });
       return;
@@ -354,6 +417,7 @@
     drawCylinder($('frontC'), rot, {});
     drawCylinder($('backC'), rot + Math.PI, {});
     drawSeam();
+    drawMap();
   }
 
   // ---- controls ----
