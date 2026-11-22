@@ -181,7 +181,7 @@ footer a{color:#fff}
     <h1>Color it. Create it. Wear it.</h1>
     <p>Pick a picture, fill it with your colours, or draw your own. Love what you made? We can print it on a real cup — a one-of-a-kind gift made by you.</p>
     <div class="facts">
-      <span class="fact">🎨 12 pictures + free drawing</span>
+      <span class="fact" id="tplCount">🎨 Pictures + free drawing</span>
       <span class="fact">🖨️ Print it on a real tumbler</span>
       <span class="fact">🔄 New picture every week</span>
     </div>
@@ -223,7 +223,7 @@ footer a{color:#fff}
           <button type="button" id="stkDel" title="Remove sticker">🗑</button>
         </div>
       </div>
-      <div class="hint" style="margin-top:8px">✨ Stickers: tap one to add it, drag to move, use the buttons on the picture to resize or remove.</div>
+      <div class="hint" style="margin-top:8px">Every picture starts <b>white</b> — tap a colour, then tap a part to paint it. ✨ Stickers: tap one to add it, drag to move, use the buttons on the picture to resize or remove.</div>
       <div class="tools">
         <button type="button" id="undoBtn">↶ Undo</button>
         <button type="button" id="clearBtn">🗑️ Start over</button>
@@ -250,6 +250,7 @@ footer a{color:#fff}
         <div class="stk-tabs" id="stkTabs"></div>
         <div class="stk-grid" id="stkGrid"></div>
         <button type="button" id="buildRoomBtn" style="margin-top:11px;width:100%;border:1.5px dashed #f0a7b6;background:#fff5f7;color:#c2185b;border-radius:10px;padding:9px;font-size:12.5px;font-weight:800;cursor:pointer">🏠 Build a room for me</button>
+        <button type="button" id="buildPlayBtn" style="margin-top:8px;width:100%;border:1.5px dashed #a7d8f0;background:#f1f9ff;color:#16679a;border-radius:10px;padding:9px;font-size:12.5px;font-weight:800;cursor:pointer">🎡 Build a playground for me</button>
         <div class="hint" style="margin-top:5px">Tap a sticker to add it, drag to move, use + / − to resize, tap a colour then tap a part to recolour.</div>
       </div>
 
@@ -332,12 +333,14 @@ footer a{color:#fff}
   function weekNo(){var d=new Date(),t=new Date(d.getFullYear(),0,1);return Math.ceil(((d-t)/86400000+t.getDay()+1)/7)}
   var weekly=weekNo()%TPL.length;
   $('weeklyName').textContent=TPL[weekly]?TPL[weekly].name:'a fun new picture';
+  $('tplCount').textContent='🎨 '+TPL.length+' pictures + free drawing';
 
   /* ---------- template thumbnails + selection ---------- */
   function svgInner(t,fills){
     var out='';
     (t.shapes||[]).forEach(function(s,i){
-      var fill=(fills&&fills[i])||s.c||'#ffffff';
+      // Colouring pages always start white; only saved artwork restores its colours.
+      var fill=(fills&&fills[i])||(s.c==='none'?'none':'#ffffff');
       var st=' fill="'+fill+'" stroke="#25313b" stroke-width="'+(s.w||4)+'" stroke-linejoin="round" stroke-linecap="round"';
       if(s.t==='circle') out+='<circle cx="'+s.cx+'" cy="'+s.cy+'" r="'+s.r+'"'+st+'/>';
       else if(s.t==='ellipse') out+='<ellipse cx="'+s.cx+'" cy="'+s.cy+'" rx="'+s.rx+'" ry="'+s.ry+'"'+(s.rot?' transform="rotate('+s.rot+' '+s.cx+' '+s.cy+')"':'')+st+'/>';
@@ -374,6 +377,8 @@ footer a{color:#fff}
                {n:'Fruit',f:['Apple','Banana','Orange','Strawberry','Grapes','Watermelon','Pear','Pineapple','Cherry','Lemon','Peach','Kiwi','Ice cream']},
                {n:'My home',f:['Table','Chair','Sofa','TV','Bed','Lamp','Bookshelf','Rug','Window','Door','Clock','Plant','House','Tree','Xmas tree']},
                {n:'People',f:['Boy','Girl','Dad','Mom','Baby','Dog','Cat','Cat face']},
+               {n:'Vehicles',f:['Car','Bus','Train','Truck','Ship','Airplane','Helicopter','Bicycle','Scooter','Traffic light']},
+               {n:'Playground',f:['Slide','Swing','Seesaw','Ferris wheel','Carousel','Trampoline','Ball pit','Sandcastle']},
                {n:'World',f:['Mountains','River','House','Tree','Xmas tree']}];
   var stkCat=0;
 
@@ -449,6 +454,17 @@ footer a{color:#fff}
     plan.forEach(function(p){placeSticker(p[0],p[1],p[2],p[3])});
     holder.classList.remove('idle');
     toast('🏠 Room built! Tap any part to change its colour');
+  }
+
+  function buildPlayground(){
+    while(layer.firstChild)layer.removeChild(layer.firstChild);
+    selSticker(null);
+    var plan=[['Ferris wheel',104,146,1.15],['Slide',278,190,1.2],['Swing',198,258,1.0],
+              ['Carousel',338,282,0.75],['Ball pit',74,318,0.95],['Traffic light',18,240,0.7],
+              ['Boy',152,338,0.62],['Girl',236,342,0.62]];
+    plan.forEach(function(p){placeSticker(p[0],p[1],p[2],p[3])});
+    holder.classList.remove('idle');
+    toast('🎡 Playground built! Tap any part to change its colour');
   }
 
   function wireSticker(g){
@@ -583,6 +599,7 @@ footer a{color:#fff}
     else{toast('Tap Start over to clear the picture')}
   });
   $('buildRoomBtn').addEventListener('click',buildRoom);
+  $('buildPlayBtn').addEventListener('click',buildPlayground);
   $('clearBtn').addEventListener('click',function(){restoreStickers([]);mode==='draw'?clearCanvas():loadTemplate(tplIdx)});
   $('randomBtn').addEventListener('click',function(){restoreStickers([]);setMode('color');loadTemplate(Math.floor(Math.random()*TPL.length))});
 
