@@ -90,19 +90,34 @@
       name: 'Space Flask 500 / 1000 / 1200ml', short: 'Space Flask',
       zh: '太空壶 500 / 1000 / 1200ml',
       cap: '500–1200ml',
-      desc: 'Extra-slim tall bottle with small loop lid. Three capacities, one silhouette.',
-      printArea: { x: 162, y: 210, w: 76, h: 282 },
+      desc: 'Wide-mouth straight-body sport flask with ribbed screw cap and carry-loop lid. Three lid options: round handle, flip-up spout, side loop.',
+      printArea: { x: 160, y: 214, w: 80, h: 274 },
       svg: svgWrap('fl', `
-        <path d="M150,155 L150,490 Q150,516 165,518 L235,518 Q250,516 250,490 L250,155 Z" fill="url(#fl-body)" stroke="#828b95" stroke-width="1.3"/>
-        <path d="M162,168 L162,484 Q162,502 169,507 L175,507 L175,168 Z" fill="url(#fl-light)" opacity="0.5"/>
-        <path d="M238,168 L238,484 Q238,502 232,507 L228,507 L228,168 Z" fill="#000" opacity="0.05"/>
-        <ellipse cx="200" cy="155" rx="50" ry="9" fill="#c4ccd4" stroke="#828b95" stroke-width="1.2"/>
-        <path d="M148,155 L148,128 Q200,118 252,128 L252,155 Q200,165 148,155 Z" fill="url(#fl-lid)"/>
-        <path d="M172,128 Q172,108 200,106 Q228,108 228,128 Z" fill="#2b3137"/>
-        <rect x="180" y="98" width="40" height="12" rx="6" fill="none" stroke="#23282d" stroke-width="6"/>
-        <rect x="188" y="145" width="24" height="7" rx="3" fill="#aeb6be"/>
-        <path d="M165,518 Q200,524 235,518" fill="none" stroke="#6f7882" stroke-width="1" opacity="0.6"/>
-        <rect class="print-guide" x="162" y="210" width="76" height="282" rx="5" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
+        <!-- bottle body: wide straight cylinder, rounded base -->
+        <path d="M146,168 L146,488 Q146,516 160,520 L240,520 Q254,516 254,488 L254,168 Z" fill="url(#fl-body)" stroke="#828b95" stroke-width="1.3"/>
+        <path d="M158,180 L158,484 Q159,502 166,508 L172,508 L172,180 Z" fill="url(#fl-light)" opacity="0.5"/>
+        <path d="M242,180 L242,484 Q241,502 234,508 L228,508 L228,180 Z" fill="#000" opacity="0.05"/>
+        <!-- neck step / shoulder -->
+        <path d="M150,168 L150,156 Q200,150 250,156 L250,168 Z" fill="#c4ccd4" stroke="#828b95" stroke-width="1.2"/>
+        <!-- ribbed screw collar -->
+        <path d="M145,156 L145,132 Q200,124 255,132 L255,156 Q200,166 145,156 Z" fill="url(#fl-metal)" stroke="#828b95" stroke-width="1.1"/>
+        <g stroke="#9aa2aa" stroke-width="1" opacity="0.7">
+          <path d="M152,135 L152,155"/><path d="M160,134 L160,156"/><path d="M168,133 L168,157"/><path d="M176,133 L176,158"/>
+          <path d="M184,132 L184,158"/><path d="M192,132 L192,159"/><path d="M200,132 L200,159"/><path d="M208,132 L208,159"/>
+          <path d="M216,132 L216,158"/><path d="M224,133 L224,158"/><path d="M232,133 L232,157"/><path d="M240,134 L240,156"/><path d="M248,135 L248,155"/>
+        </g>
+        <!-- top raised boss (small ribbed cylinder) -->
+        <path d="M180,132 L180,104 Q200,99 220,104 L220,132 Z" fill="url(#fl-metal)" stroke="#828b95" stroke-width="1"/>
+        <g stroke="#9aa2aa" stroke-width="1" opacity="0.7">
+          <path d="M187,106 L187,130"/><path d="M194,105 L194,131"/><path d="M200,104 L200,131"/><path d="M206,105 L206,131"/><path d="M213,106 L213,130"/>
+        </g>
+        <ellipse cx="200" cy="104" rx="20" ry="5" fill="#e9edf1" stroke="#828b95" stroke-width="1"/>
+        <!-- big round carry handle (view 1) -->
+        <circle cx="200" cy="62" r="34" fill="none" stroke="#2b3137" stroke-width="11"/>
+        <circle cx="200" cy="62" r="34" fill="none" stroke="#5b636b" stroke-width="1.5"/>
+        <path d="M186,93 L186,104 Q200,100 214,104 L214,93 Z" fill="#3d444b"/>
+        <!-- print guide -->
+        <rect class="print-guide" x="160" y="214" width="80" height="274" rx="5" fill="none" stroke="#e11d48" stroke-width="1.7" stroke-dasharray="7 5"/>
       `)
     },
     {

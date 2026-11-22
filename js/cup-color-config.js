@@ -63,22 +63,22 @@
     },
     {
       id: 'space-flask', name: 'Space Flask', zh: '太空壶',
-      body: { path: 'M150,155 L150,506 Q150,520 162,520 L238,520 Q250,520 250,506 L250,155 Z', top: 155, bottom: 520 },
+      body: { path: 'M146,168 L146,488 Q146,516 160,520 L240,520 Q254,516 254,488 L254,168 Z', top: 168, bottom: 520 },
       decor: [
-        { t: 'path', d: 'M162,168 L162,492 Q163,505 170,510 L176,510 L176,168 Z', fill: '#ffffff', op: 0.18 },
-        { t: 'path', d: 'M238,168 L238,492 Q237,505 231,510 L226,510 L226,168 Z', fill: '#000000', op: 0.06 }
+        { t: 'path', d: 'M158,180 L158,484 Q159,502 166,508 L172,508 L172,180 Z', fill: '#ffffff', op: 0.18 },
+        { t: 'path', d: 'M242,180 L242,484 Q241,502 234,508 L228,508 L228,180 Z', fill: '#000000', op: 0.06 }
       ],
       parts: [
-        { id: 'lid', label: 'Loop lid', zh: '提环盖', kind: 'fill', shapes: [
-            { t: 'path', d: 'M144,155 L144,130 Q144,120 200,118 Q256,120 256,130 L256,155 Q200,165 144,155 Z' },
-            { t: 'ellipse', cx: 200, cy: 130, rx: 55, ry: 9 },
-            { t: 'rect', x: 192, y: 118, w: 16, h: 12, r: 3 }
+        { id: 'lid', label: 'Ribbed screw cap', zh: '螺纹盖圈', kind: 'fill', shapes: [
+            { t: 'path', d: 'M145,156 L145,132 Q200,124 255,132 L255,156 Q200,166 145,156 Z' },
+            { t: 'path', d: 'M180,132 L180,104 Q200,99 220,104 L220,132 Z' },
+            { t: 'ellipse', cx: 200, cy: 104, rx: 20, ry: 5 }
+          ], color: '#c4ccd4', stroke: '#9aa2aa', sw: 1 },
+        { id: 'loop', label: 'Round carry handle', zh: '圆环提手', kind: 'stroke', sw: 11, shapes: [
+            { t: 'path', d: 'M166,62 A34,34 0 1,1 234,62 A34,34 0 1,1 166,62 Z' }
           ], color: '#2b3137' },
-        { id: 'loop', label: 'Carry loop', zh: 'D 形提环', kind: 'stroke', sw: 8, shapes: [
-            { t: 'rect', x: 164, y: 100, w: 72, h: 26, r: 13 }
-          ], color: '#23282d' },
         { id: 'mouth', label: 'Drinking spout', zh: '饮嘴', kind: 'fill', isMouth: true, shapes: [
-            { t: 'path', d: 'M191,120 L209,120 L207,110 L193,110 Z' }
+            { t: 'path', d: 'M191,104 L209,104 L207,94 L193,94 Z' }
           ], color: '#d9e2ea', opacity: 0.35 }
       ]
     },
