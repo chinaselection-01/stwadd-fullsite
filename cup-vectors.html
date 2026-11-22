@@ -210,6 +210,20 @@
     });
   }
 
+  // import a full wrap artwork handed off from wrap-preview.html
+  (function(){
+    if(!/[?&]importWrap=1/.test(location.search)) return;
+    var data=null;
+    try{ data=sessionStorage.getItem('stwaddWrapArtwork'); }catch(e){}
+    if(!data) return;
+    picked=[{name:'wrap-artwork.png',dataUrl:data}];
+    thumbs.innerHTML='';
+    var im=document.createElement('img'); im.src=data; im.alt='wrap artwork'; thumbs.appendChild(im);
+    document.getElementById('mkMessage').value='Full 360° wrap-around print — please show the back seam on the mockup.';
+    openPanel();
+    try{ sessionStorage.removeItem('stwaddWrapArtwork'); }catch(e){}
+  })();
+
   document.getElementById('mockupForm').addEventListener('submit',function(e){
     e.preventDefault();
     var status=document.getElementById('mkStatus');

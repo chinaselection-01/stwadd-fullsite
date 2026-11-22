@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>360° Wrap Print Preview — Check the Back Seam Before You Order | STWADD</title>
+<meta name="description" content="Upload your full wrap-around artwork and preview how it wraps around a cylindrical bottle — including a magnified view of the back seam where the design meets. Free tool by STWADD drinkware.">
+<link rel="canonical" href="https://www.stwadd.com/wrap-preview.html">
+<style>
+  :root{--navy:#12212e;--red:#c41e3a;--red-dark:#9e172e;--ink:#1d2b36;--muted:#6b7a87;--line:#dfe5ea;--bg:#f4f6f8;--gold:#b98a3c}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:15px}
+  a{color:var(--red);text-decoration:none}
+  .container{max-width:1220px;margin:0 auto;padding:0 20px}
+  .top-bar{background:var(--navy);color:#cfe0ec;font-size:12px;padding:7px 0}
+  .top-bar .container{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+  .header-main{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .header-main .container{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:62px;flex-wrap:wrap}
+  .brand{font-weight:800;font-size:22px;letter-spacing:.5px;color:var(--navy)}
+  .brand span{color:var(--red)}
+  .nav-links{display:flex;gap:20px;align-items:center;font-size:14px;font-weight:600;flex-wrap:wrap}
+  .nav-links a{color:var(--navy)}
+  .nav-links .cta{background:var(--red);color:#fff;padding:9px 16px;border-radius:6px}
+  .nav-links .cta:hover{background:var(--red-dark);color:#fff}
+  .hero{background:linear-gradient(135deg,#12212e 0%,#1c3247 100%);color:#fff;padding:34px 0 30px}
+  .hero h1{font-size:30px;margin:0 0 10px;line-height:1.25}
+  .hero p{margin:0;color:#d3e0ea;max-width:820px}
+  .hero .badge{display:inline-block;background:rgba(196,30,58,.18);border:1px solid rgba(196,30,58,.5);color:#ff9aab;font-size:12px;padding:4px 11px;border-radius:20px;margin-bottom:12px;letter-spacing:.3px}
+  .notice{max-width:1220px;margin:16px auto 0;padding:11px 18px;background:#fff8e6;border:1px solid #f0d99a;border-left:4px solid #d99a00;border-radius:8px;color:#6b5410;font-size:13px}
+  .wrap{max-width:1220px;margin:0 auto;padding:22px 20px 60px}
+  .grid{display:grid;grid-template-columns:360px 1fr;gap:20px;align-items:start}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 16px rgba(20,40,60,.05);padding:18px}
+  .panel h2{font-size:17px;margin:0 0 4px}
+  .panel h3{font-size:13px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin:20px 0 9px;border-bottom:1px solid var(--line);padding-bottom:7px}
+  .field{display:block;font-size:13px;font-weight:600;margin:12px 0 5px}
+  input[type=number],input[type=text],select{width:100%;border:1px solid var(--line);border-radius:7px;padding:9px 10px;font-size:14px;background:#fff;color:var(--ink)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .mini{font-size:12px;color:var(--muted);font-weight:400}
+  .btn{background:var(--red);color:#fff;border:0;border-radius:8px;padding:11px 16px;font-size:14px;font-weight:600;cursor:pointer;width:100%}
+  .btn:hover{background:var(--red-dark)}
+  .btn.ghost{background:#fff;color:var(--red);border:1px solid var(--red)}
+  .btn.ghost:hover{background:#fff2f4}
+  .btn.dark{background:var(--navy)}
+  .btn.sm{padding:9px 12px;font-size:13px}
+  .btn:disabled{opacity:.45;cursor:not-allowed}
+  .hint{font-size:12px;color:var(--muted);margin-top:6px}
+  .range-row{display:flex;align-items:center;gap:8px}
+  .range-row input[type=range]{flex:1;min-width:0}
+  .range-row input[type=number]{width:74px;flex:none}
+  .calc{background:#f0f4f7;border:1px solid var(--line);border-radius:8px;padding:12px;margin-top:12px;font-size:13px}
+  .calc div{display:flex;justify-content:space-between;padding:3px 0}
+  .calc b{color:var(--navy)}
+  .warn{background:#fff4f4;border:1px solid #f2c6cc;color:#9e172e;border-radius:8px;padding:10px 12px;font-size:12.5px;margin-top:12px;display:none}
+  .stage-wrap{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 4px 16px rgba(20,40,60,.05);padding:18px}
+  .view-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:720px){.view-grid{grid-template-columns:1fr}}
+  .view{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#f7f9fa}
+  .view .cap{font-size:12px;font-weight:700;padding:8px 11px;background:#eef2f5;color:var(--navy);display:flex;justify-content:space-between;align-items:center}
+  .view .cap .tag{font-weight:500;color:var(--muted);font-size:11px}
+  .view canvas{display:block;width:100%;height:auto;background:linear-gradient(180deg,#fff,#eef2f6)}
+  .seam-view{grid-column:1/-1}
+  .seam-view canvas{background:#fff}
+  .status{font-size:13px;padding:10px 12px;border-radius:8px;background:#eef5fb;color:#25547a;margin-top:12px}
+  .status.good{background:#eaf7ee;color:#1e7a3c}
+  .status.bad{background:#fff4f4;color:#9e172e}
+  .empty{display:flex;align-items:center;justify-content:center;min-height:220px;color:var(--muted);font-size:14px;text-align:center;padding:20px}
+  .legend{font-size:12px;color:var(--muted);margin-top:10px}
+  .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+  @media(max-width:720px){.steps{grid-template-columns:1fr}}
+  .step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px}
+  .step .n{width:26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;margin-bottom:8px}
+  .step b{display:block;margin-bottom:3px}
+  .step span{font-size:12.5px;color:var(--muted)}
+  .footer{background:var(--navy);color:#c9d6e0;padding:28px 0 20px;font-size:13px;margin-top:40px}
+  .footer a{color:#c9d6e0}
+  .pill{display:inline-block;background:#eef2f5;border-radius:20px;padding:3px 10px;font-size:11px;color:var(--muted);margin:2px}
+</style>
+</head>
+<body>
+<div class="top-bar"><div class="container"><span>Factory-backed drinkware supply · ISO 9001 · SGS / TUV / LFGB tested</span><span>Custom logo · Low MOQ · Free physical sample before production</span></div></div>
+<header class="header-main"><div class="container">
+  <a href="/" class="brand">STWADD<span>.</span></a>
+  <nav class="nav-links">
+    <a href="/all-products.html">Products</a>
+    <a href="/customizer.html">Design a cup</a>
+    <a href="/cup-color-studio.html">Color studio</a>
+    <a href="/cup-vectors.html">Cup shapes</a>
+    <a href="/sourcing-agent.html">Sourcing</a>
+    <a class="cta" href="https://wa.me/8615088228843?text=Hi%20STWADD%2C%20I%20have%20wrap%20artwork%20to%20print." target="_blank" rel="noopener">Get a quote</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="container">
+  <span class="badge">FREE DESIGN TOOL</span>
+  <h1>360° Wrap Print Preview — see the back seam before you order</h1>
+  <p>Upload your full wrap-around artwork. We wrap it around the bottle and show you exactly where the two ends meet at the back, magnified. Catch a bad seam before it goes to print — we always make a physical sample for your approval.</p>
+</div></section>
+
+<div class="notice"><b>About this preview:</b> this is a geometric approximation of a cylindrical wrap. Real results vary with bottle shape, taper, print method (silkscreen / UV / heat transfer / laser) and material. It is a layout aid, not a color proof. A physical sample is made and approved before production.</div>
+
+<div class="wrap">
+  <div class="grid">
+    <!-- LEFT: CONTROLS -->
+    <div class="panel">
+      <h2>Set up your bottle</h2>
+      <div class="mini">All dimensions in millimetres. Check the numbers on your spec sheet or ask us — we confirm before sampling.</div>
+
+      <label class="field">Bottle body diameter <span class="mini">Ø</span></label>
+      <input type="number" id="dia" value="65" min="30" max="150" step="0.5" aria-label="Bottle diameter in millimetres">
+      <div class="hint">The straight part of the body, outside diameter.</div>
+
+      <label class="field">Printable height</label>
+      <input type="number" id="pheight" value="150" min="30" max="300" step="1" aria-label="Printable height in millimetres">
+      <div class="hint">Vertical space available for artwork on the body.</div>
+
+      <div class="two" style="margin-top:12px">
+        <div><label class="field">Bottle type</label>
+          <select id="bottle">
+            <option value="space">Space flask (straight)</option>
+            <option value="tumbler">Tumbler (tapered)</option>
+            <option value="bottle">Narrow bottle</option>
+          </select>
+        </div>
+        <div><label class="field">Seam position</label>
+          <select id="seamPos">
+            <option value="back">Back centre</option>
+            <option value="left">Left side</option>
+            <option value="right">Right side</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="calc" id="calc">
+        <div><span>Body circumference (π × Ø)</span><b id="circ">204.2 mm</b></div>
+        <div><span>Ideal artwork ratio (W : H)</span><b id="ratio">1.36 : 1</b></div>
+        <div><span>Your image ratio</span><b id="imgRatio">—</b></div>
+      </div>
+      <div class="warn" id="ratioWarn">Your artwork ratio differs from the bottle wrap. It will be stretched or repeated to fill — check the preview, or send us the artwork and we will set it up correctly.</div>
+
+      <h3>Your artwork</h3>
+      <input type="file" id="file" accept="image/*" style="display:none">
+      <button class="btn ghost" id="uploadBtn">↑ Upload full wrap artwork</button>
+      <div class="hint">Upload the whole 360° design as one flat image. Left edge and right edge are the two ends that meet at the seam.</div>
+
+      <div id="artControls" style="display:none">
+        <label class="field">Rotate the wrap <span class="mini">(move the seam into view)</span></label>
+        <div class="range-row"><input type="range" id="rot" min="0" max="360" value="0"><input type="number" id="rotNum" value="0" min="0" max="360" aria-label="Rotation degrees"><span class="unit">°</span></div>
+        <label class="field">Wrap mode</label>
+        <select id="mode">
+          <option value="stretch">Stretch to fit (one full wrap)</option>
+          <option value="repeat">Tile / repeat around</option>
+        </select>
+      </div>
+
+      <div class="hint" style="margin-top:14px">No artwork handy? <a href="/cup-vectors.html">Browse our cup shapes</a> or <a href="/customizer.html">design a cup with text</a>.</div>
+    </div>
+
+    <!-- RIGHT: PREVIEWS -->
+    <div class="stage-wrap">
+      <div class="view-grid">
+        <div class="view">
+          <div class="cap"><span>Front view</span><span class="tag">how the design reads from the front</span></div>
+          <canvas id="frontC" width="440" height="500"><div class="empty">Your preview will appear here</div></canvas>
+        </div>
+        <div class="view">
+          <div class="cap"><span>Back view</span><span class="tag" id="backTag">seam at back centre</span></div>
+          <canvas id="backC" width="440" height="500"><div class="empty">Your preview will appear here</div></canvas>
+        </div>
+        <div class="view seam-view">
+          <div class="cap"><span>🔍 Back seam — magnified</span><span class="tag">left end × right end, where they join</span></div>
+          <canvas id="seamC" width="920" height="300"><div class="empty">Upload artwork to inspect the seam</div></canvas>
+        </div>
+      </div>
+      <div class="status" id="status">Upload your wrap artwork to preview the cylinder and inspect the back seam.</div>
+      <div class="legend">The dashed red line on the back view and seam close-up marks <b>the seam</b> — the vertical line where the start and end of your artwork meet. A visible colour or line break here is what you want to catch before printing.</div>
+
+      <div class="cta-row" id="ctaRow" style="display:none">
+        <button class="btn" id="toCustomizer">Use this design on a cup →</button>
+        <button class="btn ghost dark" id="toMockup">Ask us for an AI mockup</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step"><div class="n">1</div><b>Upload one flat image</b><span>The full 360° wrap. Its left and right ends become the seam.</span></div>
+    <div class="step"><div class="n">2</div><b>Check the back seam</b><span>Rotate the wrap and zoom the seam to see if the two ends line up.</span></div>
+    <div class="step"><div class="n">3</div><b>Send it to us</b><span>We set it up on the real cup and make a physical sample for approval.</span></div>
+  </div>
+  <div style="margin-top:18px">
+    <span class="pill">360° wrap printing</span><span class="pill">seam alignment check</span><span class="pill">cylinder preview</span><span class="pill">custom logo tumbler</span><span class="pill">OEM drinkware</span>
+  </div>
+</div>
+
+<footer class="footer"><div class="container">
+  <div style="font-weight:700;color:#fff;font-size:16px;margin-bottom:6px">STWADD — factory-backed drinkware supply</div>
+  <div>We are a supply company backed by audited partner factories in Yongkang, not a reseller. Physical samples approved before every production run.</div>
+  <div style="margin-top:10px"><a href="/">Home</a> · <a href="/customizer.html">Cup customizer</a> · <a href="/cup-vectors.html">Vector shapes</a> · <a href="/color-finder.html">Pantone finder</a></div>
+</div></footer>
+
+<script src="/js/cup-vector-shapes.js"></script>
+<script>
+(function(){
+  "use strict";
+  var $ = function(id){ return document.getElementById(id); };
+  var img = null;
+  var seamSide = 'back'; // back / left / right -> rotation offset
+
+  // ---- geometry ----
+  function circ(){ return Math.PI * (parseFloat($('dia').value)||65); }
+  function idealRatio(){ return circ() / (parseFloat($('pheight').value)||150); }
+  function updateCalc(){
+    $('circ').textContent = circ().toFixed(1)+' mm';
+    $('ratio').textContent = idealRatio().toFixed(2)+' : 1';
+    if(img){ $('imgRatio').textContent = (img.naturalWidth/img.naturalHeight).toFixed(2)+' : 1'; }
+    if(img){
+      var ir = img.naturalWidth/img.naturalHeight, tr = idealRatio();
+      var diff = Math.abs(ir-tr)/tr;
+      $('ratioWarn').style.display = diff>0.25 ? 'block':'none';
+    }
+  }
+  ['dia','pheight'].forEach(function(id){ $(id).addEventListener('input',function(){ updateCalc(); if(img) renderAll(); }); });
+
+  // ---- seam position: rotate the bottle so the seam (texture u=0) sits at a chosen spot ----
+  // Cylinder view centre samples u = 0.5 + rot/2π; back view uses rot+π.
+  //   back centre : seam u=0 at back view centre -> rot = 0°
+  //   left edge   : seam at front-view φ=-90°     -> rot = 270°
+  //   right edge  : seam at front-view φ=+90°     -> rot = 90°
+  var SEAM_ROT = { back:0, left:270, right:90 };
+  $('seamPos').addEventListener('change',function(){
+    seamSide=this.value;
+    var deg=SEAM_ROT[this.value];
+    $('rot').value=deg; $('rotNum').value=deg;
+    $('backTag').textContent='seam at '+(this.value==='back'?'back centre':this.value==='left'?'left side':'right side');
+    if(img) renderAll();
+  });
+
+  // ---- core: draw a cylinder view ----
+  // For each screen column x across the visible half of the cylinder, the surface
+  // angle φ = asin((x-cx)/R), φ ∈ [-π/2, π/2]. Texture u = fract(0.5 + rot/2π + φ/2π).
+  // We sample a 1px-wide vertical strip of the source image at u and draw to column x.
+  function drawCylinder(canvas, rotRad, opts){
+    opts = opts || {};
+    var c = canvas.getContext('2d');
+    var W = canvas.width, H = canvas.height;
+    c.clearRect(0,0,W,H);
+    // bottle silhouette geometry on screen
+    var cx = W/2;
+    var bodyW = Math.min(W*0.62, 300);      // visible body width (diameter projection ~ full width)
+    var R = bodyW/2;
+    var top = 46, bottom = H-26;
+    var printTop = top+8, printH = bottom-printTop-8;
+    var mode = $('mode').value;
+
+    // background bottle body
+    var taper = $('bottle').value==='tumbler' ? 0.10 : ($('bottle').value==='bottle'?0.06:0.0);
+    c.save();
+    c.beginPath();
+    c.moveTo(cx-R*(1-taper), top);
+    c.lineTo(cx+R*(1-taper), top);
+    c.lineTo(cx+R, bottom);
+    c.lineTo(cx-R, bottom);
+    c.closePath();
+    c.fillStyle = '#e9eef2'; c.fill();
+    c.clip();
+
+    if(img){
+      var imgW = img.naturalWidth, imgH = img.naturalHeight;
+      var step = 1;
+      for(var x=Math.floor(cx-R); x<Math.ceil(cx+R); x+=step){
+        var nx = (x-cx)/R;
+        if(nx<-1) nx=-1; if(nx>1) nx=1;
+        var phi = Math.asin(nx); // surface angle at this column
+        // perspective: horizontal compression near edges handled by asin mapping
+        var u = 0.5 + rotRad/(2*Math.PI) + phi/(2*Math.PI);
+        u = u - Math.floor(u);
+        if(mode==='repeat'){
+          u = (u*2) - Math.floor(u*2); // tile the art twice around the circumference
+        }
+        var sx = Math.floor(u*imgW);
+        // draw a vertical strip; map full image height to print area
+        c.drawImage(img, sx, 0, 1, imgH, x, printTop, step+0.6, printH);
+      }
+    }
+    c.restore();
+
+    // body outline + cap hint
+    c.strokeStyle = '#8d99a4'; c.lineWidth = 2;
+    c.beginPath();
+    c.moveTo(cx-R*(1-taper), top); c.lineTo(cx-R, bottom);
+    c.lineTo(cx+R, bottom); c.lineTo(cx+R*(1-taper), top); c.closePath(); c.stroke();
+    // lid
+    c.fillStyle = '#c9d1d8';
+    c.fillRect(cx-R*(1-taper)-3, top-16, 2*R*(1-taper)+6, 16);
+    c.strokeRect(cx-R*(1-taper)-3, top-16, 2*R*(1-taper)+6, 16);
+
+    // seam marker if the seam falls within this view
+    if(img){
+      // For current rot, the seam(u=0) appears at the column whose u=0:
+      // u=0 => 0.5 + rot/2π + φ/2π = integer => φ = 2π*(integer-0.5-rot/2π)
+      // find φ in [-π/2,π/2] nearest
+      var k = Math.round(0.5 + rotRad/(2*Math.PI));
+      var phiSeam = 2*Math.PI*(k - 0.5 - rotRad/(2*Math.PI));
+      // normalize into [-π,π]
+      while(phiSeam> Math.PI) phiSeam-=2*Math.PI;
+      while(phiSeam<-Math.PI) phiSeam+=2*Math.PI;
+      if(phiSeam>=-Math.PI/2-0.02 && phiSeam<=Math.PI/2+0.02){
+        var sxSeam = cx + R*Math.sin(phiSeam);
+        c.save(); c.strokeStyle='#e11d48'; c.lineWidth=2; c.setLineDash([6,4]);
+        c.beginPath(); c.moveTo(sxSeam, printTop); c.lineTo(sxSeam, printTop+printH); c.stroke();
+        c.restore();
+      }
+    }
+  }
+
+  // ---- seam close-up: stitch right end | left end side by side, magnified ----
+  function drawSeam(){
+    var canvas = $('seamC'), c = canvas.getContext('2d');
+    var W=canvas.width, H=canvas.height;
+    c.clearRect(0,0,W,H);
+    if(!img){ return; }
+    var imgW=img.naturalWidth, imgH=img.naturalHeight;
+    var band = Math.min(Math.floor(imgW*0.22), 420); // width of each end band in source px
+    if(band<2) band=2;
+    var scaleY = H/imgH;
+    var halfW = (W-8)/2;
+    var scaleX = halfW/band;
+    // LEFT band = right end of artwork (u near 1), RIGHT band = left end (u near 0)
+    // source strip A: last `band` px ; source strip B: first `band` px
+    c.drawImage(img, imgW-band, 0, band, imgH, 2, 0, halfW, H);
+    c.drawImage(img, 0, 0, band, imgH, 4+halfW, 0, halfW, H);
+    // seam line in the middle — boundary between the two halves
+    var mx = 4+halfW;
+    c.save();
+    c.strokeStyle='#e11d48'; c.lineWidth=3; c.setLineDash([9,6]);
+    c.beginPath(); c.moveTo(mx,0); c.lineTo(mx,H); c.stroke();
+    c.restore();
+    // labels
+    c.fillStyle='rgba(18,33,46,.82)'; c.font='600 15px sans-serif';
+    c.fillText('END OF ARTWORK', 12, 24);
+    c.textAlign='right'; c.fillText('START OF ARTWORK', W-12, 24); c.textAlign='left';
+  }
+
+  function renderAll(){
+    if(!img){
+      [$('frontC'),$('backC'),$('seamC')].forEach(function(cv){
+        var c=cv.getContext('2d'); c.clearRect(0,0,cv.width,cv.height);
+      });
+      return;
+    }
+    var rot = (parseFloat($('rot').value)||0) * Math.PI/180;
+    // front = current rot; back = current rot + π
+    drawCylinder($('frontC'), rot, {});
+    drawCylinder($('backC'), rot + Math.PI, {});
+    drawSeam();
+  }
+
+  // ---- controls ----
+  function bindRot(rangeId,numId){
+    var r=$(rangeId), n=$(numId);
+    r.addEventListener('input',function(){ n.value=this.value; renderAll(); });
+    n.addEventListener('input',function(){ if(this.value!==''){ r.value=this.value; renderAll(); } });
+  }
+  bindRot('rot','rotNum');
+  $('seamPos').addEventListener('change',function(){
+    $('backTag').textContent = 'seam at '+(this.value==='back'?'back centre':this.value==='left'?'left side':'right side');
+  });
+  $('mode').addEventListener('change',renderAll);
+  $('bottle').addEventListener('change',renderAll);
+
+  $('uploadBtn').addEventListener('click',function(){ $('file').click(); });
+  $('file').addEventListener('change',function(e){
+    var f=e.target.files && e.target.files[0]; if(!f) return;
+    var reader=new FileReader();
+    reader.onload=function(ev){
+      var im=new Image();
+      im.onload=function(){
+        img=im;
+        $('artControls').style.display='block';
+        $('ctaRow').style.display='grid';
+        updateCalc();
+        renderAll();
+        $('status').textContent='Preview ready. Rotate the wrap to move the seam, then inspect the magnified seam view below.';
+        $('status').className='status good';
+      };
+      im.src=ev.target.result;
+    };
+    reader.readAsDataURL(f);
+    $('file').value='';
+  });
+
+  // ---- conversion hooks ----
+  function artworkDataURL(){
+    if(!img) return null;
+    // downscale to <=1200px for handoff
+    var max=1200, w=img.naturalWidth, h=img.naturalHeight;
+    if(w>max){ h=Math.round(h*max/w); w=max; }
+    var cv=document.createElement('canvas'); cv.width=w; cv.height=h;
+    cv.getContext('2d').drawImage(img,0,0,w,h);
+    return cv.toDataURL('image/png');
+  }
+  function handoff(){
+    var d=artworkDataURL(); if(!d) return null;
+    try{ sessionStorage.setItem('stwaddWrapArtwork', d); }catch(e){}
+    return d;
+  }
+  $('toCustomizer').addEventListener('click',function(){
+    handoff();
+    location.href='/customizer.html?importWrap=1';
+  });
+  $('toMockup').addEventListener('click',function(){
+    handoff();
+    location.href='/cup-vectors.html?importWrap=1#mockup';
+  });
+
+  updateCalc();
+})();
+</script>
+</body>
+</html>

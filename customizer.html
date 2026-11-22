@@ -125,6 +125,7 @@
 
 <div class="notice">
   <b>⚠️ Preview note:</b> This is a <b>flat, approximate layout preview</b>. Real printing wraps around a curved bottle, so the final look varies by shape, material, print method (silkscreen / UV / laser / heat transfer) and color. The dashed box marks a <b>typical printable area</b> — actual limits depend on the exact model. <b>We always make a physical sample for your approval before production.</b>
+  &nbsp; <a href="/wrap-preview.html" style="font-weight:700;text-decoration:underline">🔄 Uploading a full 360° wrap? Preview the back seam →</a>
 </div>
 
 <div class="wrap">
@@ -547,8 +548,29 @@ s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(j, s);
     }
   });
 
+  // ---- import a full wrap artwork handed off from wrap-preview.html ----
+  function importWrapArtwork(){
+    var data=null;
+    try{ data=sessionStorage.getItem('stwaddWrapArtwork'); }catch(e){}
+    if(!data) return;
+    var im=new Image();
+    im.onload=function(){
+      var a=area();
+      // fit the wrap across the full printable width
+      var base=a.w/im.naturalWidth;
+      elements=[{type:'image',img:im,scale:base,rot:0,x:a.x+a.w/2,y:a.y+a.h/2}];
+      selected=0; syncControls(); draw();
+      try{ sessionStorage.removeItem('stwaddWrapArtwork'); }catch(e){}
+      var st=$("status");
+      st.textContent='✓ Full wrap artwork imported. This is a flat view — to check the back seam, open the 360° wrap preview.';
+      st.className='status good';
+    };
+    im.src=data;
+  }
+
   // init
   renderCup(); syncControls(); draw();
+  if(/[?&]importWrap=1/.test(location.search)) importWrapArtwork();
 })();
 </script>
 </body>
