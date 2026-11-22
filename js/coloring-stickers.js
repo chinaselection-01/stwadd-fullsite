@@ -365,6 +365,156 @@
       { t: 'circle', cx: 43, cy: 34, r: 2.5, c: '#25313b', w: 1 },
       { t: 'circle', cx: 57, cy: 34, r: 2.5, c: '#25313b', w: 1 },
       { t: 'path', d: 'M45,42 Q50,47 55,42', c: '#e86fa8', w: 2 }
+    ] },
+
+    /* ---- Vehicles ---- */
+    { name: 'Car', icon: '🚗', shapes: [
+      { t: 'path', d: 'M8,54 L18,34 Q21,28 30,28 L70,28 Q79,28 82,34 L92,54 L92,70 L8,70 Z', c: '#e8484f', w: 2 },
+      { t: 'path', d: 'M30,32 L46,32 L42,48 L22,48 Z', c: '#8ed1ec', w: 1.5 },
+      { t: 'path', d: 'M52,32 L70,32 L78,48 L54,48 Z', c: '#8ed1ec', w: 1.5 },
+      { t: 'circle', cx: 28, cy: 70, r: 11, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 72, cy: 70, r: 11, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 28, cy: 70, r: 4, c: '#ffffff', w: 1 },
+      { t: 'circle', cx: 72, cy: 70, r: 4, c: '#ffffff', w: 1 }
+    ] },
+    { name: 'Bus', icon: '🚌', shapes: [
+      { t: 'path', d: 'M8,22 Q8,16 14,16 L86,16 Q92,16 92,22 L92,74 L8,74 Z', c: '#f6cf46', w: 2 },
+      { t: 'rect', x: 14, y: 24, w2: 16, h: 14, rad: 2, c: '#8ed1ec', w: 1.5 },
+      { t: 'rect', x: 34, y: 24, w2: 16, h: 14, rad: 2, c: '#8ed1ec', w: 1.5 },
+      { t: 'rect', x: 54, y: 24, w2: 16, h: 14, rad: 2, c: '#8ed1ec', w: 1.5 },
+      { t: 'rect', x: 76, y: 24, w2: 10, h: 14, rad: 2, c: '#8ed1ec', w: 1.5 },
+      { t: 'rect', x: 74, y: 44, w2: 14, h: 30, rad: 2, c: '#ffffff', w: 1.5 },
+      { t: 'circle', cx: 28, cy: 74, r: 10, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 72, cy: 74, r: 10, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 28, cy: 74, r: 3.5, c: '#ffffff', w: 1 },
+      { t: 'circle', cx: 72, cy: 74, r: 3.5, c: '#ffffff', w: 1 }
+    ] },
+    { name: 'Train', icon: '🚂', shapes: [
+      { t: 'rect', x: 12, y: 44, w2: 54, h: 30, rad: 3, c: '#e8484f', w: 2 },
+      { t: 'path', d: 'M66,50 L84,50 L94,62 L94,74 L66,74 Z', c: '#e8484f', w: 2 },
+      { t: 'rect', x: 26, y: 20, w2: 26, h: 24, rad: 2, c: '#8ed1ec', w: 1.5 },
+      { t: 'rect', x: 16, y: 34, w2: 10, h: 10, rad: 1, c: '#f6cf46', w: 1.5 },
+      { t: 'rect', x: 38, y: 10, w2: 10, h: 12, rad: 2, c: '#8a96a1', w: 1.5 },
+      { t: 'circle', cx: 43, cy: 8, r: 6, c: '#ffffff', w: 1.5 },
+      { t: 'path', d: 'M20,86 L80,86', c: 'none', w: 3 },
+      { t: 'circle', cx: 28, cy: 74, r: 11, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 54, cy: 74, r: 11, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 84, cy: 74, r: 8, c: '#4a4a4a', w: 2 }
+    ] },
+    { name: 'Truck', icon: '🚚', shapes: [
+      { t: 'rect', x: 6, y: 28, w2: 56, h: 44, rad: 2, c: '#3fa9c9', w: 2 },
+      { t: 'path', d: 'M62,42 L80,42 L92,54 L92,72 L62,72 Z', c: '#e8484f', w: 2 },
+      { t: 'rect', x: 66, y: 46, w2: 14, h: 12, rad: 2, c: '#8ed1ec', w: 1.5 },
+      { t: 'path', d: 'M16,50 L52,50', c: 'none', w: 2 },
+      { t: 'circle', cx: 24, cy: 74, r: 10, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 76, cy: 74, r: 10, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 24, cy: 74, r: 3.5, c: '#ffffff', w: 1 },
+      { t: 'circle', cx: 76, cy: 74, r: 3.5, c: '#ffffff', w: 1 }
+    ] },
+    { name: 'Ship', icon: '🚢', shapes: [
+      { t: 'path', d: 'M10,58 L90,58 L78,82 L22,82 Z', c: '#e8484f', w: 2 },
+      { t: 'rect', x: 24, y: 40, w2: 52, h: 18, rad: 2, c: '#f2ece0', w: 1.5 },
+      { t: 'rect', x: 34, y: 26, w2: 14, h: 14, rad: 2, c: '#8ed1ec', w: 1.5 },
+      { t: 'rect', x: 56, y: 26, w2: 14, h: 14, rad: 2, c: '#8ed1ec', w: 1.5 },
+      { t: 'rect', x: 44, y: 8, w2: 10, h: 18, rad: 2, c: '#8a96a1', w: 1.5 },
+      { t: 'path', d: 'M54,12 L72,16 L54,20 Z', c: '#f6cf46', w: 1.5 },
+      { t: 'path', d: 'M6,90 Q18,84 30,90 T54,90 T78,90 T96,90', c: 'none', w: 2 }
+    ] },
+    { name: 'Airplane', icon: '✈️', shapes: [
+      { t: 'path', d: 'M50,6 Q56,6 57,20 L59,48 L50,54 L41,48 L43,20 Q44,6 50,6 Z', c: '#dbeaf2', w: 2 },
+      { t: 'path', d: 'M41,42 L8,60 L8,68 L41,60 Z', c: '#3fa9c9', w: 2 },
+      { t: 'path', d: 'M59,42 L92,60 L92,68 L59,60 Z', c: '#3fa9c9', w: 2 },
+      { t: 'path', d: 'M45,56 L38,88 L46,84 L50,66 L54,84 L62,88 L55,56 Z', c: '#3fa9c9', w: 2 },
+      { t: 'circle', cx: 50, cy: 26, r: 3, c: '#8ed1ec', w: 1 }
+    ] },
+    { name: 'Helicopter', icon: '🚁', shapes: [
+      { t: 'ellipse', cx: 44, cy: 52, rx: 30, ry: 19, c: '#e8484f', w: 2 },
+      { t: 'path', d: 'M70,46 L90,46 L96,52 L90,58 L70,58 Z', c: '#e8484f', w: 2 },
+      { t: 'path', d: 'M88,38 L96,32 L96,72 L88,66 Z', c: '#3fa9c9', w: 2 },
+      { t: 'path', d: 'M16,24 L72,24 M44,24 L44,34', c: 'none', w: 3 },
+      { t: 'rect', x: 28, y: 44, w2: 18, h: 12, rad: 4, c: '#8ed1ec', w: 1.5 },
+      { t: 'path', d: 'M28,72 L28,84 M60,72 L60,84 M22,84 L66,84', c: 'none', w: 2 }
+    ] },
+    { name: 'Bicycle', icon: '🚲', shapes: [
+      { t: 'circle', cx: 24, cy: 66, r: 20, c: 'none', w: 3 },
+      { t: 'circle', cx: 76, cy: 66, r: 20, c: 'none', w: 3 },
+      { t: 'path', d: 'M24,66 L44,38 L58,66 L24,66 Z M58,66 L68,38 L44,38', c: 'none', w: 3 },
+      { t: 'path', d: 'M68,38 L76,30 M40,36 L50,36', c: 'none', w: 3 },
+      { t: 'circle', cx: 58, cy: 66, r: 5, c: '#f6cf46', w: 1.5 }
+    ] },
+    { name: 'Scooter', icon: '🛴', shapes: [
+      { t: 'path', d: 'M16,72 L66,72 L74,62', c: '#3fa9c9', w: 6 },
+      { t: 'path', d: 'M74,16 L74,62 M62,16 L86,16', c: '#4a4a4a', w: 5 },
+      { t: 'circle', cx: 22, cy: 78, r: 12, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 76, cy: 78, r: 12, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 22, cy: 78, r: 4, c: '#ffffff', w: 1 },
+      { t: 'circle', cx: 76, cy: 78, r: 4, c: '#ffffff', w: 1 }
+    ] },
+    { name: 'Traffic light', icon: '🚦', shapes: [
+      { t: 'rect', x: 36, y: 6, w2: 28, h: 64, rad: 6, c: '#4a4a4a', w: 2 },
+      { t: 'circle', cx: 50, cy: 20, r: 8, c: '#e8484f', w: 1.5 },
+      { t: 'circle', cx: 50, cy: 38, r: 8, c: '#f6cf46', w: 1.5 },
+      { t: 'circle', cx: 50, cy: 56, r: 8, c: '#5bbd6e', w: 1.5 },
+      { t: 'rect', x: 47, y: 70, w2: 6, h: 24, c: '#8a96a1', w: 1.5 }
+    ] },
+
+    /* ---- Playground ---- */
+    { name: 'Slide', icon: '🛝', shapes: [
+      { t: 'rect', x: 10, y: 30, w2: 30, h: 6, rad: 2, c: '#c68a4a', w: 1.5 },
+      { t: 'path', d: 'M12,36 L12,88 M38,36 L38,88 M12,52 L38,52 M12,70 L38,70', c: 'none', w: 3 },
+      { t: 'path', d: 'M40,32 Q60,36 78,88 L62,88 Q50,48 40,44 Z', c: '#e8484f', w: 2 },
+      { t: 'path', d: 'M8,92 L92,92', c: 'none', w: 4 }
+    ] },
+    { name: 'Swing', icon: '⛓️', shapes: [
+      { t: 'path', d: 'M22,20 L8,90 M78,20 L92,90 M22,20 L78,20', c: '#8a5a3b', w: 4 },
+      { t: 'path', d: 'M38,20 L38,66 M62,20 L62,66', c: '#4a4a4a', w: 2 },
+      { t: 'rect', x: 32, y: 66, w2: 36, h: 8, rad: 2, c: '#f2913c', w: 2 },
+      { t: 'path', d: 'M4,94 L96,94', c: 'none', w: 3 }
+    ] },
+    { name: 'Seesaw', icon: '🎢', shapes: [
+      { t: 'path', d: 'M10,62 L90,44', c: '#c68a4a', w: 7 },
+      { t: 'path', d: 'M44,88 L54,50 L64,88 Z', c: '#8a96a1', w: 2 },
+      { t: 'path', d: 'M8,92 L92,92', c: 'none', w: 3 }
+    ] },
+    { name: 'Ferris wheel', icon: '🎡', shapes: [
+      { t: 'circle', cx: 50, cy: 46, r: 34, c: 'none', w: 3 },
+      { t: 'circle', cx: 50, cy: 46, r: 6, c: '#f6cf46', w: 2 },
+      { t: 'path', d: 'M50,12 L50,80 M16,46 L84,46 M26,22 L74,70 M74,22 L26,70', c: 'none', w: 1.5 },
+      { t: 'path', d: 'M50,46 L32,92 M50,46 L68,92 M20,92 L80,92', c: '#8a5a3b', w: 3 },
+      { t: 'rect', x: 44, y: 10, w2: 12, h: 9, rad: 2, c: '#e8484f', w: 1.5 },
+      { t: 'rect', x: 70, y: 40, w2: 12, h: 9, rad: 2, c: '#3fa9c9', w: 1.5 },
+      { t: 'rect', x: 44, y: 74, w2: 12, h: 9, rad: 2, c: '#5bbd6e', w: 1.5 },
+      { t: 'rect', x: 18, y: 40, w2: 12, h: 9, rad: 2, c: '#e86fa8', w: 1.5 }
+    ] },
+    { name: 'Carousel', icon: '🎠', shapes: [
+      { t: 'path', d: 'M50,8 L88,34 L12,34 Z', c: '#e8484f', w: 2 },
+      { t: 'path', d: 'M12,34 Q16,42 24,34 Q32,42 40,34 Q48,42 56,34 Q64,42 72,34 Q80,42 88,34', c: '#f6cf46', w: 2 },
+      { t: 'rect', x: 47, y: 34, w2: 6, h: 52, c: '#c68a4a', w: 1.5 },
+      { t: 'rect', x: 20, y: 62, w2: 22, h: 16, rad: 4, c: '#8b5cc7', w: 2 },
+      { t: 'rect', x: 58, y: 62, w2: 22, h: 16, rad: 4, c: '#3fa9c9', w: 2 },
+      { t: 'rect', x: 12, y: 86, w2: 76, h: 8, rad: 3, c: '#c68a4a', w: 1.5 }
+    ] },
+    { name: 'Trampoline', icon: '🟢', shapes: [
+      { t: 'ellipse', cx: 50, cy: 52, rx: 42, ry: 16, c: '#3fa9c9', w: 2 },
+      { t: 'ellipse', cx: 50, cy: 50, rx: 34, ry: 11, c: '#8ed1ec', w: 2 },
+      { t: 'path', d: 'M18,62 L14,88 M82,62 L86,88 M50,68 L50,88', c: '#8a96a1', w: 3 }
+    ] },
+    { name: 'Ball pit', icon: '🔵', shapes: [
+      { t: 'path', d: 'M8,52 Q50,38 92,52 L88,88 L12,88 Z', c: '#f6cf46', w: 2 },
+      { t: 'circle', cx: 28, cy: 56, r: 11, c: '#e8484f', w: 2 },
+      { t: 'circle', cx: 50, cy: 50, r: 11, c: '#3fa9c9', w: 2 },
+      { t: 'circle', cx: 72, cy: 56, r: 11, c: '#8b5cc7', w: 2 },
+      { t: 'circle', cx: 38, cy: 70, r: 11, c: '#5bbd6e', w: 2 },
+      { t: 'circle', cx: 62, cy: 70, r: 11, c: '#e86fa8', w: 2 }
+    ] },
+    { name: 'Sandcastle', icon: '🏰', shapes: [
+      { t: 'rect', x: 14, y: 52, w2: 72, h: 36, rad: 2, c: '#e9bd7a', w: 2 },
+      { t: 'rect', x: 14, y: 34, w2: 20, h: 54, rad: 2, c: '#e9bd7a', w: 2 },
+      { t: 'rect', x: 40, y: 24, w2: 20, h: 64, rad: 2, c: '#e9bd7a', w: 2 },
+      { t: 'rect', x: 66, y: 34, w2: 20, h: 54, rad: 2, c: '#e9bd7a', w: 2 },
+      { t: 'path', d: 'M40,24 L50,8 L60,24 Z', c: '#e8484f', w: 2 },
+      { t: 'rect', x: 42, y: 66, w2: 16, h: 22, rad: 7, c: '#8a5a3b', w: 2 },
+      { t: 'path', d: 'M8,92 L92,92', c: 'none', w: 3 }
     ] }
   ];
 
