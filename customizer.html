@@ -568,9 +568,31 @@ s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(j, s);
     im.src=data;
   }
 
+  // ---- import artwork created in the kids' Colouring Studio ----
+  function importColoringArtwork(){
+    var data=null;
+    try{ data=sessionStorage.getItem('stwadd_coloring_session_v1'); }catch(e){}
+    if(!data) return false;
+    var im=new Image();
+    im.onload=function(){
+      var a=area();
+      // fit the drawing inside the printable area with a small margin
+      var scale=Math.min((a.w*0.9)/im.naturalWidth,(a.h*0.9)/im.naturalHeight);
+      elements=[{type:'image',img:im,scale:scale,rot:0,x:a.x+a.w/2,y:a.y+a.h/2}];
+      selected=0; syncControls(); draw();
+      try{ sessionStorage.removeItem('stwadd_coloring_session_v1'); }catch(e){}
+      var st=$('status');
+      st.textContent='✓ Your drawing is on the cup! Drag or resize it, then ask us for a free preview.';
+      st.className='status good';
+    };
+    im.src=data;
+    return true;
+  }
+
   // init
   renderCup(); syncControls(); draw();
   if(/[?&]importWrap=1/.test(location.search)) importWrapArtwork();
+  else if(/[?&]import=1/.test(location.search)) importColoringArtwork();
 })();
 </script>
 </body>
