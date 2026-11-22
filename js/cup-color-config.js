@@ -145,6 +145,44 @@
             { t: 'path', d: 'M206,142 L230,142 L230,156 L206,156 Z' }
           ], color: '#d9e2ea', opacity: 0.35 }
       ]
+    },
+    {
+      id: 'tumbler-40oz', name: '40oz Quencher Tumbler', zh: '40oz 大肚吸管杯',
+      body: { path: 'M112,168 C112,250 128,360 138,436 L138,492 Q138,516 156,520 L244,520 Q262,516 262,492 L262,436 C272,360 288,250 288,168 Z', top: 168, bottom: 520 },
+      decor: [
+        { t: 'path', d: 'M130,178 C130,255 144,360 152,436 L152,488 Q153,502 160,508 L168,508 L158,178 Z', fill: '#ffffff', op: 0.18 },
+        { t: 'path', d: 'M270,178 C270,255 256,360 248,436 L248,488 Q247,502 240,508 L232,508 L242,178 Z', fill: '#000000', op: 0.06 }
+      ],
+      parts: [
+        { id: 'lid', label: 'Straw lid', zh: '吸管盖', kind: 'fill', shapes: [
+            { t: 'path', d: 'M108,168 L108,146 Q200,134 292,146 L292,168 Q200,182 108,168 Z' },
+            { t: 'ellipse', cx: 200, cy: 146, rx: 76, ry: 11 },
+            { t: 'path', d: 'M182,142 L218,142 L214,132 L186,132 Z' }
+          ], color: '#2b3137' },
+        { id: 'handle', label: 'Side handle', zh: '侧面手柄', kind: 'stroke', sw: 15, shapes: [
+            { t: 'path', d: 'M292,196 Q332,196 332,238 L332,318 Q332,356 292,356' }
+          ], color: '#b9c0c7' },
+        { id: 'mouth', label: 'Straw', zh: '吸管', kind: 'fill', isMouth: true, shapes: [
+            { t: 'rect', x: 170, y: 112, w: 12, h: 26, r: 6 }
+          ], color: '#d9e2ea', opacity: 0.55 }
+      ]
+    },
+    {
+      id: 'narrow-bottle-500', name: '500ml Narrow-Mouth Bottle', zh: '500ml 小口瓶',
+      body: { path: 'M148,214 C148,196 168,184 184,180 L184,166 L216,166 L216,180 C232,184 252,196 252,214 L252,492 Q252,516 236,520 L164,520 Q148,516 148,492 Z', top: 166, bottom: 520 },
+      decor: [
+        { t: 'path', d: 'M164,216 C164,202 180,192 190,189 L190,490 Q191,504 196,508 L176,508 L164,216 Z', fill: '#ffffff', op: 0.18 },
+        { t: 'path', d: 'M236,216 C236,202 220,192 210,189 L210,490 Q209,504 204,508 L224,508 L236,216 Z', fill: '#000000', op: 0.06 }
+      ],
+      parts: [
+        { id: 'lid', label: 'Screw cap', zh: '螺旋盖', kind: 'fill', shapes: [
+            { t: 'rect', x: 182, y: 150, w: 36, h: 20, r: 3 },
+            { t: 'path', d: 'M178,150 Q178,142 200,140 Q222,142 222,150 L222,152 Q200,146 178,152 Z' }
+          ], color: '#c4ccd4', stroke: '#8b939b', sw: 1 },
+        { id: 'loop', label: 'Cap ring', zh: '盖提环', kind: 'stroke', sw: 5, shapes: [
+            { t: 'path', d: 'M214,146 Q232,142 236,158' }
+          ], color: '#9aa2aa' }
+      ]
     }
   ];
 
