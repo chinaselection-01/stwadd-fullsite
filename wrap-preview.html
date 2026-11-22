@@ -61,6 +61,15 @@
   .view canvas{display:block;width:100%;height:auto;background:linear-gradient(180deg,#fff,#eef2f6)}
   .seam-view{grid-column:1/-1}
   .seam-view canvas{background:#fff}
+  .view3d{grid-column:1/-1;background:radial-gradient(ellipse at 50% 30%,#ffffff 0%,#eef3f7 60%,#e2eaf0 100%)}
+  .view3d .stage3d{position:relative;height:460px;touch-action:none;cursor:grab}
+  .view3d .stage3d:active{cursor:grabbing}
+  .view3d canvas{display:block;width:100%;height:100%;background:transparent}
+  .view3d .spin-tip{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:12px;color:var(--muted);pointer-events:none}
+  .view3d .v3ctl{position:absolute;top:10px;right:12px;display:flex;gap:6px}
+  .view3d .v3ctl button{background:rgba(255,255,255,.92);border:1px solid var(--line);border-radius:6px;color:var(--navy);font-size:11px;font-weight:600;padding:5px 9px;cursor:pointer}
+  .view3d .v3ctl button:hover{background:#fff;border-color:var(--red);color:var(--red)}
+  .view3d .v3empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;text-align:center;padding:20px}
   .status{font-size:13px;padding:10px 12px;border-radius:8px;background:#eef5fb;color:#25547a;margin-top:12px}
   .status.good{background:#eaf7ee;color:#1e7a3c}
   .status.bad{background:#fff4f4;color:#9e172e}
@@ -181,6 +190,18 @@
     <!-- RIGHT: PREVIEWS -->
     <div class="stage-wrap">
       <div class="view-grid">
+        <div class="view view3d">
+          <div class="cap"><span>3D view — spin the bottle</span><span class="tag">drag left / right to rotate · see every angle</span></div>
+          <div class="stage3d" id="stage3d">
+            <div class="v3empty" id="v3empty">Upload your artwork to see the 3D bottle</div>
+            <div class="v3ctl" id="v3ctl" style="display:none">
+              <button type="button" id="v3front">Front</button>
+              <button type="button" id="v3back">Seam</button>
+              <button type="button" id="v3spin">Auto-spin: on</button>
+            </div>
+            <div class="spin-tip" id="v3tip" style="display:none">Drag the bottle to rotate · pinch / scroll not needed</div>
+          </div>
+        </div>
         <div class="view">
           <div class="cap"><span>Front view</span><span class="tag">how the design reads from the front</span></div>
           <canvas id="frontC" width="440" height="500"><div class="empty">Your preview will appear here</div></canvas>
@@ -221,6 +242,7 @@
 </div></footer>
 
 <script src="/js/cup-vector-shapes.js"></script>
+<script src="/js/three.min.js"></script>
 <script>
 (function(){
   "use strict";
@@ -242,7 +264,7 @@
       $('portraitHint').style.display = ir < 1.05 ? 'block':'none';
     }
   }
-  ['dia','pheight'].forEach(function(id){ $(id).addEventListener('input',function(){ updateCalc(); if(img) renderAll(); }); });
+  ['dia','pheight'].forEach(function(id){ $(id).addEventListener('input',function(){ updateCalc(); v3Reset(); if(img) renderAll(); }); });
 
   // ---- seam position: rotate the bottle so the seam (texture u=0) sits at a chosen spot ----
   // Cylinder view centre samples u = 0.5 + rot/2π; back view uses rot+π.
@@ -405,6 +427,117 @@
     c.textAlign='right'; c.fillText('artwork END', x0+imgDrawW, H-9); c.textAlign='left';
   }
 
+  // ================= 3D bottle =================
+  var v3 = { ready:false, renderer:null, scene:null, camera:null, bottle:null,
+             tex:null, rotSpeed:0.006, autoSpin:true, dragging:false, lastX:0, lastY:0,
+             spinAngle:0.0 };
+  function v3Init(){
+    if(v3.ready || typeof THREE==='undefined') return;
+    var stage=$('stage3d');
+    var W=stage.clientWidth||700, H=stage.clientHeight||460;
+    try{
+      v3.renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
+      v3.renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+      v3.renderer.setSize(W,H);
+      v3.renderer.outputEncoding = THREE.sRGBEncoding;
+      stage.appendChild(v3.renderer.domElement);
+    }catch(e){ return; }
+    v3.scene = new THREE.Scene();
+    v3.camera = new THREE.PerspectiveCamera(30, W/H, 0.1, 100);
+    v3.camera.position.set(0, 0.3, 6.6);
+    v3.camera.lookAt(0,0,0);
+    v3.scene.add(new THREE.AmbientLight(0xffffff, 0.92));
+    var key=new THREE.DirectionalLight(0xffffff, 0.55); key.position.set(-2,3,5); v3.scene.add(key);
+    var fill=new THREE.DirectionalLight(0xffffff, 0.25); fill.position.set(3,1,-4); v3.scene.add(fill);
+    v3.ready=true;
+
+    // drag to rotate
+    var el=v3.renderer.domElement;
+    function down(e){ v3.dragging=true; v3.lastX=(e.touches?e.touches[0].clientX:e.clientX); v3.lastY=(e.touches?e.touches[0].clientY:e.clientY); }
+    function move(e){
+      if(!v3.dragging) return;
+      var x=(e.touches?e.touches[0].clientX:e.clientX), y=(e.touches?e.touches[0].clientY:e.clientY);
+      var dx=x-v3.lastX, dy=y-v3.lastY;
+      v3.bottle.rotation.y += dx*0.011;
+      v3.bottle.rotation.x = Math.max(-0.25,Math.min(0.25, v3.bottle.rotation.x + dy*0.004));
+      v3.lastX=x; v3.lastY=y;
+      e.preventDefault();
+    }
+    function up(){ v3.dragging=false; }
+    el.addEventListener('mousedown',down); window.addEventListener('mousemove',move); window.addEventListener('mouseup',up);
+    el.addEventListener('touchstart',down,{passive:false}); window.addEventListener('touchmove',move,{passive:false}); window.addEventListener('touchend',up);
+    window.addEventListener('resize',function(){
+      if(!v3.ready) return;
+      var s=$('stage3d'), w=s.clientWidth, h=s.clientHeight;
+      v3.camera.aspect=w/h; v3.camera.updateProjectionMatrix(); v3.renderer.setSize(w,h);
+    });
+    (function loop(){
+      requestAnimationFrame(loop);
+      if(!v3.ready||!v3.bottle) return;
+      if(v3.autoSpin && !v3.dragging) v3.bottle.rotation.y += v3.rotSpeed;
+      v3.renderer.render(v3.scene, v3.camera);
+    })();
+
+    $('v3front').addEventListener('click',function(){ if(v3.bottle) v3.bottle.rotation.set(0,0,0); });
+    $('v3back').addEventListener('click',function(){ if(v3.bottle) v3.bottle.rotation.set(0,Math.PI,0); });
+    $('v3spin').addEventListener('click',function(){
+      v3.autoSpin=!v3.autoSpin;
+      this.textContent='Auto-spin: '+(v3.autoSpin?'on':'off');
+    });
+  }
+  function v3Build(){
+    if(!img) return;
+    v3Init();
+    if(!v3.ready) return;
+    // rotation slider only turns the body — no geometry rebuild
+    if(v3.bottle && v3.body){
+      v3.body.rotation.y = v3BaseRot() + (parseFloat($('rot').value)||0)*Math.PI/180;
+      return;
+    }
+    if(v3.bottle){ v3.scene.remove(v3.bottle); }
+    var dia = parseFloat($('dia').value)||65;              // mm diameter
+    var pheight = parseFloat($('pheight').value)||150;     // mm tall
+    // keep the real bottle proportion: height / diameter (e.g. 150/65 ≈ 2.3)
+    var H = 2.3;                                           // scene height, matched to radius below
+    var R = 1.0;                                           // radius
+    H = (pheight/dia) * 2 * R;                             // true proportion: height = (h/d) × diameter
+    var taper = $('bottle').value==='tumbler' ? 0.12 : ($('bottle').value==='bottle'?0.06:0.0);
+    var geo = new THREE.CylinderGeometry(R*(1-taper), R, H, 96, 1, true);
+    if(!v3.tex){ v3.tex = new THREE.Texture(img); }
+    v3.tex.image = img; v3.tex.needsUpdate=true;
+    v3.tex.wrapS = THREE.RepeatWrapping;
+    v3.tex.wrapT = THREE.ClampToEdgeWrapping;
+    v3.tex.offset.set(0,0);
+    v3.tex.repeat.set(1,1);
+    v3.tex.encoding = THREE.sRGBEncoding;
+    var mat = new THREE.MeshStandardMaterial({map:v3.tex, side:THREE.DoubleSide, roughness:0.42, metalness:0.12});
+    var grp = new THREE.Group();
+    var body = new THREE.Mesh(geo, mat);
+    // CylinderGeometry UV: u=0 at +X side. Rotate so the flat artwork's left edge (u=0) faces BACK.
+    body.rotation.y = v3BaseRot() + (parseFloat($('rot').value)||0)*Math.PI/180;
+    grp.add(body); v3.body=body;
+    // cap + base rings
+    var capMat = new THREE.MeshStandardMaterial({color:0xc9d1d8, roughness:0.35, metalness:0.55});
+    var cap = new THREE.Mesh(new THREE.CylinderGeometry(R*(1-taper)+0.02, R*(1-taper)+0.02, 0.22, 64), capMat);
+    cap.position.y = H/2+0.05; grp.add(cap);
+    var base = new THREE.Mesh(new THREE.CylinderGeometry(R+0.01, R+0.01, 0.07, 64), capMat);
+    base.position.y = -H/2-0.02; grp.add(base);
+    v3.scene.add(grp);
+    v3.bottle=grp;
+    // frame the bottle so the full height fits with margin
+    var vFov = v3.camera.fov*Math.PI/180;
+    var dist = (H/2 + 0.5) / Math.tan(vFov/2);
+    v3.camera.position.z = Math.max(5.0, dist);
+    v3.camera.lookAt(0,0,0);
+    $('v3empty').style.display='none';
+    $('v3ctl').style.display='flex';
+    $('v3tip').style.display='block';
+  }
+  function v3BaseRot(){ return Math.PI; }
+  function v3Reset(){
+    if(v3.bottle){ v3.scene.remove(v3.bottle); v3.bottle=null; v3.body=null; }
+  }
+
   function renderAll(){
     if(!img){
       [$('frontC'),$('backC'),$('seamC'),$('mapC')].forEach(function(cv){
@@ -418,6 +551,7 @@
     drawCylinder($('backC'), rot + Math.PI, {});
     drawSeam();
     drawMap();
+    v3Build();
   }
 
   // ---- controls ----
@@ -430,8 +564,8 @@
   $('seamPos').addEventListener('change',function(){
     $('backTag').textContent = 'seam at '+(this.value==='back'?'back centre':this.value==='left'?'left side':'right side');
   });
-  $('mode').addEventListener('change',renderAll);
-  $('bottle').addEventListener('change',renderAll);
+  $('mode').addEventListener('change',function(){ v3Reset(); renderAll(); });
+  $('bottle').addEventListener('change',function(){ v3Reset(); renderAll(); });
 
   $('uploadBtn').addEventListener('click',function(){ $('file').click(); });
   $('file').addEventListener('change',function(e){
