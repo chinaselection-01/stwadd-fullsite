@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Color & Create — Make Your Own Cup Art | STWADD</title>
+<meta name="description" content="A free colouring and drawing studio for kids and grown-ups. Colour a cup, print your art on a real custom tumbler, and come back for a new template every week.">
+<link rel="canonical" href="https://www.stwadd.com/coloring-studio.html">
+<style>
+:root{--red:#c41e3a;--red-d:#9e1530;--ink:#12212e;--muted:#5f6c78;--line:#e2e8ee;--bg:#f5f8fa;--shadow:0 10px 30px rgba(18,33,46,.08)}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-text-size-adjust:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+
+/* header (matches the rest of the site) */
+.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:64px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;letter-spacing:-.3px}
+.brand .dot{width:26px;height:26px;border-radius:50%;background:var(--red);display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:13.5px;font-weight:600}
+.nav a{text-decoration:none;white-space:nowrap}
+.nav a:hover{color:var(--red)}
+.nav .cta{background:var(--red);color:#fff;padding:8px 15px;border-radius:20px}
+.nav-toggle{display:none;border:0;background:none;font-size:24px;cursor:pointer}
+
+.hero{background:linear-gradient(135deg,#12212e 0%,#1b3a4b 100%);color:#fff;padding:34px 0 30px}
+.hero .wrap{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.hero-txt{flex:1 1 460px}
+.hero h1{margin:0 0 10px;font-size:30px;line-height:1.15;letter-spacing:-.5px}
+.hero p{margin:0;color:#c9dbe6;font-size:15px;max-width:620px}
+.hero .facts{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+.hero .fact{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:22px;padding:6px 13px;font-size:12.5px;white-space:nowrap}
+.menu-now{background:#fff;color:var(--red-d);border-radius:12px;padding:14px 16px;font-size:13px;max-width:270px}
+.menu-now b{display:block;font-size:15px;margin-bottom:4px}
+
+.notice{background:#fff8e6;border:1px solid #f0dfae;color:#6b5316;border-radius:10px;padding:11px 14px;font-size:12.5px;margin:18px 0 0}
+
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr) 250px;gap:18px;margin:22px auto 10px;align-items:start}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:16px}
+.card h3{margin:0 0 4px;font-size:15px}
+.card .sub{margin:0 0 14px;color:var(--muted);font-size:12px}
+.panel-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.mode-switch{display:flex;background:var(--bg);border-radius:10px;padding:4px;gap:4px;margin-bottom:16px}
+.mode-switch button{flex:1;border:0;background:transparent;border-radius:7px;padding:9px 6px;font-size:13px;font-weight:700;color:var(--muted);cursor:pointer}
+.mode-switch button.on{background:#fff;color:var(--red);box-shadow:0 2px 8px rgba(18,33,46,.09)}
+
+/* template grid */
+.tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tpl{position:relative;border:2px solid var(--line);background:#fff;border-radius:10px;padding:6px;cursor:pointer;text-align:center;transition:.15s}
+.tpl:hover{border-color:#f0a7b6}
+.tpl.on{border-color:var(--red);background:#fff5f7}
+.tpl svg{width:100%;height:auto;display:block;pointer-events:none}
+.tpl span{display:block;font-size:10.5px;margin-top:4px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tpl .star{position:absolute;top:3px;right:4px;font-size:11px}
+
+/* canvas */
+.stage-card{padding:14px}
+.stage-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.stage-head .t{font-weight:800;font-size:15px}
+.stage-head .badge{font-size:11px;background:#eef4f8;color:#33607a;border-radius:14px;padding:4px 10px}
+.canvas-holder{background:#fff;border:1.5px dashed #cfd9e2;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;min-height:360px;touch-action:none}
+#colorSvg{width:100%;max-width:460px;height:auto;display:block;user-select:none;-webkit-user-select:none}
+#drawCanvas{width:100%;max-width:460px;height:auto;display:block;touch-action:none;cursor:crosshair}
+.region{cursor:pointer;transition:fill .12s}
+.region:hover{stroke:var(--red)}
+.canvas-holder.idle:after{content:"Tap a shape to fill it with colour";position:absolute;bottom:10px;font-size:11.5px;color:#7d8a96;background:rgba(255,255,255,.85);padding:4px 10px;border-radius:12px;pointer-events:none}
+#stickerLayer{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;touch-action:none}
+#stickerLayer .stk{pointer-events:all;cursor:grab}
+#stickerLayer .stk:active{cursor:grabbing}
+#stickerLayer .stk .region{cursor:pointer}
+.stk-toolbar{position:absolute;top:8px;right:8px;display:none;gap:5px;z-index:3}
+.stk-toolbar.on{display:flex}
+.stk-toolbar button{border:1px solid #cfd9e2;background:#fff;border-radius:8px;width:30px;height:30px;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 2px 6px rgba(18,33,46,.12)}
+
+/* sticker palette */
+.stk-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;max-height:262px;overflow-y:auto;padding-right:3px}
+.stk-item{border:2px solid var(--line);background:#fff;border-radius:10px;padding:4px 2px 3px;cursor:pointer;text-align:center;transition:.12s;user-select:none}
+.stk-item:hover{border-color:#f0a7b6;transform:translateY(-1px)}
+.stk-item svg{width:100%;height:auto;display:block;pointer-events:none}
+.stk-item span{display:block;font-size:9px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.3}
+.stk-tabs{display:flex;gap:4px;margin-bottom:9px;flex-wrap:wrap}
+.stk-tabs button{border:1px solid var(--line);background:#fff;border-radius:14px;padding:4px 9px;font-size:11px;font-weight:700;cursor:pointer;color:var(--muted)}
+.stk-tabs button.on{background:var(--red);color:#fff;border-color:var(--red)}
+
+/* tools */
+.tools{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tools button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 10px;font-size:12.5px;font-weight:600;cursor:pointer}
+.tools button:hover{border-color:var(--red);color:var(--red)}
+.swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin:4px 0 14px}
+.sw{aspect-ratio:1;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #d7e0e8;cursor:pointer;padding:0}
+.sw.on{box-shadow:0 0 0 2px var(--red);transform:scale(1.08)}
+.sw.custom{background:conic-gradient(#f44,#ff0,#4f4,#4ff,#44f,#f4f,#f44);position:relative;overflow:hidden}
+.sw.custom input{position:absolute;inset:-6px;width:160%;height:160%;border:0;cursor:pointer;opacity:0}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:11.5px;font-weight:700;color:var(--muted);margin-bottom:5px}
+.field input[type=range]{width:100%}
+.hint{font-size:11.5px;color:var(--muted);margin-top:6px}
+
+/* gallery + badges */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.gal-item{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff;cursor:pointer;position:relative}
+.gal-item img{width:100%;aspect-ratio:1;object-fit:contain;display:block;background:#fff}
+.gal-item button{position:absolute;top:2px;right:2px;border:0;background:rgba(255,255,255,.9);border-radius:50%;width:20px;height:20px;font-size:12px;line-height:1;cursor:pointer;color:#a00}
+.gal-empty{font-size:12px;color:var(--muted);text-align:center;padding:22px 6px;border:1px dashed var(--line);border-radius:9px}
+.badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge-medal{font-size:11px;border-radius:18px;padding:6px 10px;background:#eef1f4;color:#8a96a1;white-space:nowrap}
+.badge-medal.got{background:linear-gradient(135deg,#fff0c2,#ffd980);color:#7a5600;font-weight:700}
+
+/* conversion band */
+.convert{background:linear-gradient(135deg,var(--red) 0%,var(--red-d) 100%);color:#fff;border-radius:16px;padding:24px 26px;margin:26px auto 12px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.convert .ico{font-size:38px}
+.convert .txt{flex:1 1 380px}
+.convert h2{margin:0 0 6px;font-size:21px}
+.convert p{margin:0;color:#ffe1e7;font-size:13.5px;max-width:620px}
+.convert .actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn2{border:0;border-radius:9px;padding:12px 18px;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap}
+.btn2.white{background:#fff;color:var(--red-d)}
+.btn2.ghost{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.5)}
+
+.parent-panel{display:none;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:22px 24px;margin:0 auto 36px}
+.parent-panel.open{display:block}
+.parent-panel h2{margin:0 0 4px;font-size:20px}
+.parent-panel .sub{margin:0 0 18px;color:var(--muted);font-size:13px}
+.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.pgrid .full{grid-column:1/-1}
+.pfield label{display:block;font-size:12px;font-weight:700;margin-bottom:5px}
+.pfield input,.pfield select,.pfield textarea{width:100%;border:1px solid #d7e0e8;border-radius:7px;padding:10px 11px;font-size:14px;font-family:inherit;color:var(--ink);outline:none}
+.pfield input:focus,.pfield select:focus,.pfield textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(196,30,58,.1)}
+.pfield textarea{min-height:62px;resize:vertical}
+.submit-row{display:flex;align-items:center;gap:14px;margin-top:16px;flex-wrap:wrap}
+.submit-row button{background:var(--red);color:#fff;border:0;border-radius:8px;padding:12px 20px;font-size:14px;font-weight:800;cursor:pointer}
+.submit-row button:disabled{opacity:.6}
+.mystatus{font-size:13px}
+.mystatus.ok{color:#0a7d3f}.mystatus.err{color:#b1142e}
+.privacy{font-size:11.5px;color:var(--muted);margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+.art-preview{display:flex;align-items:center;gap:12px;background:var(--bg);border-radius:10px;padding:10px;margin-bottom:16px}
+.art-preview img{width:74px;height:74px;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:8px}
+.art-preview .t{font-size:13px;font-weight:700}
+.art-preview .s{font-size:12px;color:var(--muted)}
+
+footer{background:#12212e;color:#9fb0bc;text-align:center;padding:22px 16px;font-size:12.5px;margin-top:30px}
+footer a{color:#fff}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#12212e;color:#fff;padding:11px 18px;border-radius:24px;font-size:13px;z-index:99;opacity:0;pointer-events:none;transition:.25s;max-width:90vw;text-align:center}
+.toast.show{opacity:1}
+
+@media(max-width:1000px){.layout{grid-template-columns:1fr 1fr}.stage-card{grid-column:1/-1;grid-row:1}.side-col{grid-column:auto}}
+@media(max-width:680px){
+  .nav{display:none;position:absolute;top:64px;left:0;right:0;background:#fff;padding:14px 16px;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:12px}
+  .nav.open{display:flex}
+  .nav-toggle{display:block}
+  .hero h1{font-size:24px}
+  .layout{grid-template-columns:1fr}
+  .stage-card{grid-column:auto;grid-row:auto}
+  .pgrid{grid-template-columns:1fr}
+  .convert{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header"><div class="wrap">
+  <a class="brand" href="/"><span class="dot">S</span> STWADD</a>
+  <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/all-products.html">Products</a>
+    <a href="/customizer.html">Design Studio</a>
+    <a href="/cup-vectors.html">Vector Shapes</a>
+    <a href="/cup-color-studio.html">Color Studio</a>
+    <a href="/coloring-studio.html">Color &amp; Create</a>
+    <a class="cta" href="/index.html#contact">Get a Quote</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="hero-txt">
+    <h1>Color it. Create it. Wear it.</h1>
+    <p>Pick a picture, fill it with your colours, or draw your own. Love what you made? We can print it on a real cup — a one-of-a-kind gift made by you.</p>
+    <div class="facts">
+      <span class="fact">🎨 12 pictures + free drawing</span>
+      <span class="fact">🖨️ Print it on a real tumbler</span>
+      <span class="fact">🔄 New picture every week</span>
+    </div>
+  </div>
+  <div class="menu-now"><b>✨ This week's pick</b><span id="weeklyName">—</span><br><small> Tap it in the picture list to start.</small></div>
+</div></section>
+
+<div class="wrap">
+  <p class="notice">👨‍👩‍👧 <b>For parents:</b> This is a drawing game. We do not collect your child's name or any personal details. When you're ready to make a cup, <b>you</b> fill in the short order form below. Artwork is saved only in this browser.</p>
+
+  <div class="layout">
+    <!-- left: templates + palettes -->
+    <div>
+      <div class="card">
+        <h3>Picture to colour</h3>
+        <p class="sub">Tap one to begin</p>
+        <div class="tpl-grid" id="tplGrid"></div>
+      </div>
+    </div>
+
+    <!-- centre: canvas -->
+    <div class="card stage-card">
+      <div class="stage-head">
+        <div class="t" id="pieceName">Happy Cup</div>
+        <div class="badge" id="modeBadge">Colouring</div>
+      </div>
+      <div class="mode-switch">
+        <button class="on" id="modeColor" type="button">🎨 Colour a picture</button>
+        <button id="modeDraw" type="button">✏️ Draw my own</button>
+      </div>
+      <div class="canvas-holder idle" id="holder">
+        <svg id="colorSvg" viewBox="0 0 400 400" role="img" aria-label="Colouring picture"></svg>
+        <canvas id="drawCanvas" width="800" height="800" style="display:none"></canvas>
+        <svg id="stickerLayer" viewBox="0 0 400 400" aria-label="Stickers"></svg>
+        <div class="stk-toolbar" id="stkToolbar">
+          <button type="button" id="stkSmall" title="Smaller">−</button>
+          <button type="button" id="stkBig" title="Bigger">+</button>
+          <button type="button" id="stkFront" title="Bring to front">⇅</button>
+          <button type="button" id="stkDel" title="Remove sticker">🗑</button>
+        </div>
+      </div>
+      <div class="hint" style="margin-top:8px">✨ Stickers: tap one to add it, drag to move, use the buttons on the picture to resize or remove.</div>
+      <div class="tools">
+        <button type="button" id="undoBtn">↶ Undo</button>
+        <button type="button" id="clearBtn">🗑️ Start over</button>
+        <button type="button" id="saveBtn">💾 Save to my gallery</button>
+        <button type="button" id="randomBtn">🎲 Surprise me</button>
+      </div>
+    </div>
+
+    <!-- right: tools + gallery -->
+    <div class="side-col">
+      <div class="card">
+        <h3>Colours</h3>
+        <p class="sub">Pick, then tap a shape</p>
+        <div class="swatches" id="swatches"></div>
+        <div class="field" id="sizeField" style="display:none">
+          <label>Brush size <span id="sizeVal">18</span></label>
+          <input type="range" id="brushSize" min="4" max="60" value="18">
+        </div>
+        <button type="button" id="eraserBtn" style="display:none;border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 10px;font-size:12.5px;font-weight:700;cursor:pointer;width:100%">🧽 Eraser: off</button>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <div class="panel-title"><h3>✨ Stickers</h3><span class="sub" style="margin:0">tap to add</span></div>
+        <div class="stk-tabs" id="stkTabs"></div>
+        <div class="stk-grid" id="stkGrid"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <div class="panel-title"><h3>My gallery</h3><span class="sub" id="galCount" style="margin:0">0 saved</span></div>
+        <div class="gal-grid" id="galGrid"></div>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h3>My badges</h3>
+        <p class="sub">Come back and colour more!</p>
+        <div class="badges" id="badges"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- conversion -->
+  <div class="convert">
+    <div class="ico">🖨️</div>
+    <div class="txt">
+      <h2>Love your artwork? Put it on a real cup.</h2>
+      <p>We'll print your design on a custom tumbler or bottle — a gift that's truly yours. Tell us what you'd like and we'll send back a free preview. Nothing to pay, no obligation.</p>
+    </div>
+    <div class="actions">
+      <button class="btn2 white" id="toCupBtn" type="button">Put it on a cup →</button>
+      <button class="btn2 ghost" id="askBtn" type="button">Email me a free preview</button>
+    </div>
+  </div>
+
+  <!-- parent form -->
+  <div class="parent-panel" id="parentPanel">
+    <h2>Make it real — order your custom cup</h2>
+    <p class="sub">For grown-ups. We use these details only to reply with your preview and quote.</p>
+    <div class="art-preview" id="artPreview">
+      <img id="artThumb" alt="Your artwork">
+      <div><div class="t">Your artwork is attached</div><div class="s">We'll put it on the cup shape you choose below.</div></div>
+    </div>
+    <form id="parentForm" novalidate>
+      <div class="pgrid">
+        <div class="pfield"><label>Your name (parent / guardian) *</label><input type="text" id="pName" autocomplete="name" required></div>
+        <div class="pfield"><label>Email *</label><input type="email" id="pEmail" autocomplete="email" required></div>
+        <div class="pfield"><label>Cup shape</label><select id="pShape"></select></div>
+        <div class="pfield"><label>How many cups?</label><input type="text" id="pQty" placeholder="e.g. 1 gift, or 200 pcs"></div>
+        <div class="pfield full"><label>Anything we should know? (optional)</label><textarea id="pNote" placeholder="e.g. print the drawing centred on the front, about 6 cm wide"></textarea></div>
+      </div>
+      <div class="submit-row">
+        <button type="submit" id="pSubmit">Send my design →</button>
+        <span class="mystatus" id="pStatus"></span>
+      </div>
+    </form>
+    <p class="privacy">🔒 We never ask for your child's name, age or contact details. The drawing is sent as an anonymous image file. Your details stay confidential — or just email <b>bob@stwadd.com</b> and attach your drawing.</p>
+  </div>
+</div>
+
+<footer>© 2017–2026 Yongkang STWADD Houseware Co., Ltd. · <a href="/cup-vectors.html">Vector shapes</a> · <a href="/customizer.html">Design studio</a> · <a href="/">Home</a></footer>
+<div class="toast" id="toast"></div>
+
+<script src="/js/cup-vector-shapes.js"></script>
+<script src="/js/ai-mockup-request.js"></script>
+<script src="/js/coloring-templates.js"></script>
+<script src="/js/coloring-stickers.js"></script>
+<script>
+(function(){
+  'use strict';
+  var TPL = window.COLORING_TEMPLATES || [];
+  var M = window.STWADD_MOCKUP || {};
+  var $=function(id){return document.getElementById(id)};
+  var svg=$('colorSvg'), holder=$('holder'), cv=$('drawCanvas'), ctx=cv.getContext('2d');
+
+  var COLORS=['#e8484f','#f2913c','#f6cf46','#5bbd6e','#3fa9c9','#4169c4',
+              '#8b5cc7','#e86fa8','#8a5a3b','#4a4a4a','#ffffff','#000000'];
+  var cur=COLORS[0], mode='color', tplIdx=0, brush=18, eraser=false;
+  var strokes=[], redoStack=[];              // free-draw history
+  var GKEY='stwadd_coloring_gallery_v1', CKEY='stwadd_coloring_count_v1';
+  var SKEY='stwadd_coloring_session_v1';
+
+  function toast(t){var el=$('toast');el.textContent=t;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(function(){el.classList.remove('show')},2300)}
+
+  /* ---------- weekly pick ---------- */
+  function weekNo(){var d=new Date(),t=new Date(d.getFullYear(),0,1);return Math.ceil(((d-t)/86400000+t.getDay()+1)/7)}
+  var weekly=weekNo()%TPL.length;
+  $('weeklyName').textContent=TPL[weekly]?TPL[weekly].name:'a fun new picture';
+
+  /* ---------- template thumbnails + selection ---------- */
+  function svgInner(t,fills){
+    var out='';
+    (t.shapes||[]).forEach(function(s,i){
+      var fill=(fills&&fills[i])||s.c||'#ffffff';
+      var st=' fill="'+fill+'" stroke="#25313b" stroke-width="'+(s.w||4)+'" stroke-linejoin="round" stroke-linecap="round"';
+      if(s.t==='circle') out+='<circle cx="'+s.cx+'" cy="'+s.cy+'" r="'+s.r+'"'+st+'/>';
+      else if(s.t==='ellipse') out+='<ellipse cx="'+s.cx+'" cy="'+s.cy+'" rx="'+s.rx+'" ry="'+s.ry+'"'+(s.rot?' transform="rotate('+s.rot+' '+s.cx+' '+s.cy+')"':'')+st+'/>';
+      else if(s.t==='rect') out+='<rect x="'+s.x+'" y="'+s.y+'" width="'+s.w2+'" height="'+s.h+'" rx="'+(s.rad||0)+'"'+st+'/>';
+      else out+='<path d="'+s.d+'" fill-rule="evenodd"'+st+'/>';
+    });
+    return out;
+  }
+  function buildTplGrid(){
+    var g=$('tplGrid');g.innerHTML='';
+    TPL.forEach(function(t,i){
+      var d=document.createElement('div');d.className='tpl'+(i===tplIdx?' on':'');
+      d.innerHTML='<svg viewBox="0 0 400 400">'+svgInner(t)+'</svg><span>'+t.name+'</span>'+(i===weekly?'<span class="star">⭐</span>':'');
+      d.addEventListener('click',function(){setMode('color');loadTemplate(i)});
+      g.appendChild(d);
+    });
+  }
+  function loadTemplate(i){
+    tplIdx=i;var t=TPL[i];if(!t)return;
+    $('pieceName').textContent=t.name;
+    svg.innerHTML=svgInner(t);
+    Array.prototype.forEach.call(svg.querySelectorAll('circle,ellipse,rect,path'),function(el,idx){
+      el.setAttribute('class','region');
+      el.addEventListener('click',function(){el.setAttribute('fill',cur);holder.classList.remove('idle')});
+    });
+    buildTplGrid();
+  }
+
+  /* ---------- stickers ---------- */
+  var STK = window.COLORING_STICKERS || [];
+  var layer=$('stickerLayer'), stkToolbar=$('stkToolbar'), selStk=null;
+  var stkCats=[{n:'All',f:null},{n:'Sky',f:['Sun','Moon','Star','Lightning','Cloud','Rainbow']},
+               {n:'Cute',f:['Heart','Cat face','Fish','Flower','Balloon','Gift']},
+               {n:'World',f:['Mountains','River','House','Tree','Xmas tree','Ice cream']}];
+  var stkCat=0;
+
+  function shapeTag(s){
+    var fill=(s.c||'#ffffff');
+    var st=' fill="'+fill+'" stroke="#25313b" stroke-width="'+(s.w||3)+'" stroke-linejoin="round" stroke-linecap="round"';
+    if(s.t==='circle') return '<circle cx="'+s.cx+'" cy="'+s.cy+'" r="'+s.r+'"'+st+'/>';
+    if(s.t==='ellipse') return '<ellipse cx="'+s.cx+'" cy="'+s.cy+'" rx="'+s.rx+'" ry="'+s.ry+'"'+(s.rot?' transform="rotate('+s.rot+' '+s.cx+' '+s.cy+')"':'')+st+'/>';
+    if(s.t==='rect') return '<rect x="'+s.x+'" y="'+s.y+'" width="'+s.w2+'" height="'+s.h+'" rx="'+(s.rad||0)+'"'+st+'/>';
+    return '<path d="'+s.d+'"'+st+'/>';
+  }
+  function stkMarkup(s){return (s.shapes||[]).map(shapeTag).join('')}
+
+  function buildStkTabs(){
+    var el=$('stkTabs');el.innerHTML='';
+    stkCats.forEach(function(c,i){
+      var b=document.createElement('button');b.type='button';b.textContent=c.n;
+      if(i===stkCat)b.className='on';
+      b.addEventListener('click',function(){stkCat=i;buildStkTabs();buildStkGrid()});
+      el.appendChild(b);
+    });
+  }
+  function buildStkGrid(){
+    var g=$('stkGrid');g.innerHTML='';
+    var cat=stkCats[stkCat];
+    STK.forEach(function(s,i){
+      if(cat.f && cat.f.indexOf(s.name)<0)return;
+      var d=document.createElement('div');d.className='stk-item';
+      d.title='Add '+s.name;
+      d.innerHTML='<svg viewBox="0 0 100 100">'+stkMarkup(s)+'</svg><span>'+s.name+'</span>';
+      d.addEventListener('click',function(){addSticker(i)});
+      g.appendChild(d);
+    });
+  }
+
+  function selSticker(g){
+    if(selStk&&selStk.parentNode)selStk.removeAttribute('data-sel');
+    selStk=g;
+    if(g){g.setAttribute('data-sel','1');stkToolbar.classList.add('on')}
+    else stkToolbar.classList.remove('on');
+  }
+
+  function addSticker(idx){
+    var s=STK[idx];if(!s)return;
+    var g=document.createElementNS('http://www.w3.org/2000/svg','g');
+    g.setAttribute('class','stk');
+    var list=layer.querySelectorAll('.stk');
+    var off=(list.length%5)*18;
+    g.setAttribute('transform','translate('+(120+off)+','+(130+off)+') scale(1.5)');
+    g.innerHTML='<g transform="translate(-50,-50)">'+stkMarkup(s)+'</g>';
+    layer.appendChild(g);
+    wireSticker(g);
+    selSticker(g);
+    holder.classList.remove('idle');
+    toast('✨ '+s.name+' added — drag to move');
+  }
+
+  function wireSticker(g){
+    // tap a region to recolour; drag the whole sticker to move
+    var moved=false, sx=0, sy=0, ox=0, oy=0, scale=1, downTarget=null;
+    function parse(){
+      var m=/translate\(([-\d.]+),([-\d.]+)\)\s*scale\(([-\d.]+)\)/.exec(g.getAttribute('transform')||'');
+      if(m){ox=+m[1];oy=+m[2];scale=+m[3]}else{ox=0;oy=0;scale=1}
+    }
+    function apply(){g.setAttribute('transform','translate('+ox+','+oy+') scale('+scale+')')}
+    function vb(e){var r=layer.getBoundingClientRect();return{x:(e.clientX-r.left)*400/r.width,y:(e.clientY-r.top)*400/r.height}}
+    g.addEventListener('pointerdown',function(e){
+      e.stopPropagation();e.preventDefault();
+      parse();moved=false;
+      downTarget=e.target; // remember which shape was pressed (pointer capture retargets pointerup)
+      var p=vb(e);sx=p.x;sy=p.y;
+      g.setPointerCapture(e.pointerId);
+      selSticker(g);
+    });
+    g.addEventListener('pointermove',function(e){
+      if(!g.hasPointerCapture||!g.hasPointerCapture(e.pointerId))return;
+      var p=vb(e);
+      if(Math.abs(p.x-sx)>2||Math.abs(p.y-sy)>2)moved=true;
+      if(moved){ox+=p.x-sx;oy+=p.y-sy;sx=p.x;sy=p.y;apply()}
+    });
+    g.addEventListener('pointerup',function(e){
+      if(!moved){
+        var t=downTarget;
+        if(t && t!==g && (t.tagName==='path'||t.tagName==='circle'||t.tagName==='ellipse'||t.tagName==='rect')){
+          t.setAttribute('fill',cur);
+        }
+      }
+      downTarget=null;
+    });
+    g._getScale=function(){return scale};
+    g._setScale=function(v){scale=Math.max(.6,Math.min(3,v));apply()};
+  }
+
+  function stickerSnapshot(){
+    var out=[];
+    Array.prototype.forEach.call(layer.querySelectorAll('.stk'),function(g){
+      var m=/translate\(([-\d.]+),([-\d.]+)\)\s*scale\(([-\d.]+)\)/.exec(g.getAttribute('transform')||'');
+      var fills=[];
+      Array.prototype.forEach.call(g.querySelectorAll('path,circle,ellipse,rect'),function(el){fills.push(el.getAttribute('fill'))});
+      out.push({x:m?+m[1]:0,y:m?+m[2]:0,s:m?+m[3]:1,fills:fills,
+                inner:g.firstChild?g.firstChild.innerHTML:''});
+    });
+    return out;
+  }
+  function restoreStickers(list){
+    layer.innerHTML='';selSticker(null);
+    (list||[]).forEach(function(o){
+      var g=document.createElementNS('http://www.w3.org/2000/svg','g');
+      g.setAttribute('class','stk');
+      g.setAttribute('transform','translate('+o.x+','+o.y+') scale('+o.s+')');
+      g.innerHTML='<g transform="translate(-50,-50)">'+o.inner+'</g>';
+      var els=g.querySelectorAll('path,circle,ellipse,rect'),i=0;
+      Array.prototype.forEach.call(els,function(el){if(o.fills&&o.fills[i])el.setAttribute('fill',o.fills[i]);i++});
+      layer.appendChild(g);wireSticker(g);
+    });
+  }
+
+  $('stkSmall').addEventListener('click',function(){if(selStk&&selStk._setScale)selStk._setScale(selStk._getScale()-0.2)});
+  $('stkBig').addEventListener('click',function(){if(selStk&&selStk._setScale)selStk._setScale(selStk._getScale()+0.2)});
+  $('stkFront').addEventListener('click',function(){if(selStk){layer.appendChild(selStk);toast('Brought to front')}});
+  $('stkDel').addEventListener('click',function(){if(selStk){var p=selStk.parentNode;if(p)p.removeChild(selStk);selSticker(null);toast('Sticker removed')}});
+
+  /* ---------- swatches ---------- */
+  function buildSwatches(){
+    var s=$('swatches');s.innerHTML='';
+    COLORS.forEach(function(c,i){
+      var b=document.createElement('button');b.className='sw'+(i===0?' on':'');b.style.background=c;b.type='button';b.title=c;
+      b.addEventListener('click',function(){pickColor(c,b)});s.appendChild(b);
+    });
+    var custom=document.createElement('label');custom.className='sw custom';custom.title='Pick any colour';
+    custom.innerHTML='<input type="color" value="#ff7a45">';
+    custom.querySelector('input').addEventListener('input',function(e){pickColor(e.target.value,custom)});
+    s.appendChild(custom);
+  }
+  function pickColor(c,btn){
+    cur=c;Array.prototype.forEach.call($('swatches').children,function(x){x.classList.remove('on')});
+    if(btn)btn.classList.add('on');
+    if(eraser){eraser=false;$('eraserBtn').textContent='🧽 Eraser: off'}
+  }
+
+  /* ---------- mode switch ---------- */
+  function setMode(m){
+    mode=m;
+    $('modeColor').classList.toggle('on',m==='color');
+    $('modeDraw').classList.toggle('on',m==='draw');
+    $('modeBadge').textContent=m==='color'?'Colouring':'Free drawing';
+    svg.style.display=m==='color'?'block':'none';
+    cv.style.display=m==='draw'?'block':'none';
+    $('sizeField').style.display=m==='draw'?'block':'none';
+    $('eraserBtn').style.display=m==='draw'?'block':'none';
+    $('stickerLayer').style.display='block'; // stickers stay visible in both modes
+    holder.classList.toggle('idle',m==='color');
+    if(m==='draw'){
+      $('pieceName').textContent='My own drawing';
+      if(!strokes.length)clearCanvas();
+    }else{
+      loadTemplate(tplIdx);
+    }
+  }
+  $('modeColor').addEventListener('click',function(){setMode('color')});
+  $('modeDraw').addEventListener('click',function(){setMode('draw')});
+
+  /* ---------- free drawing ---------- */
+  function paintAll(list){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    (list||[]).forEach(function(s){
+      ctx.strokeStyle=s.c;ctx.lineWidth=s.w;ctx.lineCap='round';ctx.lineJoin='round';
+      ctx.beginPath();
+      s.pts.forEach(function(p,i){i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y)});
+      if(s.pts.length===1){ctx.lineTo(s.pts[0].x+.1,s.pts[0].y+.1)}
+      ctx.stroke();
+    });
+  }
+  function clearCanvas(){strokes=[];redoStack=[];paintAll([]);holder.classList.remove('idle')}
+  function pos(e){var r=cv.getBoundingClientRect();return{x:(e.clientX-r.left)*cv.width/r.width,y:(e.clientY-r.top)*cv.height/r.height}}
+  var drawing=false,active=null;
+  cv.addEventListener('pointerdown',function(e){
+    e.preventDefault();cv.setPointerCapture(e.pointerId);drawing=true;
+    active={c:eraser?'#ffffff':cur,w:eraser?brush*2:brush,pts:[pos(e)]};strokes.push(active);redoStack=[];holder.classList.remove('idle');paintAll(strokes);
+  });
+  cv.addEventListener('pointermove',function(e){if(!drawing||!active)return;e.preventDefault();active.pts.push(pos(e));paintAll(strokes)});
+  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){cv.addEventListener(ev,function(){drawing=false;active=null})});
+  $('brushSize').addEventListener('input',function(e){brush=+e.target.value;$('sizeVal').textContent=brush});
+  $('eraserBtn').addEventListener('click',function(){eraser=!eraser;$('eraserBtn').textContent='🧽 Eraser: '+(eraser?'on':'off')});
+  $('undoBtn').addEventListener('click',function(){
+    if(mode==='draw'){if(!strokes.length)return;redoStack.push(strokes.pop());paintAll(strokes)}
+    else{toast('Tap Start over to clear the picture')}
+  });
+  $('clearBtn').addEventListener('click',function(){restoreStickers([]);mode==='draw'?clearCanvas():loadTemplate(tplIdx)});
+  $('randomBtn').addEventListener('click',function(){restoreStickers([]);setMode('color');loadTemplate(Math.floor(Math.random()*TPL.length))});
+
+  /* ---------- export current art as PNG dataURL (with stickers) ---------- */
+  function exportWithStickers(baseImg, cb){
+    // baseImg = an HTMLImageElement drawn from the base art. Overlay stickers as SVG.
+    var stks=Array.prototype.map.call(layer.querySelectorAll('.stk'),function(g){
+      return '<g transform="'+g.getAttribute('transform')+'">'+g.innerHTML+'</g>';
+    }).join('');
+    if(!stks){var c=document.createElement('canvas');c.width=c.height=800;c.getContext('2d').drawImage(baseImg,0,0,800,800);cb(c.toDataURL('image/png'));return}
+    var wrap=document.createElementNS('http://www.w3.org/2000/svg','svg');
+    wrap.setAttribute('xmlns','http://www.w3.org/2000/svg');
+    wrap.setAttribute('viewBox','0 0 400 400');
+    wrap.setAttribute('width','800');wrap.setAttribute('height','800');
+    wrap.innerHTML='<image href="'+baseImg.src+'" x="0" y="0" width="400" height="400"/>'+stks;
+    var str=new XMLSerializer().serializeToString(wrap);
+    var img2=new Image();
+    img2.onload=function(){var c=document.createElement('canvas');c.width=c.height=800;c.getContext('2d').drawImage(img2,0,0,800,800);cb(c.toDataURL('image/png'))};
+    img2.onerror=function(){cb(baseImg.src)};
+    img2.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(str);
+  }
+  function artDataURL(cb){
+    if(mode==='draw'){
+      var base=new Image();
+      base.onload=function(){exportWithStickers(base,cb)};
+      base.onerror=function(){cb(cv.toDataURL('image/png'))};
+      base.src=cv.toDataURL('image/png');
+      return;
+    }
+    var clone=svg.cloneNode(true);
+    clone.setAttribute('xmlns','http://www.w3.org/2000/svg');
+    clone.setAttribute('width','800');clone.setAttribute('height','800');
+    var str=new XMLSerializer().serializeToString(clone);
+    var img=new Image();
+    img.onload=function(){exportWithStickers(img,cb)};
+    img.onerror=function(){cb(null)};
+    img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(str);
+  }
+
+  /* ---------- snapshot for saving (lightweight, not a PNG) ---------- */
+  function snapshot(){
+    var sn=stickerSnapshot();
+    if(mode==='draw')return{mode:'draw',strokes:strokes.map(function(s){return{c:s.c,w:s.w,pts:s.pts.map(function(p){return{x:Math.round(p.x),y:Math.round(p.y)}})}}),stickers:sn};
+    var fills=[];Array.prototype.forEach.call(svg.querySelectorAll('.region'),function(el){fills.push(el.getAttribute('fill'))});
+    return{mode:'color',tpl:tplIdx,fills:fills,stickers:sn};
+  }
+  function restoreArt(s){
+    if(s.mode==='draw'){setMode('draw');strokes=s.strokes||[];paintAll(strokes);holder.classList.remove('idle')}
+    else{setMode('color');tplIdx=s.tpl||0;loadTemplate(tplIdx);Array.prototype.forEach.call(svg.querySelectorAll('.region'),function(el,i){if(s.fills&&s.fills[i])el.setAttribute('fill',s.fills[i])})}
+    restoreStickers(s.stickers);
+  }
+
+  /* ---------- gallery (local only) ---------- */
+  function getGallery(){try{return JSON.parse(localStorage.getItem(GKEY)||'[]')}catch(e){return[]}}
+  function setGallery(g){try{localStorage.setItem(GKEY,JSON.stringify(g.slice(0,12)))}catch(e){toast('Browser storage is full — remove an old drawing')}}
+  function renderGallery(){
+    var g=getGallery(),el=$('galGrid');el.innerHTML='';
+    $('galCount').textContent=g.length+' saved';
+    if(!g.length){el.innerHTML='<div class="gal-empty" style="grid-column:1/-1">Your saved drawings will appear here.</div>';return}
+    g.forEach(function(item,i){
+      var d=document.createElement('div');d.className='gal-item';
+      var im=document.createElement('img');im.src=item.thumb;im.alt='saved drawing';
+      var del=document.createElement('button');del.textContent='×';del.title='Delete';
+      del.addEventListener('click',function(e){e.stopPropagation();var gg=getGallery();gg.splice(i,1);setGallery(gg);renderGallery()});
+      d.addEventListener('click',function(){restoreArt(item.data);toast('Drawing loaded — keep creating!');window.scrollTo({top:document.querySelector('.layout').offsetTop-20,behavior:'smooth'})});
+      d.appendChild(im);d.appendChild(del);el.appendChild(d);
+    });
+  }
+  $('saveBtn').addEventListener('click',function(){
+    artDataURL(function(url){
+      if(!url){toast('Could not save this drawing');return}
+      var g=getGallery();g.unshift({data:snapshot(),thumb:url,date:Date.now()});setGallery(g);
+      var n=(parseInt(localStorage.getItem(CKEY)||'0',10)||0)+1;try{localStorage.setItem(CKEY,String(n))}catch(e){}
+      renderGallery();renderBadges();toast('✓ Saved to your gallery');
+    });
+  });
+
+  /* ---------- badges ---------- */
+  var BADGES=[{n:1,i:'🎨',t:'First Artist'},{n:3,i:'🖍️',t:'3 Creations'},{n:6,i:'🌟',t:'Little Star'},{n:12,i:'🏆',t:'Master Artist'}];
+  function renderBadges(){
+    var n=parseInt(localStorage.getItem(CKEY)||'0',10)||0,el=$('badges');el.innerHTML='';
+    BADGES.forEach(function(b){
+      var d=document.createElement('span');d.className='badge-medal'+(n>=b.n?' got':'');
+      d.textContent=(n>=b.n?b.i:'🔒')+' '+b.t;el.appendChild(d);
+    });
+  }
+
+  /* ---------- conversion to a real cup ---------- */
+  var lastArt=null;
+  function currentArt(cb){artDataURL(function(url){lastArt=url;cb&&cb(url)})}
+  function showParent(){
+    if(!lastArt){currentArt(function(){})}
+    $('parentPanel').classList.add('open');
+    $('artThumb').src=lastArt||'';
+    $('parentPanel').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  $('askBtn').addEventListener('click',function(){currentArt(showParent)});
+  $('toCupBtn').addEventListener('click',function(){
+    currentArt(function(url){
+      if(!url){toast('Could not export your drawing');return}
+      try{sessionStorage.setItem(SKEY,url)}catch(e){}
+      // customizer reads ?import=1 and pulls the picture from sessionStorage
+      window.location.href='/customizer.html?import=1';
+    });
+  });
+
+  // fill cup-shape dropdown from the shared vector library
+  if(M.fillShapes&&window.CUP_VECTOR_SHAPES){M.fillShapes($('pShape'),window.CUP_VECTOR_SHAPES.map(function(s){return{name:s.name,cap:s.cap}}))}
+
+  $('parentForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=$('pName').value.trim(),email=$('pEmail').value.trim(),st=$('pStatus');
+    if(!name||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){st.className='mystatus err';st.textContent='Please enter your name and a valid email.';return}
+    if(!lastArt){st.className='mystatus err';st.textContent='Please draw something first.';return}
+    var btn=$('pSubmit');btn.disabled=true;st.className='mystatus';st.textContent='Sending…';
+    var img={name:'child-drawing.png',mime:'image/png',size:Math.round(lastArt.length*0.75),dataUrl:lastArt};
+    M.submit({name:name,email:email,shape:$('pShape').value,quantity:$('pQty').value.trim(),message:$('pNote').value.trim()},[img],function(ok){
+      btn.disabled=false;
+      if(ok){st.className='mystatus ok';st.textContent='✓ Received! We will email your free preview within 1 business day.';$('parentForm').reset()}
+      else{st.className='mystatus err';st.textContent='Could not send right now — please email bob@stwadd.com with your drawing.'}
+    });
+  });
+
+  buildSwatches();buildTplGrid();buildStkTabs();buildStkGrid();loadTemplate(weekly);renderGallery();renderBadges();
+})();
+</script>
+</body>
+</html>
