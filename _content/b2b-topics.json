@@ -182,21 +182,29 @@
     },
     {
       "slug": "when-to-use-a-china-buying-office-sourcing-agent",
-      "title": "When a China Buying Office Beats a Factory Direct: The Honest Comparison",
-      "meta_desc": "For multi-category buying, a China buying office can consolidate suppliers, inspect and ship for 3-5 percent. Here is when that is worth it and when factory direct is cheaper.",
+      "title": "When a China Buying Office Beats Factory Direct — and When It Does Not",
+      "meta_desc": "A China buying office earns its 3-5% commission when you buy across several factories and can consolidate them into one container. The honest cost model, with the break-even arithmetic.",
       "angle": "诚实对比不推销买办：什么情况划算（多品类、小批量、无中国团队、要一站式）；什么情况工厂直采更便宜（单品类、大货、模具归你、开模沟通）。给成本模型：3-5% 佣金 vs 自己承担内陆运输+验货+拼柜管理的时间成本。",
       "faq": [
         [
           "When is a sourcing agent cheaper than ordering from a factory direct?",
-          "A buying office pays off when you buy across several categories, when quantities per factory are small, when you have no one in China to inspect and consolidate, or when you cannot commit to a large single-factory order. If you are ordering one product in volume from one plant, direct is almost always cheaper."
+          "A buying office pays off when you buy across several categories, when quantities per factory are small, when you have no one in China to inspect and consolidate, or when you cannot commit to a large single-factory order. If you are ordering one product in volume from one plant, direct is almost always cheaper. In the worked example above, consolidating six suppliers into one container saved $7,816 — more than the $2,325 commission at 5%. With one supplier there is nothing to consolidate, so the commission buys only coordination that a purchase order and a phone call already handle."
         ],
         [
           "What does a buying office actually do that I cannot do myself?",
-          "Matching your specification to qualified suppliers, automating RFQs, comparing quotes side by side, screening compliance and landed cost, consolidating multiple suppliers into one container, running AQL 2.5 inspection, arranging private-label packaging and booking freight to your port. The value is coordination, not a secret source of cheaper products."
+          "Matching your specification to qualified suppliers, automating RFQs, comparing quotes side by side, screening compliance and landed cost, consolidating multiple suppliers into one container, running AQL 2.5 inspection, arranging private-label packaging and booking freight to your port. The value is coordination, not a secret source of cheaper products. The measurable part is the logistics consolidation; the judgement part is supplier qualification and production follow-up, and you should price the two separately when you compare quotes."
         ],
         [
           "How transparent should the commission be?",
-          "A buying office should state the commission up front, typically 3-5% of order value, and show you the factory's actual invoice so you can see the markup. If they refuse to disclose the factory or the underlying invoice, you cannot verify whether you are paying a fair price."
+          "A buying office should state the commission up front, typically 3-5% of order value, and show you the factory's actual invoice so you can see the markup. If they refuse to disclose the factory or the underlying invoice, you cannot verify whether you are paying a fair price. Ask one question in writing: does the price include any commission paid to us by the factory? A clear no, plus an invoice you can read, is the standard you should hold anyone to."
+        ],
+        [
+          "Will my freight forwarder do the same job more cheaply?",
+          "Often, yes — and you should ask. Plenty of forwarders with their own warehouse in China will collect from several factories, consolidate into one container and handle the export documents. That removes most of the per-shipment cost. What they typically will not do is qualify the factory, write the specification, normalise the quotes, follow production, or argue your claim when goods fail inspection. If your need is logistics only, use a forwarder and save the percentage; if your need is people on the ground, pay for that."
+        ],
+        [
+          "If I pay for moulds through a buying office, do I own them?",
+          "You should, and you need it in writing rather than as a habit. The clause needs to name who owns the mould, where it is physically stored, who maintains it, and the exact conditions under which the factory must release it if you move elsewhere — including the condition it must be in and the deadline for release. Our MOQ and tooling guide covers the amortisation maths and why a mould sitting in someone else's name is the part that should worry you."
         ]
       ],
       "opening": "Sometimes a sourcing agent is the cheapest way to buy and sometimes it is an expensive way to do what a factory would have done for free. The difference comes down to whether you are buying one product in volume or several categories in small quantities."
