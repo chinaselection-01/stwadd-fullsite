@@ -123,7 +123,7 @@ p, li, td, th { overflow-wrap: break-word; }
   /* 7. Floating contact buttons — collapse into one compact bottom row so
    *    they stop covering hero/body copy on a narrow screen. */
   .float-btns {
-    right: 12px; bottom: 86px;
+    left: 12px; right: auto; bottom: 12px;
     flex-direction: row; gap: 7px;
   }
   .float-btns a {
