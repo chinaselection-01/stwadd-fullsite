@@ -58,25 +58,59 @@ p, li, td, th { overflow-wrap: break-word; }
   [style*="width: 9"], [style*="width:9"],
   [style*="width: 10"], [style*="width:10"] { max-width: 100% !important; }
 
-  /* 4b. Expanded hamburger menu: stack vertically instead of horizontal
-   *     flex row that overflows the phone screen. */
-  .nav-links[style*="flex"] {
-    position: absolute; top: 100%; left: 0; right: 0;
-    flex-direction: column; align-items: flex-start;
-    gap: 0; width: 100%; max-height: calc(100vh - 90px); overflow-y: auto;
-    background: #fff; padding: 8px 20px 18px;
-    box-shadow: 0 12px 32px rgba(0,0,0,.14); z-index: 1100;
+  /* 4b. MOBILE NAV — show EVERY section name as a horizontally scrollable
+   *     chip row directly under the logo. Buyers on a phone must be able to
+   *     see what each section is without opening a hidden hamburger menu. */
+  .header-main .container { flex-wrap: wrap; }
+  .nav-links, .nav-links[style*="flex"] {
+    display: flex !important;
+    order: 10;
+    flex: 0 0 100%;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    position: static;
+    max-height: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 10px 0 12px;
+    margin: 0;
+    border-top: 1px solid var(--border, #e5e7eb);
+    background: transparent;
+    box-shadow: none;
   }
-  .nav-links[style*="flex"] > a,
-  .nav-links[style*="flex"] > .dropdown > a {
-    display: block; width: 100%; padding: 12px 0;
-    border-bottom: 1px solid #f0f0f0; font-size: 1rem;
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links > a, .nav-links > .dropdown > a,
+  .nav-links[style*="flex"] > a, .nav-links[style*="flex"] > .dropdown > a {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    width: auto;
+    padding: 8px 13px;
+    border: 1px solid #e3e9ef;
+    border-bottom: 1px solid #e3e9ef;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--text, #1c2b3a);
+    font-size: 13px;
+    line-height: 1.2;
+    white-space: nowrap;
   }
-  .nav-links[style*="flex"] .dropdown-menu {
-    position: static; opacity: 1; visibility: visible; transform: none;
-    box-shadow: none; min-width: 0; padding: 4px 0 8px 14px;
+  .nav-links > a::after { display: none; }
+  .nav-links > .dropdown { flex: 0 0 auto; position: static; }
+  .nav-links .dropdown-menu,
+  .nav-links[style*="flex"] .dropdown-menu { display: none !important; }
+  .nav-links a.btn, .nav-links a.btn-primary {
+    background: var(--primary, #c41e3a) !important;
+    color: #fff !important;
+    border-color: var(--primary, #c41e3a) !important;
   }
-  .nav-links[style*="flex"] .lang-switch, .lang-switch { margin-left: 0; }
+  .menu-toggle { display: none !important; }
+  .lang-switch { margin-left: 0; }
 
   /* 5. Common legacy two-column grids stack on phones */
   .unit-grid-2, .unit-cols-2, .two-col, .col-2,
@@ -85,4 +119,18 @@ p, li, td, th { overflow-wrap: break-word; }
   /* 6. Headings scale down */
   h1 { font-size: clamp(1.45rem, 6vw, 2rem) !important; line-height: 1.25 !important; }
   h2 { font-size: clamp(1.25rem, 5vw, 1.7rem) !important; line-height: 1.3 !important; }
+
+  /* 7. Floating contact buttons — collapse into one compact bottom row so
+   *    they stop covering hero/body copy on a narrow screen. */
+  .float-btns {
+    right: 12px; bottom: 86px;
+    flex-direction: row; gap: 7px;
+  }
+  .float-btns a {
+    width: 40px; height: 40px; font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  }
+
+  /* 8. Hero headline must break inside long words instead of overflowing */
+  .hero h1, .hero-content h1, h1 { overflow-wrap: break-word; word-break: break-word; }
 }
