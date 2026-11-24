@@ -15,7 +15,7 @@ A factory-backed drinkware supply company (est. 2017) producing to buyers' own s
 
 Free samples - you pay only the courier. Ready stock ships in 7-15 days; samples 1-3 days, custom samples 7-10 days, production 25-30 days. MOQ 500-1000 pcs on existing models, new tooling from 3,000 pcs (moulds USD 1,000-2,000). 304/316 steel, lead-free, PFAS-free, ISO 9001, SGS and TUV tested. Also a China buying office for retail chains: 12 categories, container consolidation, 3-5% commission.
 
-Factory-direct quotes, no unit prices published: sales1@stwadd.com | WhatsApp +86 150 8822 8843 | www.stwadd.com
+Factory-direct quotes, no unit prices published: bob@stwadd.com | WhatsApp +86 150 8822 8843 | www.stwadd.com
 #drinkware #OEM #tumbler
 ```
 
@@ -44,7 +44,7 @@ Factory-direct quotes, no unit prices published: sales1@stwadd.com | WhatsApp +8
 [第 3 段：下一步 —— 留邮箱拿工厂报价 / WhatsApp]
 
 Full specs, carton data and the 192-model catalogue: https://www.stwadd.com/2026-catalog.html
-Factory-direct quotes (no unit prices published): sales1@stwadd.com | WhatsApp +86 150 8822 8843
+Factory-direct quotes (no unit prices published): bob@stwadd.com | WhatsApp +86 150 8822 8843
 
 #drinkware #tumbler #thermos #OEM #ODM #waterbottle #privatelabel #manufacturing
 ```
@@ -58,7 +58,7 @@ Walk through one of our most requested shapes: double-wall 304 stainless steel, 
 Capacity 1200ml. 304 stainless steel, BPA-free, lead-free, PFAS-free. MOQ 500-1000 pcs on existing models; new tooling from 3,000 pcs (mould USD 1,000-2,000). Samples 1-3 days from stock, custom samples 7-10 days, production 25-30 days. Free samples - you pay only the courier.
 
 Full specs, carton data and the 192-model catalogue: https://www.stwadd.com/2026-catalog.html
-Factory-direct quotes (no unit prices published): sales1@stwadd.com | WhatsApp +86 150 8822 8843
+Factory-direct quotes (no unit prices published): bob@stwadd.com | WhatsApp +86 150 8822 8843
 
 #drinkware #tumbler #thermos #OEM #ODM #waterbottle #privatelabel #manufacturing
 ```

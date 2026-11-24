@@ -12,7 +12,7 @@
 (function() {
   'use strict';
 
-  var INQUIRY_EMAIL = 'sales1@stwadd.com';
+  var INQUIRY_EMAIL = 'bob@stwadd.com';
   var INQUIRY_CC = 'bob@stwadd.com';
 
   /* ── 网易外贸通留资上报 (requestClue) ──
