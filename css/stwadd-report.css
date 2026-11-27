@@ -1,0 +1,88 @@
+/* ============================================================
+   STWADD Quality Intelligence Report — shared report layout
+   Used by a-drinkware-quality-problems-troubleshooting.html
+   and a-insulated-bottle-defect-durability-report.html
+   Scope: everything under .rpt so it never leaks into other pages
+   ============================================================ */
+.rpt{
+  --ink:#12212e; --sub:#5a6b78; --line:#dde5ec; --paper:#fff;
+  --bg:#f2f5f8; --accent:#0f6b8c; --accent2:#c41e3a;
+  --ok:#1a7f4b; --okbg:#eef8f1; --warn:#a35a00; --warnbg:#fff7e8;
+  color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg); line-height:1.65;
+}
+.rpt *{box-sizing:border-box}
+.rpt a{color:var(--accent);text-decoration:none}
+.rpt a:hover{text-decoration:underline}
+.rpt img{max-width:100%;display:block}
+.rpt h1,.rpt h2,.rpt h3,.rpt p,.rpt ol,.rpt ul{margin:0}
+.rpt-hero{background:linear-gradient(135deg,#102633 0%,#1b4257 58%,#20546b 100%);color:#fff;padding:44px 20px 38px}
+.rpt-hero-inner{max-width:980px;margin:0 auto}
+.rpt-kicker{font-size:11.5px;letter-spacing:2px;font-weight:800;color:#8fd3e8;text-transform:uppercase;margin-bottom:16px}
+.rpt-hero h1{font-size:clamp(26px,4.2vw,40px);line-height:1.22;font-weight:800;letter-spacing:-.4px;max-width:900px}
+.rpt-hero .rpt-sub{font-size:16px;color:#c5dbe6;margin-top:14px;max-width:800px;line-height:1.65}
+.rpt-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.18)}
+.rpt-meta span{font-size:11px;letter-spacing:.7px;color:#9fc2d2;text-transform:uppercase}
+.rpt-meta b{display:block;font-size:13px;color:#fff;letter-spacing:0;text-transform:none;margin-top:3px;font-weight:700}
+.rpt-body{max-width:980px;margin:0 auto;padding:0 20px 40px}
+.rpt-crumb{font-size:12.5px;color:var(--sub);padding:18px 0 4px}
+.rpt-crumb a{color:var(--sub)}
+.rpt-card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px 26px;margin:20px 0;box-shadow:0 3px 14px rgba(18,33,46,.035)}
+.rpt-summary{border-left:4px solid var(--accent)}
+.rpt-card h2{font-size:20px;line-height:1.35;margin-bottom:12px;color:var(--ink)}
+.rpt-card p{font-size:14.5px;color:#3c4a56;margin:9px 0}
+.rpt-summary ul{margin:12px 0 0;padding-left:20px;font-size:14px;color:#3c4a56}
+.rpt-summary li{margin:6px 0}
+.rpt-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 0}
+.rpt-stat{background:#f7fafc;border:1px solid var(--line);border-radius:8px;padding:14px 12px;text-align:center}
+.rpt-stat b{display:block;font-size:24px;line-height:1.1;color:var(--accent2);font-weight:800}
+.rpt-stat span{display:block;font-size:11.5px;color:var(--sub);margin-top:6px;line-height:1.45}
+.rpt-note{background:var(--warnbg);border:1px solid #f0dcb4;border-radius:8px;padding:12px 14px;font-size:13px;color:#7a5200;margin-top:14px;line-height:1.6}
+.rpt-toc ol{list-style:none;padding:0;margin:14px 0 0;counter-reset:toc}
+.rpt-toc li{counter-increment:toc;padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px;display:flex;gap:12px}
+.rpt-toc li:last-child{border-bottom:0}
+.rpt-toc li:before{content:counter(toc,decimal-leading-zero);color:var(--accent);font-weight:800;font-size:13px;min-width:24px}
+.rpt-toc a{color:#2c3f4d}
+.rpt-chapter{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:22px 24px;margin:16px 0;display:flex;gap:18px;box-shadow:0 3px 14px rgba(18,33,46,.035)}
+.rpt-ch-num{flex:0 0 46px;height:46px;border-radius:9px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;letter-spacing:.5px}
+.rpt-ch-content{flex:1;min-width:0}
+.rpt-ch-content h2{font-size:18.5px;line-height:1.4;margin-bottom:12px;color:var(--ink)}
+.rpt-block{margin:10px 0}
+.rpt-lab{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:1.1px;color:var(--accent2);margin-bottom:3px}
+.rpt-block p{font-size:14px;color:#3c4a56;line-height:1.7}
+.rpt-fix{background:var(--okbg);border-left:3px solid var(--ok);border-radius:0 7px 7px 0;padding:10px 13px;margin-top:13px;font-size:13.5px;line-height:1.65;color:#175c39}
+.rpt-table{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+.rpt-table th,.rpt-table td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+.rpt-table th{background:#f7fafc;color:var(--sub);font-weight:700;font-size:12px;letter-spacing:.4px;text-transform:uppercase}
+.rpt-table tr:last-child td{border-bottom:0}
+.rpt-table td b{color:var(--accent2)}
+.rpt-figure{margin:18px 0 0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fafbfc}
+.rpt-figure img{width:100%;height:auto;max-height:380px;object-fit:contain}
+.rpt-figure figcaption{padding:10px 14px;font-size:12.5px;color:var(--sub);border-top:1px solid var(--line)}
+.rpt-conclusion{background:linear-gradient(135deg,#12212e,#204357);color:#fff;border:0}
+.rpt-conclusion h2{color:#fff}
+.rpt-conclusion p{color:#d3e2ea}
+.rpt-cta{background:var(--accent2);color:#fff;border:0;text-align:center}
+.rpt-cta h2{color:#fff;font-size:22px}
+.rpt-cta p{color:#ffe4e9;font-size:14.5px;margin:10px auto 18px;max-width:640px}
+.rpt-cta .rpt-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.rpt-cta a.rpt-btn{display:inline-block;background:#fff;color:#a6142c;border-radius:7px;padding:11px 18px;font-weight:800;font-size:14px;text-decoration:none}
+.rpt-cta a.rpt-btn.wa{background:#25D366;color:#fff}
+.rpt-cta small{display:block;margin-top:16px;color:#ffd9e0;font-size:12px}
+.rpt-cta small a{color:#fff;text-decoration:underline}
+.rpt-footer{background:#0c0f14;color:#9ca3af;padding:26px 20px;font-size:13px;text-align:center}
+.rpt-footer a{color:#cbd5e1}
+.rpt-footer p+p{margin-top:6px;font-size:11.5px;color:#7b8492}
+@media(max-width:760px){
+  .rpt-hero{padding:32px 18px 28px}
+  .rpt-hero h1{font-size:25px}
+  .rpt-hero .rpt-sub{font-size:14.5px}
+  .rpt-body{padding:0 14px 30px}
+  .rpt-card,.rpt-chapter{padding:18px 16px}
+  .rpt-chapter{gap:12px}
+  .rpt-ch-num{flex-basis:36px;height:36px;font-size:14px}
+  .rpt-ch-content h2{font-size:16.5px}
+  .rpt-stats{grid-template-columns:repeat(2,1fr)}
+  .rpt-table{font-size:12.5px}
+  .rpt-table th,.rpt-table td{padding:8px 9px}
+}
